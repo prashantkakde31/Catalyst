@@ -1,0 +1,519 @@
+﻿@model Interpidians.Catalyst.Client.Web.ViewModels.ExamViewModel
+
+@{
+    Layout = null;
+    ViewBag.Title = "Start";
+}
+
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+<!--<![endif]-->
+<head>
+    <title>Catalyst | Exam</title>
+
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Favicon -->
+    @*<link rel="shortcut icon" href="favicon.ico">*@
+
+    <!-- Web Fonts -->
+    <link rel='stylesheet' type='text/css' href='//fonts.googleapis.com/css?family=Open+Sans:400,300,600&amp;subset=cyrillic,latin'>
+
+    <!-- CSS Global Compulsory -->
+    <link rel="stylesheet" href="~/Content/plugins/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/Content/css/app.css">
+    <link rel="stylesheet" href="~/Content/css/blocks.css">
+
+    <link rel="stylesheet" href="~/Content/css/sky-forms.css">
+    <link rel="stylesheet" href="~/Content/css/shop.style.css">
+    <link rel="stylesheet" href="~/Content/css/catalyst.css">
+
+    <!-- CSS Header and Footer -->
+    <link rel="stylesheet" href="~/Content/css/headers/header-v5.css">
+    <link rel="stylesheet" href="~/Content/css/footers/footer-v4.css">
+
+    <!-- CSS Implementing Plugins -->
+    <link rel="stylesheet" href="~/Content/plugins/animate.css">
+    <link rel="stylesheet" href="~/Content/plugins/line-icons/line-icons.css">
+    <link rel="stylesheet" href="~/Content/plugins/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="~/Content/plugins/scrollbar/css/jquery.mCustomScrollbar.css">
+
+    <!-- Style Switcher -->
+    <!--link rel="stylesheet" href="~/Content/css/plugins/style-switcher.css">
+
+    <!-- CSS Theme -->
+    <link rel="stylesheet" href="~/Content/css/theme-colors/green.css" id="style_color">
+
+    <!-- CSS Customization -->
+    <link rel="stylesheet" href="~/Content/css/catalyst.css?v=20170714">
+
+    <!-- CSS Page Style -->
+    <link rel="stylesheet" href="~/Content/css/pages/mcq-test.css?v=20170714">
+
+    <!-- Global Js Variables -->
+    <script type="text/javascript">
+        var page = "mcq-test";
+    </script>
+</head>
+
+@*<body class="header-fixed" data-page="mcq-test" oncontextmenu="return false;">*@
+
+<body class="header-fixed" data-page="mcq-test">
+
+    <div class="wrapper">
+
+        <!--=== Breadcrumbs v4 ===-->
+        <div class="breadcrumbs">
+
+            <div class="container">
+                <h1 class="pull-left">MCQs</h1>
+                <div class="pull-right margin-top-10">
+                    <!--Timer -->
+                    <div class="mcq-timer pull-left margin-right-10">
+                        <div id="timer">@(TimeSpan.FromTicks(Model.CurrentExam.TotalTimeLeft * 10000000))</div>
+                    </div>
+                    <button class="pull-left btn-u btn-u-blue margin-right-10" type="button" id="btnStopTimer"><i class="glyphicon glyphicon-pause"></i></button>
+                    <button class="pull-left btn-u" type="button" data-toggle="modal" data-target=".modal-status">SUBMIT</button>
+                    <!-- STATUS Button start hidden for time being -->
+                    <button class="pull-left btn btn-primary hide" type="button" data-toggle="modal" data-target=".modal-status">STATUS</button>
+                    <!-- STATUS Button end -->
+                    <!-- Timer -->
+                </div>
+            </div>
+        </div>
+        <!--=== End Breadcrumbs v4 ===-->
+        <!--=== MCQs ===-->
+        <div class="content-md ">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-3">
+                        <p class="">Question: <span class="color-green"><span class="activeQ">@((!string.IsNullOrEmpty(Request.QueryString["SrNo"])) ? Html.Raw(Request.QueryString["SrNo"]) : Html.Raw(1))</span> / <span class="totalQ">@Model.CurrentExam.TotalQuestions</span></span></p>
+                    </div>
+
+                    <div class="col-sm-9">
+                        <div class="test-nav">
+                            <div class="test-nav-prev test-nav-control-block">
+                                @*<a href="@Request.Url.AbsolutePath?SrNo=@(Convert.ToInt32(Request.QueryString["SrNo"])-1)" class="test-nav-control" data-control="prev"><i class="fa fa-angle-left"></i></a>*@
+                                <a href="javascript:;" data-page="@(Convert.ToInt32(Request.QueryString["SrNo"])-1)" class="test-nav-control" data-control="prev"><i class="fa fa-angle-left"></i></a>
+                            </div>
+                            <div class="test-nav-pager test-nav-control-block text-center">
+                                <ul class="pagination questions-strip">
+                                    @*@for (int i = 1; i <= Model.CurrentExam.TotalQuestions; i++)
+                                        {
+                                            <li>
+                                                <a href="javascript:;" data-navigate-url="@Request.Url.AbsolutePath?SrNo=@i" data-control="pager" data-page="@i" class="test-nav-control" >@i</a>
+                                            </li>
+                                        }*@
+
+                                    @for (int i = 1; i <= Model.CurrentExam.TotalQuestions; i++)
+                                    {
+                                        <li>
+                                            <a href="javascript:;" data-control="pager" data-page="@i" class="test-nav-control @Convert.ToString(Model.CurrentExam.ExamDetails[i-1].QuestionStatus)">@i</a>
+                                        </li>
+                                    }
+                                </ul>
+                            </div>
+                            <div class="test-nav-next test-nav-control-block">
+                                @*<a href="@Request.Url.AbsolutePath?SrNo=@(Convert.ToInt32(Request.QueryString["SrNo"])+1)" class="test-nav-control" data-control="next"><i class="fa fa-angle-right"></i></a>*@
+                                <a href="javascript:;" data-page="@(Convert.ToInt32(Request.QueryString["SrNo"])+1)" class="test-nav-control" data-control="next"><i class="fa fa-angle-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-12 margin-top-10">
+
+
+                        <div class="test-body">
+                            <!-- Q.1 -->
+                            <div id="QuestionPanel" class="panel panel-default active" style="display: block;" data-question-id="@Interpidians.Catalyst.Core.Utility.Crypto.Encrypt(Model.CurrentQuestion.McqID.ToString())" data-exam-id="@Interpidians.Catalyst.Core.Utility.Crypto.Encrypt(Model.CurrentExam.ExamID.ToString())" data-question-sr-no="@Request.QueryString["SrNo"]">
+                                <div class="panel-heading">
+
+                                    @{
+                                        if (!string.IsNullOrEmpty(Model.CurrentQuestion.QuestionText1))
+                                        {
+                                            <h4 class="panel-title@(("QuestionOrBoth".IndexOf(Model.CurrentExam.DisableQuestionAnswer,StringComparison.CurrentCultureIgnoreCase) != -1) ? " invisible" : "")">@Model.CurrentQuestion.QuestionText1</h4>
+                                        }
+
+                                        @*if (!string.IsNullOrEmpty(Model.CurrentQuestion.QuestionText2))
+                                            {
+                                                <h4 class="panel-title">@Model.CurrentQuestion.QuestionText2</h4>
+                                            }*@
+                                    }
+                                </div>
+                                <div class="sky-form">
+                                    <div class="panel-body@(("QuestionOrBoth".IndexOf(Model.CurrentExam.DisableQuestionAnswer,StringComparison.CurrentCultureIgnoreCase) != -1) ? " invisible" : "")">
+                                        <div class="row">
+                                            <div class="col-xs-12 col-md-8">
+                                                <!-- Question Image/Text (if any )-->
+                                                <div class="row">
+
+                                                    @{
+                                                        if (!string.IsNullOrEmpty(Model.CurrentQuestion.QuestionImageLink))
+                                                        {
+                                                            <div class="col-md-5"><img class="img-responsive" src="http://app.educastle.net/Upload/QuestionImage/@Model.CurrentQuestion.QuestionImageLink" alt=""></div>
+                                                        }
+
+                                                        if (!string.IsNullOrEmpty(Model.CurrentQuestion.QuestionText2))
+                                                        {
+                                                            <div class="col-sm-12">
+                                                                <p>
+                                                                    @Model.CurrentQuestion.QuestionText2
+                                                                </p>
+                                                            </div>
+                                                        }
+
+                                                        if (!string.IsNullOrEmpty(Model.CurrentQuestion.QuestionImage2))
+                                                        {
+                                                            <div class="col-md-6"><img class="img-responsive" src="http://app.educastle.net/Upload/QuestionImage/@Model.CurrentQuestion.QuestionImage2" alt=""></div>
+                                                        }
+
+                                                        if (!string.IsNullOrEmpty(Model.CurrentQuestion.CommonAnswerImage))
+                                                        {
+                                                            <div class="col-md-6"><img class="img-responsive" src="http://app.educastle.net/Upload/CommonAnswer/@Model.CurrentQuestion.CommonAnswerImage" alt=""></div>
+                                                        }
+                                                    }
+                                                </div>
+                                            </div>
+                                            @{
+                                                if (Model.CurrentQuestion.McqAnswers.Where(x => x.AnswerType == "Image").Any<Interpidians.Catalyst.Core.Entity.McqAnswer>())
+                                                {
+                                                    @Html.Raw("<div class='col-xs-12 col-md-12'>") @*For Image Options*@
+                                                }
+                                                else
+                                                {
+                                                    if (!string.IsNullOrEmpty(Model.CurrentQuestion.QuestionImageLink))
+                                                    {
+                                                        @Html.Raw("<div class='col-xs-12 col-md-4'>")  @*For Text Options with Question Image*@
+                                                    }
+                                                    else
+                                                    {
+                                                        @Html.Raw("<div class='col-xs-12 col-md-8'>")  @*For Text Options without Question Image*@
+                                                    }
+
+                                                }
+                                            }
+
+                                            <!-- Options -->
+                                            <h4>Options</h4>
+                                            <div class="options">
+
+                                                @*@foreach (var item in Model.CurrentQuestion.McqAnswers)
+                                                    {
+                                                        if (!string.IsNullOrEmpty(item.Answer))
+                                                        {
+                                                            <label class="radio"><input type="radio" name="currentMcqChoice" data-answer-id="@Interpidians.Catalyst.Core.Utility.Crypto.Encrypt(item.McqAnswerID.ToString())" @{ if (item.IsSelected) { <text> checked</text> }}><i class="rounded-x"></i>@item.Answer</label>
+                                                        }
+                                                        if (!string.IsNullOrEmpty(item.AnswerImage))
+                                                        {
+                                                             <label class="radio col-sm-6 col-md-3"><input type="radio" name="currentMcqChoice" data-answer-id="@Interpidians.Catalyst.Core.Utility.Crypto.Encrypt(item.McqAnswerID.ToString())" @{ if (item.IsSelected) { <text> checked</text> }}><i class="rounded-x"></i><img class="img-responsive" src="http://app.educastle.net/Upload/AnswerImage/@item.AnswerImage" alt="" /></label>
+                                                        }
+                                                    }*@
+
+                                                @*@foreach (var item in Model.CurrentQuestion.McqAnswers)*@
+                                                @for (int i=0;i< Model.CurrentQuestion.McqAnswers.Count;i++)
+                                                {
+                                                    switch (Model.CurrentQuestion.McqAnswers[i].AnswerType)
+                                                    {
+                                                        case "TEXT":
+                                                            <label class="radio"><input type="radio" name="currentMcqChoice" data-answer-id="@Interpidians.Catalyst.Core.Utility.Crypto.Encrypt(Model.CurrentQuestion.McqAnswers[i].McqAnswerID.ToString())" @{ if (Model.CurrentQuestion.McqAnswers[i].IsSelected) { <text> checked</text> }}><i class="rounded-x"></i>@Model.CurrentQuestion.McqAnswers[i].Answer</label>
+                                                            break;
+
+                                                        case "NONE":
+                                                            <label class="radio"><input type="radio" name="currentMcqChoice" data-answer-id="@Interpidians.Catalyst.Core.Utility.Crypto.Encrypt(Model.CurrentQuestion.McqAnswers[i].McqAnswerID.ToString())" @{ if (Model.CurrentQuestion.McqAnswers[i].IsSelected) { <text> checked</text> }}><i class="rounded-x"></i>@("ABCDEFGHIJKLM"[i].ToString())</label>
+                                                            break;
+
+                                                        case "IMAGE":
+                                                            <label class="radio col-sm-6 col-md-3"><input type="radio" name="currentMcqChoice" data-answer-id="@Interpidians.Catalyst.Core.Utility.Crypto.Encrypt(Model.CurrentQuestion.McqAnswers[i].McqAnswerID.ToString())" @{ if (Model.CurrentQuestion.McqAnswers[i].IsSelected) { <text> checked</text> }}><i class="rounded-x"></i><img class="img-responsive" src="http://app.educastle.net/Upload/AnswerImage/@Model.CurrentQuestion.McqAnswers[i].AnswerImage" alt="" /></label>
+                                                            break;
+
+                                                        default:
+                                                            break;
+                                                    }
+                                                }
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <!-- Help Popup -->
+                                    <div id="q1-help" class="hide">
+                                        @{
+                                            <!-- Solution -->
+                                            if (!string.IsNullOrEmpty(@Model.CurrentQuestion.HintText))
+                                            {
+                                                <h4>Solution</h4>
+                                                <p>
+                                                    @Model.CurrentQuestion.HintText
+                                                </p>
+
+                                                if (!string.IsNullOrEmpty(@Model.CurrentQuestion.HintImageLink))
+                                                {
+                                                    <div class="row">
+                                                        <div class="col-md-8"><img class="img-responsive" src="http://app.educastle.net/Upload/SolutionImage/@Model.CurrentQuestion.HintImageLink" alt=""></div>
+                                                    </div>
+                                                }
+                                            }
+                                            <!-- /end Solution -->
+                                        }
+                                        @{
+                                            <!-- Solution Documents -->
+                                            if (!string.IsNullOrEmpty(@Model.CurrentQuestion.SupportedDocumentLink))
+                                            {
+                                                @:<h3>Solution Documents</h3>
+                                                @:<ul>
+                                                    @:
+                                                    <li><a href="http://app.educastle.net/Upload/SolutionDocument/@Model.CurrentQuestion.SupportedDocumentLink" class="text-success" target="_blank">@Model.CurrentQuestion.SupportedDocumentLink</a></li>
+
+
+                                                if (!string.IsNullOrEmpty(@Model.CurrentQuestion.SupportedDocumentLink2))
+                                                {
+                                                    <li><a href="http://app.educastle.net/Upload/SolutionDocument/@Model.CurrentQuestion.SupportedDocumentLink2" class="text-success" target="_blank">@Model.CurrentQuestion.SupportedDocumentLink2</a></li>
+                                                }
+                                                if (!string.IsNullOrEmpty(@Model.CurrentQuestion.SupportedDocumentLink3))
+                                                {
+                                                    <li><a href="http://app.educastle.net/Upload/SolutionDocument/@Model.CurrentQuestion.SupportedDocumentLink3" class="text-success" target="_blank">@Model.CurrentQuestion.SupportedDocumentLink3</a></li>
+                                                }
+                                                @:</ul>
+
+
+                                            }
+                                            <!-- /end Solution Documents -->
+                                        }
+
+                                        @{
+
+                                            <!-- Solution Video -->
+                                            if (!string.IsNullOrEmpty(@Model.CurrentQuestion.HintVideoUrl))
+                                            {
+                                                @:<h3>Solution Video</h3>
+                                                @:<video class="full-width" controls>
+                                                    @:
+                                                    <source src="@Model.CurrentQuestion.HintVideoUrl" type="video/mp4">
+                                                    @: Your browser does not support the video tag.
+                                                    @:
+                                                @:</video>
+
+
+                                                if (!string.IsNullOrEmpty(@Model.CurrentQuestion.VideoLink))
+                                                {
+                                                    @:<ul>
+                                                        @:<li><a href="http://app.educastle.net/Upload/SolutionVideo/@Model.CurrentQuestion.VideoLink" class="text-success" target="_blank">@Model.CurrentQuestion.VideoLink</a></li>
+                                                    @:</ul>
+                                                }
+                                            }
+
+                                             <!-- /end Solution Video -->
+                                        }
+
+
+                                    </div>
+                                    <!-- End Help Popup -->
+                                </div>
+                            </div>
+
+                            <div class="panel-footer">
+                                <button class="btn rounded btn-u-sm@(("AnswerOrBoth".IndexOf(Model.CurrentExam.DisableQuestionAnswer,StringComparison.CurrentCultureIgnoreCase) != -1) ? " invisible" : "")" type="button" data-source="#q1-help" data-toggle="modal" data-target=".modal-mcqhelp"><i class="glyphicon glyphicon-question-sign"></i> Help</button>
+                                <button class="btn rounded btn-u-sm btn-warning" type="button" id="btnMarkForReview"><i class="fa fa-eye"></i> Mark For Review</button>
+                                <button class="btn-u rounded btn-u-sm btn-u-blue pull-right margin-left-10" type="button" id="btnSkipQuestion">Skip&nbsp;&nbsp;<i class="fa fa-angle-right"></i></button>
+                                <button class="btn-u rounded btn-u-sm pull-right margin-left-5" type="button" id="btnClearSelection">Clear Selection&nbsp;&nbsp;</button>
+                                <button class="btn-u rounded btn-u-sm pull-right" type="button" id="btnSubmitAnswer">Submit answer & continue&nbsp;&nbsp;<i class="fa fa-angle-right"></i></button>
+                            </div>
+                        </div>
+                        <!-- /Q.1 -->
+
+                    </div>
+
+                </div>
+
+                <!-- Modal : MCQ Help -->
+                <div id="modal-mcqhelp" class="modal fade modal-mcqhelp" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-md">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+                                <h4 id="myLargeModalLabel2" class="modal-title">Help</h4>
+                            </div>
+                            <div class="modal-body">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Modal : Question Status -->
+                <div id="modal-status" class="modal fade modal-status" tabindex="-1">
+                    <div class="modal-dialog modal-md">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button data-dismiss="modal" class="close" type="button">×</button>
+                                <h4 id="myLargeModalLabel2" class="modal-title">Status</h4>
+                            </div>
+                            <div class="modal-body">
+                                <div id="chart" class="chart">
+                                    <div class="chartTitle text-center">Total Questions<br/><b>@Model.CurrentExam.TotalQuestions</b></div>
+                                    <canvas id="myChart"></canvas>
+                                </div>
+                                <div id="chartjs-legend" class="chart-legend"></div>
+                                <div class="text-right">
+                                    <button type="button" class="btn btn-default text-uppercase" data-dismiss="modal">Resume Test</button>
+                                    <button type="button" class="btn btn-primary text-uppercase" id="btnSubmitExam">Submit Test</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Modal : /end Question Statu -->
+            </div><!--/end row-->
+        </div><!--/end container-->
+    </div>
+    <!--=== End MCQs ===-->
+    <!--=== Footer v4 ===-->
+    <div class="footer-v4">
+        <div class="copyright">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <p>
+                            2017 &copy; ALL Rights Reserved.
+                            <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div><!--/copyright-->
+    </div>
+    <!--=== End Footer v4 ===-->
+    </div><!--/wrapper-->
+    <!-- JS Global Compulsory -->
+    <script src="~/Content/plugins/jquery/jquery.min.js"></script>
+    <script src="~/Content/plugins/jquery/jquery.plugin.js"></script>
+    <script src="~/Content/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <!-- JS Implementing Plugins -->
+    <script src="~/Content/plugins/back-to-top.js"></script>
+    <script src="~/Content/plugins/smoothScroll.js"></script>
+    <script src="~/Content/plugins/scrollbar/js/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="~/Content/js/plugins/module.pubsub.js"></script>
+    <script src="~/Content/js/plugins/notify.min.js"></script>
+    <script src="~/Content/js/plugins/countdown.js"></script>
+    <script src="~/Content/js/mcq-test.js?v=2017070902"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
+
+
+    <!-- JS Common Level -->
+    <script src="~/Content/js/common.js"></script>
+    <!-- JS Customization -->
+    <script src="~/Content/js/custom.js"></script>
+    <script>
+        jQuery(document).ready(function () {
+            App.init();
+            App.initScrollBar();
+
+            // And for a doughnut chart
+            $('#modal-status').on('shown.bs.modal', function () {
+
+                var data = {
+                    labels: [
+                        "Answered",
+                        "Not Answered",
+                        "Skipped",
+                        "Marked for Review",
+                    ],
+                    datasets: [{
+                        data: [@Model.CurrentExamSummary.noOfQuestionAttempted, @Model.CurrentExamSummary.noOfQuestionNotAttempted, @Model.CurrentExamSummary.noOfQuestionSkipped, @Model.CurrentExamSummary.noOfQuestionMarkedForReview],
+                        backgroundColor: [
+                            "#72c02c",
+                            "#acacac",
+                            "#2980b9",
+                            "#ec971f"
+                        ],
+                        borderWidth: 1
+                    }]
+                }
+                addData(DoughnutChart, data.labels, data.datasets);
+            });
+
+            function addData(chart, label, data) {
+                console.log("update chart", chart, label, data);
+                chart.data.labels = label;
+                chart.data.datasets = data;
+
+                chart.update();
+                $("#chartjs-legend").html(chart.generateLegend());
+            }
+
+            var data = {
+                labels: [
+                    "Red",
+                    "Blue",
+                    "Yellow"
+                ],
+                datasets: [{
+                    data: [300, 50, 100],
+                    backgroundColor: [
+                        "#FF6384",
+                        "#36A2EB",
+                        "#FFCE56"
+                    ],
+                    hoverBackgroundColor: [
+                        "#FF6384",
+                        "#36A2EB",
+                        "#FFCE56"
+                    ],
+                    borderWidth: 1
+                }]
+            };
+
+            var options = {
+                cutoutPercentage: 50,
+                legend: {
+                    display: false
+                }
+            };
+
+            var Doughnut = $("#myChart").get(0).getContext("2d");
+            var DoughnutChart = new Chart(Doughnut, {
+                type: 'doughnut',
+                data: data,
+                options: {
+                    cutoutPercentage: 75,
+                    legend: { display: false },
+                    legendCallback: function (chart) {
+                        var text = [];
+
+                        text.push('<ul class="' + chart.id + '-legend">');
+                        for (var i = 0; i < chart.data.datasets[0].data.length; i++) {
+                            //console.log(chart.data.datasets[0].data[i]);
+                            text.push('<li><span style="background-color:' + chart.data.datasets[0].backgroundColor[i] + '"></span>');
+                            if (chart.data.labels[i]) {
+                                text.push(chart.data.labels[i] + " (" + chart.data.datasets[0].data[i] + ")");
+                            }
+                            text.push('</li>');
+                        }
+                        text.push('</ul>');
+                        return text.join("");
+                    }
+                },
+                tooltipTemplate: ""
+            });
+
+            $("#chartjs-legend").html(DoughnutChart.generateLegend());
+
+        });
+    </script>
+    <!--[if lt IE 9]>
+        <script src="~/Content/plugins/respond.js"></script>
+        <script src="~/Content/plugins/html5shiv.js"></script>
+        <script src="~/Content/js/plugins/placeholder-IE-fixes.js"></script>
+        <![endif]-->
+    <!--[if lt IE 10]>
+        <script src="~/Content/plugins/sky-forms-pro/skyforms/js/jquery.placeholder.min.js"></script>
+        <![endif]-->
+</body>
+</html>

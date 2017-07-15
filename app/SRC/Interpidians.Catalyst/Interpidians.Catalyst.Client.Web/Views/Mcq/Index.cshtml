@@ -1,0 +1,40 @@
+﻿@model IEnumerable<Interpidians.Catalyst.Core.Entity.SubjectMaster>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_CommonLayout.cshtml";
+}
+
+
+
+@*<div class="col-sm-3">
+     @foreach (var item in Model)
+            { 
+    <ul class="list-group side-nav-v1">
+
+        <li class="list-group-item">
+           
+                @Html.DisplayFor(modelItem => item.Name)
+           
+           
+        </li>
+    </ul>
+            }
+</div>*@
+@ViewBag.SubjectName
+<div class="col-sm-3">
+    
+    <ul class="list-group sidebar-nav-v1">
+         @foreach (var subject in @Model)
+            { 
+        <li class="list-group-item" @(@ViewBag.SubjectName==subject.Name?"class=list-group-item active":"class=list-group-item")>
+           
+               @Html.ActionLink(subject.Name, "Sample", "Mcq", new { subject=subject.Name},null)
+           
+           
+        </li>
+          
+            }
+    </ul>
+            
+</div>

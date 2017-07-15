@@ -1,0 +1,133 @@
+﻿@model Interpidians.Catalyst.Client.Web.ViewModels.SampleMcqViewModel
+
+@{
+    ViewBag.Title = "Mcq Samples";
+    Layout = "~/Views/Shared/_CommonLayout.cshtml";
+}
+
+<!-- Fetch Subjects under course or subcourse -->
+<div class="col-sm-3">
+    <ul class="list-group sidebar-nav-v1">
+
+        @foreach (var subject in Model.SubjectList)
+        {
+            if (subject.Name == ViewBag.SubjectName)
+            {              
+            <li class="list-group-item active">
+                @Html.ActionLink(subject.Name, MVC.Mcq.ActionNames.Sample, MVC.Mcq.Name, new { course = Convert.ToString(ViewBag.CourseName), subcourse = Convert.ToString(ViewBag.subcourse), subject = subject.Name }, null)
+            </li>
+            }
+            else
+            {
+                           
+            <li class="list-group-item">
+                @Html.ActionLink(subject.Name, MVC.Mcq.ActionNames.Sample, MVC.Mcq.Name, new { course = Convert.ToString(ViewBag.CourseName), subcourse = Convert.ToString(ViewBag.subcourse), subject = subject.Name }, null)
+            </li>
+            }
+        }
+
+        @*<li class="list-group-item active">
+            <a href="#">English</a>
+        </li>
+        <li class="list-group-item">
+            <a href="#">Physics</a>
+        </li>
+        <li class="list-group-item">
+            <a href="#">Chemistry</a>
+        </li>
+        <li class="list-group-item">
+            <a href="#">Maths</a>
+        </li>
+        <li class="list-group-item">
+            <a href="#">Bio</a>
+        </li>*@
+    </ul>
+</div>
+
+<!-- End Fetch Subjects under course or subcourse -->
+
+<div class="col-sm-9">
+    <div class="row">
+        <div class="col-md-6">
+            <!-- Fetch Subject Topics -->
+            <div class="panel panel-blue">
+                <div class="panel-heading">
+                    <h3 class="panel-title"><i class="fa fa-tasks"></i>Topic Wise</h3>
+                </div>
+                <div class="panel-body">
+                    <table class="table table-border">
+
+                        <tbody>
+                            @foreach (var topic in Model.TopicWiseList)
+                            { 
+                                <tr>
+                                    <td>
+                                       @* @Html.ActionLink(topic.Name, "Topic","Mcq", new { id = topic.SubjectID },null)*@
+                                         @Html.ActionLink(topic.Name,MVC.Mcq.ActionNames.Topic,MVC.Mcq.Name, new { id=Interpidians.Catalyst.Core.Utility.Crypto.Encrypt("id", ""+topic.TopicID) }, null)
+
+                                    </td>
+                                </tr>
+                            }
+                            @*<tr>
+                                <td><a href="#">Sample A</a></td>
+                            </tr>
+                            <tr>
+                                <td><a href="#">Sample B</a></td>
+                            </tr>
+                            <tr>
+                                <td><a href="#">Sample C</a></td>
+                            </tr>
+                            <tr>
+                                <td><a href="#">Sample D</a></td>
+                            </tr>*@
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+            <!-- End Fetch Subject Topics -->
+        </div>
+
+        <div class="col-md-6">
+            <!-- Fetch Subject Papers -->
+            <div class="panel panel-sea">
+                <div class="panel-heading">
+                    <h3 class="panel-title"><i class="fa fa-tasks"></i>Paper Wise</h3>
+                </div>
+                <div class="panel-body">
+                    <table class="table table-border">
+                        <tbody>
+                            @foreach (var topic in Model.PaperWiseList)
+                            { 
+                                <tr>
+                                    <td>
+                                       @* @Html.ActionLink(topic.Name, "")*@
+                                        @Html.ActionLink(topic.Name,MVC.Mcq.ActionNames.Paper,MVC.Mcq.Name, new { id=Interpidians.Catalyst.Core.Utility.Crypto.Encrypt("id", ""+topic.PaperID) }, null)
+
+                                    </td>
+                                </tr>
+                            }
+                            @*<tr>
+                                <td><a href="#">Sample A</a></td>
+                            </tr>
+                            <tr>
+                                <td><a href="#">Sample B</a></td>
+                            </tr>
+                            <tr>
+                                <td><a href="#">Sample C</a></td>
+                            </tr>
+                            <tr>
+                                <td><a href="#">Sample D</a></td>
+                            </tr>*@
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- Fetch Subject Papers -->
+        </div>
+
+        <div class="col-sm-offset-3 col-sm-6">
+            <button class="btn-u btn-u-lg btn-block text-highlights-green" type="button">Go Premium <i class="fa fa-usd"></i></button>
+        </div>
+    </div>
+</div>

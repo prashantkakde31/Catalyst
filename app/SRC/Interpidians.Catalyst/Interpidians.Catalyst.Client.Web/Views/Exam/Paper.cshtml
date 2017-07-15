@@ -1,0 +1,10 @@
+﻿@{
+    ViewBag.Title = "Paper";
+}
+
+<h2>Exam for Paper - @ViewData["PaperID"]</h2>
+<h3>Total Questions - @ViewData["TotalQuestions"]</h3>
+<h3>Total Time - @ViewData["TotalTime"] (HH:MM:SS)</h3>
+
+<h1>@Html.ActionLink("START TEST", MVC.Exam.Start(@ViewData["PaperID"].ToString(),"1"))</h1>
+

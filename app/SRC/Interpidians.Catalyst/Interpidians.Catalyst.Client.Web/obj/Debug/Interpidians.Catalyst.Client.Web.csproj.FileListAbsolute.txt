@@ -1,0 +1,326 @@
+c:\users\ckakdep\documents\visual studio 2013\Projects\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\Interpidians.Catalyst.Client.Web.dll.config
+c:\users\ckakdep\documents\visual studio 2013\Projects\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\Interpidians.Catalyst.Client.Web.dll
+c:\users\ckakdep\documents\visual studio 2013\Projects\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\Interpidians.Catalyst.Client.Web.pdb
+c:\users\ckakdep\documents\visual studio 2013\Projects\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\Interpidians.Catalyst.Core.dll
+c:\users\ckakdep\documents\visual studio 2013\Projects\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\Microsoft.Web.Infrastructure.dll
+c:\users\ckakdep\documents\visual studio 2013\Projects\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+c:\users\ckakdep\documents\visual studio 2013\Projects\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\Newtonsoft.Json.dll
+c:\users\ckakdep\documents\visual studio 2013\Projects\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\SimpleInjector.dll
+c:\users\ckakdep\documents\visual studio 2013\Projects\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\SimpleInjector.Integration.Web.dll
+c:\users\ckakdep\documents\visual studio 2013\Projects\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\SimpleInjector.Integration.Web.Mvc.dll
+c:\users\ckakdep\documents\visual studio 2013\Projects\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\System.Net.Http.dll
+c:\users\ckakdep\documents\visual studio 2013\Projects\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\System.Net.Http.Formatting.dll
+c:\users\ckakdep\documents\visual studio 2013\Projects\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\System.Net.Http.WebRequest.dll
+c:\users\ckakdep\documents\visual studio 2013\Projects\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\System.Web.Helpers.dll
+c:\users\ckakdep\documents\visual studio 2013\Projects\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\System.Web.Http.dll
+c:\users\ckakdep\documents\visual studio 2013\Projects\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\System.Web.Http.WebHost.dll
+c:\users\ckakdep\documents\visual studio 2013\Projects\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\System.Web.Mvc.dll
+c:\users\ckakdep\documents\visual studio 2013\Projects\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\System.Web.Razor.dll
+c:\users\ckakdep\documents\visual studio 2013\Projects\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\System.Web.WebPages.Deployment.dll
+c:\users\ckakdep\documents\visual studio 2013\Projects\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\System.Web.WebPages.dll
+c:\users\ckakdep\documents\visual studio 2013\Projects\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\System.Web.WebPages.Razor.dll
+c:\users\ckakdep\documents\visual studio 2013\Projects\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\Interpidians.Catalyst.Core.pdb
+c:\users\ckakdep\documents\visual studio 2013\Projects\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\SimpleInjector.xml
+c:\users\ckakdep\documents\visual studio 2013\Projects\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\SimpleInjector.Integration.Web.xml
+c:\users\ckakdep\documents\visual studio 2013\Projects\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\SimpleInjector.Integration.Web.Mvc.xml
+c:\users\ckakdep\documents\visual studio 2013\Projects\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\Newtonsoft.Json.xml
+c:\users\ckakdep\documents\visual studio 2013\Projects\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\System.Net.Http.xml
+c:\users\ckakdep\documents\visual studio 2013\Projects\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\System.Net.Http.Formatting.xml
+c:\users\ckakdep\documents\visual studio 2013\Projects\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\System.Net.Http.WebRequest.xml
+c:\users\ckakdep\documents\visual studio 2013\Projects\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\System.Web.Helpers.xml
+c:\users\ckakdep\documents\visual studio 2013\Projects\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\System.Web.Http.xml
+c:\users\ckakdep\documents\visual studio 2013\Projects\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\System.Web.Http.WebHost.xml
+c:\users\ckakdep\documents\visual studio 2013\Projects\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\System.Web.Mvc.xml
+c:\users\ckakdep\documents\visual studio 2013\Projects\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\System.Web.Razor.xml
+c:\users\ckakdep\documents\visual studio 2013\Projects\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\System.Web.WebPages.xml
+c:\users\ckakdep\documents\visual studio 2013\Projects\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\System.Web.WebPages.Deployment.xml
+c:\users\ckakdep\documents\visual studio 2013\Projects\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\System.Web.WebPages.Razor.xml
+c:\users\ckakdep\documents\visual studio 2013\Projects\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\obj\Debug\Interpidians.Catalyst.Client.Web.csprojResolveAssemblyReference.cache
+c:\users\ckakdep\documents\visual studio 2013\Projects\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\obj\Debug\Interpidians.Catalyst.Client.Web.dll
+c:\users\ckakdep\documents\visual studio 2013\Projects\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\obj\Debug\Interpidians.Catalyst.Client.Web.pdb
+c:\users\ckakdep\documents\visual studio 2013\Projects\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\Interpidians.Catalyst.Infrastructure.Logger.dll
+c:\users\ckakdep\documents\visual studio 2013\Projects\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\log4net.dll
+c:\users\ckakdep\documents\visual studio 2013\Projects\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\Interpidians.Catalyst.Infrastructure.Logger.pdb
+c:\users\ckakdep\documents\visual studio 2013\Projects\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\log4net.xml
+C:\Users\ckakdep\Documents\Visual Studio 2013\Projects\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\Interpidians.Catalyst.DependencyResolution.dll
+C:\Users\ckakdep\Documents\Visual Studio 2013\Projects\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\Interpidians.Catalyst.Infrastructure.Mailer.dll
+C:\Users\ckakdep\Documents\Visual Studio 2013\Projects\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\Interpidians.Catalyst.DependencyResolution.pdb
+C:\Users\ckakdep\Documents\Visual Studio 2013\Projects\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\Interpidians.Catalyst.Infrastructure.Mailer.pdb
+C:\Users\ckakdep\Documents\Visual Studio 2013\Projects\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\T4MVCExtensions.dll
+C:\Users\ckakdep\documents\visual studio 2013\Projects\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\ClosedXML.dll
+C:\Users\ckakdep\documents\visual studio 2013\Projects\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\DocumentFormat.OpenXml.dll
+C:\Users\ckakdep\documents\visual studio 2013\Projects\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\Interpidians.Catalyst.Core.Entity.dll
+C:\Users\ckakdep\documents\visual studio 2013\Projects\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\Interpidians.Catalyst.Core.Utility.dll
+C:\Users\ckakdep\documents\visual studio 2013\Projects\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\Interpidians.Catalyst.Infrastructure.Data.dll
+C:\Users\ckakdep\documents\visual studio 2013\Projects\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\Microsoft.Practices.EnterpriseLibrary.Data.dll
+C:\Users\ckakdep\documents\visual studio 2013\Projects\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\Microsoft.Practices.EnterpriseLibrary.Common.dll
+C:\Users\ckakdep\documents\visual studio 2013\Projects\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\Microsoft.Practices.ServiceLocation.dll
+C:\Users\ckakdep\documents\visual studio 2013\Projects\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\Microsoft.Practices.Unity.dll
+C:\Users\ckakdep\documents\visual studio 2013\Projects\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\Microsoft.Practices.Unity.Interception.dll
+C:\Users\ckakdep\documents\visual studio 2013\Projects\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\Interpidians.Catalyst.Core.Entity.pdb
+C:\Users\ckakdep\documents\visual studio 2013\Projects\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\Interpidians.Catalyst.Core.Utility.pdb
+C:\Users\ckakdep\documents\visual studio 2013\Projects\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\ClosedXML.xml
+C:\Users\ckakdep\documents\visual studio 2013\Projects\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\Interpidians.Catalyst.Infrastructure.Data.pdb
+C:\Users\ckakdep\documents\visual studio 2013\Projects\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\Microsoft.Practices.EnterpriseLibrary.Data.xml
+C:\Users\ckakdep\documents\visual studio 2013\Projects\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\Microsoft.Practices.EnterpriseLibrary.Common.xml
+C:\Users\ckakdep\documents\visual studio 2013\Projects\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\Microsoft.Practices.ServiceLocation.pdb
+C:\Users\ckakdep\documents\visual studio 2013\Projects\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\Microsoft.Practices.ServiceLocation.xml
+C:\Users\ckakdep\documents\visual studio 2013\Projects\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\Microsoft.Practices.Unity.xml
+C:\Users\ckakdep\documents\visual studio 2013\Projects\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\Microsoft.Practices.Unity.Interception.xml
+C:\Users\ckakdep\Desktop\Interpidians\Catalyst\SourceCode\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\Interpidians.Catalyst.Client.Web.dll.config
+C:\Users\ckakdep\Desktop\Interpidians\Catalyst\SourceCode\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\Interpidians.Catalyst.Client.Web.dll
+C:\Users\ckakdep\Desktop\Interpidians\Catalyst\SourceCode\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\Interpidians.Catalyst.Client.Web.pdb
+C:\Users\ckakdep\Desktop\Interpidians\Catalyst\SourceCode\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\ClosedXML.dll
+C:\Users\ckakdep\Desktop\Interpidians\Catalyst\SourceCode\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\DocumentFormat.OpenXml.dll
+C:\Users\ckakdep\Desktop\Interpidians\Catalyst\SourceCode\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\Interpidians.Catalyst.Core.dll
+C:\Users\ckakdep\Desktop\Interpidians\Catalyst\SourceCode\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\Interpidians.Catalyst.Core.Entity.dll
+C:\Users\ckakdep\Desktop\Interpidians\Catalyst\SourceCode\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\Interpidians.Catalyst.Core.Utility.dll
+C:\Users\ckakdep\Desktop\Interpidians\Catalyst\SourceCode\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\Interpidians.Catalyst.DependencyResolution.dll
+C:\Users\ckakdep\Desktop\Interpidians\Catalyst\SourceCode\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\ckakdep\Desktop\Interpidians\Catalyst\SourceCode\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+C:\Users\ckakdep\Desktop\Interpidians\Catalyst\SourceCode\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\Newtonsoft.Json.dll
+C:\Users\ckakdep\Desktop\Interpidians\Catalyst\SourceCode\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\System.Net.Http.dll
+C:\Users\ckakdep\Desktop\Interpidians\Catalyst\SourceCode\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\System.Net.Http.Formatting.dll
+C:\Users\ckakdep\Desktop\Interpidians\Catalyst\SourceCode\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\System.Net.Http.WebRequest.dll
+C:\Users\ckakdep\Desktop\Interpidians\Catalyst\SourceCode\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\System.Web.Helpers.dll
+C:\Users\ckakdep\Desktop\Interpidians\Catalyst\SourceCode\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\System.Web.Http.dll
+C:\Users\ckakdep\Desktop\Interpidians\Catalyst\SourceCode\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\System.Web.Http.WebHost.dll
+C:\Users\ckakdep\Desktop\Interpidians\Catalyst\SourceCode\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\System.Web.Mvc.dll
+C:\Users\ckakdep\Desktop\Interpidians\Catalyst\SourceCode\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\System.Web.Razor.dll
+C:\Users\ckakdep\Desktop\Interpidians\Catalyst\SourceCode\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\System.Web.WebPages.Deployment.dll
+C:\Users\ckakdep\Desktop\Interpidians\Catalyst\SourceCode\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\System.Web.WebPages.dll
+C:\Users\ckakdep\Desktop\Interpidians\Catalyst\SourceCode\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\System.Web.WebPages.Razor.dll
+C:\Users\ckakdep\Desktop\Interpidians\Catalyst\SourceCode\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\T4MVCExtensions.dll
+C:\Users\ckakdep\Desktop\Interpidians\Catalyst\SourceCode\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\SimpleInjector.dll
+C:\Users\ckakdep\Desktop\Interpidians\Catalyst\SourceCode\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\SimpleInjector.Integration.Web.dll
+C:\Users\ckakdep\Desktop\Interpidians\Catalyst\SourceCode\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\Interpidians.Catalyst.Infrastructure.Data.dll
+C:\Users\ckakdep\Desktop\Interpidians\Catalyst\SourceCode\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\Interpidians.Catalyst.Infrastructure.Logger.dll
+C:\Users\ckakdep\Desktop\Interpidians\Catalyst\SourceCode\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\Interpidians.Catalyst.Infrastructure.Mailer.dll
+C:\Users\ckakdep\Desktop\Interpidians\Catalyst\SourceCode\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\SimpleInjector.Integration.Web.Mvc.dll
+C:\Users\ckakdep\Desktop\Interpidians\Catalyst\SourceCode\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\Microsoft.Practices.EnterpriseLibrary.Data.dll
+C:\Users\ckakdep\Desktop\Interpidians\Catalyst\SourceCode\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\Microsoft.Practices.EnterpriseLibrary.Common.dll
+C:\Users\ckakdep\Desktop\Interpidians\Catalyst\SourceCode\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\Microsoft.Practices.ServiceLocation.dll
+C:\Users\ckakdep\Desktop\Interpidians\Catalyst\SourceCode\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\log4net.dll
+C:\Users\ckakdep\Desktop\Interpidians\Catalyst\SourceCode\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\Microsoft.Practices.Unity.dll
+C:\Users\ckakdep\Desktop\Interpidians\Catalyst\SourceCode\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\Microsoft.Practices.Unity.Interception.dll
+C:\Users\ckakdep\Desktop\Interpidians\Catalyst\SourceCode\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\Interpidians.Catalyst.Core.Entity.pdb
+C:\Users\ckakdep\Desktop\Interpidians\Catalyst\SourceCode\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\Interpidians.Catalyst.Core.Utility.pdb
+C:\Users\ckakdep\Desktop\Interpidians\Catalyst\SourceCode\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\Interpidians.Catalyst.Core.pdb
+C:\Users\ckakdep\Desktop\Interpidians\Catalyst\SourceCode\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\Interpidians.Catalyst.DependencyResolution.pdb
+C:\Users\ckakdep\Desktop\Interpidians\Catalyst\SourceCode\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\ClosedXML.xml
+C:\Users\ckakdep\Desktop\Interpidians\Catalyst\SourceCode\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\Newtonsoft.Json.xml
+C:\Users\ckakdep\Desktop\Interpidians\Catalyst\SourceCode\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\System.Net.Http.xml
+C:\Users\ckakdep\Desktop\Interpidians\Catalyst\SourceCode\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\System.Net.Http.Formatting.xml
+C:\Users\ckakdep\Desktop\Interpidians\Catalyst\SourceCode\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\System.Net.Http.WebRequest.xml
+C:\Users\ckakdep\Desktop\Interpidians\Catalyst\SourceCode\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\System.Web.Helpers.xml
+C:\Users\ckakdep\Desktop\Interpidians\Catalyst\SourceCode\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\System.Web.Http.xml
+C:\Users\ckakdep\Desktop\Interpidians\Catalyst\SourceCode\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\System.Web.Http.WebHost.xml
+C:\Users\ckakdep\Desktop\Interpidians\Catalyst\SourceCode\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\System.Web.Mvc.xml
+C:\Users\ckakdep\Desktop\Interpidians\Catalyst\SourceCode\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\System.Web.Razor.xml
+C:\Users\ckakdep\Desktop\Interpidians\Catalyst\SourceCode\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\System.Web.WebPages.xml
+C:\Users\ckakdep\Desktop\Interpidians\Catalyst\SourceCode\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\System.Web.WebPages.Deployment.xml
+C:\Users\ckakdep\Desktop\Interpidians\Catalyst\SourceCode\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\System.Web.WebPages.Razor.xml
+C:\Users\ckakdep\Desktop\Interpidians\Catalyst\SourceCode\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\SimpleInjector.xml
+C:\Users\ckakdep\Desktop\Interpidians\Catalyst\SourceCode\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\SimpleInjector.Integration.Web.xml
+C:\Users\ckakdep\Desktop\Interpidians\Catalyst\SourceCode\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\Interpidians.Catalyst.Infrastructure.Data.pdb
+C:\Users\ckakdep\Desktop\Interpidians\Catalyst\SourceCode\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\Interpidians.Catalyst.Infrastructure.Logger.pdb
+C:\Users\ckakdep\Desktop\Interpidians\Catalyst\SourceCode\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\Interpidians.Catalyst.Infrastructure.Mailer.pdb
+C:\Users\ckakdep\Desktop\Interpidians\Catalyst\SourceCode\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\SimpleInjector.Integration.Web.Mvc.xml
+C:\Users\ckakdep\Desktop\Interpidians\Catalyst\SourceCode\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\Microsoft.Practices.EnterpriseLibrary.Data.xml
+C:\Users\ckakdep\Desktop\Interpidians\Catalyst\SourceCode\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\Microsoft.Practices.EnterpriseLibrary.Common.xml
+C:\Users\ckakdep\Desktop\Interpidians\Catalyst\SourceCode\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\Microsoft.Practices.ServiceLocation.pdb
+C:\Users\ckakdep\Desktop\Interpidians\Catalyst\SourceCode\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\Microsoft.Practices.ServiceLocation.xml
+C:\Users\ckakdep\Desktop\Interpidians\Catalyst\SourceCode\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\log4net.xml
+C:\Users\ckakdep\Desktop\Interpidians\Catalyst\SourceCode\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\Microsoft.Practices.Unity.xml
+C:\Users\ckakdep\Desktop\Interpidians\Catalyst\SourceCode\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\Microsoft.Practices.Unity.Interception.xml
+C:\Users\ckakdep\Desktop\Interpidians\Catalyst\SourceCode\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\obj\Debug\Interpidians.Catalyst.Client.Web.csprojResolveAssemblyReference.cache
+C:\Users\ckakdep\Desktop\Interpidians\Catalyst\SourceCode\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\obj\Debug\Interpidians.Catalyst.Client.Web.dll
+C:\Users\ckakdep\Desktop\Interpidians\Catalyst\SourceCode\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\obj\Debug\Interpidians.Catalyst.Client.Web.pdb
+E:\Intrepedians Project rnd\Catalyst\User Solution\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\Interpidians.Catalyst.Client.Web.dll
+E:\Intrepedians Project rnd\Catalyst\User Solution\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\Interpidians.Catalyst.Client.Web.pdb
+E:\Intrepedians Project rnd\Catalyst\User Solution\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\ClosedXML.dll
+E:\Intrepedians Project rnd\Catalyst\User Solution\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\DocumentFormat.OpenXml.dll
+E:\Intrepedians Project rnd\Catalyst\User Solution\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\Interpidians.Catalyst.Core.dll
+E:\Intrepedians Project rnd\Catalyst\User Solution\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\Interpidians.Catalyst.Core.Entity.dll
+E:\Intrepedians Project rnd\Catalyst\User Solution\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\Interpidians.Catalyst.Core.Utility.dll
+E:\Intrepedians Project rnd\Catalyst\User Solution\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\Interpidians.Catalyst.DependencyResolution.dll
+E:\Intrepedians Project rnd\Catalyst\User Solution\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\Microsoft.Web.Infrastructure.dll
+E:\Intrepedians Project rnd\Catalyst\User Solution\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+E:\Intrepedians Project rnd\Catalyst\User Solution\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\Newtonsoft.Json.dll
+E:\Intrepedians Project rnd\Catalyst\User Solution\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\System.Net.Http.dll
+E:\Intrepedians Project rnd\Catalyst\User Solution\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\System.Net.Http.WebRequest.dll
+E:\Intrepedians Project rnd\Catalyst\User Solution\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\System.Web.Helpers.dll
+E:\Intrepedians Project rnd\Catalyst\User Solution\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\System.Web.Mvc.dll
+E:\Intrepedians Project rnd\Catalyst\User Solution\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\System.Web.Razor.dll
+E:\Intrepedians Project rnd\Catalyst\User Solution\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\System.Web.WebPages.Deployment.dll
+E:\Intrepedians Project rnd\Catalyst\User Solution\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\System.Web.WebPages.dll
+E:\Intrepedians Project rnd\Catalyst\User Solution\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\System.Web.WebPages.Razor.dll
+E:\Intrepedians Project rnd\Catalyst\User Solution\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\T4MVCExtensions.dll
+E:\Intrepedians Project rnd\Catalyst\User Solution\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\SimpleInjector.dll
+E:\Intrepedians Project rnd\Catalyst\User Solution\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\SimpleInjector.Integration.Web.dll
+E:\Intrepedians Project rnd\Catalyst\User Solution\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\Interpidians.Catalyst.Infrastructure.Data.dll
+E:\Intrepedians Project rnd\Catalyst\User Solution\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\Interpidians.Catalyst.Infrastructure.Logger.dll
+E:\Intrepedians Project rnd\Catalyst\User Solution\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\Interpidians.Catalyst.Infrastructure.Mailer.dll
+E:\Intrepedians Project rnd\Catalyst\User Solution\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\SimpleInjector.Integration.Web.Mvc.dll
+E:\Intrepedians Project rnd\Catalyst\User Solution\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\Microsoft.Practices.EnterpriseLibrary.Data.dll
+E:\Intrepedians Project rnd\Catalyst\User Solution\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\Microsoft.Practices.EnterpriseLibrary.Common.dll
+E:\Intrepedians Project rnd\Catalyst\User Solution\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\Microsoft.Practices.ServiceLocation.dll
+E:\Intrepedians Project rnd\Catalyst\User Solution\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\log4net.dll
+E:\Intrepedians Project rnd\Catalyst\User Solution\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\Microsoft.Practices.Unity.dll
+E:\Intrepedians Project rnd\Catalyst\User Solution\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\Microsoft.Practices.Unity.Interception.dll
+E:\Intrepedians Project rnd\Catalyst\User Solution\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\Interpidians.Catalyst.Core.Entity.pdb
+E:\Intrepedians Project rnd\Catalyst\User Solution\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\Interpidians.Catalyst.Core.Utility.pdb
+E:\Intrepedians Project rnd\Catalyst\User Solution\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\Interpidians.Catalyst.Core.pdb
+E:\Intrepedians Project rnd\Catalyst\User Solution\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\Interpidians.Catalyst.DependencyResolution.pdb
+E:\Intrepedians Project rnd\Catalyst\User Solution\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\ClosedXML.xml
+E:\Intrepedians Project rnd\Catalyst\User Solution\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\Newtonsoft.Json.xml
+E:\Intrepedians Project rnd\Catalyst\User Solution\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\System.Net.Http.xml
+E:\Intrepedians Project rnd\Catalyst\User Solution\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\System.Net.Http.WebRequest.xml
+E:\Intrepedians Project rnd\Catalyst\User Solution\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\System.Web.Helpers.xml
+E:\Intrepedians Project rnd\Catalyst\User Solution\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\System.Web.Mvc.xml
+E:\Intrepedians Project rnd\Catalyst\User Solution\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\System.Web.Razor.xml
+E:\Intrepedians Project rnd\Catalyst\User Solution\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\System.Web.WebPages.xml
+E:\Intrepedians Project rnd\Catalyst\User Solution\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\System.Web.WebPages.Deployment.xml
+E:\Intrepedians Project rnd\Catalyst\User Solution\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\System.Web.WebPages.Razor.xml
+E:\Intrepedians Project rnd\Catalyst\User Solution\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\SimpleInjector.xml
+E:\Intrepedians Project rnd\Catalyst\User Solution\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\SimpleInjector.Integration.Web.xml
+E:\Intrepedians Project rnd\Catalyst\User Solution\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\Interpidians.Catalyst.Infrastructure.Data.pdb
+E:\Intrepedians Project rnd\Catalyst\User Solution\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\Interpidians.Catalyst.Infrastructure.Logger.pdb
+E:\Intrepedians Project rnd\Catalyst\User Solution\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\Interpidians.Catalyst.Infrastructure.Mailer.pdb
+E:\Intrepedians Project rnd\Catalyst\User Solution\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\SimpleInjector.Integration.Web.Mvc.xml
+E:\Intrepedians Project rnd\Catalyst\User Solution\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\Microsoft.Practices.EnterpriseLibrary.Data.xml
+E:\Intrepedians Project rnd\Catalyst\User Solution\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\Microsoft.Practices.EnterpriseLibrary.Common.xml
+E:\Intrepedians Project rnd\Catalyst\User Solution\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\Microsoft.Practices.ServiceLocation.pdb
+E:\Intrepedians Project rnd\Catalyst\User Solution\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\Microsoft.Practices.ServiceLocation.xml
+E:\Intrepedians Project rnd\Catalyst\User Solution\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\log4net.xml
+E:\Intrepedians Project rnd\Catalyst\User Solution\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\Microsoft.Practices.Unity.xml
+E:\Intrepedians Project rnd\Catalyst\User Solution\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\Microsoft.Practices.Unity.Interception.xml
+E:\Intrepedians Project rnd\Catalyst\User Solution\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\obj\Debug\Interpidians.Catalyst.Client.Web.csprojResolveAssemblyReference.cache
+E:\Intrepedians Project rnd\Catalyst\User Solution\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\obj\Debug\Interpidians.Catalyst.Client.Web.dll
+E:\Intrepedians Project rnd\Catalyst\User Solution\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\obj\Debug\Interpidians.Catalyst.Client.Web.pdb
+D:\Prashant\Interpidians\Catalyst\Interpidians.Catalyst\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\Interpidians.Catalyst.Client.Web.dll.config
+D:\Prashant\Interpidians\Catalyst\Interpidians.Catalyst\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\Interpidians.Catalyst.Client.Web.dll
+D:\Prashant\Interpidians\Catalyst\Interpidians.Catalyst\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\Interpidians.Catalyst.Client.Web.pdb
+D:\Prashant\Interpidians\Catalyst\Interpidians.Catalyst\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\ClosedXML.dll
+D:\Prashant\Interpidians\Catalyst\Interpidians.Catalyst\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\DocumentFormat.OpenXml.dll
+D:\Prashant\Interpidians\Catalyst\Interpidians.Catalyst\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\Interpidians.Catalyst.Core.dll
+D:\Prashant\Interpidians\Catalyst\Interpidians.Catalyst\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\Interpidians.Catalyst.Core.Entity.dll
+D:\Prashant\Interpidians\Catalyst\Interpidians.Catalyst\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\Interpidians.Catalyst.Core.Utility.dll
+D:\Prashant\Interpidians\Catalyst\Interpidians.Catalyst\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\Interpidians.Catalyst.DependencyResolution.dll
+D:\Prashant\Interpidians\Catalyst\Interpidians.Catalyst\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\Microsoft.Web.Infrastructure.dll
+D:\Prashant\Interpidians\Catalyst\Interpidians.Catalyst\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+D:\Prashant\Interpidians\Catalyst\Interpidians.Catalyst\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\Newtonsoft.Json.dll
+D:\Prashant\Interpidians\Catalyst\Interpidians.Catalyst\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\System.Web.Helpers.dll
+D:\Prashant\Interpidians\Catalyst\Interpidians.Catalyst\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\System.Web.Mvc.dll
+D:\Prashant\Interpidians\Catalyst\Interpidians.Catalyst\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\System.Web.Razor.dll
+D:\Prashant\Interpidians\Catalyst\Interpidians.Catalyst\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\System.Web.WebPages.Deployment.dll
+D:\Prashant\Interpidians\Catalyst\Interpidians.Catalyst\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\System.Web.WebPages.dll
+D:\Prashant\Interpidians\Catalyst\Interpidians.Catalyst\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\System.Web.WebPages.Razor.dll
+D:\Prashant\Interpidians\Catalyst\Interpidians.Catalyst\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\T4MVCExtensions.dll
+D:\Prashant\Interpidians\Catalyst\Interpidians.Catalyst\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\SimpleInjector.dll
+D:\Prashant\Interpidians\Catalyst\Interpidians.Catalyst\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\SimpleInjector.Integration.Web.dll
+D:\Prashant\Interpidians\Catalyst\Interpidians.Catalyst\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\Interpidians.Catalyst.Infrastructure.Data.dll
+D:\Prashant\Interpidians\Catalyst\Interpidians.Catalyst\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\Interpidians.Catalyst.Infrastructure.Logger.dll
+D:\Prashant\Interpidians\Catalyst\Interpidians.Catalyst\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\Interpidians.Catalyst.Infrastructure.Mailer.dll
+D:\Prashant\Interpidians\Catalyst\Interpidians.Catalyst\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\SimpleInjector.Integration.Web.Mvc.dll
+D:\Prashant\Interpidians\Catalyst\Interpidians.Catalyst\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\Microsoft.Practices.EnterpriseLibrary.Data.dll
+D:\Prashant\Interpidians\Catalyst\Interpidians.Catalyst\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\Microsoft.Practices.EnterpriseLibrary.Common.dll
+D:\Prashant\Interpidians\Catalyst\Interpidians.Catalyst\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\Microsoft.Practices.ServiceLocation.dll
+D:\Prashant\Interpidians\Catalyst\Interpidians.Catalyst\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\log4net.dll
+D:\Prashant\Interpidians\Catalyst\Interpidians.Catalyst\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\Microsoft.Practices.Unity.dll
+D:\Prashant\Interpidians\Catalyst\Interpidians.Catalyst\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\Microsoft.Practices.Unity.Interception.dll
+D:\Prashant\Interpidians\Catalyst\Interpidians.Catalyst\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\Interpidians.Catalyst.Core.Entity.pdb
+D:\Prashant\Interpidians\Catalyst\Interpidians.Catalyst\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\Interpidians.Catalyst.Core.Utility.pdb
+D:\Prashant\Interpidians\Catalyst\Interpidians.Catalyst\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\Interpidians.Catalyst.Core.pdb
+D:\Prashant\Interpidians\Catalyst\Interpidians.Catalyst\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\Interpidians.Catalyst.DependencyResolution.pdb
+D:\Prashant\Interpidians\Catalyst\Interpidians.Catalyst\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\ClosedXML.xml
+D:\Prashant\Interpidians\Catalyst\Interpidians.Catalyst\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\Newtonsoft.Json.xml
+D:\Prashant\Interpidians\Catalyst\Interpidians.Catalyst\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\System.Web.Helpers.xml
+D:\Prashant\Interpidians\Catalyst\Interpidians.Catalyst\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\System.Web.Mvc.xml
+D:\Prashant\Interpidians\Catalyst\Interpidians.Catalyst\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\System.Web.Razor.xml
+D:\Prashant\Interpidians\Catalyst\Interpidians.Catalyst\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\System.Web.WebPages.xml
+D:\Prashant\Interpidians\Catalyst\Interpidians.Catalyst\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\System.Web.WebPages.Deployment.xml
+D:\Prashant\Interpidians\Catalyst\Interpidians.Catalyst\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\System.Web.WebPages.Razor.xml
+D:\Prashant\Interpidians\Catalyst\Interpidians.Catalyst\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\SimpleInjector.xml
+D:\Prashant\Interpidians\Catalyst\Interpidians.Catalyst\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\SimpleInjector.Integration.Web.xml
+D:\Prashant\Interpidians\Catalyst\Interpidians.Catalyst\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\Interpidians.Catalyst.Infrastructure.Data.pdb
+D:\Prashant\Interpidians\Catalyst\Interpidians.Catalyst\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\Interpidians.Catalyst.Infrastructure.Logger.pdb
+D:\Prashant\Interpidians\Catalyst\Interpidians.Catalyst\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\Interpidians.Catalyst.Infrastructure.Mailer.pdb
+D:\Prashant\Interpidians\Catalyst\Interpidians.Catalyst\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\SimpleInjector.Integration.Web.Mvc.xml
+D:\Prashant\Interpidians\Catalyst\Interpidians.Catalyst\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\Microsoft.Practices.EnterpriseLibrary.Data.xml
+D:\Prashant\Interpidians\Catalyst\Interpidians.Catalyst\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\Microsoft.Practices.EnterpriseLibrary.Common.xml
+D:\Prashant\Interpidians\Catalyst\Interpidians.Catalyst\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\Microsoft.Practices.ServiceLocation.pdb
+D:\Prashant\Interpidians\Catalyst\Interpidians.Catalyst\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\Microsoft.Practices.ServiceLocation.xml
+D:\Prashant\Interpidians\Catalyst\Interpidians.Catalyst\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\log4net.xml
+D:\Prashant\Interpidians\Catalyst\Interpidians.Catalyst\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\Microsoft.Practices.Unity.xml
+D:\Prashant\Interpidians\Catalyst\Interpidians.Catalyst\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\Microsoft.Practices.Unity.Interception.xml
+D:\Prashant\Interpidians\Catalyst\Interpidians.Catalyst\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\obj\Debug\Interpidians.Catalyst.Client.Web.csprojResolveAssemblyReference.cache
+D:\Prashant\Interpidians\Catalyst\Interpidians.Catalyst\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\obj\Debug\Interpidians.Catalyst.Client.Web.dll
+D:\Prashant\Interpidians\Catalyst\Interpidians.Catalyst\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\obj\Debug\Interpidians.Catalyst.Client.Web.pdb
+D:\PrashantPro\Projects\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\Interpidians.Catalyst.Client.Web.dll.config
+D:\PrashantPro\Projects\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\Interpidians.Catalyst.Client.Web.dll
+D:\PrashantPro\Projects\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\Interpidians.Catalyst.Client.Web.pdb
+D:\PrashantPro\Projects\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\ClosedXML.dll
+D:\PrashantPro\Projects\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\DocumentFormat.OpenXml.dll
+D:\PrashantPro\Projects\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\Interpidians.Catalyst.Core.dll
+D:\PrashantPro\Projects\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\Interpidians.Catalyst.Core.Entity.dll
+D:\PrashantPro\Projects\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\Interpidians.Catalyst.Core.Utility.dll
+D:\PrashantPro\Projects\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\Interpidians.Catalyst.DependencyResolution.dll
+D:\PrashantPro\Projects\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\Microsoft.Web.Infrastructure.dll
+D:\PrashantPro\Projects\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+D:\PrashantPro\Projects\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\Newtonsoft.Json.dll
+D:\PrashantPro\Projects\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\System.Web.Helpers.dll
+D:\PrashantPro\Projects\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\System.Web.Http.dll
+D:\PrashantPro\Projects\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\System.Web.Http.WebHost.dll
+D:\PrashantPro\Projects\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\System.Web.Mvc.dll
+D:\PrashantPro\Projects\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\System.Web.Razor.dll
+D:\PrashantPro\Projects\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\System.Web.WebPages.Deployment.dll
+D:\PrashantPro\Projects\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\System.Web.WebPages.dll
+D:\PrashantPro\Projects\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\System.Web.WebPages.Razor.dll
+D:\PrashantPro\Projects\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\T4MVCExtensions.dll
+D:\PrashantPro\Projects\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\SimpleInjector.dll
+D:\PrashantPro\Projects\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\SimpleInjector.Integration.Web.dll
+D:\PrashantPro\Projects\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\Interpidians.Catalyst.Infrastructure.Data.dll
+D:\PrashantPro\Projects\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\Interpidians.Catalyst.Infrastructure.Logger.dll
+D:\PrashantPro\Projects\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\Interpidians.Catalyst.Infrastructure.Mailer.dll
+D:\PrashantPro\Projects\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\SimpleInjector.Integration.Web.Mvc.dll
+D:\PrashantPro\Projects\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\System.Net.Http.dll
+D:\PrashantPro\Projects\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\System.Net.Http.Formatting.dll
+D:\PrashantPro\Projects\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\Microsoft.Practices.EnterpriseLibrary.Data.dll
+D:\PrashantPro\Projects\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\Microsoft.Practices.EnterpriseLibrary.Common.dll
+D:\PrashantPro\Projects\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\Microsoft.Practices.ServiceLocation.dll
+D:\PrashantPro\Projects\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\log4net.dll
+D:\PrashantPro\Projects\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\Microsoft.Practices.Unity.dll
+D:\PrashantPro\Projects\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\Microsoft.Practices.Unity.Interception.dll
+D:\PrashantPro\Projects\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\Interpidians.Catalyst.Core.Entity.pdb
+D:\PrashantPro\Projects\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\Interpidians.Catalyst.Core.Utility.pdb
+D:\PrashantPro\Projects\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\Interpidians.Catalyst.Core.pdb
+D:\PrashantPro\Projects\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\Interpidians.Catalyst.DependencyResolution.pdb
+D:\PrashantPro\Projects\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\ClosedXML.xml
+D:\PrashantPro\Projects\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\Newtonsoft.Json.xml
+D:\PrashantPro\Projects\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\System.Web.Helpers.xml
+D:\PrashantPro\Projects\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\System.Web.Http.xml
+D:\PrashantPro\Projects\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\System.Web.Http.WebHost.xml
+D:\PrashantPro\Projects\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\System.Web.Mvc.xml
+D:\PrashantPro\Projects\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\System.Web.Razor.xml
+D:\PrashantPro\Projects\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\System.Web.WebPages.xml
+D:\PrashantPro\Projects\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\System.Web.WebPages.Deployment.xml
+D:\PrashantPro\Projects\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\System.Web.WebPages.Razor.xml
+D:\PrashantPro\Projects\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\SimpleInjector.xml
+D:\PrashantPro\Projects\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\SimpleInjector.Integration.Web.xml
+D:\PrashantPro\Projects\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\Interpidians.Catalyst.Infrastructure.Data.pdb
+D:\PrashantPro\Projects\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\Interpidians.Catalyst.Infrastructure.Logger.pdb
+D:\PrashantPro\Projects\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\Interpidians.Catalyst.Infrastructure.Mailer.pdb
+D:\PrashantPro\Projects\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\SimpleInjector.Integration.Web.Mvc.xml
+D:\PrashantPro\Projects\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\System.Net.Http.xml
+D:\PrashantPro\Projects\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\System.Net.Http.Formatting.xml
+D:\PrashantPro\Projects\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\Microsoft.Practices.EnterpriseLibrary.Data.xml
+D:\PrashantPro\Projects\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\Microsoft.Practices.EnterpriseLibrary.Common.xml
+D:\PrashantPro\Projects\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\Microsoft.Practices.ServiceLocation.pdb
+D:\PrashantPro\Projects\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\Microsoft.Practices.ServiceLocation.xml
+D:\PrashantPro\Projects\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\log4net.xml
+D:\PrashantPro\Projects\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\Microsoft.Practices.Unity.xml
+D:\PrashantPro\Projects\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\bin\Microsoft.Practices.Unity.Interception.xml
+D:\PrashantPro\Projects\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\obj\Debug\Interpidians.Catalyst.Client.Web.csprojResolveAssemblyReference.cache
+D:\PrashantPro\Projects\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\obj\Debug\Interpidians.Catalyst.Client.Web.dll
+D:\PrashantPro\Projects\Interpidians.Catalyst\Interpidians.Catalyst.Client.Web\obj\Debug\Interpidians.Catalyst.Client.Web.pdb

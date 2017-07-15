@@ -1,0 +1,87 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.40629.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Client", "Client", "{34C3CA8F-2E85-470F-BF6A-8EC0CC2B99AC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Interpidians.Catalyst.Client.Web", "Interpidians.Catalyst.Client.Web\Interpidians.Catalyst.Client.Web.csproj", "{57A1368C-C936-41E8-BDC8-339F67A75818}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{A2A2CC73-2F08-4F3E-9B59-EE0C3C27664C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{A2D3BD82-9CBD-44C8-8637-B0B84DCE5DCD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Service", "Service", "{CD2285C2-69FD-43ED-8178-1E4F095F93BD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Interpidians.Catalyst.Infrastructure.Data", "Interpidians.Catalyst.Infrastructure.Data\Interpidians.Catalyst.Infrastructure.Data.csproj", "{FEC2B337-598B-422F-8D04-956FC871F12B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Interpidians.Catalyst.Infrastructure.Mailer", "Interpidians.Catalyst.Infrastructure.Mailer\Interpidians.Catalyst.Infrastructure.Mailer.csproj", "{8C0F5967-C0C1-4A6E-9380-A201CD220237}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Interpidians.Catalyst.Infrastructure.Logger", "Interpidians.Catalyst.Infrastructure.Logger\Interpidians.Catalyst.Infrastructure.Logger.csproj", "{34DCE289-040B-4A69-915F-17D9012A96FD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Interpidians.Catalyst.Core", "Interpidians.Catalyst.Core\Interpidians.Catalyst.Core.csproj", "{2CE72720-8918-4E53-8F62-F7ED74A411B6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DependencyResolution", "DependencyResolution", "{7C4D8478-9C8D-4071-B329-EA83DB333444}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Interpidians.Catalyst.DependencyResolution", "Interpidians.Catalyst.DependencyResolution\Interpidians.Catalyst.DependencyResolution.csproj", "{73A2E4D0-FF02-4317-8809-E72AFDF816C2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Interpidians.Catalyst.Core.Entity", "Interpidians.Catalyst.Core.Entity\Interpidians.Catalyst.Core.Entity.csproj", "{7DF9C6CC-DD3B-432B-AD22-5C51CFEBBABA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Interpidians.Catalyst.Core.Utility", "Interpidians.Catalyst.Core.Utility\Interpidians.Catalyst.Core.Utility.csproj", "{5D9DAA32-D85C-4BCC-93D2-F781266E5906}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{57A1368C-C936-41E8-BDC8-339F67A75818}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{57A1368C-C936-41E8-BDC8-339F67A75818}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{57A1368C-C936-41E8-BDC8-339F67A75818}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{57A1368C-C936-41E8-BDC8-339F67A75818}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FEC2B337-598B-422F-8D04-956FC871F12B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FEC2B337-598B-422F-8D04-956FC871F12B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FEC2B337-598B-422F-8D04-956FC871F12B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FEC2B337-598B-422F-8D04-956FC871F12B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8C0F5967-C0C1-4A6E-9380-A201CD220237}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C0F5967-C0C1-4A6E-9380-A201CD220237}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C0F5967-C0C1-4A6E-9380-A201CD220237}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C0F5967-C0C1-4A6E-9380-A201CD220237}.Release|Any CPU.Build.0 = Release|Any CPU
+		{34DCE289-040B-4A69-915F-17D9012A96FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{34DCE289-040B-4A69-915F-17D9012A96FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{34DCE289-040B-4A69-915F-17D9012A96FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{34DCE289-040B-4A69-915F-17D9012A96FD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2CE72720-8918-4E53-8F62-F7ED74A411B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2CE72720-8918-4E53-8F62-F7ED74A411B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2CE72720-8918-4E53-8F62-F7ED74A411B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2CE72720-8918-4E53-8F62-F7ED74A411B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{73A2E4D0-FF02-4317-8809-E72AFDF816C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{73A2E4D0-FF02-4317-8809-E72AFDF816C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{73A2E4D0-FF02-4317-8809-E72AFDF816C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{73A2E4D0-FF02-4317-8809-E72AFDF816C2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7DF9C6CC-DD3B-432B-AD22-5C51CFEBBABA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7DF9C6CC-DD3B-432B-AD22-5C51CFEBBABA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7DF9C6CC-DD3B-432B-AD22-5C51CFEBBABA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7DF9C6CC-DD3B-432B-AD22-5C51CFEBBABA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5D9DAA32-D85C-4BCC-93D2-F781266E5906}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D9DAA32-D85C-4BCC-93D2-F781266E5906}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D9DAA32-D85C-4BCC-93D2-F781266E5906}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D9DAA32-D85C-4BCC-93D2-F781266E5906}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{57A1368C-C936-41E8-BDC8-339F67A75818} = {34C3CA8F-2E85-470F-BF6A-8EC0CC2B99AC}
+		{FEC2B337-598B-422F-8D04-956FC871F12B} = {A2D3BD82-9CBD-44C8-8637-B0B84DCE5DCD}
+		{8C0F5967-C0C1-4A6E-9380-A201CD220237} = {A2D3BD82-9CBD-44C8-8637-B0B84DCE5DCD}
+		{34DCE289-040B-4A69-915F-17D9012A96FD} = {A2D3BD82-9CBD-44C8-8637-B0B84DCE5DCD}
+		{2CE72720-8918-4E53-8F62-F7ED74A411B6} = {A2A2CC73-2F08-4F3E-9B59-EE0C3C27664C}
+		{73A2E4D0-FF02-4317-8809-E72AFDF816C2} = {7C4D8478-9C8D-4071-B329-EA83DB333444}
+		{7DF9C6CC-DD3B-432B-AD22-5C51CFEBBABA} = {A2A2CC73-2F08-4F3E-9B59-EE0C3C27664C}
+		{5D9DAA32-D85C-4BCC-93D2-F781266E5906} = {A2A2CC73-2F08-4F3E-9B59-EE0C3C27664C}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		EnterpriseLibraryConfigurationToolBinariesPath = packages\Unity.2.1.505.0\lib\NET35;packages\Unity.Interception.2.1.505.0\lib\NET35;packages\EnterpriseLibrary.Common.5.0.505.0\lib\NET35;packages\EnterpriseLibrary.Data.5.0.505.0\lib\NET35
+	EndGlobalSection
+EndGlobal

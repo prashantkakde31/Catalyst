@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2CE72720-8918-4E53-8F62-F7ED74A411B6}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Interpidians.Catalyst.Core</RootNamespace>
+    <AssemblyName>Interpidians.Catalyst.Core</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ApplicationService\EmployeeService.cs" />
+    <Compile Include="ApplicationService\ExamDetailService.cs" />
+    <Compile Include="ApplicationService\ExamService.cs" />
+    <Compile Include="ApplicationService\IEmployeeService.cs" />
+    <Compile Include="ApplicationService\IExamDetailService.cs" />
+    <Compile Include="ApplicationService\IExamService.cs" />
+    <Compile Include="ApplicationService\IMcqService.cs" />
+    <Compile Include="ApplicationService\ISubjectService.cs" />
+    <Compile Include="ApplicationService\McqService.cs" />
+    <Compile Include="ApplicationService\SubjectService.cs" />
+    <Compile Include="Common\ILogger.cs" />
+    <Compile Include="Common\IMailer.cs" />
+    <Compile Include="Common\IServiceLocator.cs" />
+    <Compile Include="DomainService\ICityMasterRepository.cs" />
+    <Compile Include="DomainService\ICountryMasterRepository.cs" />
+    <Compile Include="DomainService\ICourseMasterRepository.cs" />
+    <Compile Include="DomainService\IDiscountMasterRepository.cs" />
+    <Compile Include="DomainService\IEmployeeRepository.cs" />
+    <Compile Include="DomainService\IExamDetailRepository.cs" />
+    <Compile Include="DomainService\IExamRepository.cs" />
+    <Compile Include="DomainService\IExamResultRepository.cs" />
+    <Compile Include="DomainService\IGradeMasterRepository.cs" />
+    <Compile Include="DomainService\IMcqAnswerRepository.cs" />
+    <Compile Include="DomainService\IMcqRepository.cs" />
+    <Compile Include="DomainService\IMenuMasterRepository.cs" />
+    <Compile Include="DomainService\IOrderDetailRepository.cs" />
+    <Compile Include="DomainService\IPaperMasterRepository.cs" />
+    <Compile Include="DomainService\IProductMasterRepository.cs" />
+    <Compile Include="DomainService\IProductPurchaseDetailRepository.cs" />
+    <Compile Include="DomainService\IRoleMasterRepository.cs" />
+    <Compile Include="DomainService\ISchoolCollegeMasterRepository.cs" />
+    <Compile Include="DomainService\IShoppingCartRepository.cs" />
+    <Compile Include="DomainService\IStateMasterRepository.cs" />
+    <Compile Include="DomainService\ISubCourseMasterRepository.cs" />
+    <Compile Include="DomainService\ISubjectMasterRepository.cs" />
+    <Compile Include="DomainService\ITestimonialRepository.cs" />
+    <Compile Include="DomainService\ITopicMasterRepository.cs" />
+    <Compile Include="DomainService\ITransactionDetailRepository.cs" />
+    <Compile Include="DomainService\IUserCartRepository.cs" />
+    <Compile Include="DomainService\IUserEducationDetailRepository.cs" />
+    <Compile Include="DomainService\IUserEnquiryRepository.cs" />
+    <Compile Include="DomainService\IUserMasterRepository.cs" />
+    <Compile Include="DomainService\IUserProfileRepository.cs" />
+    <Compile Include="DomainService\IUserRoleRepository.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Interpidians.Catalyst.Core.Entity\Interpidians.Catalyst.Core.Entity.csproj">
+      <Project>{7df9c6cc-dd3b-432b-ad22-5c51cfebbaba}</Project>
+      <Name>Interpidians.Catalyst.Core.Entity</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

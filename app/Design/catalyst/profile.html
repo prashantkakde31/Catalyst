@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
+<head>
+	<title>Catalyst | Login | Register</title>
+
+	<!-- Meta -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+	<!-- Favicon -->
+	<link rel="shortcut icon" href="favicon.ico">
+
+	<!-- Web Fonts -->
+	<link rel='stylesheet' type='text/css' href='//fonts.googleapis.com/css?family=Open+Sans:400,300,600&amp;subset=cyrillic,latin'>
+
+	<!-- CSS Global Compulsory -->
+	<link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="assets/css/app.css">
+	<link rel="stylesheet" href="assets/css/blocks.css">
+	
+    <link rel="stylesheet" href="assets/css/sky-forms.css">
+	<link rel="stylesheet" href="assets/css/shop.style.css">
+	<link rel="stylesheet" href="assets/css/catalyst.css">
+
+	<!-- CSS Header and Footer -->
+	<link rel="stylesheet" href="assets/css/headers/header-v5.css">
+	<link rel="stylesheet" href="assets/css/footers/footer-v4.css">
+
+	<!-- CSS Implementing Plugins -->
+	<link rel="stylesheet" href="assets/plugins/animate.css">
+	<link rel="stylesheet" href="assets/plugins/line-icons/line-icons.css">
+	<link rel="stylesheet" href="assets/plugins/font-awesome/css/font-awesome.min.css">
+	<link rel="stylesheet" href="assets/plugins/scrollbar/css/jquery.mCustomScrollbar.css">
+
+	<!-- CSS Page Style -->
+	<link rel="stylesheet" href="assets/css/pages/log-reg-v3.css">
+
+	<!-- Style Switcher -->
+	<!--link rel="stylesheet" href="assets/css/plugins/style-switcher.css">
+
+	<!-- CSS Theme -->
+	<link rel="stylesheet" href="assets/css/theme-colors/green.css" id="style_color">
+
+	<!-- CSS Customization -->
+    <link rel="stylesheet" href="assets/css/pages/profile.css">
+	<link rel="stylesheet" href="assets/css/catalyst.css">
+    
+    <!-- Global Js Variables -->
+    <script type="text/javascript">
+        var page = "mcq";
+    </script>
+</head>
+
+<body class="header-fixed">
+
+	<div class="wrapper">
+		<!--=== Header v5 ===-->
+		<div class="header-v5 header-static">
+			<!-- Topbar v3 -->
+			<div class="topbar-v3">
+				<div class="search-open">
+					<div class="container">
+						<input type="text" class="form-control" placeholder="Search">
+						<div class="search-close"><i class="icon-close"></i></div>
+					</div>
+				</div>
+
+				<div class="container">
+					<div class="row">						
+						<div class="col-sm-offset-6 col-sm-6">
+							<ul class="list-inline right-topbar pull-right">
+								<li><a href="#">Account</a></li>
+								<li><a href="#">Login / Register</a></li>
+								<li><i class="search fa fa-search search-button"></i></li>
+							</ul>
+						</div>
+					</div>
+				</div><!--/container-->
+			</div>
+			<!-- End Topbar v3 -->
+
+			 <!-- Navbar -->
+            <div class="navbar navbar-default mega-menu" role="navigation">
+                <div class="container">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="index.html">
+                            <img id="logo-header" src="assets/img/logo.png" alt="Logo">
+                        </a>
+                    </div>
+
+                    <!-- Shopping Cart -->
+                    <div class="shop-badge badge-icons pull-right">
+                        <a href="#"><i class="fa fa-shopping-cart"></i></a>
+                        <span class="badge badge-sea rounded-x">3</span>
+                        <div class="badge-open">
+                            <ul class="list-unstyled mCustomScrollbar" data-mcs-theme="minimal-dark">
+                                <li>
+                                    <button type="button" class="close">×</button>
+                                    <div class="overflow-h">
+                                        <span>Board Name</span>
+                                        <strong>Subject Name</strong>
+                                        <br>
+                                        <strong class="color-green">$40.00</strong>
+                                    </div>
+                                </li>
+                                <li>
+                                    <button type="button" class="close">×</button>
+                                    <div class="overflow-h">
+                                        <span>Board Name</span>
+                                        <strong>Combo(All Subject + All Years)</strong>
+                                        <br>
+                                        <strong class="color-green">$40.00</strong>
+                                    </div>
+                                </li>
+                                <li>
+                                    <button type="button" class="close">×</button>
+                                    <div class="overflow-h">
+                                        <span>Board Name</span>
+                                        <strong>Year 2011</strong>
+                                        <br>
+                                        <strong class="color-green">$40.00</strong>
+                                    </div>
+                                </li>
+
+                            </ul>
+                            <div class="subtotal">
+                                <div class="overflow-h margin-bottom-10">
+                                    <span>Subtotal</span>
+                                    <span class="pull-right subtotal-cost">$1200.00</span>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-12">
+                                        <a href="shop-ui-add-to-cart.html" class="btn-u btn-u-sea-shop btn-block">Checkout</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Shopping Cart -->
+
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse navbar-responsive-collapse">
+                        <!-- Nav Menu -->
+                        <ul class="nav navbar-nav">
+                            <!-- Home -->
+                            <li class="active"><a href="#">Home</a></li>
+                            <!-- /Home -->
+
+                            <!-- MCQs -->
+                            <li class="dropdown">
+                                <a href="javascript:void(0);" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown">
+                                    MCQ<small>s</small>
+								</a>
+                                <ul class="dropdown-menu">
+                                    <li class="dropdown-submenu">
+                                        <a href="javascript:void(0);">CIPP</a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="#">English</a></li>
+                                            <li><a href="#">Physics</a></li>
+                                            <li><a href="#">Chemistry</a></li>
+                                            <li><a href="#">Maths</a></li>
+                                            <li><a href="#">Bio</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown-submenu">
+                                        <a href="javascript:void(0);">Checkpoint</a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="#">English</a></li>
+                                            <li><a href="#">Physics</a></li>
+                                            <li><a href="#">Chemistry</a></li>
+                                            <li><a href="#">Maths</a></li>
+                                            <li><a href="#">Bio</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown-submenu">
+                                        <a href="javascript:void(0);">IGCSE</a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="#">English</a></li>
+                                            <li><a href="#">Physics</a></li>
+                                            <li><a href="#">Chemistry</a></li>
+                                            <li><a href="#">Maths</a></li>
+                                            <li><a href="#">Bio</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown-submenu">
+                                        <a href="javascript:void(0);">IB</a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="#">English</a></li>
+                                            <li><a href="#">Physics</a></li>
+                                            <li><a href="#">Chemistry</a></li>
+                                            <li><a href="#">Maths</a></li>
+                                            <li><a href="#">Bio</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown-submenu">
+                                        <a href="javascript:void(0);">A-Level</a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="#">English</a></li>
+                                            <li><a href="#">Physics</a></li>
+                                            <li><a href="#">Chemistry</a></li>
+                                            <li><a href="#">Maths</a></li>
+                                            <li><a href="#">Bio</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <!-- End MCQs -->
+
+                            <!-- Solutions -->
+                            <li class="dropdown">
+                                <a href="javascript:void(0);" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown" data-delay="1000">
+									Theory
+								</a>
+                                <ul class="dropdown-menu">
+                                    <li class="dropdown-submenu">
+                                        <a href="javascript:void(0);">CIPP</a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="#">English</a></li>
+                                            <li><a href="#">Physics</a></li>
+                                            <li><a href="#">Chemistry</a></li>
+                                            <li><a href="#">Maths</a></li>
+                                            <li><a href="#">Bio</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown-submenu">
+                                        <a href="javascript:void(0);">Checkpoint</a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="#">English</a></li>
+                                            <li><a href="#">Physics</a></li>
+                                            <li><a href="#">Chemistry</a></li>
+                                            <li><a href="#">Maths</a></li>
+                                            <li><a href="#">Bio</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown-submenu">
+                                        <a href="javascript:void(0);">IGCSE</a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="#">English</a></li>
+                                            <li><a href="#">Physics</a></li>
+                                            <li><a href="#">Chemistry</a></li>
+                                            <li><a href="#">Maths</a></li>
+                                            <li><a href="#">Bio</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown-submenu">
+                                        <a href="javascript:void(0);">IB</a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="#">English</a></li>
+                                            <li><a href="#">Physics</a></li>
+                                            <li><a href="#">Chemistry</a></li>
+                                            <li><a href="#">Maths</a></li>
+                                            <li><a href="#">Bio</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown-submenu">
+                                        <a href="javascript:void(0);">A-Level</a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="#">English</a></li>
+                                            <li><a href="#">Physics</a></li>
+                                            <li><a href="#">Chemistry</a></li>
+                                            <li><a href="#">Maths</a></li>
+                                            <li><a href="#">Bio</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <!-- End Solutions -->
+
+                            <!-- Notes -->
+                            <li class="dropdown">
+                                <a href="javascript:void(0);" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown">
+                                    Notes
+								</a>
+                                <ul class="dropdown-menu">
+                                    <li class="dropdown-submenu">
+                                        <a href="javascript:void(0);">CIPP</a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="#">English</a></li>
+                                            <li><a href="#">Physics</a></li>
+                                            <li><a href="#">Chemistry</a></li>
+                                            <li><a href="#">Maths</a></li>
+                                            <li><a href="#">Bio</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown-submenu">
+                                        <a href="javascript:void(0);">Checkpoint</a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="#">English</a></li>
+                                            <li><a href="#">Physics</a></li>
+                                            <li><a href="#">Chemistry</a></li>
+                                            <li><a href="#">Maths</a></li>
+                                            <li><a href="#">Bio</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown-submenu">
+                                        <a href="javascript:void(0);">IGCSE</a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="#">English</a></li>
+                                            <li><a href="#">Physics</a></li>
+                                            <li><a href="#">Chemistry</a></li>
+                                            <li><a href="#">Maths</a></li>
+                                            <li><a href="#">Bio</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown-submenu">
+                                        <a href="javascript:void(0);">IB</a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="#">English</a></li>
+                                            <li><a href="#">Physics</a></li>
+                                            <li><a href="#">Chemistry</a></li>
+                                            <li><a href="#">Maths</a></li>
+                                            <li><a href="#">Bio</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown-submenu">
+                                        <a href="javascript:void(0);">A-Level</a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="#">English</a></li>
+                                            <li><a href="#">Physics</a></li>
+                                            <li><a href="#">Chemistry</a></li>
+                                            <li><a href="#">Maths</a></li>
+                                            <li><a href="#">Bio</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <!-- Notes -->
+                            <!-- Resource -->
+                            <li class="dropdown">
+                                
+                                <a href="javascript:void(0);" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown">
+                                    Resource
+								</a>
+                                
+                                <ul class="dropdown-menu">
+                                    
+                                    <li class="dropdown-submenu">
+                                        <a href="javascript:void(0);">CIPP</a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="#">English</a></li>
+                                            <li><a href="#">Physics</a></li>
+                                            <li><a href="#">Chemistry</a></li>
+                                            <li><a href="#">Maths</a></li>
+                                            <li><a href="#">Bio</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown-submenu">
+                                        <a href="javascript:void(0);">Checkpoint</a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="#">English</a></li>
+                                            <li><a href="#">Physics</a></li>
+                                            <li><a href="#">Chemistry</a></li>
+                                            <li><a href="#">Maths</a></li>
+                                            <li><a href="#">Bio</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown-submenu">
+                                        <a href="javascript:void(0);">IGCSE</a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="#">English</a></li>
+                                            <li><a href="#">Physics</a></li>
+                                            <li><a href="#">Chemistry</a></li>
+                                            <li><a href="#">Maths</a></li>
+                                            <li><a href="#">Bio</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown-submenu">
+                                        <a href="javascript:void(0);">IB</a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="#">English</a></li>
+                                            <li><a href="#">Physics</a></li>
+                                            <li><a href="#">Chemistry</a></li>
+                                            <li><a href="#">Maths</a></li>
+                                            <li><a href="#">Bio</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown-submenu">
+                                        <a href="javascript:void(0);">A-Level</a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="#">English</a></li>
+                                            <li><a href="#">Physics</a></li>
+                                            <li><a href="#">Chemistry</a></li>
+                                            <li><a href="#">Maths</a></li>
+                                            <li><a href="#">Bio</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <!-- Video / Worksheet -->
+
+                            <!-- -Cambridge -->
+                            <li class=""><a href="#">Cambridge</a></li>
+                            <!-- Cambridge -->
+
+                            <!-- About  -->
+                            <li class="dropdown">
+                             <a href="javascript:void(0);" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown">
+                                    About
+								</a>
+                                
+                                <ul class="dropdown-menu">
+                                    <li class="">
+                                        <a href="javascript:void(0);">Team</a>                                        
+                                    </li>
+                                    <li class="">
+                                        <a href="javascript:void(0);">Testimonials</a>                                        
+                                    </li>
+                                    <li class="">
+                                        <a href="javascript:void(0);">Help and Advice</a>                                        
+                                    </li>
+                                </ul>
+                            </li>
+                            <!-- About -->
+                            <!-- About  -->
+                            <li class=""><a href="#">Contact</a></li>
+                            <!-- About -->
+
+                        </ul>
+                        <!-- End Nav Menu -->
+                    </div>
+                </div>
+            </div>
+            <!-- End Navbar -->
+		</div>
+		<!--=== End Header v5 ===-->
+
+		<!--=== Breadcrumbs v4 ===-->
+		<div class="breadcrumbs">
+			<div class="container">
+				<h1 class="pull-left">MCQs</h1>
+				<ul class="pull-right breadcrumb">
+					<li><a href="#">Home</a></li>
+					<li><a href="#">MCQs</a></li>
+                    <li><a href="#">CIPP</a></li>
+                    <li><a href="#">English</a></li>
+                    
+				</ul>
+			</div>
+		</div>
+		<!--=== End Breadcrumbs v4 ===-->
+
+		<!--=== MCQs ===-->
+		<div class="content-md ">
+			<div class="container profile">
+				<div class="row">
+				<!--Left Sidebar-->
+				<div class="col-md-3 md-margin-bottom-40">
+					<img class="img-responsive profile-img margin-bottom-20" src="assets/img/team/img32-md.jpg" alt="">
+
+					<ul class="list-group sidebar-nav-v1 margin-bottom-40" id="sidebar-nav-1">
+						<li class="list-group-item">
+							<a href="page_profile.html"><i class="fa fa-bar-chart-o"></i> Overall</a>
+						</li>
+						<li class="list-group-item">
+							<a href="page_profile_me.html"><i class="fa fa-user"></i> Profile</a>
+						</li>
+						<li class="list-group-item">
+							<a href="page_profile_users.html"><i class="fa fa-group"></i> Users</a>
+						</li>
+						<li class="list-group-item">
+							<a href="page_profile_projects.html"><i class="fa fa-cubes"></i> My Projects</a>
+						</li>
+						<li class="list-group-item">
+							<a href="page_profile_comments.html"><i class="fa fa-comments"></i> Comments</a>
+						</li>
+						<li class="list-group-item">
+							<a href="page_profile_history.html"><i class="fa fa-history"></i> History</a>
+						</li>
+						<li class="list-group-item active">
+							<a href="page_profile_settings.html"><i class="fa fa-cog"></i> Settings</a>
+						</li>
+					</ul>
+
+					<div class="panel-heading-v2 overflow-h">
+						<h2 class="heading-xs pull-left"><i class="fa fa-bar-chart-o"></i> Task Progress</h2>
+						<a href="#"><i class="fa fa-cog pull-right"></i></a>
+					</div>
+					<h3 class="heading-xs">Web Design <span class="pull-right">92%</span></h3>
+					<div class="progress progress-u progress-xxs">
+						<div style="width: 92%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="92" role="progressbar" class="progress-bar progress-bar-u">
+						</div>
+					</div>
+					<h3 class="heading-xs">Unify Project <span class="pull-right">85%</span></h3>
+					<div class="progress progress-u progress-xxs">
+						<div style="width: 85%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="85" role="progressbar" class="progress-bar progress-bar-blue">
+						</div>
+					</div>
+					<h3 class="heading-xs">Sony Corporation <span class="pull-right">64%</span></h3>
+					<div class="progress progress-u progress-xxs margin-bottom-40">
+						<div style="width: 64%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="64" role="progressbar" class="progress-bar progress-bar-dark">
+						</div>
+					</div>
+
+					<hr>
+
+					<!--Notification-->
+					<div class="panel-heading-v2 overflow-h">
+						<h2 class="heading-xs pull-left"><i class="fa fa-bell-o"></i> Notification</h2>
+						<a href="#"><i class="fa fa-cog pull-right"></i></a>
+					</div>
+					<ul class="list-unstyled mCustomScrollbar margin-bottom-20 _mCS_1 mCS-autoHide" data-mcs-theme="minimal-dark" style="position: relative; overflow: visible;"><div id="mCSB_1" class="mCustomScrollBox mCS-minimal-dark mCSB_vertical mCSB_outside" tabindex="0"><div id="mCSB_1_container" class="mCSB_container" style="position: relative; top: -155px; left: 0px;" dir="ltr">
+						<li class="notification">
+							<i class="icon-custom icon-sm rounded-x icon-bg-red icon-line icon-envelope"></i>
+							<div class="overflow-h">
+								<span><strong>Albert Heller</strong> has sent you email.</span>
+								<small>Two minutes ago</small>
+							</div>
+						</li>
+						<li class="notification">
+							<img class="rounded-x mCS_img_loaded" src="assets/img/testimonials/img6.jpg" alt="">
+							<div class="overflow-h">
+								<span><strong>Taylor Lee</strong> started following you.</span>
+								<small>Today 18:25 pm</small>
+							</div>
+						</li>
+						<li class="notification">
+							<i class="icon-custom icon-sm rounded-x icon-bg-yellow icon-line fa fa-bolt"></i>
+							<div class="overflow-h">
+								<span><strong>Natasha Kolnikova</strong> accepted your invitation.</span>
+								<small>Yesterday 1:07 pm</small>
+							</div>
+						</li>
+						<li class="notification">
+							<img class="rounded-x mCS_img_loaded" src="assets/img/testimonials/img1.jpg" alt="">
+							<div class="overflow-h">
+								<span><strong>Mikel Andrews</strong> commented on your Timeline.</span>
+								<small>23/12 11:01 am</small>
+							</div>
+						</li>
+						<li class="notification">
+							<i class="icon-custom icon-sm rounded-x icon-bg-blue icon-line fa fa-comments"></i>
+							<div class="overflow-h">
+								<span><strong>Bruno Js.</strong> added you to group chating.</span>
+								<small>Yesterday 1:07 pm</small>
+							</div>
+						</li>
+						<li class="notification">
+							<img class="rounded-x mCS_img_loaded" src="assets/img/testimonials/img6.jpg" alt="">
+							<div class="overflow-h">
+								<span><strong>Taylor Lee</strong> changed profile picture.</span>
+								<small>23/12 15:15 pm</small>
+							</div>
+						</li>
+					</div></div><div id="mCSB_1_scrollbar_vertical" class="mCSB_scrollTools mCSB_1_scrollbar mCS-minimal-dark mCSB_scrollTools_vertical" style="display: block;"><div class="mCSB_draggerContainer"><div id="mCSB_1_dragger_vertical" class="mCSB_dragger" style="position: absolute; min-height: 50px; display: block; height: 199px; max-height: 286px; top: 97px;" oncontextmenu="return false;"><div class="mCSB_dragger_bar" style="line-height: 50px;"></div></div><div class="mCSB_draggerRail"></div></div></div></ul>
+					<button type="button" class="btn-u btn-u-default btn-u-sm btn-block">Load More</button>
+					<!--End Notification-->
+
+					<div class="margin-bottom-50"></div>
+
+					<!--Datepicker-->
+					<form action="#" id="sky-form2" class="sky-form">
+						<div id="inline-start" class="hasDatepicker"><div class="ui-datepicker-inline ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all" style="display: block;"><div class="ui-datepicker-header ui-widget-header ui-helper-clearfix ui-corner-all"><a class="ui-datepicker-prev ui-corner-all" data-handler="prev" data-event="click" title="<i class=&quot;fa fa-angle-left&quot;></i>"><span class="ui-icon ui-icon-circle-triangle-w"><i class="fa fa-angle-left"></i></span></a><a class="ui-datepicker-next ui-corner-all" data-handler="next" data-event="click" title="<i class=&quot;fa fa-angle-right&quot;></i>"><span class="ui-icon ui-icon-circle-triangle-e"><i class="fa fa-angle-right"></i></span></a><div class="ui-datepicker-title"><span class="ui-datepicker-month">October</span>&nbsp;<span class="ui-datepicker-year">2016</span></div></div><table class="ui-datepicker-calendar"><thead><tr><th class="ui-datepicker-week-end"><span title="Sunday">Su</span></th><th><span title="Monday">Mo</span></th><th><span title="Tuesday">Tu</span></th><th><span title="Wednesday">We</span></th><th><span title="Thursday">Th</span></th><th><span title="Friday">Fr</span></th><th class="ui-datepicker-week-end"><span title="Saturday">Sa</span></th></tr></thead><tbody><tr><td class=" ui-datepicker-week-end ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="9" data-year="2016"><a class="ui-state-default" href="#">1</a></td></tr><tr><td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="9" data-year="2016"><a class="ui-state-default" href="#">2</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="9" data-year="2016"><a class="ui-state-default" href="#">3</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="9" data-year="2016"><a class="ui-state-default" href="#">4</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="9" data-year="2016"><a class="ui-state-default" href="#">5</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="9" data-year="2016"><a class="ui-state-default" href="#">6</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="9" data-year="2016"><a class="ui-state-default" href="#">7</a></td><td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="9" data-year="2016"><a class="ui-state-default" href="#">8</a></td></tr><tr><td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="9" data-year="2016"><a class="ui-state-default" href="#">9</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="9" data-year="2016"><a class="ui-state-default" href="#">10</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="9" data-year="2016"><a class="ui-state-default" href="#">11</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="9" data-year="2016"><a class="ui-state-default" href="#">12</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="9" data-year="2016"><a class="ui-state-default" href="#">13</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="9" data-year="2016"><a class="ui-state-default" href="#">14</a></td><td class=" ui-datepicker-week-end ui-datepicker-days-cell-over  ui-datepicker-current-day ui-datepicker-today" data-handler="selectDay" data-event="click" data-month="9" data-year="2016"><a class="ui-state-default ui-state-highlight ui-state-active ui-state-hover" href="#">15</a></td></tr><tr><td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="9" data-year="2016"><a class="ui-state-default" href="#">16</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="9" data-year="2016"><a class="ui-state-default" href="#">17</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="9" data-year="2016"><a class="ui-state-default" href="#">18</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="9" data-year="2016"><a class="ui-state-default" href="#">19</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="9" data-year="2016"><a class="ui-state-default" href="#">20</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="9" data-year="2016"><a class="ui-state-default" href="#">21</a></td><td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="9" data-year="2016"><a class="ui-state-default" href="#">22</a></td></tr><tr><td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="9" data-year="2016"><a class="ui-state-default" href="#">23</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="9" data-year="2016"><a class="ui-state-default" href="#">24</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="9" data-year="2016"><a class="ui-state-default" href="#">25</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="9" data-year="2016"><a class="ui-state-default" href="#">26</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="9" data-year="2016"><a class="ui-state-default" href="#">27</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="9" data-year="2016"><a class="ui-state-default" href="#">28</a></td><td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="9" data-year="2016"><a class="ui-state-default" href="#">29</a></td></tr><tr><td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="9" data-year="2016"><a class="ui-state-default" href="#">30</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="9" data-year="2016"><a class="ui-state-default" href="#">31</a></td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-week-end ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td></tr></tbody></table></div></div>
+					</form>
+					<!--End Datepicker-->
+				</div>
+				<!--End Left Sidebar-->
+
+				<!-- Profile Content -->
+				<div class="col-md-9">
+					<div class="profile-body margin-bottom-20">
+						<div class="tab-v1">
+							<ul class="nav nav-justified nav-tabs">
+								<li class="active"><a data-toggle="tab" href="#profile" aria-expanded="true">Edit Profile</a></li>
+								<li class=""><a data-toggle="tab" href="#passwordTab" aria-expanded="false">Change Password</a></li>
+								<li class=""><a data-toggle="tab" href="#payment" aria-expanded="false">Payment Options</a></li>
+								<li class=""><a data-toggle="tab" href="#settings" aria-expanded="false">Notification Settings</a></li>
+							</ul>
+							<div class="tab-content">
+								<div id="profile" class="profile-edit tab-pane fade active in">
+									<h2 class="heading-md">Manage your Name, ID and Email Addresses.</h2>
+									<p>Below are the name and email addresses on file for your account.</p>
+									<br>
+									<dl class="dl-horizontal">
+										<dt><strong>Your name </strong></dt>
+										<dd>
+											Edward Rooster
+											<span>
+												<a class="pull-right" href="#">
+													<i class="fa fa-pencil"></i>
+												</a>
+											</span>
+										</dd>
+										<hr>
+										<dt><strong>Your ID </strong></dt>
+										<dd>
+											FKJ-032440
+											<span>
+												<a class="pull-right" href="#">
+													<i class="fa fa-pencil"></i>
+												</a>
+											</span>
+										</dd>
+										<hr>
+										<dt><strong>Company name </strong></dt>
+										<dd>
+											Htmlstream
+											<span>
+												<a class="pull-right" href="#">
+													<i class="fa fa-pencil"></i>
+												</a>
+											</span>
+										</dd>
+										<hr>
+										<dt><strong>Primary Email Address </strong></dt>
+										<dd>
+											edward-rooster@gmail.com
+											<span>
+												<a class="pull-right" href="#">
+													<i class="fa fa-pencil"></i>
+												</a>
+											</span>
+										</dd>
+										<hr>
+										<dt><strong>Phone Number </strong></dt>
+										<dd>
+											(304) 33-2867-499
+											<span>
+												<a class="pull-right" href="#">
+													<i class="fa fa-pencil"></i>
+												</a>
+											</span>
+										</dd>
+										<hr>
+										<dt><strong>Office Number </strong></dt>
+										<dd>
+											(304) 44-9810-296
+											<span>
+												<a class="pull-right" href="#">
+													<i class="fa fa-pencil"></i>
+												</a>
+											</span>
+										</dd>
+										<hr>
+										<dt><strong>Address </strong></dt>
+										<dd>
+											California, US
+											<span>
+												<a class="pull-right" href="#">
+													<i class="fa fa-pencil"></i>
+												</a>
+											</span>
+										</dd>
+										<hr>
+									</dl>
+									<button type="button" class="btn-u btn-u-default">Cancel</button>
+									<button type="button" class="btn-u">Save Changes</button>
+								</div>
+
+								<div id="passwordTab" class="profile-edit tab-pane fade">
+									<h2 class="heading-md">Manage your Security Settings</h2>
+									<p>Change your password.</p>
+									<br>
+									<form class="sky-form" id="sky-form4" action="#" novalidate="novalidate">
+										<dl class="dl-horizontal">
+											<dt>Username</dt>
+											<dd>
+												<section>
+													<label class="input">
+														<i class="icon-append fa fa-user"></i>
+														<input type="text" placeholder="Username" name="username">
+														<b class="tooltip tooltip-bottom-right">Needed to enter the website</b>
+													</label>
+												</section>
+											</dd>
+											<dt>Email address</dt>
+											<dd>
+												<section>
+													<label class="input">
+														<i class="icon-append fa fa-envelope"></i>
+														<input type="email" placeholder="Email address" name="email">
+														<b class="tooltip tooltip-bottom-right">Needed to verify your account</b>
+													</label>
+												</section>
+											</dd>
+											<dt>Enter your password</dt>
+											<dd>
+												<section>
+													<label class="input">
+														<i class="icon-append fa fa-lock"></i>
+														<input type="password" id="password" name="password" placeholder="Password">
+														<b class="tooltip tooltip-bottom-right">Don't forget your password</b>
+													</label>
+												</section>
+											</dd>
+											<dt>Confirm Password</dt>
+											<dd>
+												<section>
+													<label class="input">
+														<i class="icon-append fa fa-lock"></i>
+														<input type="password" name="passwordConfirm" placeholder="Confirm password">
+														<b class="tooltip tooltip-bottom-right">Don't forget your password</b>
+													</label>
+												</section>
+											</dd>
+										</dl>
+										<label class="toggle toggle-change"><input type="checkbox" checked="" name="checkbox-toggle-1"><i class="no-rounded"></i>Remember password</label>
+										<br>
+										<section>
+											<label class="checkbox"><input type="checkbox" id="terms" name="terms"><i></i><a href="#">I agree with the Terms and Conditions</a></label>
+										</section>
+										<button type="button" class="btn-u btn-u-default">Cancel</button>
+										<button class="btn-u" type="submit">Save Changes</button>
+									</form>
+								</div>
+
+								<div id="payment" class="profile-edit tab-pane fade">
+									<h2 class="heading-md">Manage your Payment Settings</h2>
+									<p>Below are the payment options for your account.</p>
+									<br>
+									<form class="sky-form" id="sky-form" action="#" novalidate="novalidate">
+										<!--Checkout-Form-->
+										<section>
+											<div class="inline-group">
+												<label class="radio"><input type="radio" checked="" name="radio-inline"><i class="rounded-x"></i>Visa</label>
+												<label class="radio"><input type="radio" name="radio-inline"><i class="rounded-x"></i>MasterCard</label>
+												<label class="radio"><input type="radio" name="radio-inline"><i class="rounded-x"></i>PayPal</label>
+											</div>
+										</section>
+
+										<section>
+											<label class="input">
+												<input type="text" name="name" placeholder="Name on card">
+											</label>
+										</section>
+
+										<div class="row">
+											<section class="col col-10">
+												<label class="input">
+													<input type="text" name="card" id="card" placeholder="Card number">
+												</label>
+											</section>
+											<section class="col col-2">
+												<label class="input">
+													<input type="text" name="cvv" id="cvv" placeholder="CVV2">
+												</label>
+											</section>
+										</div>
+
+										<div class="row">
+											<label class="label col col-4">Expiration date</label>
+											<section class="col col-5">
+												<label class="select">
+													<select name="month">
+														<option disabled="" selected="" value="0">Month</option>
+														<option value="1">January</option>
+														<option value="1">February</option>
+														<option value="3">March</option>
+														<option value="4">April</option>
+														<option value="5">May</option>
+														<option value="6">June</option>
+														<option value="7">July</option>
+														<option value="8">August</option>
+														<option value="9">September</option>
+														<option value="10">October</option>
+														<option value="11">November</option>
+														<option value="12">December</option>
+													</select>
+													<i></i>
+												</label>
+											</section>
+											<section class="col col-3">
+												<label class="input">
+													<input type="text" placeholder="Year" id="year" name="year">
+												</label>
+											</section>
+										</div>
+										<button type="button" class="btn-u btn-u-default">Cancel</button>
+										<button class="btn-u" type="submit">Save Changes</button>
+										<!--End Checkout-Form-->
+									</form>
+								</div>
+
+								<div id="settings" class="profile-edit tab-pane fade">
+									<h2 class="heading-md">Manage your Notifications.</h2>
+									<p>Below are the notifications you may manage.</p>
+									<br>
+									<form class="sky-form" id="sky-form3" action="#">
+										<label class="toggle"><input type="checkbox" checked="" name="checkbox-toggle-1"><i class="no-rounded"></i>Email notification</label>
+										<hr>
+										<label class="toggle"><input type="checkbox" checked="" name="checkbox-toggle-1"><i class="no-rounded"></i>Send me email notification when a user comments on my blog</label>
+										<hr>
+										<label class="toggle"><input type="checkbox" checked="" name="checkbox-toggle-1"><i class="no-rounded"></i>Send me email notification for the latest update</label>
+										<hr>
+										<label class="toggle"><input type="checkbox" checked="" name="checkbox-toggle-1"><i class="no-rounded"></i>Send me email notification when a user sends me message</label>
+										<hr>
+										<label class="toggle"><input type="checkbox" checked="" name="checkbox-toggle-1"><i class="no-rounded"></i>Receive our monthly newsletter</label>
+										<hr>
+										<button type="button" class="btn-u btn-u-default">Reset</button>
+										<button class="btn-u" type="submit">Save Changes</button>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- End Profile Content -->
+			</div>
+			</div><!--/end container-->
+		</div>
+		<!--=== End MCQs ===-->
+
+		<!--=== Some Text ===-->
+		<div class="shop-subscribe">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12 md-margin-bottom-20">
+						<h2>Suspendisse et tincidunt ipsum, et dignissim urna.</h2>
+					</div>					
+				</div>
+			</div><!--/end container-->
+		</div>
+		<!--=== End Some Text ===-->
+
+		<!--=== Footer v4 ===-->
+		<div class="footer-v4">
+			<div class="copyright">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-6">
+							<p>
+								2016 &copy; ALL Rights Reserved.
+								<a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
+							</p>
+						</div>
+					</div>
+				</div>
+			</div><!--/copyright-->
+		</div>
+		<!--=== End Footer v4 ===-->
+	</div><!--/wrapper-->
+
+	
+
+<!-- JS Global Compulsory -->
+	<script src="assets/plugins/jquery/jquery.min.js"></script>
+	<script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+	<!-- JS Implementing Plugins -->
+	<script src="assets/plugins/back-to-top.js"></script>
+	<script src="assets/plugins/smoothScroll.js"></script>
+	<script src="assets/plugins/scrollbar/js/jquery.mCustomScrollbar.concat.min.js"></script>
+	
+	<!-- JS Common Level -->
+	<script src="assets/js/common.js"></script>
+    <!-- JS Customization -->
+	<script src="assets/js/custom.js"></script>
+	<script>
+		jQuery(document).ready(function() {
+			App.init();			
+			App.initScrollBar();			
+		});
+	</script>
+<!--[if lt IE 9]>
+	<script src="assets/plugins/respond.js"></script>
+	<script src="assets/plugins/html5shiv.js"></script>
+	<script src="assets/js/plugins/placeholder-IE-fixes.js"></script>
+	<![endif]-->
+<!--[if lt IE 10]>
+	<script src="assets/plugins/sky-forms-pro/skyforms/js/jquery.placeholder.min.js"></script>
+	<![endif]-->
+</body>
+</html>

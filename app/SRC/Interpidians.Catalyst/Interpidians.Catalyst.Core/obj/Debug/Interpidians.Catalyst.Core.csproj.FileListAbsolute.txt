@@ -1,0 +1,35 @@
+c:\users\ckakdep\documents\visual studio 2013\Projects\Interpidians.Catalyst\Interpidians.Catalyst.Core\bin\Debug\Interpidians.Catalyst.Core.dll
+c:\users\ckakdep\documents\visual studio 2013\Projects\Interpidians.Catalyst\Interpidians.Catalyst.Core\bin\Debug\Interpidians.Catalyst.Core.pdb
+c:\users\ckakdep\documents\visual studio 2013\Projects\Interpidians.Catalyst\Interpidians.Catalyst.Core\obj\Debug\Interpidians.Catalyst.Core.dll
+c:\users\ckakdep\documents\visual studio 2013\Projects\Interpidians.Catalyst\Interpidians.Catalyst.Core\obj\Debug\Interpidians.Catalyst.Core.pdb
+C:\Users\ckakdep\Documents\Visual Studio 2013\Projects\Interpidians.Catalyst\Interpidians.Catalyst.Core\obj\Debug\Interpidians.Catalyst.Core.csprojResolveAssemblyReference.cache
+C:\Users\ckakdep\documents\visual studio 2013\Projects\Interpidians.Catalyst\Interpidians.Catalyst.Core\bin\Debug\Interpidians.Catalyst.Core.Entity.dll
+C:\Users\ckakdep\documents\visual studio 2013\Projects\Interpidians.Catalyst\Interpidians.Catalyst.Core\bin\Debug\Interpidians.Catalyst.Core.Entity.pdb
+C:\Users\ckakdep\Desktop\Interpidians\Catalyst\SourceCode\Interpidians.Catalyst\Interpidians.Catalyst.Core\bin\Debug\Interpidians.Catalyst.Core.dll
+C:\Users\ckakdep\Desktop\Interpidians\Catalyst\SourceCode\Interpidians.Catalyst\Interpidians.Catalyst.Core\bin\Debug\Interpidians.Catalyst.Core.pdb
+C:\Users\ckakdep\Desktop\Interpidians\Catalyst\SourceCode\Interpidians.Catalyst\Interpidians.Catalyst.Core\bin\Debug\Interpidians.Catalyst.Core.Entity.dll
+C:\Users\ckakdep\Desktop\Interpidians\Catalyst\SourceCode\Interpidians.Catalyst\Interpidians.Catalyst.Core\bin\Debug\Interpidians.Catalyst.Core.Entity.pdb
+C:\Users\ckakdep\Desktop\Interpidians\Catalyst\SourceCode\Interpidians.Catalyst\Interpidians.Catalyst.Core\obj\Debug\Interpidians.Catalyst.Core.csprojResolveAssemblyReference.cache
+C:\Users\ckakdep\Desktop\Interpidians\Catalyst\SourceCode\Interpidians.Catalyst\Interpidians.Catalyst.Core\obj\Debug\Interpidians.Catalyst.Core.dll
+C:\Users\ckakdep\Desktop\Interpidians\Catalyst\SourceCode\Interpidians.Catalyst\Interpidians.Catalyst.Core\obj\Debug\Interpidians.Catalyst.Core.pdb
+E:\Intrepedians Project rnd\Catalyst\User Solution\Interpidians.Catalyst\Interpidians.Catalyst.Core\bin\Debug\Interpidians.Catalyst.Core.dll
+E:\Intrepedians Project rnd\Catalyst\User Solution\Interpidians.Catalyst\Interpidians.Catalyst.Core\bin\Debug\Interpidians.Catalyst.Core.pdb
+E:\Intrepedians Project rnd\Catalyst\User Solution\Interpidians.Catalyst\Interpidians.Catalyst.Core\bin\Debug\Interpidians.Catalyst.Core.Entity.dll
+E:\Intrepedians Project rnd\Catalyst\User Solution\Interpidians.Catalyst\Interpidians.Catalyst.Core\bin\Debug\Interpidians.Catalyst.Core.Entity.pdb
+E:\Intrepedians Project rnd\Catalyst\User Solution\Interpidians.Catalyst\Interpidians.Catalyst.Core\obj\Debug\Interpidians.Catalyst.Core.csprojResolveAssemblyReference.cache
+E:\Intrepedians Project rnd\Catalyst\User Solution\Interpidians.Catalyst\Interpidians.Catalyst.Core\obj\Debug\Interpidians.Catalyst.Core.dll
+E:\Intrepedians Project rnd\Catalyst\User Solution\Interpidians.Catalyst\Interpidians.Catalyst.Core\obj\Debug\Interpidians.Catalyst.Core.pdb
+D:\Prashant\Interpidians\Catalyst\Interpidians.Catalyst\Interpidians.Catalyst\Interpidians.Catalyst.Core\bin\Debug\Interpidians.Catalyst.Core.dll
+D:\Prashant\Interpidians\Catalyst\Interpidians.Catalyst\Interpidians.Catalyst\Interpidians.Catalyst.Core\bin\Debug\Interpidians.Catalyst.Core.pdb
+D:\Prashant\Interpidians\Catalyst\Interpidians.Catalyst\Interpidians.Catalyst\Interpidians.Catalyst.Core\bin\Debug\Interpidians.Catalyst.Core.Entity.dll
+D:\Prashant\Interpidians\Catalyst\Interpidians.Catalyst\Interpidians.Catalyst\Interpidians.Catalyst.Core\bin\Debug\Interpidians.Catalyst.Core.Entity.pdb
+D:\Prashant\Interpidians\Catalyst\Interpidians.Catalyst\Interpidians.Catalyst\Interpidians.Catalyst.Core\obj\Debug\Interpidians.Catalyst.Core.csprojResolveAssemblyReference.cache
+D:\Prashant\Interpidians\Catalyst\Interpidians.Catalyst\Interpidians.Catalyst\Interpidians.Catalyst.Core\obj\Debug\Interpidians.Catalyst.Core.dll
+D:\Prashant\Interpidians\Catalyst\Interpidians.Catalyst\Interpidians.Catalyst\Interpidians.Catalyst.Core\obj\Debug\Interpidians.Catalyst.Core.pdb
+D:\PrashantPro\Projects\Interpidians.Catalyst\Interpidians.Catalyst.Core\bin\Debug\Interpidians.Catalyst.Core.dll
+D:\PrashantPro\Projects\Interpidians.Catalyst\Interpidians.Catalyst.Core\bin\Debug\Interpidians.Catalyst.Core.pdb
+D:\PrashantPro\Projects\Interpidians.Catalyst\Interpidians.Catalyst.Core\bin\Debug\Interpidians.Catalyst.Core.Entity.dll
+D:\PrashantPro\Projects\Interpidians.Catalyst\Interpidians.Catalyst.Core\bin\Debug\Interpidians.Catalyst.Core.Entity.pdb
+D:\PrashantPro\Projects\Interpidians.Catalyst\Interpidians.Catalyst.Core\obj\Debug\Interpidians.Catalyst.Core.csprojResolveAssemblyReference.cache
+D:\PrashantPro\Projects\Interpidians.Catalyst\Interpidians.Catalyst.Core\obj\Debug\Interpidians.Catalyst.Core.dll
+D:\PrashantPro\Projects\Interpidians.Catalyst\Interpidians.Catalyst.Core\obj\Debug\Interpidians.Catalyst.Core.pdb

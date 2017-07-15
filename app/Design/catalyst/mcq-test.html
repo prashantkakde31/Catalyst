@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
+<head>
+	<title>Catalyst | Login | Register</title>
+
+	<!-- Meta -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+	<!-- Favicon -->
+	<link rel="shortcut icon" href="favicon.ico">
+
+	<!-- Web Fonts -->
+	<link rel='stylesheet' type='text/css' href='//fonts.googleapis.com/css?family=Open+Sans:400,300,600&amp;subset=cyrillic,latin'>
+
+	<!-- CSS Global Compulsory -->
+	<link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="assets/css/app.css">
+	<link rel="stylesheet" href="assets/css/blocks.css">
+	
+    <link rel="stylesheet" href="assets/css/sky-forms.css">
+	<link rel="stylesheet" href="assets/css/shop.style.css">
+	<link rel="stylesheet" href="assets/css/catalyst.css">
+
+	<!-- CSS Header and Footer -->
+	<link rel="stylesheet" href="assets/css/headers/header-v5.css">
+	<link rel="stylesheet" href="assets/css/footers/footer-v4.css">
+
+	<!-- CSS Implementing Plugins -->
+	<link rel="stylesheet" href="assets/plugins/animate.css">
+	<link rel="stylesheet" href="assets/plugins/line-icons/line-icons.css">
+	<link rel="stylesheet" href="assets/plugins/font-awesome/css/font-awesome.min.css">
+	<link rel="stylesheet" href="assets/plugins/scrollbar/css/jquery.mCustomScrollbar.css">
+
+	<!-- Style Switcher -->
+	<!--link rel="stylesheet" href="assets/css/plugins/style-switcher.css">
+
+	<!-- CSS Theme -->
+	<link rel="stylesheet" href="assets/css/theme-colors/green.css" id="style_color">
+
+	<!-- CSS Customization -->
+	<link rel="stylesheet" href="assets/css/catalyst.css">
+    
+    <!-- CSS Page Style -->
+	<link rel="stylesheet" href="assets/css/pages/mcq-test.css">
+    
+    <!-- Global Js Variables -->
+    <script type="text/javascript">
+        var page = "mcq-test";
+    </script>
+</head>
+
+<body class="header-fixed" data-page="mcq-test">
+
+	<div class="wrapper">		
+
+		<!--=== Breadcrumbs v4 ===-->
+		<div class="breadcrumbs">
+            
+			<div class="container">
+				<h1 class="pull-left">MCQs</h1>
+				<div class="pull-right margin-top-10">
+                    <!--Timer -->
+                    <div class="mcq-timer pull-left margin-right-10">
+                        <div id="timer"></div>
+                    </div>
+                    <button class="pull-left btn-u btn-u-blue margin-right-10" type="button"><i class="glyphicon glyphicon-pause"></i></button>
+                    <button class="pull-left btn-u" type="button">SUBMIT</button>
+
+                    <!-- STATUS Button start -->
+                    <button class="pull-left btn btn-primary" type="button" data-toggle="modal" data-target=".modal-status">STATUS</button>
+                    <!-- STATUS Button end -->
+
+                    <!-- Timer Ends -->
+                </div>
+			</div>
+		</div>
+		<!--=== End Breadcrumbs v4 ===-->
+        
+
+		<!--=== MCQs ===-->
+		<div class="content-md ">
+			<div class="container">
+				<div class="row">   
+                    <div class="col-sm-3">
+                        <p class="">Question: <span class="color-green"><span class="activeQ"></span> / <span class="totalQ"></span></span></p>
+                    </div>
+                    <div class="col-sm-9">
+                        <div class="test-nav">                            
+                            <div class="test-nav-prev test-nav-control-block">
+                                <a href="javascript:void(0)" class="test-nav-control" data-control="prev"><i class="fa fa-angle-left"></i></a>
+                            </div>
+                            <div class="test-nav-pager test-nav-control-block text-center">
+                                <ul class="pagination questions-strip"></ul>
+                            </div>
+                            <div class="test-nav-next test-nav-control-block">
+                                <a href="javascript:void(0)" class="test-nav-control" data-control="next"><i class="fa fa-angle-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 margin-top-10">                     
+                       
+                        
+                        <div class="test-body">
+                            <!-- Q.1 -->
+                            <div id="que-1" class="panel panel-default active" style="display: block;">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">                                        
+                                        This is a question section and only text ? Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry. Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry
+                                    </h4>
+                                </div>                            
+                                <div class="sky-form">
+                                    <div class="panel-body">
+                                        <div class="row">                                            
+                                            <div class="col-xs-12 col-md-8">
+                                                <!-- Question Image/Text (if any )-->
+                                                <div class="row">
+                                                    <div class="col-md-5"><img class="img-responsive" src="assets/img/main/img1.jpg" alt=""></div>
+                                                    <div class="col-sm-12"><p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch.</p></div>
+                                                </div>                                                
+                                            </div>
+                                            
+                                            <div class="col-xs-12 col-md-4">
+                                                <!-- Options -->
+                                                <h4>Options</h4>
+                                                <div class="options">
+                                                    <label class="radio"><input type="radio" name="radio-q1"><i class="rounded-x"></i>Alexandra</label>
+                                                    <label class="radio"><input type="radio" name="radio-q1"><i class="rounded-x"></i>Alice</label>
+                                                    <label class="radio"><input type="radio" name="radio-q1"><i class="rounded-x"></i>Anastasia</label>
+                                                    <label class="radio"><input type="radio" name="radio-q1"><i class="rounded-x"></i>Avelina</label>
+                                                </div>
+                                                
+                                                
+                                            </div>
+                                        </div>
+                                        <div id="q1-help" class="hide">
+                                            <h4>Solution</h4>
+                                            <p>
+                                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et.
+                                            </p>
+                                            <div class="row">
+                                                <div class="col-md-8"><img class="img-responsive" src="assets/img/main/img1.jpg" alt=""></div>
+                                            </div>
+                                            <hr>
+                                            <h3>Solution Documents</h3>
+                                            <ul>
+                                                <li><a href="#" class="text-success">Solution document link 1</a></li>
+                                                <li><a href="#" class="text-success">Solution document link 2</a></li>
+                                                <li><a href="#" class="text-success">Solution document link 3</a></li>
+                                                <li><a href="#" class="text-success">Solution document link 4</a></li>
+                                            </ul>
+                                            <hr>
+                                            <h3>Solution Video</h3>
+                                            <video class="full-width" controls>
+                                                <source src="assets/media/5f87gf.mp4" type="video/mp4">
+                                                Your browser does not support the video tag.
+                                            </video>
+                                            <ul>
+                                                <li><a href="#" class="text-success">Solution Video link 1</a></li>
+                                                <li><a href="#" class="text-success">Solution Video link 2</a></li>
+                                                <li><a href="#" class="text-success">Solution Video link 3</a></li>
+                                                <li><a href="#" class="text-success">Solution Video link 4</a></li>
+                                            </ul>
+                                            <hr>
+                                            <h3>Hint</h3>
+                                            <a href="#">This will be hint or video link or any link</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="panel-footer">
+                                    <button class="btn rounded btn-u-sm" type="button" data-source="#q1-help" data-toggle="modal" data-target=".modal-mcqhelp"><i class="glyphicon glyphicon-question-sign"></i> Help</button>
+                                    <button class="btn rounded btn-u-sm btn-warning" type="button"><i class="fa fa-eye"></i> Mark For Review</button>
+                                    <button class="btn-u rounded btn-u-sm pull-right margin-left-10" type="button">Next&nbsp;&nbsp;<i class="fa fa-angle-right"></i></button>
+                                    <button class="btn-u rounded btn-u-sm pull-right" type="button"><i class="fa fa-angle-left"></i>&nbsp;&nbsp;Previous</button>
+                                </div>
+                            </div>
+                            <!-- /Q.1 -->
+                            
+                            <!-- Q.2 -->
+                            <div id="que-2" class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">                                        
+                                        This is a question section and only text ? Anim pariatur cliche reprehenderit, 
+                                    </h4>
+                                </div>                            
+                                <div class="sky-form">
+                                    <div class="panel-body">
+                                        <div class="row">                                            
+                                            <div class="col-xs-12 col-md-8">
+                                                <!-- Question Image/Text (if any )-->
+                                                <div class="row">
+                                                    <div class="col-md-5"><img class="img-responsive" src="assets/img/main/img1.jpg" alt=""></div>
+                                                    <div class="col-sm-12"><p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.</p></div>
+                                                </div>                                                
+                                            </div>
+                                            
+                                            <div class="col-xs-12 col-md-4">
+                                                <!-- Options -->
+                                                <h4>Options</h4>
+                                                <div class="options">
+                                                    <label class="radio"><input type="radio" name="radio-q1"><i class="rounded-x"></i>Alexandra 2</label>
+                                                    <label class="radio"><input type="radio" name="radio-q1"><i class="rounded-x"></i>Alice 2</label>
+                                                    <label class="radio"><input type="radio" name="radio-q1"><i class="rounded-x"></i>Anastasia 2</label>
+                                                    <label class="radio"><input type="radio" name="radio-q1"><i class="rounded-x"></i>Avelina 2</label>
+                                                </div>
+                                                
+                                                
+                                            </div>
+                                        </div>
+                                        <div id="q2-help" class="hide">
+                                            <h4>Solution</h4>
+                                            <p>
+                                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et.
+                                            </p>
+                                            <div class="row">
+                                                <div class="col-md-8"><img class="img-responsive" src="assets/img/main/img1.jpg" alt=""></div>
+                                            </div>
+                                            <h4>Hint</h4>
+                                            <a href="#">This will be hint or video link or any link</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="panel-footer">
+                                    <button class="btn rounded btn-u-sm" type="button" data-source="#q2-help" data-toggle="modal" data-target=".modal-mcqhelp"><i class="glyphicon glyphicon-question-sign"></i> Help</button>
+                                    <button class="btn rounded btn-u-sm btn-warning" type="button"><i class="fa fa-eye"></i> Mark For Review</button>
+                                    <button class="btn-u rounded btn-u-sm pull-right margin-left-10" type="button">Next&nbsp;&nbsp;<i class="fa fa-angle-right"></i></button>
+                                    <button class="btn-u rounded btn-u-sm pull-right" type="button"><i class="fa fa-angle-left"></i>&nbsp;&nbsp;Previous</button>
+                                </div>
+                            </div>
+                            <!-- /Q.2 -->
+                           
+                            <!-- Q.3 -->
+                            <div id="que-3" class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">                                        
+                                        This is a question 3 section and only text  
+                                    </h4>
+                                </div>                            
+                                <div class="sky-form">
+                                    <div class="panel-body">
+                                        <div class="row">                                            
+                                            <div class="col-xs-12 col-md-8">
+                                                <!-- Question Image/Text (if any )-->
+                                                <div class="row">
+                                                    <div class="col-md-5"><img class="img-responsive" src="assets/img/main/img1.jpg" alt=""></div>
+                                                    <div class="col-sm-12"><p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.</p></div>
+                                                </div>                                                
+                                            </div>
+                                            
+                                            <div class="col-xs-12 col-md-12">
+                                                <!-- Options -->
+                                                <h4>Options</h4>
+                                                <div class="options">
+                                                    <label class="radio col-sm-6 col-md-3"><input type="radio" name="radio-q1"><i class="rounded-x"></i><img class="img-responsive" src="assets/img/main/img1.jpg" alt=""></label>
+                                                    <label class="radio col-sm-6 col-md-3"><input type="radio" name="radio-q1"><i class="rounded-x"></i><img class="img-responsive" src="assets/img/main/img1.jpg" alt=""></label>
+                                                    <label class="radio col-sm-6 col-md-3"><input type="radio" name="radio-q1"><i class="rounded-x"></i><img class="img-responsive" src="assets/img/main/img1.jpg" alt=""></label>
+                                                    <label class="radio col-sm-6 col-md-3"><input type="radio" name="radio-q1"><i class="rounded-x"></i><img class="img-responsive" src="assets/img/main/img1.jpg" alt=""></label>
+                                                </div>                                                
+                                                
+                                            </div>
+                                        </div>
+                                        <div id="q3-help" class="hide">
+                                            <h4>Solution</h4>
+                                            <p>
+                                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et.
+                                            </p>
+                                            <div class="row">
+                                                <div class="col-md-8"><img class="img-responsive" src="assets/img/main/img1.jpg" alt=""></div>
+                                            </div>
+                                            <h4>Hint</h4>
+                                            <a href="#">This will be hint or video link or any link</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="panel-footer">
+                                    <button class="btn rounded btn-u-sm" type="button" data-source="#q3-help" data-toggle="modal" data-target=".modal-mcqhelp"><i class="glyphicon glyphicon-question-sign"></i> Help</button>
+                                    <button class="btn rounded btn-u-sm btn-warning" type="button"><i class="fa fa-eye"></i> Mark For Review</button>
+                                    <button class="btn-u rounded btn-u-sm pull-right margin-left-10" type="button">Next&nbsp;&nbsp;<i class="fa fa-angle-right"></i></button>
+                                    <button class="btn-u rounded btn-u-sm pull-right" type="button"><i class="fa fa-angle-left"></i>&nbsp;&nbsp;Previous</button>
+                                </div>
+                            </div>
+                            <!-- /Q.3 -->
+                            
+                             <!-- Q.4 -->
+                            <div id="que-4" class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">                                        
+                                        This is a question 4 section and only text  
+                                    </h4>                                    
+                                </div>                            
+                                <div class="sky-form">
+                                    <div class="panel-body">
+                                        <div class="row">                                            
+                                            <div class="col-xs-12 col-md-8">
+                                                <!-- Question Image/Text (if any )-->
+                                                <div class="row">
+                                                    <div class="col-sm-12">
+                                                        <p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.</p>
+                                                
+                                                        <audio controls>
+                                                            <source 
+                                                                src="assets/media/duck.mp3" 
+                                                                type="audio/mpeg" 
+                                                                controls="controls"/> 
+                                                        </audio>
+                                                    </div>
+                                                    
+                                                </div>                                                
+                                            </div>
+                                            
+                                            <div class="col-xs-12 col-md-4">
+                                                <!-- Options -->
+                                                <h4>Options</h4>
+                                                <div class="options">
+                                                    <label class="radio"><input type="radio" name="radio-q1"><i class="rounded-x"></i>Alexandra 2</label>
+                                                    <label class="radio"><input type="radio" name="radio-q1"><i class="rounded-x"></i>Alice 2</label>
+                                                    <label class="radio"><input type="radio" name="radio-q1"><i class="rounded-x"></i>Anastasia 2</label>
+                                                    <label class="radio"><input type="radio" name="radio-q1"><i class="rounded-x"></i>Avelina 2</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div id="q4-help" class="hide">
+                                            <h4>Solution</h4>
+                                            <p>
+                                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et.
+                                            </p>
+                                            <div class="row">
+                                                <div class="col-md-8"><img class="img-responsive" src="assets/img/main/img1.jpg" alt=""></div>
+                                            </div>
+                                            <h4>Hint</h4>
+                                            <a href="#">This will be hint or video link or any link</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="panel-footer">
+                                    <button class="btn rounded btn-u-sm" type="button" data-source="#q4-help" data-toggle="modal" data-target=".modal-mcqhelp"><i class="glyphicon glyphicon-question-sign"></i> Help</button>
+                                    <button class="btn rounded btn-u-sm btn-warning" type="button"><i class="fa fa-eye"></i> Mark For Review</button>
+                                    <button class="btn-u rounded btn-u-sm pull-right margin-left-10" type="button">Next&nbsp;&nbsp;<i class="fa fa-angle-right"></i></button>
+                                    <button class="btn-u rounded btn-u-sm pull-right" type="button"><i class="fa fa-angle-left"></i>&nbsp;&nbsp;Previous</button>
+                                </div>
+                            </div>
+                            <!-- /Q.4 -->
+                        </div>
+                        
+                    </div>                    
+                    
+                    <!-- Modal : MCQ Help -->
+                    <div id="modal-mcqhelp" class="modal fade modal-mcqhelp" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                         <div class="modal-dialog modal-md">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+                                    <h4 id="myLargeModalLabel2" class="modal-title">Help</h4>
+                                </div>
+                                <div class="modal-body">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Modal : Status -->
+                    <div id="modal-status" class="modal fade modal-status" tabindex="-1">
+                         <div class="modal-dialog modal-md">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button data-dismiss="modal" class="close" type="button">×</button>
+                                    <h4 id="myLargeModalLabel2" class="modal-title">Status</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="pull-right">Remaining time <b>05:34:23</b></div>
+                                    <div class="clearfix"></div>
+                                    <div class="row">
+                                        <div id="chart" class="chart">
+                                            <div class="chartTitle text-center">Total Questions<br><b>40</b></div>
+                                            <canvas id="myChart"></canvas>
+                                        </div>
+                                        <div id="chartjs-legend" class="chart-legend"></div>
+                                    </div>
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th>Q.</th>
+                                                <th>Question</th>
+                                                <th class="text-center">Status</th>
+                                                <th class="text-center">Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>1</td>
+                                                <td class="ellipses">Enim eiusmod high life accusamus terry. Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry</td>
+                                                <td><span class="dp-block label label-default">Skip</span></td>
+                                                <td><button class="btn btn-sm rounded btn-primary" type="button">SOLVE</button></td>
+                                            </tr>
+                                            <tr>
+                                                <td>2</td>
+                                                <td class="ellipses">Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry</td>
+                                                <td><span class="dp-block label label-success">Atempted</span></td>
+                                                <td><button class="btn btn-sm rounded btn-warning" type="button">Modify</button></td>
+                                            </tr>
+                                            <tr>
+                                                <td>3</td>
+                                                <td class="ellipses">Ut mattis tempor orci egestas fermentum. Morbi lacinia nisl vitae lacinia vulputate.</td>
+                                                <td><span class="dp-block label label-danger">Not Atempted</span></td>
+                                                <td><button class="btn btn-sm rounded btn-primary" type="button">SOLVE</button></td>
+                                            </tr>
+                                            <tr>
+                                                <td>4</td>
+                                                <td class="ellipses">Phasellus molestie aliquam ante nec euismod. Integer varius dictum lacus quis placerat. Nulla accumsan accumsan ex vitae bibendum. Nulla vehicula suscipit mauris at commodo.</td>
+                                                <td><span class="dp-block label label-warning">Under Review</span></td>
+                                                <td><button class="btn btn-sm rounded btn-primary" type="button">SOLVE</button></td>
+                                            </tr>
+                                            <tr>
+                                                <td>1</td>
+                                                <td class="ellipses">Enim eiusmod high life accusamus terry. Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry</td>
+                                                <td><span class="dp-block label label-default">Skip</span></td>
+                                                <td><button class="btn btn-sm rounded btn-primary" type="button">SOLVE</button></td>
+                                            </tr>
+                                            <tr>
+                                                <td>2</td>
+                                                <td class="ellipses">Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry</td>
+                                                <td><span class="dp-block label label-success">Atempted</span></td>
+                                                <td><button class="btn btn-sm rounded btn-warning" type="button">Modify</button></td>
+                                            </tr>
+                                            <tr>
+                                                <td>3</td>
+                                                <td class="ellipses">Ut mattis tempor orci egestas fermentum. Morbi lacinia nisl vitae lacinia vulputate.</td>
+                                                <td><span class="dp-block label label-danger">Not Atempted</span></td>
+                                                <td><button class="btn btn-sm rounded btn-primary" type="button">SOLVE</button></td>
+                                            </tr>
+                                            <tr>
+                                                <td>4</td>
+                                                <td class="ellipses">Phasellus molestie aliquam ante nec euismod. Integer varius dictum lacus quis placerat. Nulla accumsan accumsan ex vitae bibendum. Nulla vehicula suscipit mauris at commodo.</td>
+                                                <td><span class="dp-block label label-warning">Under Review</span></td>
+                                                <td><button class="btn btn-sm rounded btn-primary" type="button">SOLVE</button></td>
+                                            </tr>
+                                            <tr>
+                                                <td>1</td>
+                                                <td class="ellipses">Enim eiusmod high life accusamus terry. Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry</td>
+                                                <td><span class="dp-block label label-default">Skip</span></td>
+                                                <td><button class="btn btn-sm rounded btn-primary" type="button">SOLVE</button></td>
+                                            </tr>
+                                            <tr>
+                                                <td>2</td>
+                                                <td class="ellipses">Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry</td>
+                                                <td><span class="dp-block label label-success">Atempted</span></td>
+                                                <td><button class="btn btn-sm rounded btn-warning" type="button">Modify</button></td>
+                                            </tr>
+                                            <tr>
+                                                <td>3</td>
+                                                <td class="ellipses">Ut mattis tempor orci egestas fermentum. Morbi lacinia nisl vitae lacinia vulputate.</td>
+                                                <td><span class="dp-block label label-danger">Not Atempted</span></td>
+                                                <td><button class="btn btn-sm rounded btn-primary" type="button">SOLVE</button></td>
+                                            </tr>
+                                            <tr>
+                                                <td>4</td>
+                                                <td class="ellipses">Phasellus molestie aliquam ante nec euismod. Integer varius dictum lacus quis placerat. Nulla accumsan accumsan ex vitae bibendum. Nulla vehicula suscipit mauris at commodo.</td>
+                                                <td><span class="dp-block label label-warning">Under Review</span></td>
+                                                <td><button class="btn btn-sm rounded btn-primary" type="button">SOLVE</button></td>
+                                            </tr>
+                                            
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div><!--/end row-->
+			</div><!--/end container-->
+		</div>
+		<!--=== End MCQs ===-->
+
+		
+
+		<!--=== Footer v4 ===-->
+		<div class="footer-v4">
+			<div class="copyright">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-6">
+							<p>
+								2016 &copy; ALL Rights Reserved.
+								<a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
+							</p>
+						</div>
+					</div>
+				</div>
+			</div><!--/copyright-->
+		</div>
+		<!--=== End Footer v4 ===-->
+	</div><!--/wrapper-->
+
+	
+
+<!-- JS Global Compulsory -->
+	<script src="assets/plugins/jquery/jquery.min.js"></script>
+	<script src="assets/plugins/jquery/jquery.plugin.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
+	<script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+	<!-- JS Implementing Plugins -->
+	<script src="assets/plugins/back-to-top.js"></script>
+	<script src="assets/plugins/smoothScroll.js"></script>
+	<script src="assets/plugins/scrollbar/js/jquery.mCustomScrollbar.concat.min.js"></script>
+	<script src="assets/js/plugins/module.pubsub.js"></script>
+	<script src="assets/js/plugins/countdown.js"></script>
+	<script src="assets/js/mcq-test.js"></script>
+	
+	
+	<!-- JS Common Level -->
+	<script src="assets/js/common.js"></script>
+    <!-- JS Customization -->
+	<script src="assets/js/custom.js"></script>
+	<script>
+		jQuery(document).ready(function() {
+			App.init();			
+			App.initScrollBar();            
+		});
+	</script>
+    <script>
+        // And for a doughnut chart
+        $('#modal-status').on('shown.bs.modal', function () {
+            
+            var data = {
+                labels: [
+                    "Answered",
+                    "Not Answered",
+                    "Skipped",
+                    "Marked for Review",
+                ],
+                datasets: [{
+                    data: [30, 2, 1,7],
+                    backgroundColor: [
+                        "#72c02c",
+                        "#acacac",
+                        "#2980b9",
+                        "#ec971f"
+                    ],
+                    borderWidth: 1
+                }]
+            }
+            addData(DoughnutChart,data.labels,data.datasets);
+        });
+
+        function addData(chart, label, data) {
+            console.log("update chart",chart, label, data);
+            chart.data.labels = label;
+            chart.data.datasets = data;
+
+            chart.update();
+            $("#chartjs-legend").html(chart.generateLegend());
+        }
+
+        var data = {
+            labels: [
+                "Red",
+                "Blue",
+                "Yellow"
+            ],
+            datasets: [{
+                data: [300, 50, 100],
+                backgroundColor: [
+                    "#FF6384",
+                    "#36A2EB",
+                    "#FFCE56"
+                ],
+                hoverBackgroundColor: [
+                    "#FF6384",
+                    "#36A2EB",
+                    "#FFCE56"
+                ],
+                borderWidth: 1
+            }]
+        };
+
+        var options = {            
+            cutoutPercentage: 50,
+            legend: {
+                display: false
+            }
+        };
+
+        var Doughnut = $("#myChart").get(0).getContext("2d");
+        var DoughnutChart = new Chart(Doughnut, {
+            type: 'doughnut',
+            data: data,
+            options: { 
+                cutoutPercentage: 75 ,
+                legend: {display: false},
+                legendCallback: function(chart) {
+                    var text = [];
+
+                    text.push('<ul class="' + chart.id + '-legend">');
+                    for (var i = 0; i < chart.data.datasets[0].data.length; i++) {
+                        //console.log(chart.data.datasets[0].data[i]);
+                        text.push('<li><span style="background-color:' + chart.data.datasets[0].backgroundColor[i] + '"></span>');
+                        if (chart.data.labels[i]) {
+                            text.push(chart.data.labels[i] + " ("+chart.data.datasets[0].data[i] +")");
+                        }
+                        text.push('</li>');
+                    }
+                    text.push('</ul>');
+                    return text.join("");
+                }
+            },
+            tooltipTemplate: "<%= value %>%"                    
+        });
+
+        $("#chartjs-legend").html(DoughnutChart.generateLegend());
+        
+    </script>
+<!--[if lt IE 9]>
+	<script src="assets/plugins/respond.js"></script>
+	<script src="assets/plugins/html5shiv.js"></script>
+	<script src="assets/js/plugins/placeholder-IE-fixes.js"></script>
+	<![endif]-->
+<!--[if lt IE 10]>
+	<script src="assets/plugins/sky-forms-pro/skyforms/js/jquery.placeholder.min.js"></script>
+	<![endif]-->
+</body>
+</html>

@@ -1,0 +1,168 @@
+/*
+ * Template Name: Unify - Responsive Bootstrap Template
+ * Description: Business, Corporate, Portfolio, E-commerce and Blog Theme.
+ * Author: @htmlstream
+ * Website: http://htmlstream.com
+*/
+
+var App = function () {
+
+    function handleBootstrap() {
+        /*Bootstrap Carousel*/
+        jQuery('.carousel').carousel({
+            interval: 15000,
+            pause: 'hover'
+        });
+
+        /*Tooltips*/
+        jQuery('.tooltips').tooltip();
+        jQuery('.tooltips-show').tooltip('show');
+        jQuery('.tooltips-hide').tooltip('hide');
+        jQuery('.tooltips-toggle').tooltip('toggle');
+        jQuery('.tooltips-destroy').tooltip('destroy');
+
+        /*Popovers*/
+        jQuery('.popovers').popover();
+        jQuery('.popovers-show').popover('show');
+        jQuery('.popovers-hide').popover('hide');
+        jQuery('.popovers-toggle').popover('toggle');
+        jQuery('.popovers-destroy').popover('destroy');
+    }
+
+    function handleSearchV1() {
+        jQuery('.search-button').click(function () {
+            jQuery('.search-open').slideDown();
+        });
+
+        jQuery('.search-close').click(function () {
+            jQuery('.search-open').slideUp();
+        });
+
+        jQuery(window).scroll(function(){
+          if(jQuery(this).scrollTop() > 1) jQuery('.search-open').fadeOut('fast');
+        });
+
+    }
+
+    function handleToggle() {
+        jQuery('.list-toggle').on('click', function() {
+            jQuery(this).toggleClass('active');
+        });
+
+        /*
+        jQuery('#serviceList').on('shown.bs.collapse'), function() {
+            jQuery(".servicedrop").addClass('glyphicon-chevron-up').removeClass('glyphicon-chevron-down');
+        }
+
+        jQuery('#serviceList').on('hidden.bs.collapse'), function() {
+            jQuery(".servicedrop").addClass('glyphicon-chevron-down').removeClass('glyphicon-chevron-up');
+        }
+        */
+    }
+
+    function handleBoxed() {
+        jQuery('.boxed-layout-btn').click(function(){
+            jQuery(this).addClass("active-switcher-btn");
+            jQuery(".wide-layout-btn").removeClass("active-switcher-btn");
+            jQuery("body").addClass("boxed-layout container");
+        });
+        jQuery('.wide-layout-btn').click(function(){
+            jQuery(this).addClass("active-switcher-btn");
+            jQuery(".boxed-layout-btn").removeClass("active-switcher-btn");
+            jQuery("body").removeClass("boxed-layout container");
+        });
+    }
+
+    function handleHeader() {
+         jQuery(window).scroll(function() {
+            if (jQuery(window).scrollTop()>100){
+                $('body').css({'padding-top':$(".header-fixed .header-static").height()});
+                jQuery(".header-fixed .header-static").addClass("header-fixed-shrink");
+            }
+            else {
+                $('body').css({'padding-top':0});
+                jQuery(".header-fixed .header-static").removeClass("header-fixed-shrink");
+            }
+        });
+    }
+
+    function handleMegaMenu() {
+        $(document).on('click', '.mega-menu .dropdown-menu', function(e) {
+            e.stopPropagation()
+        })
+    }
+
+  // Please Wait
+  function handlePleaseWait() {
+  	var is_box_visible = true;
+		$(document).mouseleave(function(e){
+	    if ((e.clientY < 0)&&(is_box_visible === true)) {
+      	$('.g-popup-wrapper').show();
+      	if ($('.g-popup-wrapper').is(':visible')) $('body').addClass('g-blur');
+	    }
+		});
+    $('.g-popup__close').on('click', function(e) {
+      $('.g-popup-wrapper').hide();
+      $('body').removeClass('g-blur');
+      is_box_visible = false;
+    });
+  }
+    
+    
+// Equal Height Columns
+	function handleEqualHeightColumns() {
+		var EqualHeightColumns = function () {
+			$(".equal-height-columns").each(function() {
+				heights = [];
+				$(".equal-height-column", this).each(function() {
+					$(this).removeAttr("style");
+					heights.push($(this).height()); // write column's heights to the array
+				});
+				$(".equal-height-column", this).height(Math.max.apply(Math, heights)); //find and set max
+			});
+		}
+
+		EqualHeightColumns();
+		$(window).resize(function() {
+			EqualHeightColumns();
+		});
+		$(window).load(function() {
+			EqualHeightColumns();
+		});
+	}
+
+    return {
+        init: function () {
+            handleBootstrap();
+            handleSearchV1();
+            handleToggle();
+            handleBoxed();
+            //handleHeader();
+            handleMegaMenu();
+            handlePleaseWait();
+            handleEqualHeightColumns();
+        },
+
+        initScrollBar: function () {
+            jQuery('.mCustomScrollbar').mCustomScrollbar({
+                theme:"minimal",
+                scrollInertia: 300,
+                scrollEasing: "linear"
+            });
+        },
+
+        initCounter: function () {
+            jQuery('.counter').counterUp({
+                delay: 10,
+                time: 1000
+            });
+        },
+
+        initParallaxBg: function () {
+            jQuery('.parallaxBg').parallax("50%", 0.2);
+            jQuery('.parallaxBg1').parallax("50%", 0.4);
+        },
+        page : (page || $('body').attr('pagename'))
+    };
+
+}();

@@ -1,0 +1,67 @@
+body[data-page="mcq-test"] .wrapper{background: #eee;}
+
+.test-nav{position: relative;padding: 0 30px;overflow: hidden;/*height: 30px;*/margin-bottom: 10px;}
+.test-nav .test-nav-control-block{}
+.test-nav .test-nav-control-block.test-nav-pager{width: 100%;overflow: auto;}
+
+
+.test-nav ul,
+.test-nav li{list-style: none;padding: 0;margin: 0;}
+
+.test-nav ul.pagination{/*white-space: nowrap;*/}
+.test-nav ul.pagination li{display: inline-block;}
+.test-nav ul.pagination li a{border-radius: 100%;display: inline-block;width: 30px;height: 30px;    text-align: center;    padding: 0;    line-height: 30px;    margin: 0 4px;}
+
+.test-nav ul.pagination li a.skip{
+    border-color: #2980b9;
+    color: #2980b9;
+}
+.test-nav ul.pagination li a.review{
+    border-color: #eea236;
+    color: #eea236;
+}
+.test-nav ul.pagination li a.attempt{
+    border-color: #72c02c;
+    color: #72c02c;
+}
+
+.test-nav .test-nav-control-block.test-nav-prev,
+.test-nav .test-nav-control-block.test-nav-next{position: absolute;top:0;z-index: 2;display: none;}
+
+.test-nav .test-nav-control-block.test-nav-prev{left: 0;}
+.test-nav .test-nav-control-block.test-nav-next{right: 0;}
+
+.test-nav .test-nav-control-block.test-nav-prev a,
+.test-nav .test-nav-control-block.test-nav-next a{font-size: 20px;background: #eee;display: block;padding: 0 10px;    line-height: 30px;}
+
+.test-nav .test-nav-control-block.test-nav-prev a:hover,
+.test-nav .test-nav-control-block.test-nav-next a:hover{background: #ddd;}
+
+.test-body .panel{display: none;}
+.test-body .panel.active{}
+
+.test-body .panel{    
+    background: none;
+    border: 0;
+}
+.test-body .panel .panel-heading{
+    border: 0;
+    background: #fff;
+    margin-bottom: 10px;
+}
+.test-body .panel .sky-form{
+    background: #fff;
+}
+
+@media screen and (min-width:1024px){
+   /* .test-body .panel .sky-form .radio, 
+    .test-body .panel .sky-form .checkbox{
+        border: 1px solid #ddd;
+        padding: 10px 10px 10px 40px;
+    }
+    .test-body .panel .sky-form .radio i, 
+    .test-body .panel .sky-form .checkbox i{
+        top: 15px;
+        left: 10px;
+    }*/
+}

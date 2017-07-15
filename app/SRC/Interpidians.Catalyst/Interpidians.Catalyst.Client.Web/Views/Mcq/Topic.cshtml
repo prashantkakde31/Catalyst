@@ -1,0 +1,161 @@
+﻿@model Interpidians.Catalyst.Client.Web.ViewModels.TopicMcqViewModel
+
+@{
+    ViewBag.Title = "Topic";
+    Layout = "~/Views/Shared/_CommonLayout.cshtml";
+    // Layout = null;
+}
+<div class="col-sm-9">
+
+    <div id="accordion" class="panel-group acc-v1">
+        @foreach (var mcq in Model.McqList)
+        {
+            <div class="panel panel-default">
+                <div class="panel-heading">
+
+                    <h4 class="panel-title">
+                        <a href="#collapse-@mcq.TopicWiseSrNo" data-parent="#accordion" data-toggle="collapse" class="accordion-toggle">
+                            @(mcq.TopicWiseSrNo + "." + mcq.QuestionText1)
+                        </a>
+                    </h4>
+                </div>
+
+                <div class="sky-form panel-collapse collapse in" id="collapse-@mcq.TopicWiseSrNo">
+                    <div class="panel-body">
+
+                        <!-- Question Image/Text (if any )-->
+                        <div class="row">
+                            @{
+                                if (!string.IsNullOrEmpty(mcq.QuestionImageLink))
+                                {
+                                    <div class="col-md-6"><img class="img-responsive" src="~/Upload/QuestionImage/@mcq.QuestionImageLink" alt=""></div>
+                                }
+
+                                if (!string.IsNullOrEmpty(mcq.QuestionText2))
+                                {
+                                    <div class="col-sm-12">
+                                        <p>
+                                            @mcq.QuestionText2
+                                        </p>
+                                    </div>
+                                }
+
+                                if (!string.IsNullOrEmpty(mcq.QuestionImage2))
+                                {
+                                    <div class="col-md-6"><img class="img-responsive" src="~/Upload/QuestionImage/@mcq.QuestionImage2" alt=""></div>
+                                }
+
+                                if (!string.IsNullOrEmpty(mcq.CommonAnswerImage))
+                                {
+                                    <div class="col-md-6"><img class="img-responsive" src="~/Upload/CommonAnswer/@mcq.CommonAnswerImage" alt=""></div>
+                                }
+
+                                @*if (!string.IsNullOrEmpty(mcq.QuestionText3))
+                                    {
+                                        <div class="col-sm-12">
+                                            <p>
+                                                @mcq.QuestionText3
+                                            </p>
+                                        </div>
+                                    }
+
+                                    if (!string.IsNullOrEmpty(mcq.QuestionText4))
+                                    {
+                                        <div class="col-sm-12">
+                                            <p>
+                                                @mcq.QuestionText4
+                                            </p>
+                                        </div>
+                                    }*@
+                            }
+
+                        </div>
+
+                        <!-- Options -->
+                        <h4>Options</h4>
+                        <div class="inline-group">
+                            @*@foreach (var item in mcq.McqAnswers)
+                                {
+                                    switch (item.AnswerType)
+                                    {
+                                        case "Text":
+                                            <label class="radio"><input type="radio" name="radio-q1" data-answer-id="@Interpidians.Catalyst.Core.Utility.Crypto.Encrypt(item.McqAnswerID.ToString())" @{ if (item.IsSelected) { <text> checked</text> }}><i class="rounded-x"></i>@item.Answer</label>
+                                            break;
+
+                                        case "Image":
+                                            <label class="radio col-sm-6 col-md-3"><input type="radio" name="radio-q1" data-answer-id="@Interpidians.Catalyst.Core.Utility.Crypto.Encrypt(item.McqAnswerID.ToString())" @{ if (item.IsSelected) { <text> checked</text> }}><i class="rounded-x"></i><img class="img-responsive" src="~/@item.Answer" alt="" /></label>
+                                            break;
+
+                                        default:
+                                            break;
+                                    }
+                                }*@
+
+                            @foreach (var item in mcq.McqAnswers)
+                            {
+
+                                if (!string.IsNullOrEmpty(item.Answer))
+                                {
+                                    <label class="radio"><input type="radio" name="radio-q1" data-answer-id="@Interpidians.Catalyst.Core.Utility.Crypto.Encrypt(item.McqAnswerID.ToString())" @{ if (item.IsSelected) { <text> checked</text> }}><i class="rounded-x"></i>@item.Answer</label>
+                                }
+
+                                if (!string.IsNullOrEmpty(item.AnswerImage))
+                                {
+                                    <label class="radio col-sm-6 col-md-3"><input type="radio" name="radio-q1" data-answer-id="@Interpidians.Catalyst.Core.Utility.Crypto.Encrypt(item.McqAnswerID.ToString())" @{ if (item.IsSelected) { <text> checked</text> }}><i class="rounded-x"></i><img class="img-responsive" src="~/Upload/AnswerImage/@item.AnswerImage" alt="" /></label>
+                                }
+
+                            }
+                        </div>
+
+                        <div class="row">
+                            <div class="col-sm-10">
+                                <a class="color-green" href="#" data-source="#q1-help" data-toggle="modal" data-target=".modal-mcqhelp">
+                                    @if (mcq.HintText != null)
+                                    {
+                                        @(mcq.HintText)
+                                    }
+                                </a>
+                            </div>
+                            <div class="col-sm-2">
+                                <a rel="grow" class="btn-block btn-u grow" href="#collapse-@(mcq.TopicWiseSrNo + 1)" data-parent="#accordion" data-toggle="collapse" class="accordion-toggle">Next&nbsp;&nbsp;<i class="glyphicon glyphicon-chevron-right"></i></a>
+                            </div>
+                        </div>
+
+
+                        <div id="q1-help" class="hide">
+                            <h4>Solution</h4>
+                            @*<p>
+                                    @(mcq.SolutionText)
+                                </p>
+                                @if (!string.IsNullOrEmpty(mcq.SolutionImageLink))
+                                {
+                                <div class="row">
+                                    <div class="col-md-8">
+                                        <img class="img-responsive" src="~/@mcq.SolutionImageLink" alt="">
+                                    </div>
+                                </div>
+                                }
+                                @if (!string.IsNullOrEmpty(mcq.HintText))
+                                {
+                                <h4>Hint</h4>
+                                <a href="#@mcq.HintText">@mcq.HintText</a>
+                                }*@
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+    }
+    </div>
+
+    <div class="row">
+        <div class="col-sm-2 pull-right">
+            <button class="btn-u btn-block btn-u-blue" type="button">View Result</button>
+        </div>
+    </div>
+
+</div>
+
+
+
