@@ -14,14 +14,13 @@
             if (subject.Name == ViewBag.SubjectName)
             {              
             <li class="list-group-item active">
-                @Html.ActionLink(subject.Name, MVC.Mcq.ActionNames.Sample, MVC.Mcq.Name, new { course = Convert.ToString(ViewBag.CourseName), subcourse = Convert.ToString(ViewBag.subcourse), subject = subject.Name }, null)
+                @Html.ActionLink(subject.Name, MVC.Mcq.ActionNames.Sample, MVC.Mcq.Name, new { course = Convert.ToString(ViewBag.CourseName), subcourse = Convert.ToString(ViewBag.subcourse), subject = Convert.ToString(subject.Name).Trim() }, null)
             </li>
             }
             else
-            {
-                           
+            {                          
             <li class="list-group-item">
-                @Html.ActionLink(subject.Name, MVC.Mcq.ActionNames.Sample, MVC.Mcq.Name, new { course = Convert.ToString(ViewBag.CourseName), subcourse = Convert.ToString(ViewBag.subcourse), subject = subject.Name }, null)
+                @Html.ActionLink(subject.Name, MVC.Mcq.ActionNames.Sample, MVC.Mcq.Name, new { course =  Convert.ToString(ViewBag.CourseName), subcourse = Convert.ToString(ViewBag.subcourse), subject = Convert.ToString(subject.Name).Trim() }, null)
             </li>
             }
         }

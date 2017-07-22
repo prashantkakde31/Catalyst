@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<mvcSiteMap xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xmlns="http://mvcsitemap.codeplex.com/schemas/MvcSiteMap-File-4.0"
+            xsi:schemaLocation="http://mvcsitemap.codeplex.com/schemas/MvcSiteMap-File-4.0 MvcSiteMapSchema.xsd">
+  
+  <!--CIPP-->
+  <mvcSiteMapNode title="HOME" controller="User" action="Index">
+    <!--<mvcSiteMapNode title="DynamicSampleMcq" controller="Mcq" action="Index" key="SampleMcq">-->
+    <mvcSiteMapNode title="Courses" dynamicNodeProvider="Interpidians.Catalyst.Client.Web.Helpers.CourseDetailsDynamicNodeProvider, Interpidians.Catalyst.Client.Web">
+      <mvcSiteMapNode title="SubCourses" dynamicNodeProvider="Interpidians.Catalyst.Client.Web.Helpers.SubCourseDetailsDynamicNodeProvider, Interpidians.Catalyst.Client.Web">
+        <mvcSiteMapNode title="Subjects" dynamicNodeProvider="Interpidians.Catalyst.Client.Web.Helpers.SubjectDetailsDynamicNodeProvider, Interpidians.Catalyst.Client.Web">
+          <mvcSiteMapNode title="Menus" dynamicNodeProvider="Interpidians.Catalyst.Client.Web.Helpers.MenuDetailsDynamicNodeProvider, Interpidians.Catalyst.Client.Web"/>
+        </mvcSiteMapNode>
+      </mvcSiteMapNode>
+    </mvcSiteMapNode>     
+    <!--</mvcSiteMapNode>-->
+  <!--<mvcSiteMapNode title="CIPP" clickable="false">
+    <mvcSiteMapNode title="Grade 1" clickable="false">
+      <mvcSiteMapNode title="English" clickable="false">
+        <mvcSiteMapNode title="MCQs" url="Mcq/Sample/IGCSE/Grade 1/English" />
+        <mvcSiteMapNode title="Theory" url="Theory/Sample/IGCSE/Grade 1/English" />
+      </mvcSiteMapNode>
+      <mvcSiteMapNode title="Science" clickable="false">
+        <mvcSiteMapNode title="MCQs" url="Mcq/Sample/IGCSE/Grade 1/Science" />
+        <mvcSiteMapNode title="Theory" url="Theory/Sample/IGCSE/Grade 1/Science" />
+      </mvcSiteMapNode>
+      <mvcSiteMapNode title="Maths" clickable="false">
+        <mvcSiteMapNode title="MCQs" url="Mcq/Sample/IGCSE/Grade 1/Maths" />
+        <mvcSiteMapNode title="Theory" url="Theory/Sample/IGCSE/Grade 1/Maths" />
+      </mvcSiteMapNode>
+    </mvcSiteMapNode>
+    <mvcSiteMapNode title="Grade 2" clickable="false">
+      <mvcSiteMapNode title="English" clickable="false">
+        <mvcSiteMapNode title="MCQs" url="Mcq/Sample/IGCSE/Grade 2/English" />
+        <mvcSiteMapNode title="Theory" url="Theory/Sample/IGCSE/Grade 2/English" />
+      </mvcSiteMapNode>
+      <mvcSiteMapNode title="Science" clickable="false">
+        <mvcSiteMapNode title="MCQs" url="Mcq/Sample/IGCSE/Grade 2/Science" />
+        <mvcSiteMapNode title="Theory" url="Theory/Sample/IGCSE/Grade 2/Science" />
+      </mvcSiteMapNode>
+      <mvcSiteMapNode title="Maths" clickable="false">
+        <mvcSiteMapNode title="MCQs" url="Mcq/Sample/IGCSE/Grade 2/Maths" />
+        <mvcSiteMapNode title="Theory" url="Theory/Sample/IGCSE/Grade 2/Maths" />
+      </mvcSiteMapNode>
+    </mvcSiteMapNode>
+  </mvcSiteMapNode>-->
+  <!--/CIPP-->
+  </mvcSiteMapNode>
+
+</mvcSiteMap>

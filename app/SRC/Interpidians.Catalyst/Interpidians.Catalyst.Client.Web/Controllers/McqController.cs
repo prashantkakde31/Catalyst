@@ -11,6 +11,8 @@ using Interpidians.Catalyst.Client.Web.Common;
 using Interpidians.Catalyst.Client.Web.ViewModels;
 using System.Web.Routing;
 using System.Globalization;
+using MvcSiteMapProvider.Web.Mvc.Filters;
+using MvcSiteMapProvider;
 
 namespace Interpidians.Catalyst.Client.Web.Controllers
 {
@@ -37,10 +39,11 @@ namespace Interpidians.Catalyst.Client.Web.Controllers
         {
             //http://localhost:51260/Mcq/Sample/?course=IB&subcourse=f&subject=f
             //http://localhost:51260/Mcq/Sample/IB/f/f
+            //http://localhost:51260/Mcq/Sample/IGCSE/Grade 10/Physics
 
             ViewBag.SubjectName = subject;
             ViewBag.CourseName = course;
-            ViewBag.Subcourse = subcourse;
+            ViewBag.Subcourse =  subcourse;
 
             int subcourseId = (from subcourseid in this.McqService.getAllSubCourses().Where(a => a.Name == subcourse) select subcourseid.SubCourseID).FirstOrDefault();
             List<SubjectMaster> lstSub = this.McqService.GetAllSubjects().Where(a => a.SubCourseID == subcourseId).ToList();
