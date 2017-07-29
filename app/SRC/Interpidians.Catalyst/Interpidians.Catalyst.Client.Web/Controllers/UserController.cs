@@ -24,5 +24,9 @@ namespace Interpidians.Catalyst.Client.Web.Controllers
             return View();
         }
 
+        public virtual ActionResult Login()
+        {
+            return View();
+        }
     }
 }

@@ -63,33 +63,93 @@ namespace Interpidians.Catalyst.Client.Web.Controllers
         public virtual ActionResult Topic(string id)
         {
             int topicid = Convert.ToInt32(id);
-            int subcourseId = (from subcourseid in this.McqService.getAllTopics().Where(a => a.TopicID == topicid) select subcourseid.SubjectID).FirstOrDefault();
+            //int subcourseId = (from subcourseid in this.McqService.getAllTopics().Where(a => a.TopicID == topicid) select subcourseid.SubjectID).FirstOrDefault();
             List<Mcq> lstMcq = this.McqService.getAllMcqs().Where(a => a.TopicwisePaperID == topicid).ToList();
             List<McqAnswer> lstMcqAnswer = this.McqService.getAllMcqAnswers().ToList();
-            foreach (var item1 in lstMcq)
-            {
-                item1.McqAnswers = lstMcqAnswer.Where(x => x.McqID == item1.McqID).ToList<McqAnswer>();
-            }
+            int i = 1;
+
+            //lstMcq?.ForEach(x=> { x.TopicWiseSrNo = i++; });
+
+            var result = (from mcq in lstMcq
+                       join ans in lstMcqAnswer on mcq.McqID equals ans.McqID into mcqAnswers
+                       let Rank = i++
+                       select new Mcq
+                       {
+                           McqID = mcq.McqID,
+                           CommonAnswerImage = mcq.CommonAnswerImage,
+                           CorrectAnswerID = mcq.CorrectAnswerID,
+                           HintAudioLink = mcq.HintAudioLink,
+                           HintImageLink = mcq.HintImageLink,
+                           HintText = mcq.HintText,
+                           HintVideoUrl = mcq.HintVideoUrl,
+                           IsVisible = mcq.IsVisible,
+                           Marks = mcq.Marks,
+                           PaperWiseSrNo = mcq.PaperWiseSrNo,
+                           QuestionAudioLink = mcq.QuestionAudioLink,
+                           QuestionImage2 = mcq.QuestionImage2,
+                           QuestionImageLink = mcq.QuestionImageLink,
+                           QuestionText1 = mcq.QuestionText1,
+                           QuestionText2 = mcq.QuestionText2,
+                           SupportedDocumentLink=mcq.SupportedDocumentLink,
+                           SupportedDocumentLink2=mcq.SupportedDocumentLink2,
+                           SupportedDocumentLink3 = mcq.SupportedDocumentLink3,
+                           TimeToSolve=mcq.TimeToSolve,
+                           TopicwisePaperID=mcq.TopicwisePaperID,
+                           TopicWiseSrNo= Rank,
+                           VideoLink=mcq.VideoLink,
+                           YearwisePaperID=mcq.YearwisePaperID,
+                           McqAnswers = mcqAnswers.ToList()
+                       }).ToList();
 
             TopicMcqViewModel objTopicMcqViewModel = new TopicMcqViewModel();
-            objTopicMcqViewModel.McqList = lstMcq;
+            objTopicMcqViewModel.McqList = result;
             return View(objTopicMcqViewModel);
         }
 
         [CryptoValueProvider]
         public virtual ActionResult Paper(string id)
         {
-            int paperid = Convert.ToInt32(id);
-            int subcourseId = (from subcourseid in this.McqService.getAllPapers().Where(a => a.PaperID == paperid) select subcourseid.SubjectId).FirstOrDefault();
-            List<Mcq> lstMcq = this.McqService.getAllMcqs().Where(a => a.TopicwisePaperID == paperid).ToList();
+            int paperID = Convert.ToInt32(id);
+            //int subcourseId = (from subcourseid in this.McqService.getAllTopics().Where(a => a.TopicID == paperID) select subcourseid.SubjectID).FirstOrDefault();
+            List<Mcq> lstMcq = this.McqService.getAllMcqs().Where(a => a.YearwisePaperID == paperID).ToList();
             List<McqAnswer> lstMcqAnswer = this.McqService.getAllMcqAnswers().ToList();
-            foreach (var item1 in lstMcq)
-            {
-                item1.McqAnswers = lstMcqAnswer.Where(x => x.McqID == item1.McqID).ToList<McqAnswer>();
-            }
+            int i = 1;
 
-            TopicMcqViewModel objTopicMcqViewModel = new TopicMcqViewModel();
-            objTopicMcqViewModel.McqList = lstMcq;
+            //lstMcq?.ForEach(x=> { x.TopicWiseSrNo = i++; });
+
+            var result = (from mcq in lstMcq
+                          join ans in lstMcqAnswer on mcq.McqID equals ans.McqID into mcqAnswers
+                          let Rank = i++
+                          select new Mcq
+                          {
+                              McqID = mcq.McqID,
+                              CommonAnswerImage = mcq.CommonAnswerImage,
+                              CorrectAnswerID = mcq.CorrectAnswerID,
+                              HintAudioLink = mcq.HintAudioLink,
+                              HintImageLink = mcq.HintImageLink,
+                              HintText = mcq.HintText,
+                              HintVideoUrl = mcq.HintVideoUrl,
+                              IsVisible = mcq.IsVisible,
+                              Marks = mcq.Marks,
+                              PaperWiseSrNo = mcq.PaperWiseSrNo,
+                              QuestionAudioLink = mcq.QuestionAudioLink,
+                              QuestionImage2 = mcq.QuestionImage2,
+                              QuestionImageLink = mcq.QuestionImageLink,
+                              QuestionText1 = mcq.QuestionText1,
+                              QuestionText2 = mcq.QuestionText2,
+                              SupportedDocumentLink = mcq.SupportedDocumentLink,
+                              SupportedDocumentLink2 = mcq.SupportedDocumentLink2,
+                              SupportedDocumentLink3 = mcq.SupportedDocumentLink3,
+                              TimeToSolve = mcq.TimeToSolve,
+                              TopicwisePaperID = mcq.TopicwisePaperID,
+                              TopicWiseSrNo = Rank,
+                              VideoLink = mcq.VideoLink,
+                              YearwisePaperID = mcq.YearwisePaperID,
+                              McqAnswers = mcqAnswers.ToList()
+                          }).ToList();
+
+            PaperMcqViewModel objTopicMcqViewModel = new PaperMcqViewModel();
+            objTopicMcqViewModel.McqList = result;
             return View(objTopicMcqViewModel);
         }
 

@@ -1,0 +1,36 @@
+﻿@model MvcSiteMapProvider.Web.Html.Models.SiteMapPathHelperModel
+@using System.Web.Mvc.Html
+@using System.Linq
+@using MvcSiteMapProvider.Web.Html.Models
+
+@*Reference Taken from
+    1) https://joeylicc.wordpress.com/2013/07/08/asp-net-mvc-sitemappath-using-site-map-provider-bootstrap-breadcrumbs/
+    2) https://github.com/maartenba/MvcSiteMapProvider
+*@
+
+@if (Model.Nodes.Count != 1)
+{
+    @:<ul class="pull-right breadcrumb">
+
+        foreach (var node in Model.Nodes)
+        {
+
+        if (node == Model.Nodes.First())
+        {
+        continue;
+        }
+
+        if (node != Model.Nodes.Last())
+        {
+            string url = node.IsClickable ? node.Url : "#";
+
+            @:<li><a href="@url">@node.Title</a><span class="divider"></span></li>
+        }
+        else
+        {
+            @:<li class="active">@node.Title</li>
+        }
+        }
+
+        @:</ul>
+}

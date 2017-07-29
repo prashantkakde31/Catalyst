@@ -43,6 +43,22 @@ namespace T4MVC
             }
             public readonly string _CommonLayout = "~/Views/Shared/_CommonLayout.cshtml";
             public readonly string _ErrorLayout = "~/Views/Shared/_ErrorLayout.cshtml";
+            static readonly _DisplayTemplatesClass s_DisplayTemplates = new _DisplayTemplatesClass();
+            public _DisplayTemplatesClass DisplayTemplates { get { return s_DisplayTemplates; } }
+            [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+            public partial class _DisplayTemplatesClass
+            {
+                public readonly string BootstrapMenuHelperModel = "BootstrapMenuHelperModel";
+                public readonly string BootstrapSiteMapPathHelperModel = "BootstrapSiteMapPathHelperModel";
+                public readonly string CanonicalHelperModel = "CanonicalHelperModel";
+                public readonly string MenuHelperModel = "MenuHelperModel";
+                public readonly string MetaRobotsHelperModel = "MetaRobotsHelperModel";
+                public readonly string SiteMapHelperModel = "SiteMapHelperModel";
+                public readonly string SiteMapNodeModel = "SiteMapNodeModel";
+                public readonly string SiteMapNodeModelList = "SiteMapNodeModelList";
+                public readonly string SiteMapPathHelperModel = "SiteMapPathHelperModel";
+                public readonly string SiteMapTitleHelperModel = "SiteMapTitleHelperModel";
+            }
         }
     }
 

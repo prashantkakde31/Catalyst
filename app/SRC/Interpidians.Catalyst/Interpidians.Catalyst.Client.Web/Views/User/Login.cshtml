@@ -4,7 +4,7 @@
 <!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
 <!--[if !IE]><!-->
 <html lang="en">
- <!--<![endif]-->
+<!--<![endif]-->
 <head>
     <title>@ViewBag.Title</title>
 
@@ -105,7 +105,6 @@
                 </div><!--/container-->
             </div>
             <!-- End Topbar v3 -->
-
             <!-- Navbar -->
             <div class="navbar navbar-default mega-menu" role="navigation">
                 <div class="container">
@@ -172,8 +171,6 @@
                         </div>
                     </div>
                     <!-- End Shopping Cart -->
-
-
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     @*startFromCurrentNode: false, startingNodeInChildLevel: false, showStartingNode: true*@
                     <div class="collapse navbar-collapse navbar-responsive-collapse">
@@ -185,29 +182,148 @@
             <!-- End Navbar -->
         </div>
         <!--=== End Header v5 ===-->
-        
-
         <!--=== Breadcrumbs v4 ===-->
         <div class="breadcrumbs">
             <div class="container">
-                <h1 class="pull-left">MCQ</h1>
+                <h1 class="pull-left">MCQs</h1>
                 @Html.MvcSiteMap().SiteMapPath("BootstrapSiteMapPathHelperModel")
             </div>
         </div>
+
         <!--=== End Breadcrumbs v4 ===-->
 
-        <!--=== Page Content ===-->
-        <div class="content-md ">
+        <!--=== Login ===-->
+        <div class="log-reg-v3 content-md" style="background-image: url('../../Content/img/bg/11.jpg');">
             <div class="container">
-                <div class="row">
 
-                    @RenderBody()
+                <div class="row space-xlg-hor equal-height-columns">
+                    <!--login Block-->
+                    <div class="form-block login-block col-md-6 col-sm-12 rounded-left equal-height-column">
+                        <div class="form-block-header">
+                            <h2 class="margin-bottom-15">Sign In</h2>
+                        </div>
 
-                </div><!--/end row-->
+                        <div class="input-group margin-bottom-20">
+                            <span class="input-group-addon rounded-left"><i class="icon-user color-white"></i></span>
+                            <input type="text" class="form-control rounded-right" placeholder="Username">
+                        </div>
+
+                        <div class="input-group margin-bottom-20">
+                            <span class="input-group-addon rounded-left"><i class="icon-lock color-white"></i></span>
+                            <input type="password" class="form-control rounded-right" placeholder="Password">
+                        </div>
+
+                        <div class="row margin-bottom-70">
+                            <div class="col-md-12">
+                                <button type="submit" class="btn-u btn-block rounded">Sign In</button>
+                            </div>
+                        </div>
+                        <div class="social-login">
+                            <div class="or rounded-x">Or</div>
+                            <ul class="list-unstyled">
+                                <li>
+                                    <button class="btn rounded btn-block btn-lg btn-facebook-inversed margin-bottom-20">
+                                        <i class="fa fa-facebook"></i> Sign in with Facebook
+                                    </button>
+                                </li>
+                                <li>
+                                    <button class="btn rounded btn-block btn-lg btn-gmail-inversed">
+                                        <i class="fa fa-envelope"></i> Sign in with Gmail
+                                    </button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!--End login Block-->
+                    <!--Reg Block-->
+                    <div class="sky-form sign-up form-block reg-block col-md-6 col-sm-12 rounded-right equal-height-column">
+                        <div class="form-block-header">
+                            <h2 class="margin-bottom-10">Sign Up</h2>
+                        </div>
+
+                        <div class="input-group margin-bottom-20">
+                            <span class="input-group-addon rounded-left"><i class="icon-user"></i></span>
+                            <input type="text" class="form-control rounded-right" placeholder="Your Name">
+                        </div>
+
+                        <div class="input-group margin-bottom-20">
+                            <span class="input-group-addon rounded-left"><i class="icon-envelope"></i></span>
+                            <input type="email" class="form-control rounded-right" placeholder="Your email">
+                        </div>
+
+                        <div class="input-group margin-bottom-20">
+                            <span class="input-group-addon rounded-left"><i class="glyphicon glyphicon-phone"></i></span>
+                            <input type="text" class="form-control rounded-right" placeholder="Mobile Number">
+                        </div>
+
+
+                        <div class="input-group margin-bottom-20">
+                            <span class="input-group-addon rounded-left"><i class="icon-lock"></i></span>
+                            <input type="password" class="form-control rounded-right" placeholder="Password">
+                        </div>
+                        <label>Exam Appearance Year</label>
+                        <div class="input-group margin-bottom-20">
+                            <div class="inline-group">
+                                <label class="radio"><input type="radio" name="radio-eay" checked=""><i class="rounded-x"></i>2016</label>
+                                <label class="radio"><input type="radio" name="radio-eay"><i class="rounded-x"></i>2017</label>
+                                <label class="radio"><input type="radio" name="radio-eay"><i class="rounded-x"></i>2018</label>
+                            </div>
+                        </div>
+
+                        <label>Exam Appearance Month</label>
+                        <div class="input-group margin-bottom-20">
+                            <div class="inline-group">
+                                <label class="radio"><input type="radio" name="radio-ead" checked=""><i class="rounded-x"></i>March</label>
+                                <label class="radio"><input type="radio" name="radio-ead"><i class="rounded-x"></i>May</label>
+                                <label class="radio"><input type="radio" name="radio-ead"><i class="rounded-x"></i>Oct</label>
+                            </div>
+                        </div>
+
+                        <div class="margin-bottom-15">
+                            <label class="checkbox termslink"><input type="checkbox" name="checkbox" checked=""><i></i> I agree to terms &amp; conditions</label>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <button type="submit" class="btn-u btn-block rounded">Register</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!--End Reg Block-->
+
+                </div>
             </div><!--/end container-->
         </div>
-        <!--=== End Page Content ===-->
-        
+        <!--=== End Login ===-->
+        <!--=== Shop Suvbscribe ===-->
+        <div class="shop-subscribe">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 md-margin-bottom-20">
+                        <h2>Suspendisse et tincidunt ipsum, et dignissim urna.</h2>
+                    </div>
+
+                </div>
+            </div><!--/end container-->
+        </div>
+        <!--=== End Shop Suvbscribe ===-->
+        <!--=== Footer v4 ===-->
+        <div class="footer-v4">
+            <div class="copyright">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p>
+                                2016 &copy; ALL Rights Reserved.
+                                <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div><!--/copyright-->
+        </div>
+        <!--=== End Footer v4 ===-->
+
 
     </div>
 

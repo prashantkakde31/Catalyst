@@ -50,17 +50,17 @@ namespace Interpidians.Catalyst.Client.Web
                 defaults: new { controller = "Exam", action = "Start", id = UrlParameter.Optional }
             );
 
-            //routes.MapRoute(
-            //    name: "Default",
-            //    url: "{controller}/{action}/{id}",
-            //    defaults: new { controller = "Employee", action = "Index", id = UrlParameter.Optional }
-            //);
-
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Exam", action = "Paper", id = UrlParameter.Optional }
+                defaults: new { controller = "User", action = "login", id = UrlParameter.Optional }
             );
+
+            //routes.MapRoute(
+            //    name: "Default",
+            //    url: "{controller}/{action}/{id}",
+            //    defaults: new { controller = "Exam", action = "Paper", id = UrlParameter.Optional }
+            //);
         }
     }
 }
