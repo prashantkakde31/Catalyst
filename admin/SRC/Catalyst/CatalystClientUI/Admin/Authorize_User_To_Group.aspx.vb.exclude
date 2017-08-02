@@ -1,0 +1,324 @@
+﻿Imports System.Data
+Imports System.Data.SqlClient
+
+Partial Class ADMIN_Authorize_User_To_Group
+    Inherits System.Web.UI.Page
+    Dim msg As String = ""
+    Dim acs As New HelperClass
+    Dim conn As New SqlConnection(ConfigurationSettings.AppSettings().Item("ConnectionStringV"))
+
+
+    Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+
+        'Session("UserCode") = "ADMIN"
+        If Session("UserCode") = "" Then
+            Response.Write("<script language=javascript>alert('Your Session Has EXPIRE/NOT LOGGED  IN Please Login Again.')</script>")
+            Response.Redirect(acs.mapLink(Request.Path))
+        End If
+
+
+        If Not Page.IsPostBack Then
+            ''Check this user have access right of this page
+            Dim strchk As String = acs.CheckSession(Session("UserCode"), System.IO.Path.GetFileName(Request.PhysicalPath))
+            strchk = "VALID"
+            If strchk = "INVALID" Then
+                Session("HomeFlag") = "N"
+                Session("UserCode") = ""
+                Response.Redirect(acs.mapLink(Request.Path))
+            End If
+            If conn.State = ConnectionState.Closed Then conn.Open()
+        End If
+        If Not Page.IsPostBack Then
+            GetUserName()
+        End If
+        btn_show.Enabled = True
+        btn_Authorize.Enabled = False
+        DgCheckList.PageIndex = 0
+
+        Response.Write("<script language=javascript>window.history.forward(1)</script>")
+    End Sub
+
+    Private Sub GetUserName()
+
+        If conn.State = ConnectionState.Closed Then conn.Open()
+        Dim qry As String = " select User_Name from admin_maps_user_master where user_id in (select distinct User_id from ADMIN_MAPS_GRP_USR_MSTR_TEMP where status = 'Pending') union select '--Select--' from dual"
+
+        Dim cmd As New SqlCommand
+        Dim ds As New DataSet
+        cmd.CommandText = qry
+        cmd.Connection = conn
+
+        Dim da As New SqlDataAdapter(cmd)
+        da.SelectCommand = cmd
+        da.Fill(ds)
+        Ddl_UserName.DataTextField = "User_Name"
+        Ddl_UserName.DataSource = ds
+        Ddl_UserName.DataBind()
+        If conn.State = ConnectionState.Open Then conn.Close()
+
+    End Sub
+
+    Protected Sub Ddl_UserName_SelectedIndexChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles Ddl_UserName.SelectedIndexChanged
+        If conn.State = ConnectionState.Closed Then conn.Open()
+        Dim qry As String = " Select Group_Name From admin_maps_group_master where Group_ID IN ( Select Group_ID From ADMIN_MAPS_GRP_USR_MSTR_TEMP where User_ID IN ( select user_id from admin_maps_user_master where user_name = @UserName)) union select '--Select--'from dual "
+
+        Dim prmUserName As New SqlParameter("UserName", SqlDbType.VarChar)
+        Dim cmd As New SqlCommand(qry, conn)
+        prmUserName.Value = Ddl_UserName.SelectedItem.Text.Trim
+        cmd.Parameters.Add(prmUserName)
+
+        Dim da As New SqlDataAdapter
+        Dim ds As New DataSet
+        da.SelectCommand = cmd
+        da.Fill(ds)
+        Ddl_GroupName.DataTextField = "Group_Name"
+        Ddl_GroupName.DataSource = ds
+        Ddl_GroupName.DataBind()
+        If conn.State = ConnectionState.Open Then conn.Close()
+    End Sub
+
+    Protected Sub btn_show_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btn_show.Click
+
+        If (txt_ToDate.Text.Trim <> "" Or txt_FromDate.Text.Trim <> "") Then
+
+            msg = acs.ValidateText(txt_FromDate.Text.Trim, "FromDate", 100)
+            If msg <> "Y" Then
+                Tell.text(msg, Me)
+                txt_FromDate.Text = ""
+                Exit Sub
+            End If
+
+            msg = acs.ValidateText(txt_ToDate.Text.Trim, "ToDate", 100)
+            If msg <> "Y" Then
+                Tell.text(msg, Me)
+                txt_ToDate.Text = ""
+                Exit Sub
+            End If
+
+            msg = acs.ValidateFromDateToDate(txt_FromDate.Text.Trim, txt_ToDate.Text.Trim)
+            If msg <> "Y" Then
+                Tell.text(msg, Me)
+                Exit Sub
+            End If
+
+        End If
+
+        DataBind()
+    End Sub
+
+    Protected Sub DataBind()
+
+        Dim qryShow As String = ""
+
+        Dim prmUserName As New SqlParameter("UserName", SqlDbType.VarChar)
+        Dim prmGroupName As New SqlParameter("GroupName", SqlDbType.VarChar)
+        Dim prmfromdate As New SqlParameter("FromDate", SqlDbType.DateTime)
+        Dim prmToDate As New SqlParameter("ToDate", SqlDbType.DateTime)
+
+
+        qryShow = " select A.user_id, A.User_Name , B.Group_Id  , C.Group_Name , B.remark "
+        qryShow = qryShow & " from admin_maps_user_master A ,  ADMIN_MAPS_GRP_USR_MSTR_TEMP B , admin_maps_group_master C "
+        qryShow = qryShow & " where A.user_id = B.user_id AND B.Group_ID = C.Group_id And B.Status = 'Pending' "
+
+
+        If Ddl_UserName.SelectedItem.Text <> "--Select--" And Ddl_GroupName.SelectedItem.Text <> "--Select--" And txt_FromDate.Text.Trim <> "" And txt_ToDate.Text.Trim <> "" Then
+
+
+            qryShow = qryShow & " And B.user_id = (select user_id from admin_maps_user_master where user_name = @UserName ) "
+            qryShow = qryShow & " AND B.Group_ID = ( select Group_ID from admin_maps_group_master where Group_Name = @GroupName ) "
+            qryShow = qryShow & " AND (Maker_Date between @FromDate AND @ToDate ) "
+
+        ElseIf Ddl_UserName.SelectedItem.Text <> "--Select--" And Ddl_GroupName.SelectedItem.Text <> "--Select--" Then
+
+            qryShow = qryShow & " And B.user_id = (select user_id from admin_maps_user_master where user_name = @UserName ) "
+            qryShow = qryShow & " AND B.Group_ID = ( select Group_ID from admin_maps_group_master where Group_Name = @GroupName ) "
+
+        ElseIf Ddl_UserName.SelectedItem.Text <> "--Select--" And txt_FromDate.Text.Trim <> "" And txt_ToDate.Text.Trim <> "" Then
+
+            qryShow = qryShow & " And B.user_id = (select user_id from admin_maps_user_master where user_name = @UserName ) "
+            qryShow = qryShow & " AND (Maker_Date between @FromDate AND @ToDate ) "
+
+        ElseIf Ddl_UserName.SelectedItem.Text <> "--Select--" Then
+
+            qryShow = qryShow & " And B.user_id = (select user_id from admin_maps_user_master where user_name = @UserName ) "
+
+        ElseIf txt_FromDate.Text.Trim <> "" And txt_ToDate.Text.Trim <> "" Then
+
+            qryShow = qryShow & " AND (Maker_Date between @FromDate AND @ToDate ) "
+
+        End If
+
+        qryShow = qryShow & " Order by Maker_Date asc "
+
+        Dim _Cmd As New SqlCommand(qryShow, conn)
+
+        If Ddl_UserName.SelectedItem.Text <> "--Select--" And Ddl_GroupName.SelectedItem.Text <> "--Select--" And txt_FromDate.Text.Trim <> "" And txt_ToDate.Text.Trim <> "" Then
+
+            prmUserName.Value = Ddl_UserName.SelectedItem.Value
+            prmGroupName.Value = Ddl_GroupName.SelectedItem.Value
+            prmfromdate.Value = txt_FromDate.Text.Trim
+            prmToDate.Value = txt_ToDate.Text.Trim
+            _Cmd.Parameters.Add(prmUserName)
+            _Cmd.Parameters.Add(prmGroupName)
+            _Cmd.Parameters.Add(prmfromdate)
+            _Cmd.Parameters.Add(prmToDate)
+
+        ElseIf Ddl_UserName.SelectedItem.Text <> "--Select--" And Ddl_GroupName.SelectedItem.Text <> "--Select--" Then
+
+            prmUserName.Value = Ddl_UserName.SelectedItem.Value
+            prmGroupName.Value = Ddl_GroupName.SelectedItem.Value
+
+            _Cmd.Parameters.Add(prmUserName)
+            _Cmd.Parameters.Add(prmGroupName)
+
+
+        ElseIf Ddl_UserName.SelectedItem.Text <> "--Select--" And txt_FromDate.Text.Trim <> "" And txt_ToDate.Text.Trim <> "" Then
+
+            prmUserName.Value = Ddl_UserName.SelectedItem.Value
+            prmfromdate.Value = txt_FromDate.Text.Trim
+            prmToDate.Value = txt_ToDate.Text.Trim
+
+            _Cmd.Parameters.Add(prmUserName)
+            _Cmd.Parameters.Add(prmfromdate)
+            _Cmd.Parameters.Add(prmToDate)
+
+        ElseIf Ddl_UserName.SelectedItem.Text <> "--Select--" Then
+
+            prmUserName.Value = Ddl_UserName.SelectedItem.Value
+            _Cmd.Parameters.Add(prmUserName)
+
+        ElseIf txt_FromDate.Text.Trim <> "" And txt_ToDate.Text.Trim <> "" Then
+
+            prmfromdate.Value = txt_FromDate.Text.Trim
+            prmToDate.Value = txt_ToDate.Text.Trim
+
+            _Cmd.Parameters.Add(prmfromdate)
+            _Cmd.Parameters.Add(prmToDate)
+
+        End If
+
+        Dim da As New SqlDataAdapter()
+        Dim ds As New DataSet
+        da.SelectCommand = _Cmd
+        If conn.State = ConnectionState.Closed Then conn.Open()
+        DgCheckList.SelectedIndex = -1
+        da.Fill(ds)
+        DgCheckList.DataSource = ds
+        DgCheckList.DataBind()
+        DgCheckList.Visible = True
+
+        btn_Authorize.Enabled = True
+    End Sub
+
+    Protected Sub DgCheckList_PageIndexChanging(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.GridViewPageEventArgs) Handles DgCheckList.PageIndexChanging
+
+        DgCheckList.SelectedIndex = -1
+        DgCheckList.PageIndex = e.NewPageIndex
+        DataBind()
+
+    End Sub
+
+
+    Protected Sub btn_Authorize_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btn_Authorize.Click
+
+        If conn.State = ConnectionState.Closed Then conn.Open()
+        Dim gvRow As GridViewRow
+        Dim qryInsert As String = ""
+        Dim qryDelete As String = ""
+        Dim qryUpdate As String = ""
+        Dim prmUserID As New SqlParameter("UserID", SqlDbType.VarChar)
+        Dim prmGroupID As New SqlParameter("GroupID", SqlDbType.VarChar)
+        Dim prmCheckerName As New SqlParameter("CheckerName", SqlDbType.VarChar)
+
+        For Each gvRow In DgCheckList.Rows
+            Dim cb As CheckBox = CType(gvRow.FindControl("checkbox1"), CheckBox)
+            If cb.Checked = True Then
+
+                Dim VarUserID As String = gvRow.Cells(1).Text.Trim
+                Dim VarGroupID As String = gvRow.Cells(3).Text.Trim
+                Dim VarAction As String = gvRow.Cells(5).Text.Trim
+
+
+                If VarAction = "ADD" Then
+
+                    Dim cmdADD As SqlCommand
+                    cmdADD = New SqlCommand("insert into ADMIN_MAPS_GROUP_USER_MASTER values (@UserID,@GroupID)", conn)
+                    cmdADD.Parameters.Add(prmUserID)
+                    cmdADD.Parameters.Add(prmGroupID)
+                    prmUserID.Value = VarUserID
+                    prmGroupID.Value = VarGroupID
+                    cmdADD.ExecuteNonQuery()
+                    cmdADD.Parameters.Clear()
+
+                    qryInsert = " INSERT INTO ADMIN_USER_FORM_DETAIL (USERID, FORMID) SELECT @UserID, FORM_ID FROM ADMIN_MAPS_GROUP_FORM_DETIALS WHERE GROUP_ID = @GroupID "
+
+                    Dim _CmdInsert As New SqlCommand(qryInsert, conn)
+                    prmUserID.Value = VarUserID
+                    prmGroupID.Value = VarGroupID
+
+                    _CmdInsert.Parameters.Add(prmUserID)
+                    _CmdInsert.Parameters.Add(prmGroupID)
+
+                    _CmdInsert.ExecuteNonQuery()
+                    _CmdInsert.Parameters.Clear()
+
+                ElseIf VarAction = "DELETE" Then
+
+                    Dim cmdDelete As New SqlCommand("delete from ADMIN_MAPS_GROUP_USER_MASTER where USER_ID =@UserID AND GROUP_ID=@GroupID", conn)
+                    cmdDelete.Parameters.Add(prmUserID)
+                    cmdDelete.Parameters.Add(prmGroupID)
+                    prmUserID.Value = VarUserID
+                    prmGroupID.Value = VarGroupID
+                    cmdDelete.ExecuteNonQuery()
+                    cmdDelete.Parameters.Clear()
+
+
+                    'qryDelete = " Delete From ADMIN_USER_FORM_DETAIL "
+                    'qryDelete = qryDelete & "  Where userid = :UserID "
+                    'qryDelete = qryDelete & " And Formid IN ( SELECT Form_ID FROM ADMIN_MAPS_GROUP_FORM_DETIALS WHERE GROUP_ID = :GroupID ) "
+
+
+                    qryDelete = " Delete From ADMIN_USER_FORM_DETAIL A"
+                    qryDelete = qryDelete & "  Where userid = @UserID "
+                    qryDelete = qryDelete & " And Formid IN ( SELECT Form_ID FROM ADMIN_MAPS_GROUP_FORM_DETIALS WHERE GROUP_ID = @GroupID ) "
+                    qryDelete = qryDelete & " AND rowid IN (Select max(rowid) From ADMIN_USER_FORM_DETAIL B where A.Formid = B.Formid ) "
+
+
+
+
+                    Dim _CmdDel As New SqlCommand(qryDelete, conn)
+                    prmUserID.Value = VarUserID
+                    prmGroupID.Value = VarGroupID
+
+                    _CmdDel.Parameters.Add(prmUserID)
+                    _CmdDel.Parameters.Add(prmGroupID)
+
+                    _CmdDel.ExecuteNonQuery()
+                    _CmdDel.Parameters.Clear()
+
+                End If
+
+                qryUpdate = " Update ADMIN_MAPS_GRP_USR_MSTR_TEMP Set status = 'Authorize' , Checker_Date = getdate() , Checker_Name = @CheckerName where user_id = @UserID And Group_ID = @GroupID "
+
+                Dim _Cmdupdate As New SqlCommand(qryUpdate, conn)
+                prmCheckerName.Value = Session("UserCode")
+
+                _Cmdupdate.Parameters.Add(prmUserID)
+                _Cmdupdate.Parameters.Add(prmGroupID)
+                _Cmdupdate.Parameters.Add(prmCheckerName)
+
+                _Cmdupdate.ExecuteNonQuery()
+                _Cmdupdate.Parameters.Clear()
+
+            End If
+        Next
+
+        DataBind()
+        If conn.State = ConnectionState.Open Then conn.Close()
+
+    End Sub
+
+
+
+
+End Class

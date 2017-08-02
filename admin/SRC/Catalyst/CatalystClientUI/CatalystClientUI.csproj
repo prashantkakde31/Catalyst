@@ -1,0 +1,1266 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{97BE4C37-20D3-41FD-99A3-A0CA4AC45EDB}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CatalystClientUI</RootNamespace>
+    <AssemblyName>CatalystClientUI</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=3.5.40412.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Diet Project\Diet_20160422_1\Diet_20160422_1\Diet\GNHClientUI\bin\AjaxControlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=0.86.0.518, Culture=neutral, PublicKeyToken=1b03e6acf1164f73">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Diet Project\Diet_20160422_1\Diet_20160422_1\Diet\GNHClientUI\bin\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Admin\AddNewGroup.aspx" />
+    <Content Include="Admin\AddNewGroup.aspx.vb" />
+    <Content Include="Admin\AddNewUsers.aspx" />
+    <Content Include="Admin\AddNewUsers.aspx.vb" />
+    <Content Include="Admin\Add_NewMenu.aspx" />
+    <Content Include="Admin\Add_NewMenu.aspx.vb" />
+    <Content Include="Admin\Add_NewScreen.aspx" />
+    <Content Include="Admin\Add_NewScreen.aspx.vb">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="Admin\Add_User_To_Group.aspx" />
+    <Content Include="Admin\Add_User_To_Group.aspx.vb" />
+    <Content Include="Admin\Assign_Rights_To_User.aspx" />
+    <Content Include="Admin\Assign_Rights_To_User.aspx.vb" />
+    <Content Include="Admin\audit_log_reports.aspx" />
+    <Content Include="Admin\audit_log_reports.aspx.vb" />
+    <Content Include="Admin\DevelopmentHelp_error.aspx" />
+    <Content Include="Admin\DevelopmentHelp_error.aspx.vb" />
+    <Content Include="Admin\GROUP_FORM_ACCESS.aspx" />
+    <Content Include="Admin\GROUP_FORM_ACCESS.aspx.vb" />
+    <Content Include="Admin\NewGroup_Report.aspx" />
+    <Content Include="Admin\NewGroup_Report.aspx.vb" />
+    <Content Include="Admin\PASSWORD_MANAGER.aspx" />
+    <Content Include="Admin\PASSWORD_MANAGER.aspx.vb" />
+    <Content Include="Admin\Reset_User_Password.aspx" />
+    <Content Include="Admin\Reset_User_Password.aspx.vb" />
+    <Content Include="Admin\Rpt_GroupWiseForms.aspx" />
+    <Content Include="Admin\Rpt_GroupWiseForms.aspx.vb" />
+    <Content Include="Admin\Rpt_UserWiseScreen.aspx" />
+    <Content Include="Admin\Rpt_UserWiseScreen.aspx.vb" />
+    <Content Include="Admin\Users_Report.aspx" />
+    <Content Include="Admin\Users_Report.aspx.vb" />
+    <Content Include="Admin\UserValidityPeriod.aspx" />
+    <Content Include="Admin\UserValidityPeriod.aspx.vb" />
+    <Content Include="Admin\User_Action_Trial.aspx" />
+    <Content Include="Admin\User_Action_Trial.aspx.vb" />
+    <Content Include="Admin\USER_BLOCKING.aspx" />
+    <Content Include="Admin\USER_BLOCKING.aspx.vb" />
+    <Content Include="Admin\USER_DISABLING.aspx" />
+    <Content Include="Admin\USER_DISABLING.aspx.vb" />
+    <Content Include="Admin\User_Login_Rpt.aspx" />
+    <Content Include="Admin\User_Login_Rpt.aspx.vb" />
+    <Content Include="Admin\User_Session_Track.aspx" />
+    <Content Include="Admin\User_Session_Track.aspx.vb" />
+    <Content Include="Admin\User_Status_report.aspx" />
+    <Content Include="Admin\User_Status_report.aspx.vb" />
+    <Content Include="Admin\USER_UNLOCKING.aspx" />
+    <Content Include="Admin\USER_UNLOCKING.aspx.vb" />
+    <Content Include="assets\avatars\avatar.png" />
+    <Content Include="assets\avatars\avatar1.png" />
+    <Content Include="assets\avatars\avatar2.png" />
+    <Content Include="assets\avatars\avatar3.png" />
+    <Content Include="assets\avatars\avatar4.png" />
+    <Content Include="assets\avatars\avatar5.png" />
+    <Content Include="assets\avatars\profile-pic.jpg" />
+    <Content Include="assets\avatars\user.jpg" />
+    <Content Include="assets\css\ace-fonts.css" />
+    <Content Include="assets\css\ace-ie.css" />
+    <Content Include="assets\css\ace-part2.css" />
+    <Content Include="assets\css\ace-rtl.css" />
+    <Content Include="assets\css\ace-skins.css" />
+    <Content Include="assets\css\ace.css" />
+    <Content Include="assets\css\ace.onpage-help.css" />
+    <Content Include="assets\css\bootstrap-datetimepicker.css" />
+    <Content Include="assets\css\bootstrap-duallistbox.css" />
+    <Content Include="assets\css\bootstrap-editable.css" />
+    <Content Include="assets\css\bootstrap-multiselect.css" />
+    <Content Include="assets\css\bootstrap-timepicker.css" />
+    <Content Include="assets\css\bootstrap.css" />
+    <Content Include="assets\css\chosen-sprite%402x.png" />
+    <Content Include="assets\css\chosen-sprite.png" />
+    <Content Include="assets\css\chosen.css" />
+    <Content Include="assets\css\colorbox.css" />
+    <Content Include="assets\css\colorpicker.css" />
+    <Content Include="assets\css\datepicker.css" />
+    <Content Include="assets\css\daterangepicker.css" />
+    <Content Include="assets\css\dropzone.css" />
+    <Content Include="assets\css\font-awesome.css" />
+    <Content Include="assets\css\fullcalendar.css" />
+    <Content Include="assets\css\fullcalendar.print.css" />
+    <Content Include="assets\css\images\border.png" />
+    <Content Include="assets\css\images\border1.png" />
+    <Content Include="assets\css\images\border2.png" />
+    <Content Include="assets\css\images\controls.png" />
+    <Content Include="assets\css\images\ie6\borderBottomCenter.png" />
+    <Content Include="assets\css\images\ie6\borderBottomLeft.png" />
+    <Content Include="assets\css\images\ie6\borderBottomRight.png" />
+    <Content Include="assets\css\images\ie6\borderMiddleLeft.png" />
+    <Content Include="assets\css\images\ie6\borderMiddleRight.png" />
+    <Content Include="assets\css\images\ie6\borderTopCenter.png" />
+    <Content Include="assets\css\images\ie6\borderTopLeft.png" />
+    <Content Include="assets\css\images\ie6\borderTopRight.png" />
+    <Content Include="assets\css\images\loading.gif" />
+    <Content Include="assets\css\images\loading_background.png" />
+    <Content Include="assets\css\images\meteorshower.jpg" />
+    <Content Include="assets\css\images\meteorshower2.jpg" />
+    <Content Include="assets\css\images\overlay.png" />
+    <Content Include="assets\css\images\pattern.jpg" />
+    <Content Include="assets\css\images\pattern.png" />
+    <Content Include="assets\css\images\spritemap%402x.png" />
+    <Content Include="assets\css\images\spritemap.png" />
+    <Content Include="assets\css\img\alpha.png" />
+    <Content Include="assets\css\img\hue.png" />
+    <Content Include="assets\css\img\saturation.png" />
+    <Content Include="assets\css\jquery-ui.css" />
+    <Content Include="assets\css\jquery-ui.custom.css" />
+    <Content Include="assets\css\jquery.gritter.css" />
+    <Content Include="assets\css\pace.css" />
+    <Content Include="assets\css\prettify.css" />
+    <Content Include="assets\css\select2-spinner.gif" />
+    <Content Include="assets\css\select2.css" />
+    <Content Include="assets\css\select2.png" />
+    <Content Include="assets\css\select2x2.png" />
+    <Content Include="assets\css\ui.jqgrid.css" />
+    <Content Include="assets\fonts\fontawesome-webfont.svg" />
+    <Content Include="assets\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="assets\images\back_disabled.png" />
+    <Content Include="assets\images\back_enabled.png" />
+    <Content Include="assets\images\back_enabled_hover.png" />
+    <Content Include="assets\images\email1.png" />
+    <Content Include="assets\images\email2.png" />
+    <Content Include="assets\images\email3.png" />
+    <Content Include="assets\images\email4.png" />
+    <Content Include="assets\images\forward_disabled.png" />
+    <Content Include="assets\images\forward_enabled.png" />
+    <Content Include="assets\images\forward_enabled_hover.png" />
+    <Content Include="assets\images\gallery\image-1.jpg" />
+    <Content Include="assets\images\gallery\image-2.jpg" />
+    <Content Include="assets\images\gallery\image-3.jpg" />
+    <Content Include="assets\images\gallery\image-4.jpg" />
+    <Content Include="assets\images\gallery\image-5.jpg" />
+    <Content Include="assets\images\gallery\image-6.jpg" />
+    <Content Include="assets\images\gallery\thumb-1.jpg" />
+    <Content Include="assets\images\gallery\thumb-2.jpg" />
+    <Content Include="assets\images\gallery\thumb-3.jpg" />
+    <Content Include="assets\images\gallery\thumb-4.jpg" />
+    <Content Include="assets\images\gallery\thumb-5.jpg" />
+    <Content Include="assets\images\gallery\thumb-6.jpg" />
+    <Content Include="assets\images\sort_asc.png" />
+    <Content Include="assets\images\sort_asc_disabled.png" />
+    <Content Include="assets\images\sort_both.png" />
+    <Content Include="assets\images\sort_desc.png" />
+    <Content Include="assets\images\sort_desc_disabled.png" />
+    <Content Include="assets\images\spritemap%402x.png" />
+    <Content Include="assets\images\spritemap.png" />
+    <Content Include="assets\img\clear.png" />
+    <Content Include="assets\img\glyphicons-halflings-white.png" />
+    <Content Include="assets\img\glyphicons-halflings.png" />
+    <Content Include="assets\img\loading.gif" />
+    <Content Include="assets\js\ace-elements.js" />
+    <Content Include="assets\js\ace-extra.js" />
+    <Content Include="assets\js\ace.js" />
+    <Content Include="assets\js\ace\ace.ajax-content.js" />
+    <Content Include="assets\js\ace\ace.auto-container.js" />
+    <Content Include="assets\js\ace\ace.auto-padding.js" />
+    <Content Include="assets\js\ace\ace.js" />
+    <Content Include="assets\js\ace\ace.onpage-help.js" />
+    <Content Include="assets\js\ace\ace.searchbox-autocomplete.js" />
+    <Content Include="assets\js\ace\ace.settings-rtl.js" />
+    <Content Include="assets\js\ace\ace.settings-skin.js" />
+    <Content Include="assets\js\ace\ace.settings.js" />
+    <Content Include="assets\js\ace\ace.sidebar-scroll-1.js" />
+    <Content Include="assets\js\ace\ace.sidebar-scroll-2.js" />
+    <Content Include="assets\js\ace\ace.sidebar.js" />
+    <Content Include="assets\js\ace\ace.submenu-hover.js" />
+    <Content Include="assets\js\ace\ace.touch-drag.js" />
+    <Content Include="assets\js\ace\ace.widget-box.js" />
+    <Content Include="assets\js\ace\ace.widget-on-reload.js" />
+    <Content Include="assets\js\ace\elements.aside.js" />
+    <Content Include="assets\js\ace\elements.colorpicker.js" />
+    <Content Include="assets\js\ace\elements.fileinput.js" />
+    <Content Include="assets\js\ace\elements.onpage-help.js" />
+    <Content Include="assets\js\ace\elements.scroller.js" />
+    <Content Include="assets\js\ace\elements.spinner.js" />
+    <Content Include="assets\js\ace\elements.treeview.js" />
+    <Content Include="assets\js\ace\elements.typeahead.js" />
+    <Content Include="assets\js\ace\elements.wizard.js" />
+    <Content Include="assets\js\ace\elements.wysiwyg.js" />
+    <Content Include="assets\js\additional-methods.js" />
+    <Content Include="assets\js\bootbox.js" />
+    <Content Include="assets\js\bootstrap-colorpicker.js" />
+    <Content Include="assets\js\bootstrap-multiselect.js" />
+    <Content Include="assets\js\bootstrap-tag.js" />
+    <Content Include="assets\js\bootstrap-wysiwyg.js" />
+    <Content Include="assets\js\bootstrap.js" />
+    <Content Include="assets\js\Chart.js" />
+    <Content Include="assets\js\chosen.jquery.js" />
+    <Content Include="assets\js\dataTables\extensions\ColVis\js\dataTables.colVis.js" />
+    <Content Include="assets\js\dataTables\extensions\TableTools\js\dataTables.tableTools.js" />
+    <Content Include="assets\js\dataTables\extensions\TableTools\swf\copy_csv_xls.swf" />
+    <Content Include="assets\js\dataTables\extensions\TableTools\swf\copy_csv_xls_pdf.swf" />
+    <Content Include="assets\js\dataTables\jquery.dataTables.bootstrap.js" />
+    <Content Include="assets\js\dataTables\jquery.dataTables.js" />
+    <Content Include="assets\js\date-time\bootstrap-datepicker.js" />
+    <Content Include="assets\js\date-time\bootstrap-datetimepicker.js" />
+    <Content Include="assets\js\date-time\bootstrap-timepicker.js" />
+    <Content Include="assets\js\date-time\daterangepicker.js" />
+    <Content Include="assets\js\date-time\moment.js" />
+    <Content Include="assets\js\dropzone.js" />
+    <Content Include="assets\js\excanvas.js" />
+    <Content Include="assets\js\flot\jquery.flot.js" />
+    <Content Include="assets\js\flot\jquery.flot.pie.js" />
+    <Content Include="assets\js\flot\jquery.flot.resize.js" />
+    <Content Include="assets\js\fuelux\fuelux.spinner.js" />
+    <Content Include="assets\js\fuelux\fuelux.tree.js" />
+    <Content Include="assets\js\fuelux\fuelux.wizard.js" />
+    <Content Include="assets\js\fullcalendar.js" />
+    <Content Include="assets\js\html5shiv.js" />
+    <Content Include="assets\js\jqGrid\i18n\grid.locale-ar.js" />
+    <Content Include="assets\js\jqGrid\i18n\grid.locale-bg.js" />
+    <Content Include="assets\js\jqGrid\i18n\grid.locale-bg1251.js" />
+    <Content Include="assets\js\jqGrid\i18n\grid.locale-cat.js" />
+    <Content Include="assets\js\jqGrid\i18n\grid.locale-cn.js" />
+    <Content Include="assets\js\jqGrid\i18n\grid.locale-cs.js" />
+    <Content Include="assets\js\jqGrid\i18n\grid.locale-da.js" />
+    <Content Include="assets\js\jqGrid\i18n\grid.locale-de.js" />
+    <Content Include="assets\js\jqGrid\i18n\grid.locale-dk.js" />
+    <Content Include="assets\js\jqGrid\i18n\grid.locale-el.js" />
+    <Content Include="assets\js\jqGrid\i18n\grid.locale-en.js" />
+    <Content Include="assets\js\jqGrid\i18n\grid.locale-es.js" />
+    <Content Include="assets\js\jqGrid\i18n\grid.locale-fa.js" />
+    <Content Include="assets\js\jqGrid\i18n\grid.locale-fi.js" />
+    <Content Include="assets\js\jqGrid\i18n\grid.locale-fr.js" />
+    <Content Include="assets\js\jqGrid\i18n\grid.locale-gl.js" />
+    <Content Include="assets\js\jqGrid\i18n\grid.locale-he.js" />
+    <Content Include="assets\js\jqGrid\i18n\grid.locale-hr.js" />
+    <Content Include="assets\js\jqGrid\i18n\grid.locale-hr1250.js" />
+    <Content Include="assets\js\jqGrid\i18n\grid.locale-hu.js" />
+    <Content Include="assets\js\jqGrid\i18n\grid.locale-id.js" />
+    <Content Include="assets\js\jqGrid\i18n\grid.locale-is.js" />
+    <Content Include="assets\js\jqGrid\i18n\grid.locale-it.js" />
+    <Content Include="assets\js\jqGrid\i18n\grid.locale-ja.js" />
+    <Content Include="assets\js\jqGrid\i18n\grid.locale-kr.js" />
+    <Content Include="assets\js\jqGrid\i18n\grid.locale-lt.js" />
+    <Content Include="assets\js\jqGrid\i18n\grid.locale-mne.js" />
+    <Content Include="assets\js\jqGrid\i18n\grid.locale-nl.js" />
+    <Content Include="assets\js\jqGrid\i18n\grid.locale-no.js" />
+    <Content Include="assets\js\jqGrid\i18n\grid.locale-pl.js" />
+    <Content Include="assets\js\jqGrid\i18n\grid.locale-pt-br.js" />
+    <Content Include="assets\js\jqGrid\i18n\grid.locale-pt.js" />
+    <Content Include="assets\js\jqGrid\i18n\grid.locale-ro.js" />
+    <Content Include="assets\js\jqGrid\i18n\grid.locale-ru.js" />
+    <Content Include="assets\js\jqGrid\i18n\grid.locale-sk.js" />
+    <Content Include="assets\js\jqGrid\i18n\grid.locale-sr-latin.js" />
+    <Content Include="assets\js\jqGrid\i18n\grid.locale-sr.js" />
+    <Content Include="assets\js\jqGrid\i18n\grid.locale-sv.js" />
+    <Content Include="assets\js\jqGrid\i18n\grid.locale-th.js" />
+    <Content Include="assets\js\jqGrid\i18n\grid.locale-tr.js" />
+    <Content Include="assets\js\jqGrid\i18n\grid.locale-tw.js" />
+    <Content Include="assets\js\jqGrid\i18n\grid.locale-ua.js" />
+    <Content Include="assets\js\jqGrid\i18n\grid.locale-vi.js" />
+    <Content Include="assets\js\jqGrid\jquery.jqGrid.src.js" />
+    <Content Include="assets\js\jquery-ui.custom.js" />
+    <Content Include="assets\js\jquery-ui.js" />
+    <Content Include="assets\js\jquery.addnew.js" />
+    <Content Include="assets\js\jquery.autosize.js" />
+    <Content Include="assets\js\jquery.bootstrap-duallistbox.js" />
+    <Content Include="assets\js\jquery.colorbox.js" />
+    <Content Include="assets\js\jquery.easypiechart.js" />
+    <Content Include="assets\js\jquery.gritter.js" />
+    <Content Include="assets\js\jquery.hotkeys.js" />
+    <Content Include="assets\js\jquery.inputlimiter.1.3.1.js" />
+    <Content Include="assets\js\jquery.js" />
+    <Content Include="assets\js\jquery.knob.js" />
+    <Content Include="assets\js\jquery.maskedinput.js" />
+    <Content Include="assets\js\jquery.mobile.custom.js" />
+    <Content Include="assets\js\jquery.mousewheel.js" />
+    <Content Include="assets\js\jquery.nestable.js" />
+    <Content Include="assets\js\jquery.raty.js" />
+    <Content Include="assets\js\jquery.slimscroll.js" />
+    <Content Include="assets\js\jquery.sparkline.js" />
+    <Content Include="assets\js\jquery.ui.touch-punch.js" />
+    <Content Include="assets\js\jquery.validate.js" />
+    <Content Include="assets\js\jquery1x.js" />
+    <Content Include="assets\js\markdown\bootstrap-markdown.js" />
+    <Content Include="assets\js\markdown\markdown.js" />
+    <Content Include="assets\js\markdown\to-markdown.js" />
+    <Content Include="assets\js\pace.js" />
+    <Content Include="assets\js\prettify.js" />
+    <Content Include="assets\js\respond.js" />
+    <Content Include="assets\js\select2.js" />
+    <Content Include="assets\js\spin.js" />
+    <Content Include="assets\js\typeahead.jquery.js" />
+    <Content Include="assets\js\x-editable\ace-editable.js" />
+    <Content Include="assets\js\x-editable\bootstrap-editable.js" />
+    <Content Include="bin\AjaxControlToolkit.dll" />
+    <Content Include="bin\ICSharpCode.SharpZipLib.dll" />
+    <Content Include="bin\PNayak.Web.UI.WebControls.ExportButton.dll" />
+    <Content Include="Images\image.jpg" />
+    <Content Include="Screens\Mcq_Master.aspx" />
+    <Content Include="Screens\Product_Master.aspx" />
+    <Content Include="Screens\Discount_Master.aspx" />
+    <Content Include="Screens\Paper_Master.aspx" />
+    <Content Include="Screens\Course_Master.aspx" />
+    <Content Include="css\alert.css" />
+    <Content Include="css\calendar.css" />
+    <Content Include="css\colorselect.css" />
+    <Content Include="css\dailog.css" />
+    <Content Include="css\dp.css" />
+    <Content Include="css\dropdown.css" />
+    <Content Include="css\Error.css" />
+    <Content Include="css\images\alert\bot.gif" />
+    <Content Include="css\images\alert\close.gif" />
+    <Content Include="css\images\alert\corners.gif" />
+    <Content Include="css\images\alert\cornersBlue.gif" />
+    <Content Include="css\images\alert\help.gif" />
+    <Content Include="css\images\alert\important.gif" />
+    <Content Include="css\images\alert\info.gif" />
+    <Content Include="css\images\alert\title.gif" />
+    <Content Include="css\images\alert\title1.gif" />
+    <Content Include="css\images\bgs\CardHeadbg.jpg" />
+    <Content Include="css\images\bgs\CardHeadbg.png" />
+    <Content Include="css\images\bgs\ch.gif" />
+    <Content Include="css\images\bgs\headbg.gif" />
+    <Content Include="css\images\bgs\minus1.gif" />
+    <Content Include="css\images\bgs\plus1.gif" />
+    <Content Include="css\images\calendar\bubble_combined.png" />
+    <Content Include="css\images\calendar\cal.gif" />
+    <Content Include="css\images\calendar\combined.gif" />
+    <Content Include="css\images\calendar\grid.png" />
+    <Content Include="css\images\calendar\gridth.gif" />
+    <Content Include="css\images\calendar\headbg.gif" />
+    <Content Include="css\images\calendar\indicator_web20_working.gif" />
+    <Content Include="css\images\calendar\load-bg.png" />
+    <Content Include="css\images\calendar\tbg.gif" />
+    <Content Include="css\images\dailog\app-form.png" />
+    <Content Include="css\images\dailog\headbg.gif" />
+    <Content Include="css\images\dailog\left-corners.png" />
+    <Content Include="css\images\dailog\left-right.png" />
+    <Content Include="css\images\dailog\right-corners.png" />
+    <Content Include="css\images\dailog\tool-sprites.gif" />
+    <Content Include="css\images\dailog\top-bottom.png" />
+    <Content Include="css\images\dp\btn-arrow-light.gif" />
+    <Content Include="css\images\dp\btn-arrow.gif" />
+    <Content Include="css\images\dropdown\dropdown.gif" />
+    <Content Include="css\images\dropdown\dropdownhover.gif" />
+    <Content Include="css\images\home\logo.gif" />
+    <Content Include="css\images\home\toolbarbg.jpg" />
+    <Content Include="css\images\home\top_bg.jpg" />
+    <Content Include="css\images\icons\add.png" />
+    <Content Include="css\images\icons\appt.gif" />
+    <Content Include="css\images\icons\au.gif" />
+    <Content Include="css\images\icons\Btn.Close.gif" />
+    <Content Include="css\images\icons\cacheClear.png" />
+    <Content Include="css\images\icons\cal-day.gif" />
+    <Content Include="css\images\icons\cal-month.gif" />
+    <Content Include="css\images\icons\cal-proc.gif" />
+    <Content Include="css\images\icons\cal-rsc-perm.gif" />
+    <Content Include="css\images\icons\cal-week.gif" />
+    <Content Include="css\images\icons\cal-wk-week.gif" />
+    <Content Include="css\images\icons\cal.gif" />
+    <Content Include="css\images\icons\calendar.gif" />
+    <Content Include="css\images\icons\calwrkwk.gif" />
+    <Content Include="css\images\icons\canmtg.gif" />
+    <Content Include="css\images\icons\circle_animation.gif" />
+    <Content Include="css\images\icons\clndr.gif" />
+    <Content Include="css\images\icons\clndrsmll.gif" />
+    <Content Include="css\images\icons\cn.gif" />
+    <Content Include="css\images\icons\date.png" />
+    <Content Include="css\images\icons\date_add.png" />
+    <Content Include="css\images\icons\date_reflash.png" />
+    <Content Include="css\images\icons\delete.png" />
+    <Content Include="css\images\icons\edit.png" />
+    <Content Include="css\images\icons\folder_user.gif" />
+    <Content Include="css\images\icons\group.gif" />
+    <Content Include="css\images\icons\group_add.gif" />
+    <Content Include="css\images\icons\hk.png" />
+    <Content Include="css\images\icons\ico1.gif" />
+    <Content Include="css\images\icons\indicator.gif" />
+    <Content Include="css\images\icons\Item.Add.gif" />
+    <Content Include="css\images\icons\Item.Delete.gif" />
+    <Content Include="css\images\icons\Item.Edit.gif" />
+    <Content Include="css\images\icons\Item.Input.gif" />
+    <Content Include="css\images\icons\Item.Save.gif" />
+    <Content Include="css\images\icons\Item.Search.gif" />
+    <Content Include="css\images\icons\msg_center.gif" />
+    <Content Include="css\images\icons\msg_email.gif" />
+    <Content Include="css\images\icons\msg_im.gif" />
+    <Content Include="css\images\icons\msg_mobile.gif" />
+    <Content Include="css\images\icons\mtgreq-cancel.gif" />
+    <Content Include="css\images\icons\mtgreq.gif" />
+    <Content Include="css\images\icons\mtgrsp-accept.gif" />
+    <Content Include="css\images\icons\mtgrsp-decline.gif" />
+    <Content Include="css\images\icons\mtgrsp-tent.gif" />
+    <Content Include="css\images\icons\pgrs-sm.gif" />
+    <Content Include="css\images\icons\resultset_next.png" />
+    <Content Include="css\images\icons\resultset_previous.png" />
+    <Content Include="css\images\icons\rowdelete.png" />
+    <Content Include="css\images\icons\table.gif" />
+    <Content Include="css\images\icons\table_c.gif" />
+    <Content Include="css\images\icons\table_copy.png" />
+    <Content Include="css\images\icons\table_r.png" />
+    <Content Include="css\images\icons\table_refresh.png" />
+    <Content Include="css\images\icons\tick.png" />
+    <Content Include="css\images\icons\turnback.png" />
+    <Content Include="css\images\icons\us.gif" />
+    <Content Include="css\images\icons\view.png" />
+    <Content Include="css\images\share\card.gif" />
+    <Content Include="css\images\share\glass-bg.gif" />
+    <Content Include="css\images\share\hd-sprite.gif" />
+    <Content Include="css\images\share\headbg.gif" />
+    <Content Include="css\images\share\information.png" />
+    <Content Include="css\images\share\left-btn.gif" />
+    <Content Include="css\images\share\right-btn.gif" />
+    <Content Include="css\images\share\table.gif" />
+    <Content Include="css\images\share\table_c.gif" />
+    <Content Include="css\images\share\tbg.gif" />
+    <Content Include="css\images\share\tool-sprites.gif" />
+    <Content Include="css\images\validation\accept.png" />
+    <Content Include="css\images\validation\exclamation.png" />
+    <Content Include="css\images\validation\tooltop.gif" />
+    <Content Include="css\images\validation\warning.gif" />
+    <Content Include="css\main.css" />
+    <Content Include="error\ErrorFile.txt" />
+    <Content Include="Global.asax" />
+    <Content Include="Screens\Testimonial_Master.aspx" />
+    <Content Include="WebForm1.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common\GNHUtility.cs" />
+    <Compile Include="Common\PatientInfo.cs" />
+    <Compile Include="Screens\Mcq_Master.aspx.cs">
+      <DependentUpon>Mcq_Master.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Screens\Mcq_Master.aspx.designer.cs">
+      <DependentUpon>Mcq_Master.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Product_Master.aspx.cs">
+      <DependentUpon>Product_Master.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Screens\Product_Master.aspx.designer.cs">
+      <DependentUpon>Product_Master.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Discount_Master.aspx.cs">
+      <DependentUpon>Discount_Master.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Screens\Discount_Master.aspx.designer.cs">
+      <DependentUpon>Discount_Master.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Helper\Reports.cs" />
+    <Compile Include="Screens\Paper_Master.aspx.cs">
+      <DependentUpon>Paper_Master.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Screens\Paper_Master.aspx.designer.cs">
+      <DependentUpon>Paper_Master.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Course_Master.aspx.cs">
+      <DependentUpon>Course_Master.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Screens\Course_Master.aspx.designer.cs">
+      <DependentUpon>Course_Master.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Grade_Master.aspx.cs">
+      <DependentUpon>Grade_Master.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Screens\Grade_Master.aspx.designer.cs">
+      <DependentUpon>Grade_Master.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Helper\AdminClass.cs" />
+    <Compile Include="Helper\data.cs" />
+    <Compile Include="Helper\HelperClass.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Helper\Tell.cs" />
+    <Compile Include="Master\Default3.aspx.cs">
+      <DependentUpon>Default3.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Screens\SubCourse_Master.aspx.cs">
+      <DependentUpon>SubCourse_Master.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Screens\SubCourse_Master.aspx.designer.cs">
+      <DependentUpon>SubCourse_Master.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Subject_Master.aspx.cs">
+      <DependentUpon>Subject_Master.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Screens\Subject_Master.aspx.designer.cs">
+      <DependentUpon>Subject_Master.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Topic_Master.aspx.cs">
+      <DependentUpon>Topic_Master.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Screens\Topic_Master.aspx.designer.cs">
+      <DependentUpon>Topic_Master.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Testimonial_Master.aspx.cs">
+      <DependentUpon>Testimonial_Master.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Screens\Testimonial_Master.aspx.designer.cs">
+      <DependentUpon>Testimonial_Master.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Screens\Grade_Master.aspx" />
+    <Content Include="Helper\AjaxControlToolkit.dll" />
+    <Content Include="Helper\ICSharpCode.SharpZipLib.dll" />
+    <Content Include="Helper\PNayak.Web.UI.WebControls.ExportButton.dll" />
+    <Content Include="Images\469.GIF" />
+    <Content Include="Images\469_1.GIF" />
+    <Content Include="Images\469_2.GIF" />
+    <Content Include="Images\calender.JPG" />
+    <Content Include="Images\header-1.png" />
+    <Content Include="Images\header-2.png" />
+    <Content Include="Images\header-3.jpg" />
+    <Content Include="Images\header-3.png" />
+    <Content Include="Images\header-4.jpg" />
+    <Content Include="Images\header.png" />
+    <Content Include="Images\loading.gif" />
+    <Content Include="Images\loading1.gif" />
+    <Content Include="Images\loading2.gif" />
+    <Content Include="Images\loading2_old.gif" />
+    <Content Include="Images\loading_2.gif" />
+    <Content Include="Images\Logo.jpg" />
+    <Content Include="Master\Change_Password.aspx" />
+    <Content Include="Master\Change_Password.aspx.vb">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="Master\Default.aspx" />
+    <Content Include="Master\Default.aspx.vb" />
+    <Content Include="Master\Default2.aspx" />
+    <Content Include="Master\Default2.aspx.vb" />
+    <Content Include="Master\Default3.aspx" />
+    <Content Include="Master\Filenotfound.html" />
+    <Content Include="Master\Forgot_Password.aspx" />
+    <Content Include="Master\Forgot_Password.aspx.vb" />
+    <Content Include="Master\Home.aspx" />
+    <Content Include="Master\Home.aspx.vb" />
+    <Content Include="Master\Images\Back.gif" />
+    <Content Include="Master\Images\bulet_1.png" />
+    <Content Include="Master\Images\calendar.gif" />
+    <Content Include="Master\Images\cbi.jpg" />
+    <Content Include="Master\Images\d_G.png" />
+    <Content Include="Master\Images\emb.jpg" />
+    <Content Include="Master\Images\header_back.gif" />
+    <Content Include="Master\Images\ISG.jpg" />
+    <Content Include="Master\Images\login.jpg" />
+    <Content Include="Master\Images\PgFirst.gif" />
+    <Content Include="Master\Images\PgLast.gif" />
+    <Content Include="Master\Images\PgNext.gif" />
+    <Content Include="Master\Images\PgPrev.gif" />
+    <Content Include="Master\Images\plus.gif" />
+    <Content Include="Master\Images\saveButton.png" />
+    <Content Include="Master\index.aspx" />
+    <Content Include="Master\index.aspx.vb">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="Master\login.aspx" />
+    <Content Include="Master\login.aspx.vb">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="Master\MasterPage2.master.vb">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="Master\Password_strength.aspx" />
+    <Content Include="Master\Password_strength.aspx.vb">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="Master\Query_Execution.aspx" />
+    <Content Include="Master\Query_Execution.aspx.vb" />
+    <Content Include="Master\Reset_Password.aspx" />
+    <Content Include="Master\Reset_Password.aspx.vb" />
+    <Content Include="Master\Site.Master.vb">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="Scripts\bootstrap-3.3.6-dist\css\bootstrap-theme.css" />
+    <Content Include="Scripts\bootstrap-3.3.6-dist\css\bootstrap-theme.min.css" />
+    <Content Include="Scripts\bootstrap-3.3.6-dist\css\bootstrap.css" />
+    <Content Include="Scripts\bootstrap-3.3.6-dist\css\bootstrap.min.css" />
+    <Content Include="Scripts\bootstrap-3.3.6-dist\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Scripts\bootstrap-3.3.6-dist\js\bootstrap.js" />
+    <Content Include="Scripts\bootstrap-3.3.6-dist\js\bootstrap.min.js" />
+    <Content Include="Scripts\bootstrap-3.3.6-dist\js\npm.js" />
+    <Content Include="Scripts\CastleBusyBox.js" />
+    <Content Include="Scripts\css\jquery.dateselect.css" />
+    <Content Include="Scripts\gnh-converter.js" />
+    <Content Include="Scripts\intlTelInput.css" />
+    <Content Include="Scripts\intlTelInput.js" />
+    <Content Include="Scripts\intlTelInput.min.js" />
+    <Content Include="Scripts\jquery-1.12.0.js" />
+    <None Include="Scripts\jquery-1.4.1-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.4.1.js" />
+    <Content Include="Scripts\jquery-1.4.1.min.js" />
+    <Content Include="Scripts\jquery-ui.css" />
+    <Content Include="Scripts\jquery-ui.js" />
+    <Content Include="Scripts\jquery-ui.min.css" />
+    <Content Include="Scripts\jquery-ui.min.js" />
+    <Content Include="Scripts\jquery-ui.structure.css" />
+    <Content Include="Scripts\jquery-ui.structure.min.css" />
+    <Content Include="Scripts\jquery-ui.theme.css" />
+    <Content Include="Scripts\jquery-ui.theme.min.css" />
+    <Content Include="Scripts\js\jquery.dateselect.js" />
+    <Content Include="Scripts\js\jquery.dateselect.min.js" />
+    <Content Include="Scripts\Keyboard.js" />
+    <Content Include="Scripts\notify.js" />
+    <Content Include="Scripts\notify.min.js" />
+    <Content Include="Scripts\Pagination.css" />
+    <Content Include="Scripts\RecallDiet.js" />
+    <Content Include="Scripts\RecommendedDiet.js" />
+    <Content Include="Scripts\simple-modal.css" />
+    <Content Include="Scripts\simple-model.js" />
+    <Content Include="Scripts\sweetalert.css" />
+    <Content Include="Scripts\sweetalert.min.js" />
+    <Content Include="Scripts\utils.js" />
+    <Content Include="Site.css" />
+    <Content Include="src\bootstrap-datepicker.js" />
+    <Content Include="src\jquery.js" />
+    <Content Include="src\jquery.min.js" />
+    <Content Include="src\Plugins\Common.js" />
+    <Content Include="src\Plugins\datepicker_lang_AU.js" />
+    <Content Include="src\Plugins\datepicker_lang_HK.js" />
+    <Content Include="src\Plugins\datepicker_lang_US.js" />
+    <Content Include="src\Plugins\jquery.alert.js" />
+    <Content Include="src\Plugins\jquery.calendar.js" />
+    <Content Include="src\Plugins\jquery.colorselect.js" />
+    <Content Include="src\Plugins\jquery.datepicker.js" />
+    <Content Include="src\Plugins\jquery.dropdown.js" />
+    <Content Include="src\Plugins\jquery.form.js" />
+    <Content Include="src\Plugins\jquery.ifrmdailog.js" />
+    <Content Include="src\Plugins\jquery.validate.js" />
+    <Content Include="src\Plugins\wdCalendar_lang_AU.js" />
+    <Content Include="src\Plugins\wdCalendar_lang_HK.js" />
+    <Content Include="src\Plugins\wdCalendar_lang_US.js" />
+    <Content Include="Screens\SubCourse_Master.aspx" />
+    <Content Include="Screens\Subject_Master.aspx" />
+    <Content Include="Screens\Topic_Master.aspx" />
+    <Content Include="src\bootstrap-datepicker.css" />
+    <Content Include="Web.config" />
+    <Content Include="Admin\Authorize_User_To_Group.aspx.exclude" />
+    <Content Include="Admin\Authorize_User_To_Group.aspx.vb.exclude" />
+    <Content Include="assets\css\less\ace-features.less" />
+    <Content Include="assets\css\less\ace-nav.less" />
+    <Content Include="assets\css\less\ace-responsive.less" />
+    <Content Include="assets\css\less\ace-rtl.less" />
+    <Content Include="assets\css\less\ace.less" />
+    <Content Include="assets\css\less\basic.less" />
+    <Content Include="assets\css\less\bootstrap\alerts.less" />
+    <Content Include="assets\css\less\bootstrap\badges.less" />
+    <Content Include="assets\css\less\bootstrap\bootstrap.less" />
+    <Content Include="assets\css\less\bootstrap\breadcrumbs.less" />
+    <Content Include="assets\css\less\bootstrap\button-groups.less" />
+    <Content Include="assets\css\less\bootstrap\buttons.less" />
+    <Content Include="assets\css\less\bootstrap\carousel.less" />
+    <Content Include="assets\css\less\bootstrap\close.less" />
+    <Content Include="assets\css\less\bootstrap\code.less" />
+    <Content Include="assets\css\less\bootstrap\component-animations.less" />
+    <Content Include="assets\css\less\bootstrap\dropdowns.less" />
+    <Content Include="assets\css\less\bootstrap\forms.less" />
+    <Content Include="assets\css\less\bootstrap\glyphicons.less" />
+    <Content Include="assets\css\less\bootstrap\grid.less" />
+    <Content Include="assets\css\less\bootstrap\input-groups.less" />
+    <Content Include="assets\css\less\bootstrap\jumbotron.less" />
+    <Content Include="assets\css\less\bootstrap\labels.less" />
+    <Content Include="assets\css\less\bootstrap\list-group.less" />
+    <Content Include="assets\css\less\bootstrap\media.less" />
+    <Content Include="assets\css\less\bootstrap\mixins.less" />
+    <Content Include="assets\css\less\bootstrap\mixins\alerts.less" />
+    <Content Include="assets\css\less\bootstrap\mixins\background-variant.less" />
+    <Content Include="assets\css\less\bootstrap\mixins\border-radius.less" />
+    <Content Include="assets\css\less\bootstrap\mixins\buttons.less" />
+    <Content Include="assets\css\less\bootstrap\mixins\center-block.less" />
+    <Content Include="assets\css\less\bootstrap\mixins\clearfix.less" />
+    <Content Include="assets\css\less\bootstrap\mixins\forms.less" />
+    <Content Include="assets\css\less\bootstrap\mixins\gradients.less" />
+    <Content Include="assets\css\less\bootstrap\mixins\grid-framework.less" />
+    <Content Include="assets\css\less\bootstrap\mixins\grid.less" />
+    <Content Include="assets\css\less\bootstrap\mixins\hide-text.less" />
+    <Content Include="assets\css\less\bootstrap\mixins\image.less" />
+    <Content Include="assets\css\less\bootstrap\mixins\labels.less" />
+    <Content Include="assets\css\less\bootstrap\mixins\list-group.less" />
+    <Content Include="assets\css\less\bootstrap\mixins\nav-divider.less" />
+    <Content Include="assets\css\less\bootstrap\mixins\nav-vertical-align.less" />
+    <Content Include="assets\css\less\bootstrap\mixins\opacity.less" />
+    <Content Include="assets\css\less\bootstrap\mixins\pagination.less" />
+    <Content Include="assets\css\less\bootstrap\mixins\panels.less" />
+    <Content Include="assets\css\less\bootstrap\mixins\progress-bar.less" />
+    <Content Include="assets\css\less\bootstrap\mixins\reset-filter.less" />
+    <Content Include="assets\css\less\bootstrap\mixins\resize.less" />
+    <Content Include="assets\css\less\bootstrap\mixins\responsive-visibility.less" />
+    <Content Include="assets\css\less\bootstrap\mixins\size.less" />
+    <Content Include="assets\css\less\bootstrap\mixins\tab-focus.less" />
+    <Content Include="assets\css\less\bootstrap\mixins\table-row.less" />
+    <Content Include="assets\css\less\bootstrap\mixins\text-emphasis.less" />
+    <Content Include="assets\css\less\bootstrap\mixins\text-overflow.less" />
+    <Content Include="assets\css\less\bootstrap\mixins\vendor-prefixes.less" />
+    <Content Include="assets\css\less\bootstrap\modals.less" />
+    <Content Include="assets\css\less\bootstrap\navbar.less" />
+    <Content Include="assets\css\less\bootstrap\navs.less" />
+    <Content Include="assets\css\less\bootstrap\normalize.less" />
+    <Content Include="assets\css\less\bootstrap\pager.less" />
+    <Content Include="assets\css\less\bootstrap\pagination.less" />
+    <Content Include="assets\css\less\bootstrap\panels.less" />
+    <Content Include="assets\css\less\bootstrap\popovers.less" />
+    <Content Include="assets\css\less\bootstrap\print.less" />
+    <Content Include="assets\css\less\bootstrap\progress-bars.less" />
+    <Content Include="assets\css\less\bootstrap\responsive-embed.less" />
+    <Content Include="assets\css\less\bootstrap\responsive-utilities.less" />
+    <Content Include="assets\css\less\bootstrap\scaffolding.less" />
+    <Content Include="assets\css\less\bootstrap\tables.less" />
+    <Content Include="assets\css\less\bootstrap\theme.less" />
+    <Content Include="assets\css\less\bootstrap\thumbnails.less" />
+    <Content Include="assets\css\less\bootstrap\tooltip.less" />
+    <Content Include="assets\css\less\bootstrap\type.less" />
+    <Content Include="assets\css\less\bootstrap\utilities.less" />
+    <Content Include="assets\css\less\bootstrap\variables.less" />
+    <Content Include="assets\css\less\bootstrap\wells.less" />
+    <Content Include="assets\css\less\breadcrumbs.less" />
+    <Content Include="assets\css\less\bs3-reset.less" />
+    <Content Include="assets\css\less\buttons.less" />
+    <Content Include="assets\css\less\dropdown.less" />
+    <Content Include="assets\css\less\dropdown\colorpicker.less" />
+    <Content Include="assets\css\less\dropdown\navbar-dropdown.less" />
+    <Content Include="assets\css\less\dropdown\navbar-tabbed-dropdown.less" />
+    <Content Include="assets\css\less\ext\bootstrap-tag.less" />
+    <Content Include="assets\css\less\fonts-rel.less" />
+    <Content Include="assets\css\less\fonts.less" />
+    <Content Include="assets\css\less\footer.less" />
+    <Content Include="assets\css\less\form.less" />
+    <Content Include="assets\css\less\form\checkbox.less" />
+    <Content Include="assets\css\less\form\file.less" />
+    <Content Include="assets\css\less\gallery.less" />
+    <Content Include="assets\css\less\general.less" />
+    <Content Include="assets\css\less\icon-animated.less" />
+    <Content Include="assets\css\less\infobox.less" />
+    <Content Include="assets\css\less\items.less" />
+    <Content Include="assets\css\less\label-badge.less" />
+    <Content Include="assets\css\less\mixins.less" />
+    <Content Include="assets\css\less\modal.less" />
+    <Content Include="assets\css\less\navbar\collapsible.less" />
+    <Content Include="assets\css\less\navbar\navbar-menu-form.less" />
+    <Content Include="assets\css\less\navbar\toggle-button.less" />
+    <Content Include="assets\css\less\navbar\user-buttons-move-down.less" />
+    <Content Include="assets\css\less\navbar\user-buttons.less" />
+    <Content Include="assets\css\less\navbar\user-dropdown-position.less" />
+    <Content Include="assets\css\less\navbar\user-menu.less" />
+    <Content Include="assets\css\less\onpage-help.less" />
+    <Content Include="assets\css\less\other.less" />
+    <Content Include="assets\css\less\page.error.less" />
+    <Content Include="assets\css\less\page.inbox.less" />
+    <Content Include="assets\css\less\page.invoice.less" />
+    <Content Include="assets\css\less\page.login.less" />
+    <Content Include="assets\css\less\page.pricing.less" />
+    <Content Include="assets\css\less\page.profile.less" />
+    <Content Include="assets\css\less\page.timeline.less" />
+    <Content Include="assets\css\less\print.less" />
+    <Content Include="assets\css\less\progressbar.less" />
+    <Content Include="assets\css\less\scroll.less" />
+    <Content Include="assets\css\less\searchbox.less" />
+    <Content Include="assets\css\less\sidebar.less" />
+    <Content Include="assets\css\less\sidebar\active.less" />
+    <Content Include="assets\css\less\sidebar\compact.less" />
+    <Content Include="assets\css\less\sidebar\ff_fix.less" />
+    <Content Include="assets\css\less\sidebar\highlight.less" />
+    <Content Include="assets\css\less\sidebar\horizontal.less" />
+    <Content Include="assets\css\less\sidebar\hover.less" />
+    <Content Include="assets\css\less\sidebar\min.less" />
+    <Content Include="assets\css\less\sidebar\multiple.less" />
+    <Content Include="assets\css\less\sidebar\old-toggle-button.less" />
+    <Content Include="assets\css\less\sidebar\responsive-1.less" />
+    <Content Include="assets\css\less\sidebar\responsive-2.less" />
+    <Content Include="assets\css\less\sidebar\responsive-3.less" />
+    <Content Include="assets\css\less\sidebar\shortcuts-toggle.less" />
+    <Content Include="assets\css\less\sidebar\sidebar-fixed.less" />
+    <Content Include="assets\css\less\sidebar\sub-arrow.less" />
+    <Content Include="assets\css\less\skins\empty.less" />
+    <Content Include="assets\css\less\skins\no-skin.less" />
+    <Content Include="assets\css\less\skins\skin-1.less" />
+    <Content Include="assets\css\less\skins\skin-2.less" />
+    <Content Include="assets\css\less\skins\skin-3.less" />
+    <Content Include="assets\css\less\skins\skins.less" />
+    <Content Include="assets\css\less\tab-accordion.less" />
+    <Content Include="assets\css\less\tables.less" />
+    <Content Include="assets\css\less\thirdparty-calendar.less" />
+    <Content Include="assets\css\less\thirdparty-chosen.less" />
+    <Content Include="assets\css\less\thirdparty-colorbox.less" />
+    <Content Include="assets\css\less\thirdparty-dataTables.less" />
+    <Content Include="assets\css\less\thirdparty-date.less" />
+    <Content Include="assets\css\less\thirdparty-dropzone.less" />
+    <Content Include="assets\css\less\thirdparty-duallist-multiselect.less" />
+    <Content Include="assets\css\less\thirdparty-editable.less" />
+    <Content Include="assets\css\less\thirdparty-fuelux.less" />
+    <Content Include="assets\css\less\thirdparty-gritter.less" />
+    <Content Include="assets\css\less\thirdparty-jqgrid.less" />
+    <Content Include="assets\css\less\thirdparty-jquery-ui.less" />
+    <Content Include="assets\css\less\thirdparty-nestable.less" />
+    <Content Include="assets\css\less\thirdparty-raty.less" />
+    <Content Include="assets\css\less\thirdparty-select2.less" />
+    <Content Include="assets\css\less\thirdparty-slider.less" />
+    <Content Include="assets\css\less\thirdparty-typeahead.less" />
+    <Content Include="assets\css\less\thirdparty-wysiwyg.less" />
+    <Content Include="assets\css\less\tooltip-popover.less" />
+    <Content Include="assets\css\less\utility.less" />
+    <Content Include="assets\css\less\variables.less" />
+    <Content Include="assets\css\less\widget.less" />
+    <Content Include="assets\fonts\fontawesome-webfont.eot" />
+    <Content Include="assets\fonts\fontawesome-webfont.ttf" />
+    <Content Include="assets\fonts\fontawesome-webfont.woff" />
+    <Content Include="assets\fonts\FontAwesome.otf" />
+    <Content Include="assets\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="assets\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="assets\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="assets\fonts\OpenSans-300.woff" />
+    <Content Include="assets\fonts\OpenSans-400.woff" />
+    <Content Include="assets\fonts\readme" />
+    <Content Include="assets\js\ace\readme" />
+    <Content Include="assets\js\ace\scripts.json" />
+    <Content Include="css\images\alert\.svn\all-wcprops" />
+    <Content Include="css\images\alert\.svn\entries" />
+    <Content Include="css\images\alert\.svn\prop-base\bot.gif.svn-base" />
+    <Content Include="css\images\alert\.svn\prop-base\close.gif.svn-base" />
+    <Content Include="css\images\alert\.svn\prop-base\corners.gif.svn-base" />
+    <Content Include="css\images\alert\.svn\prop-base\cornersBlue.gif.svn-base" />
+    <Content Include="css\images\alert\.svn\prop-base\help.gif.svn-base" />
+    <Content Include="css\images\alert\.svn\prop-base\important.gif.svn-base" />
+    <Content Include="css\images\alert\.svn\prop-base\info.gif.svn-base" />
+    <Content Include="css\images\alert\.svn\prop-base\title.gif.svn-base" />
+    <Content Include="css\images\alert\.svn\prop-base\title1.gif.svn-base" />
+    <Content Include="css\images\alert\.svn\text-base\bot.gif.svn-base" />
+    <Content Include="css\images\alert\.svn\text-base\close.gif.svn-base" />
+    <Content Include="css\images\alert\.svn\text-base\corners.gif.svn-base" />
+    <Content Include="css\images\alert\.svn\text-base\cornersBlue.gif.svn-base" />
+    <Content Include="css\images\alert\.svn\text-base\help.gif.svn-base" />
+    <Content Include="css\images\alert\.svn\text-base\important.gif.svn-base" />
+    <Content Include="css\images\alert\.svn\text-base\info.gif.svn-base" />
+    <Content Include="css\images\alert\.svn\text-base\title.gif.svn-base" />
+    <Content Include="css\images\alert\.svn\text-base\title1.gif.svn-base" />
+    <Content Include="css\images\bgs\.svn\all-wcprops" />
+    <Content Include="css\images\bgs\.svn\entries" />
+    <Content Include="css\images\bgs\.svn\prop-base\CardHeadbg.jpg.svn-base" />
+    <Content Include="css\images\bgs\.svn\prop-base\CardHeadbg.png.svn-base" />
+    <Content Include="css\images\bgs\.svn\prop-base\ch.gif.svn-base" />
+    <Content Include="css\images\bgs\.svn\prop-base\headbg.gif.svn-base" />
+    <Content Include="css\images\bgs\.svn\prop-base\minus1.gif.svn-base" />
+    <Content Include="css\images\bgs\.svn\prop-base\plus1.gif.svn-base" />
+    <Content Include="css\images\bgs\.svn\text-base\CardHeadbg.jpg.svn-base" />
+    <Content Include="css\images\bgs\.svn\text-base\CardHeadbg.png.svn-base" />
+    <Content Include="css\images\bgs\.svn\text-base\ch.gif.svn-base" />
+    <Content Include="css\images\bgs\.svn\text-base\headbg.gif.svn-base" />
+    <Content Include="css\images\bgs\.svn\text-base\minus1.gif.svn-base" />
+    <Content Include="css\images\bgs\.svn\text-base\plus1.gif.svn-base" />
+    <Content Include="css\images\calendar\.svn\all-wcprops" />
+    <Content Include="css\images\calendar\.svn\entries" />
+    <Content Include="css\images\calendar\.svn\prop-base\bubble_combined.png.svn-base" />
+    <Content Include="css\images\calendar\.svn\prop-base\combined.gif.svn-base" />
+    <Content Include="css\images\calendar\.svn\prop-base\grid.png.svn-base" />
+    <Content Include="css\images\calendar\.svn\prop-base\gridth.gif.svn-base" />
+    <Content Include="css\images\calendar\.svn\prop-base\headbg.gif.svn-base" />
+    <Content Include="css\images\calendar\.svn\prop-base\indicator_web20_working.gif.svn-base" />
+    <Content Include="css\images\calendar\.svn\prop-base\load-bg.png.svn-base" />
+    <Content Include="css\images\calendar\.svn\prop-base\tbg.gif.svn-base" />
+    <Content Include="css\images\calendar\.svn\text-base\bubble_combined.png.svn-base" />
+    <Content Include="css\images\calendar\.svn\text-base\combined.gif.svn-base" />
+    <Content Include="css\images\calendar\.svn\text-base\grid.png.svn-base" />
+    <Content Include="css\images\calendar\.svn\text-base\gridth.gif.svn-base" />
+    <Content Include="css\images\calendar\.svn\text-base\headbg.gif.svn-base" />
+    <Content Include="css\images\calendar\.svn\text-base\indicator_web20_working.gif.svn-base" />
+    <Content Include="css\images\calendar\.svn\text-base\load-bg.png.svn-base" />
+    <Content Include="css\images\calendar\.svn\text-base\tbg.gif.svn-base" />
+    <Content Include="css\images\dailog\.svn\all-wcprops" />
+    <Content Include="css\images\dailog\.svn\entries" />
+    <Content Include="css\images\dailog\.svn\prop-base\app-form.png.svn-base" />
+    <Content Include="css\images\dailog\.svn\prop-base\headbg.gif.svn-base" />
+    <Content Include="css\images\dailog\.svn\prop-base\left-corners.png.svn-base" />
+    <Content Include="css\images\dailog\.svn\prop-base\left-right.png.svn-base" />
+    <Content Include="css\images\dailog\.svn\prop-base\right-corners.png.svn-base" />
+    <Content Include="css\images\dailog\.svn\prop-base\tool-sprites.gif.svn-base" />
+    <Content Include="css\images\dailog\.svn\prop-base\top-bottom.png.svn-base" />
+    <Content Include="css\images\dailog\.svn\text-base\app-form.png.svn-base" />
+    <Content Include="css\images\dailog\.svn\text-base\headbg.gif.svn-base" />
+    <Content Include="css\images\dailog\.svn\text-base\left-corners.png.svn-base" />
+    <Content Include="css\images\dailog\.svn\text-base\left-right.png.svn-base" />
+    <Content Include="css\images\dailog\.svn\text-base\right-corners.png.svn-base" />
+    <Content Include="css\images\dailog\.svn\text-base\tool-sprites.gif.svn-base" />
+    <Content Include="css\images\dailog\.svn\text-base\top-bottom.png.svn-base" />
+    <Content Include="css\images\dp\.svn\all-wcprops" />
+    <Content Include="css\images\dp\.svn\entries" />
+    <Content Include="css\images\dp\.svn\prop-base\btn-arrow-light.gif.svn-base" />
+    <Content Include="css\images\dp\.svn\prop-base\btn-arrow.gif.svn-base" />
+    <Content Include="css\images\dp\.svn\text-base\btn-arrow-light.gif.svn-base" />
+    <Content Include="css\images\dp\.svn\text-base\btn-arrow.gif.svn-base" />
+    <Content Include="css\images\dropdown\.svn\all-wcprops" />
+    <Content Include="css\images\dropdown\.svn\entries" />
+    <Content Include="css\images\dropdown\.svn\prop-base\dropdown.gif.svn-base" />
+    <Content Include="css\images\dropdown\.svn\prop-base\dropdownhover.gif.svn-base" />
+    <Content Include="css\images\dropdown\.svn\text-base\dropdown.gif.svn-base" />
+    <Content Include="css\images\dropdown\.svn\text-base\dropdownhover.gif.svn-base" />
+    <Content Include="css\images\home\.svn\all-wcprops" />
+    <Content Include="css\images\home\.svn\entries" />
+    <Content Include="css\images\home\.svn\prop-base\logo.gif.svn-base" />
+    <Content Include="css\images\home\.svn\prop-base\toolbarbg.jpg.svn-base" />
+    <Content Include="css\images\home\.svn\prop-base\top_bg.jpg.svn-base" />
+    <Content Include="css\images\home\.svn\text-base\logo.gif.svn-base" />
+    <Content Include="css\images\home\.svn\text-base\toolbarbg.jpg.svn-base" />
+    <Content Include="css\images\home\.svn\text-base\top_bg.jpg.svn-base" />
+    <Content Include="css\images\icons\.svn\all-wcprops" />
+    <Content Include="css\images\icons\.svn\entries" />
+    <Content Include="css\images\icons\.svn\prop-base\add.png.svn-base" />
+    <Content Include="css\images\icons\.svn\prop-base\appt.gif.svn-base" />
+    <Content Include="css\images\icons\.svn\prop-base\au.gif.svn-base" />
+    <Content Include="css\images\icons\.svn\prop-base\Btn.Close.gif.svn-base" />
+    <Content Include="css\images\icons\.svn\prop-base\cacheClear.png.svn-base" />
+    <Content Include="css\images\icons\.svn\prop-base\cal-day.gif.svn-base" />
+    <Content Include="css\images\icons\.svn\prop-base\cal-month.gif.svn-base" />
+    <Content Include="css\images\icons\.svn\prop-base\cal-proc.gif.svn-base" />
+    <Content Include="css\images\icons\.svn\prop-base\cal-rsc-perm.gif.svn-base" />
+    <Content Include="css\images\icons\.svn\prop-base\cal-week.gif.svn-base" />
+    <Content Include="css\images\icons\.svn\prop-base\cal-wk-week.gif.svn-base" />
+    <Content Include="css\images\icons\.svn\prop-base\cal.gif.svn-base" />
+    <Content Include="css\images\icons\.svn\prop-base\calendar.gif.svn-base" />
+    <Content Include="css\images\icons\.svn\prop-base\calwrkwk.gif.svn-base" />
+    <Content Include="css\images\icons\.svn\prop-base\canmtg.gif.svn-base" />
+    <Content Include="css\images\icons\.svn\prop-base\circle_animation.gif.svn-base" />
+    <Content Include="css\images\icons\.svn\prop-base\clndr.gif.svn-base" />
+    <Content Include="css\images\icons\.svn\prop-base\clndrsmll.gif.svn-base" />
+    <Content Include="css\images\icons\.svn\prop-base\cn.gif.svn-base" />
+    <Content Include="css\images\icons\.svn\prop-base\date.png.svn-base" />
+    <Content Include="css\images\icons\.svn\prop-base\date_add.png.svn-base" />
+    <Content Include="css\images\icons\.svn\prop-base\date_reflash.png.svn-base" />
+    <Content Include="css\images\icons\.svn\prop-base\delete.png.svn-base" />
+    <Content Include="css\images\icons\.svn\prop-base\edit.png.svn-base" />
+    <Content Include="css\images\icons\.svn\prop-base\folder_user.gif.svn-base" />
+    <Content Include="css\images\icons\.svn\prop-base\group.gif.svn-base" />
+    <Content Include="css\images\icons\.svn\prop-base\group_add.gif.svn-base" />
+    <Content Include="css\images\icons\.svn\prop-base\ico1.gif.svn-base" />
+    <Content Include="css\images\icons\.svn\prop-base\indicator.gif.svn-base" />
+    <Content Include="css\images\icons\.svn\prop-base\Item.Add.gif.svn-base" />
+    <Content Include="css\images\icons\.svn\prop-base\Item.Delete.gif.svn-base" />
+    <Content Include="css\images\icons\.svn\prop-base\Item.Edit.gif.svn-base" />
+    <Content Include="css\images\icons\.svn\prop-base\Item.Input.gif.svn-base" />
+    <Content Include="css\images\icons\.svn\prop-base\Item.Save.gif.svn-base" />
+    <Content Include="css\images\icons\.svn\prop-base\Item.Search.gif.svn-base" />
+    <Content Include="css\images\icons\.svn\prop-base\msg_center.gif.svn-base" />
+    <Content Include="css\images\icons\.svn\prop-base\msg_email.gif.svn-base" />
+    <Content Include="css\images\icons\.svn\prop-base\msg_im.gif.svn-base" />
+    <Content Include="css\images\icons\.svn\prop-base\msg_mobile.gif.svn-base" />
+    <Content Include="css\images\icons\.svn\prop-base\mtgreq-cancel.gif.svn-base" />
+    <Content Include="css\images\icons\.svn\prop-base\mtgreq.gif.svn-base" />
+    <Content Include="css\images\icons\.svn\prop-base\mtgrsp-accept.gif.svn-base" />
+    <Content Include="css\images\icons\.svn\prop-base\mtgrsp-decline.gif.svn-base" />
+    <Content Include="css\images\icons\.svn\prop-base\mtgrsp-tent.gif.svn-base" />
+    <Content Include="css\images\icons\.svn\prop-base\pgrs-sm.gif.svn-base" />
+    <Content Include="css\images\icons\.svn\prop-base\resultset_next.png.svn-base" />
+    <Content Include="css\images\icons\.svn\prop-base\resultset_previous.png.svn-base" />
+    <Content Include="css\images\icons\.svn\prop-base\rowdelete.png.svn-base" />
+    <Content Include="css\images\icons\.svn\prop-base\table.gif.svn-base" />
+    <Content Include="css\images\icons\.svn\prop-base\table_c.gif.svn-base" />
+    <Content Include="css\images\icons\.svn\prop-base\table_copy.png.svn-base" />
+    <Content Include="css\images\icons\.svn\prop-base\table_r.png.svn-base" />
+    <Content Include="css\images\icons\.svn\prop-base\table_refresh.png.svn-base" />
+    <Content Include="css\images\icons\.svn\prop-base\tick.png.svn-base" />
+    <Content Include="css\images\icons\.svn\prop-base\turnback.png.svn-base" />
+    <Content Include="css\images\icons\.svn\prop-base\us.gif.svn-base" />
+    <Content Include="css\images\icons\.svn\prop-base\view.png.svn-base" />
+    <Content Include="css\images\icons\.svn\text-base\add.png.svn-base" />
+    <Content Include="css\images\icons\.svn\text-base\appt.gif.svn-base" />
+    <Content Include="css\images\icons\.svn\text-base\au.gif.svn-base" />
+    <Content Include="css\images\icons\.svn\text-base\Btn.Close.gif.svn-base" />
+    <Content Include="css\images\icons\.svn\text-base\cacheClear.png.svn-base" />
+    <Content Include="css\images\icons\.svn\text-base\cal-day.gif.svn-base" />
+    <Content Include="css\images\icons\.svn\text-base\cal-month.gif.svn-base" />
+    <Content Include="css\images\icons\.svn\text-base\cal-proc.gif.svn-base" />
+    <Content Include="css\images\icons\.svn\text-base\cal-rsc-perm.gif.svn-base" />
+    <Content Include="css\images\icons\.svn\text-base\cal-week.gif.svn-base" />
+    <Content Include="css\images\icons\.svn\text-base\cal-wk-week.gif.svn-base" />
+    <Content Include="css\images\icons\.svn\text-base\cal.gif.svn-base" />
+    <Content Include="css\images\icons\.svn\text-base\calendar.gif.svn-base" />
+    <Content Include="css\images\icons\.svn\text-base\calwrkwk.gif.svn-base" />
+    <Content Include="css\images\icons\.svn\text-base\canmtg.gif.svn-base" />
+    <Content Include="css\images\icons\.svn\text-base\circle_animation.gif.svn-base" />
+    <Content Include="css\images\icons\.svn\text-base\clndr.gif.svn-base" />
+    <Content Include="css\images\icons\.svn\text-base\clndrsmll.gif.svn-base" />
+    <Content Include="css\images\icons\.svn\text-base\cn.gif.svn-base" />
+    <Content Include="css\images\icons\.svn\text-base\date.png.svn-base" />
+    <Content Include="css\images\icons\.svn\text-base\date_add.png.svn-base" />
+    <Content Include="css\images\icons\.svn\text-base\date_reflash.png.svn-base" />
+    <Content Include="css\images\icons\.svn\text-base\delete.png.svn-base" />
+    <Content Include="css\images\icons\.svn\text-base\edit.png.svn-base" />
+    <Content Include="css\images\icons\.svn\text-base\folder_user.gif.svn-base" />
+    <Content Include="css\images\icons\.svn\text-base\group.gif.svn-base" />
+    <Content Include="css\images\icons\.svn\text-base\group_add.gif.svn-base" />
+    <Content Include="css\images\icons\.svn\text-base\ico1.gif.svn-base" />
+    <Content Include="css\images\icons\.svn\text-base\indicator.gif.svn-base" />
+    <Content Include="css\images\icons\.svn\text-base\Item.Add.gif.svn-base" />
+    <Content Include="css\images\icons\.svn\text-base\Item.Delete.gif.svn-base" />
+    <Content Include="css\images\icons\.svn\text-base\Item.Edit.gif.svn-base" />
+    <Content Include="css\images\icons\.svn\text-base\Item.Input.gif.svn-base" />
+    <Content Include="css\images\icons\.svn\text-base\Item.Save.gif.svn-base" />
+    <Content Include="css\images\icons\.svn\text-base\Item.Search.gif.svn-base" />
+    <Content Include="css\images\icons\.svn\text-base\msg_center.gif.svn-base" />
+    <Content Include="css\images\icons\.svn\text-base\msg_email.gif.svn-base" />
+    <Content Include="css\images\icons\.svn\text-base\msg_im.gif.svn-base" />
+    <Content Include="css\images\icons\.svn\text-base\msg_mobile.gif.svn-base" />
+    <Content Include="css\images\icons\.svn\text-base\mtgreq-cancel.gif.svn-base" />
+    <Content Include="css\images\icons\.svn\text-base\mtgreq.gif.svn-base" />
+    <Content Include="css\images\icons\.svn\text-base\mtgrsp-accept.gif.svn-base" />
+    <Content Include="css\images\icons\.svn\text-base\mtgrsp-decline.gif.svn-base" />
+    <Content Include="css\images\icons\.svn\text-base\mtgrsp-tent.gif.svn-base" />
+    <Content Include="css\images\icons\.svn\text-base\pgrs-sm.gif.svn-base" />
+    <Content Include="css\images\icons\.svn\text-base\resultset_next.png.svn-base" />
+    <Content Include="css\images\icons\.svn\text-base\resultset_previous.png.svn-base" />
+    <Content Include="css\images\icons\.svn\text-base\rowdelete.png.svn-base" />
+    <Content Include="css\images\icons\.svn\text-base\table.gif.svn-base" />
+    <Content Include="css\images\icons\.svn\text-base\table_c.gif.svn-base" />
+    <Content Include="css\images\icons\.svn\text-base\table_copy.png.svn-base" />
+    <Content Include="css\images\icons\.svn\text-base\table_r.png.svn-base" />
+    <Content Include="css\images\icons\.svn\text-base\table_refresh.png.svn-base" />
+    <Content Include="css\images\icons\.svn\text-base\tick.png.svn-base" />
+    <Content Include="css\images\icons\.svn\text-base\turnback.png.svn-base" />
+    <Content Include="css\images\icons\.svn\text-base\us.gif.svn-base" />
+    <Content Include="css\images\icons\.svn\text-base\view.png.svn-base" />
+    <Content Include="css\images\share\.svn\all-wcprops" />
+    <Content Include="css\images\share\.svn\entries" />
+    <Content Include="css\images\share\.svn\prop-base\card.gif.svn-base" />
+    <Content Include="css\images\share\.svn\prop-base\glass-bg.gif.svn-base" />
+    <Content Include="css\images\share\.svn\prop-base\hd-sprite.gif.svn-base" />
+    <Content Include="css\images\share\.svn\prop-base\headbg.gif.svn-base" />
+    <Content Include="css\images\share\.svn\prop-base\information.png.svn-base" />
+    <Content Include="css\images\share\.svn\prop-base\left-btn.gif.svn-base" />
+    <Content Include="css\images\share\.svn\prop-base\right-btn.gif.svn-base" />
+    <Content Include="css\images\share\.svn\prop-base\table.gif.svn-base" />
+    <Content Include="css\images\share\.svn\prop-base\table_c.gif.svn-base" />
+    <Content Include="css\images\share\.svn\prop-base\tbg.gif.svn-base" />
+    <Content Include="css\images\share\.svn\prop-base\tool-sprites.gif.svn-base" />
+    <Content Include="css\images\share\.svn\text-base\card.gif.svn-base" />
+    <Content Include="css\images\share\.svn\text-base\glass-bg.gif.svn-base" />
+    <Content Include="css\images\share\.svn\text-base\hd-sprite.gif.svn-base" />
+    <Content Include="css\images\share\.svn\text-base\headbg.gif.svn-base" />
+    <Content Include="css\images\share\.svn\text-base\information.png.svn-base" />
+    <Content Include="css\images\share\.svn\text-base\left-btn.gif.svn-base" />
+    <Content Include="css\images\share\.svn\text-base\right-btn.gif.svn-base" />
+    <Content Include="css\images\share\.svn\text-base\table.gif.svn-base" />
+    <Content Include="css\images\share\.svn\text-base\table_c.gif.svn-base" />
+    <Content Include="css\images\share\.svn\text-base\tbg.gif.svn-base" />
+    <Content Include="css\images\share\.svn\text-base\tool-sprites.gif.svn-base" />
+    <Content Include="css\images\validation\.svn\all-wcprops" />
+    <Content Include="css\images\validation\.svn\entries" />
+    <Content Include="css\images\validation\.svn\prop-base\accept.png.svn-base" />
+    <Content Include="css\images\validation\.svn\prop-base\exclamation.png.svn-base" />
+    <Content Include="css\images\validation\.svn\prop-base\tooltop.gif.svn-base" />
+    <Content Include="css\images\validation\.svn\prop-base\warning.gif.svn-base" />
+    <Content Include="css\images\validation\.svn\text-base\accept.png.svn-base" />
+    <Content Include="css\images\validation\.svn\text-base\exclamation.png.svn-base" />
+    <Content Include="css\images\validation\.svn\text-base\tooltop.gif.svn-base" />
+    <Content Include="css\images\validation\.svn\text-base\warning.gif.svn-base" />
+    <Content Include="Images\Thumbs.db" />
+    <Content Include="Master\Excel_Files\5645 - 22-Dec-14.xls" />
+    <Content Include="Master\Excel_Files\5645-22-Dec-14.zip" />
+    <Content Include="Master\Excel_Files\5645.xls" />
+    <Content Include="Master\Images\Thumbs.db" />
+    <Content Include="Master\MasterPage2.master" />
+    <Content Include="Master\Site.Master" />
+    <Content Include="Scripts\bootstrap-3.3.6-dist\css\bootstrap-theme.css.map" />
+    <Content Include="Scripts\bootstrap-3.3.6-dist\css\bootstrap-theme.min.css.map" />
+    <Content Include="Scripts\bootstrap-3.3.6-dist\css\bootstrap.css.map" />
+    <Content Include="Scripts\bootstrap-3.3.6-dist\css\bootstrap.min.css.map" />
+    <Content Include="Scripts\bootstrap-3.3.6-dist\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Scripts\bootstrap-3.3.6-dist\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Scripts\bootstrap-3.3.6-dist\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Scripts\bootstrap-3.3.6-dist\fonts\glyphicons-halflings-regular.woff2" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <Content Include="Web.sitemap" />
+    <Content Include="Web1.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="css\images\alert\.svn\props\" />
+    <Folder Include="css\images\alert\.svn\tmp\prop-base\" />
+    <Folder Include="css\images\alert\.svn\tmp\props\" />
+    <Folder Include="css\images\alert\.svn\tmp\text-base\" />
+    <Folder Include="css\images\bgs\.svn\props\" />
+    <Folder Include="css\images\bgs\.svn\tmp\prop-base\" />
+    <Folder Include="css\images\bgs\.svn\tmp\props\" />
+    <Folder Include="css\images\bgs\.svn\tmp\text-base\" />
+    <Folder Include="css\images\calendar\.svn\props\" />
+    <Folder Include="css\images\calendar\.svn\tmp\prop-base\" />
+    <Folder Include="css\images\calendar\.svn\tmp\props\" />
+    <Folder Include="css\images\calendar\.svn\tmp\text-base\" />
+    <Folder Include="css\images\dailog\.svn\props\" />
+    <Folder Include="css\images\dailog\.svn\tmp\prop-base\" />
+    <Folder Include="css\images\dailog\.svn\tmp\props\" />
+    <Folder Include="css\images\dailog\.svn\tmp\text-base\" />
+    <Folder Include="css\images\dp\.svn\props\" />
+    <Folder Include="css\images\dp\.svn\tmp\prop-base\" />
+    <Folder Include="css\images\dp\.svn\tmp\props\" />
+    <Folder Include="css\images\dp\.svn\tmp\text-base\" />
+    <Folder Include="css\images\dropdown\.svn\props\" />
+    <Folder Include="css\images\dropdown\.svn\tmp\prop-base\" />
+    <Folder Include="css\images\dropdown\.svn\tmp\props\" />
+    <Folder Include="css\images\dropdown\.svn\tmp\text-base\" />
+    <Folder Include="css\images\home\.svn\props\" />
+    <Folder Include="css\images\home\.svn\tmp\prop-base\" />
+    <Folder Include="css\images\home\.svn\tmp\props\" />
+    <Folder Include="css\images\home\.svn\tmp\text-base\" />
+    <Folder Include="css\images\icons\.svn\props\" />
+    <Folder Include="css\images\icons\.svn\tmp\prop-base\" />
+    <Folder Include="css\images\icons\.svn\tmp\props\" />
+    <Folder Include="css\images\icons\.svn\tmp\text-base\" />
+    <Folder Include="css\images\share\.svn\props\" />
+    <Folder Include="css\images\share\.svn\tmp\prop-base\" />
+    <Folder Include="css\images\share\.svn\tmp\props\" />
+    <Folder Include="css\images\share\.svn\tmp\text-base\" />
+    <Folder Include="css\images\validation\.svn\props\" />
+    <Folder Include="css\images\validation\.svn\tmp\prop-base\" />
+    <Folder Include="css\images\validation\.svn\tmp\props\" />
+    <Folder Include="css\images\validation\.svn\tmp\text-base\" />
+    <Folder Include="Master\Terms and conditions\" />
+    <Folder Include="Upload\AnswerImage\" />
+    <Folder Include="Upload\CommonAnswer\" />
+    <Folder Include="Upload\HintAudio\" />
+    <Folder Include="Upload\HintImage\" />
+    <Folder Include="Upload\HintVideo\" />
+    <Folder Include="Upload\QuestionAudio\" />
+    <Folder Include="Upload\QuestionImage\" />
+    <Folder Include="Upload\SolutionAudio\" />
+    <Folder Include="Upload\SolutionDocument\" />
+    <Folder Include="Upload\SolutionImage\" />
+    <Folder Include="Upload\SolutionVideo\" />
+    <Folder Include="Upload\Testimonial\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Catalyst.Business.Contract\Catalyst.Business.Contract.csproj">
+      <Project>{843d9acd-bc87-447c-8bc0-edecc830a6d0}</Project>
+      <Name>Catalyst.Business.Contract</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Catalyst.Business.Core\Catalyst.Business.Core.csproj">
+      <Project>{024a4f80-5a8e-40a9-a8bf-5fa8f7466c66}</Project>
+      <Name>Catalyst.Business.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Catalyst.Business.Model\Catalyst.Business.Model.csproj">
+      <Project>{52d11885-2f84-474a-afd3-04fa274bb7e1}</Project>
+      <Name>Catalyst.Business.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Catalyst.DataAccess.DataManagers\Catalyst.DataAccess.DataManagers.csproj">
+      <Project>{2c39bfd4-6b7d-45cf-8cb5-c3b67d01ab20}</Project>
+      <Name>Catalyst.DataAccess.DataManagers</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>8276</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:8226/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

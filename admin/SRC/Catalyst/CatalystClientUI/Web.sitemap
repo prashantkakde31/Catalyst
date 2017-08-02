@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+  <siteMapNode url="Master/Default2.aspx" title="Home"  description="">
+    <!-- Admin Start-->
+    <siteMapNode url="ADMIN/Add_NewMenu.aspx" title="Add New Menu"  description="" />
+    <siteMapNode url="ADMIN/Add_Group_To_Department.aspx" title="Add Group To Department"  description="" />
+    <siteMapNode url="ADMIN/Add_NewScreen.aspx" title="Add New Function"  description="" />
+    <siteMapNode url="ADMIN/Add_User_To_Group.aspx" title="Assign Group To User"  description="" />
+    <siteMapNode url="ADMIN/AddNewDepartment.aspx" title="Add New Department"  description="" />
+    <siteMapNode url="ADMIN/AddNewGroup.aspx" title="Add New Group"  description="" />
+    <siteMapNode url="ADMIN/AddNewUsers.aspx" title="Add New User"  description="" />
+    <siteMapNode url="ADMIN/Change_Password.aspx" title="Change Password"  description="" />
+    <siteMapNode url="ADMIN/GROUP_FORM_ACCESS.aspx" title="Assign Rights To Group"  description="" />
+    <siteMapNode url="ADMIN/NewGroup_Report.aspx" title="Group Enrollment Report"  description="" />
+    <siteMapNode url="ADMIN/PASSWORD_MANAGER.aspx" title="Password Management"  description="" />
+    <siteMapNode url="ADMIN/Reset_User_Password.aspx" title="Reset  User Password"  description="" />
+    <siteMapNode url="ADMIN/User_Action_Trial.aspx" title="User Update Report"  description="" />
+    <siteMapNode url="ADMIN/USER_BLOCKING.aspx" title="User Blocking"  description="" />
+    <siteMapNode url="ADMIN/USER_DISABLING.aspx" title="User Disabling"  description="" />
+    <siteMapNode url="ADMIN/User_Status_report.aspx" title="User Status Report"  description="" />
+    <siteMapNode url="ADMIN/USER_UNLOCKING.aspx" title="User Unlocking"  description="" />
+    <siteMapNode url="ADMIN/Users_Report.aspx" title="User Enrollment Report"  description="" />
+    <siteMapNode url="ADMIN/UserValidityPeriod.aspx" title="User Validity"  description="" />
+    <!-- Admin Ends-->
+
+    <!-- Master Start-->
+    <siteMapNode url="Master/Change_Password.aspx" title="Change Password"  description="" />
+    <siteMapNode url="Master/My_Account.aspx" title="My Account"  description="" />
+    <!-- Master Ends-->
+
+  </siteMapNode>
+</siteMap>
+
