@@ -1,0 +1,84 @@
+//disable keys while exam is going on
+
+function disableCtrlKeyCombination(e) {
+
+    var forbiddenKeys = new Array('a', 'n', 'x', 'j', 'w', 'c');
+    var key;
+    var isCtrl;
+    if (window.event)
+    {
+        key = window.event.keyCode;     //IE
+        if (window.event.ctrlKey)
+            isCtrl = true;
+        else
+            isCtrl = false;
+    }
+    else
+    {
+        key = e.which;     //firefox
+        if (e.ctrlKey)
+            isCtrl = true;
+        else
+            isCtrl = false;
+    }
+
+    //if ctrl is pressed check if other key is in forbidenKeys array
+    if (isCtrl)
+    {
+        for (i = 0; i < forbiddenKeys.length; i++)
+        {
+            //case-insensitive comparation
+            if (forbiddenKeys[i] == String.fromCharCode(key).toLowerCase())//.toLowerCase()
+            {
+                var key_ctrl_disable = 'Key combination CTRL + ' + String.fromCharCode(key) + ' has been disabled.';
+                e.preventDefault();
+                return false;
+            }
+        }
+    }
+    return true;
+}
+https://retail.onlinesbi.com/retail/userdrivenregdetails.htm
+=====================================================
+function timer() {
+    var days = Math.floor(seconds / 24 / 60 / 60);
+    var hoursLeft = Math.floor((seconds) - (days * 86400));
+    var hours = Math.floor(hoursLeft / 3600);
+    var minutesLeft = Math.floor((hoursLeft) - (hours * 3600));
+    var minutes = Math.floor(minutesLeft / 60);
+    var remainingSeconds = seconds % 60;
+    if (remainingSeconds < 10) {
+        remainingSeconds = "0" + remainingSeconds;
+    }
+    document.getElementById('countdown').innerHTML = hours + " hours " + minutes + " minutes " + remainingSeconds + " seconds ";
+    if (seconds == 0) {
+        clearInterval(countdownTimer);
+        if (days == 0 && hours == 0 && minutes == 0) {
+            $("#auto_submit_code").val('Y');
+            bootbox.alert({
+                //size: 'small',
+                title: "Contest time is over",
+                message: "<p class='alert alert-warning'>Warning : Contest time is over. Click OK to see the result</p>",
+                callback: function (result) {
+                    $('.submit-trigger').trigger('click');
+                    $('#codejudge_requirement').submit();
+
+                }
+            });
+        }
+    } else {
+        seconds--;
+    }
+}
+
+================================================================
+Ajax Call 
+==============================================================
+
+function disableRightClick() 
+{ 
+alert("Sorry, right click is not allowed !!"); 
+return false; 
+} 
+</script> 
+<body oncontextmenu=" return disableRightClick();">

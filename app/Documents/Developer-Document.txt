@@ -1,0 +1,66 @@
+1) Used SimpleInjector as DI container in DependencyResolution
+	Ans - Since it is smaller,faster and scalable among several else we can go with structure map which is stable one
+2) Used T4MVC to avoid magic strings in Web project
+3) Used Microsoft.EnterPriseLibrary.DataAccessBlock in Infrastructure.Data to speed up the development process
+4) Used BaseConroller for Controller level Error Handling in Web project
+5) Used Closed.XML for exporting excel in Web project
+
+
+Use "Install-Package routedebugger" for debugging routes
+=======================
+
+Required Enums
+
+-SchoolCollegeType (School/College/Coaching/Tuition)
+-UserAccountStatus (UserMaster) (OPEN / SUSPENDED / EXPIRED)
+-AnswerType (McqAnswers) - Text/Image/Audio
+-QuestionStatus (ExamDetail)- Submitted, Not Submitted, Skipped
+-ExamResult (Exam) - Pass / Fail or Bronze, Silver, Gold and platinum
+-PaymentMode (OrderDetail)
+-Month
+
+========================
+
+Need questions to read from
+
+=========================
+
+<td @Html.Raw( someBoolean ? "rel='tooltip' data-container='.drillDown a'" : "" )>
+===============================
+
+Admin
+
+-- GetAll/GetByID/Add/Update/delete
+1)  Course (usp_GetAllCourse,usp_GetCourseById,usp_AddCourse,usp_UpdateCourse,usp_DeleteCourse)
+2)  Subcourse
+3)  Subject
+4)  Grade
+5)  Topic
+6)  Paper
+7)  Product
+8)  Discount
+9)  Mcq
+10) Testimonial
+11) Team
+
+12) Menu Master
+
+============================
+
+User
+->Free MCQ display - Subjectwise and topicwise
+->View Question's Subject wise and topic wise
+->Mcq's Buying page
+->Adding to cart and proceed upto checkout 41285203
+
+=============================================================
+
+Catalyst Testing 10-Feb-17
+
+1) Remove GNH name and logo from header and footer
+2) Product,MCQ,Testimonial,Team remained
+3) Page get refreshed on post back... need loader
+4) Sub Course master - fetch course name instead of course Id in grid
+5) Subject Master - fetch sub course name,course name also instead of sub course Id in grid
+6) Topic Master - fetch sub course name,course name also instead of subject Id in grid
+7) Paper Master - order should be Is Yearwise, Year, month , Is Sample, instead of id's fetch course name, sub course name, topic name in grid
