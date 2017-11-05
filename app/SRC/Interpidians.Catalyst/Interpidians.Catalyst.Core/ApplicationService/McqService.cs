@@ -32,32 +32,32 @@ namespace Interpidians.Catalyst.Core.ApplicationService
         {
             return this.SubjectMasterRepository.GetAll().ToList();
         }
-        public List<TopicMaster> getAllTopics()
+        public List<TopicMaster> GetAllTopics()
         {
             return this.TopicMasterRepository.GetAll().ToList();
         }
-        public List<PaperMaster> getAllPapers()
+        public List<PaperMaster> GetAllPapers()
         {
             return this.PaperMasterRepository.GetAll().ToList();
         }
 
-        public List<CourseMaster> getAllCourses()
+        public List<CourseMaster> GetAllCourses()
         {
             return this.CourseMasterRepository.GetAll().ToList();
         }
 
-        public List<SubCourseMaster> getAllSubCourses()
+        public List<SubCourseMaster> GetAllSubCourses()
         {
             return this.SubCourseMasterRepository.GetAll().ToList();
         }
 
 
-        public List<Mcq> getAllMcqs()
+        public List<Mcq> GetAllMcqs()
         {
             return this.McqRepository.GetAll().ToList();
         }
 
-        public List<McqAnswer> getAllMcqAnswers()
+        public List<McqAnswer> GetAllMcqAnswers()
         {
             return this.McqAnswerRepository.GetAll().ToList();
         }

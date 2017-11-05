@@ -18,8 +18,6 @@ namespace Interpidians.Catalyst.Client.Web.Controllers
 {
     public partial class McqController : BaseController
     {
-        private IExamService Service { get; set; }
-        private Exam currentExam { get; set; }
         private IMcqService McqService { get; set; }
         public McqController(IMcqService mcqService)
         {
@@ -45,12 +43,12 @@ namespace Interpidians.Catalyst.Client.Web.Controllers
             ViewBag.CourseName = course;
             ViewBag.Subcourse =  subcourse;
 
-            int subcourseId = (from subcourseid in this.McqService.getAllSubCourses().Where(a => a.Name == subcourse) select subcourseid.SubCourseID).FirstOrDefault();
+            int subcourseId = (from subcourseid in this.McqService.GetAllSubCourses().Where(a => a.Name == subcourse) select subcourseid.SubCourseID).FirstOrDefault();
             List<SubjectMaster> lstSub = this.McqService.GetAllSubjects().Where(a => a.SubCourseID == subcourseId).ToList();
             ViewBag.SubjectList = lstSub;
             int sm = (from subjectid in lstSub.Where(a => a.Name == subject) select subjectid.SubjectID).FirstOrDefault();
-            List<TopicMaster> lstTopic = this.McqService.getAllTopics().Where(a => a.SubjectID == sm).ToList();
-            List<PaperMaster> lstPaper = this.McqService.getAllPapers().Where(a => a.SubjectId == sm && (a.IsSample)).ToList();
+            List<TopicMaster> lstTopic = this.McqService.GetAllTopics().Where(a => a.SubjectID == sm).ToList();
+            List<PaperMaster> lstPaper = this.McqService.GetAllPapers().Where(a => a.SubjectId == sm && (a.IsSample)).ToList();
 
             SampleMcqViewModel objSampleMcqViewModel = new SampleMcqViewModel();
             objSampleMcqViewModel.TopicWiseList = lstTopic;
@@ -64,8 +62,8 @@ namespace Interpidians.Catalyst.Client.Web.Controllers
         {
             int topicid = Convert.ToInt32(id);
             //int subcourseId = (from subcourseid in this.McqService.getAllTopics().Where(a => a.TopicID == topicid) select subcourseid.SubjectID).FirstOrDefault();
-            List<Mcq> lstMcq = this.McqService.getAllMcqs().Where(a => a.TopicwisePaperID == topicid).ToList();
-            List<McqAnswer> lstMcqAnswer = this.McqService.getAllMcqAnswers().ToList();
+            List<Mcq> lstMcq = this.McqService.GetAllMcqs().Where(a => a.TopicwisePaperID == topicid).ToList();
+            List<McqAnswer> lstMcqAnswer = this.McqService.GetAllMcqAnswers().ToList();
             int i = 1;
 
             //lstMcq?.ForEach(x=> { x.TopicWiseSrNo = i++; });
@@ -111,8 +109,8 @@ namespace Interpidians.Catalyst.Client.Web.Controllers
         {
             int paperID = Convert.ToInt32(id);
             //int subcourseId = (from subcourseid in this.McqService.getAllTopics().Where(a => a.TopicID == paperID) select subcourseid.SubjectID).FirstOrDefault();
-            List<Mcq> lstMcq = this.McqService.getAllMcqs().Where(a => a.YearwisePaperID == paperID).ToList();
-            List<McqAnswer> lstMcqAnswer = this.McqService.getAllMcqAnswers().ToList();
+            List<Mcq> lstMcq = this.McqService.GetAllMcqs().Where(a => a.YearwisePaperID == paperID).ToList();
+            List<McqAnswer> lstMcqAnswer = this.McqService.GetAllMcqAnswers().ToList();
             int i = 1;
 
             //lstMcq?.ForEach(x=> { x.TopicWiseSrNo = i++; });

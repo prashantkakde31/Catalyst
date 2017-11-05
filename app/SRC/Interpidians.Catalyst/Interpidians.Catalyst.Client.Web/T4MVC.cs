@@ -395,6 +395,8 @@ namespace Links
                 public static readonly string jquery_min_js = Url("jquery.min.js");
                 public static readonly string jquery_min_map = Url("jquery.min.map");
                 public static readonly string jquery_plugin_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/jquery.plugin.min.js") ? Url("jquery.plugin.min.js") : Url("jquery.plugin.js");
+                public static readonly string jquery_validate_min_js = Url("jquery.validate.min.js");
+                public static readonly string jquery_validate_unobtrusive_min_js = Url("jquery.validate.unobtrusive.min.js");
             }
         
             [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -1654,6 +1656,8 @@ namespace Links
                         public const string jquery_js = "~/Content/plugins/jquery/jquery.js"; 
                         public const string jquery_min_js = "~/Content/plugins/jquery/jquery.min.js"; 
                         public const string jquery_plugin_js = "~/Content/plugins/jquery/jquery.plugin.js"; 
+                        public const string jquery_validate_min_js = "~/Content/plugins/jquery/jquery.validate.min.js"; 
+                        public const string jquery_validate_unobtrusive_min_js = "~/Content/plugins/jquery/jquery.validate.unobtrusive.min.js"; 
                     }
                 }
                 public static partial class jquery_steps 

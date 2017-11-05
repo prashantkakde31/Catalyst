@@ -53,7 +53,7 @@ namespace Interpidians.Catalyst.Client.Web
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "User", action = "login", id = UrlParameter.Optional }
+                defaults: new { controller = "User", action = "LoginRegister", id = UrlParameter.Optional }
             );
 
             //routes.MapRoute(

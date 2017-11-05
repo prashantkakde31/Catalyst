@@ -10,7 +10,7 @@ using Microsoft.Practices.EnterpriseLibrary.Data;
 
 namespace Interpidians.Catalyst.Infrastructure.Data
 {
-   public class TestimonialMasterRepository:BaseRepository,ITestimonialRepository
+   public class TestimonialMasterRepository:BaseRepository,ITestimonialMasterRepository
     {
         public IEnumerable<Testimonial> GetAll()
         {

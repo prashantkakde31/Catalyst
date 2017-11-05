@@ -8,12 +8,12 @@ namespace Interpidians.Catalyst.Core.ApplicationService
 {
    public interface IMcqService
     {
-       List<CourseMaster> getAllCourses();
-       List<SubCourseMaster> getAllSubCourses();
+       List<CourseMaster> GetAllCourses();
+       List<SubCourseMaster> GetAllSubCourses();
        List<SubjectMaster> GetAllSubjects();
-       List<TopicMaster> getAllTopics();
-       List<PaperMaster> getAllPapers();
-       List<Mcq> getAllMcqs();
-       List<McqAnswer> getAllMcqAnswers();
+       List<TopicMaster> GetAllTopics();
+       List<PaperMaster> GetAllPapers();
+       List<Mcq> GetAllMcqs();
+       List<McqAnswer> GetAllMcqAnswers();
     }
 }

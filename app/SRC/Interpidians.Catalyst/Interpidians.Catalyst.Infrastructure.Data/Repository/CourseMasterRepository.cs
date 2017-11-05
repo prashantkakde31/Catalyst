@@ -27,13 +27,7 @@ namespace Interpidians.Catalyst.Infrastructure.Data
             {
                 MapRecord(IReader, courseMaster);
             }
-            //usp_GetCourseById is name of stored procedure but dont know how to use it
-            //courseMaster = this.DB.ExecuteSprocAccessor<CourseMaster>("usp_GetCourseById");
             return courseMaster;
-            //should i write following course?
-            //IEnumerable<CourseMaster> lstCourse;
-            //lstCourse = this.DB.ExecuteSprocAccessor<CourseMaster>("usp_GetCourseById");
-            //return lstCourse;
         }
 
         public void Add(CourseMaster CourseMaster)

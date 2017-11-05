@@ -4,14 +4,15 @@ using System.Linq;
 using System.Text;
 using Interpidians.Catalyst.Core.Entity;
 
+
 namespace Interpidians.Catalyst.Core.DomainService
 {
-   public interface ITestimonialMasterRepository
+    public interface ICartItemRepository
     {
-        IEnumerable<Testimonial> GetAll();
-        Testimonial GetById(IdentifiableData id);
-        void Add(Testimonial Testimonial);
-        void Update(Testimonial Testimonial);
+        IEnumerable<CartItem> GetAll();
+        CartItem GetById(IdentifiableData id);
+        void Add(CartItem ShoppingCart);
+        void Update(CartItem ShoppingCart);
         void Delete(IdentifiableData id);
     }
 }

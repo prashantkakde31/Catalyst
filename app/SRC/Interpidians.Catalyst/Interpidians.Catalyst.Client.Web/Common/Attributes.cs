@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
@@ -61,6 +62,69 @@ namespace Interpidians.Catalyst.Client.Web.Common
         {
             get;
             set;
+        }
+    }
+    /// <summary>
+    /// Used to set model state while redirecting from action with the help of tempdata
+    /// </summary>
+    public class SetTempDataModelStateAttribute : ActionFilterAttribute
+    {
+        public override void OnActionExecuted(ActionExecutedContext filterContext)
+        {
+            base.OnActionExecuted(filterContext);
+            filterContext.Controller.TempData["ModelState"] =
+               filterContext.Controller.ViewData.ModelState;
+        }
+    }
+
+    /// <summary>
+    /// Used to get model state while redirecting from action with the help of tempdata
+    /// </summary>
+    public class RestoreModelStateFromTempDataAttribute : ActionFilterAttribute
+    {
+        public override void OnActionExecuting(ActionExecutingContext filterContext)
+        {
+            base.OnActionExecuting(filterContext);
+            if (filterContext.Controller.TempData.ContainsKey("ModelState"))
+            {
+                filterContext.Controller.ViewData.ModelState.Merge(
+                    (ModelStateDictionary)filterContext.Controller.TempData["ModelState"]);
+            }
+        }
+    }
+
+    /// <summary>
+    /// Used to ignore some model properties while validating model state
+    /// Pass comma seperated list of model attribute to be ignore
+    /// </summary>
+    public class IgnoreModelErrorsAttribute : ActionFilterAttribute
+    {
+        private string keysString;
+
+        public IgnoreModelErrorsAttribute(string keys)
+            : base()
+        {
+            this.keysString = keys;
+        }
+
+        public override void OnActionExecuting(ActionExecutingContext filterContext)
+        {
+            ModelStateDictionary modelState = filterContext.Controller.ViewData.ModelState;
+            string[] keyPatterns = keysString.Split(new char[] { ',' },
+                     StringSplitOptions.RemoveEmptyEntries);
+            for (int i = 0; i < keyPatterns.Length; i++)
+            {
+                string keyPattern = keyPatterns[i]
+                    .Trim()
+                    .Replace(@".", @"\.")
+                    .Replace(@"[", @"\[")
+                    .Replace(@"]", @"\]")
+                    .Replace(@"\[\]", @"\[[0-9]+\]")
+                    .Replace(@"*", @"[A-Za-z0-9]+");
+                IEnumerable<string> matchingKeys = modelState.Keys.Where(x => Regex.IsMatch(x, keyPattern));
+                foreach (string matchingKey in matchingKeys)
+                    modelState[matchingKey].Errors.Clear();
+            }
         }
     }
 }

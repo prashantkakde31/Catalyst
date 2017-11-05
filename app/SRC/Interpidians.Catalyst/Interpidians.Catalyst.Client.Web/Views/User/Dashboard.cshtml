@@ -1,0 +1,8 @@
+﻿@using Interpidians.Catalyst.Client.Web.Common
+@{
+    ViewBag.Title = "Dashboard";
+    Layout = "~/Views/Shared/_CommonLayout.cshtml";
+}
+
+
+<h1>Welcome @( new SessionStore().GetItemFromSession<Interpidians.Catalyst.Core.Entity.UserMaster>(SessionKeys.USER_DETAILS).UserName)</h1>

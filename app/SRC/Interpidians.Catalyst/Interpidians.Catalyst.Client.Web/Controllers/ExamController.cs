@@ -65,18 +65,18 @@ namespace Interpidians.Catalyst.Client.Web.Controllers
             if (string.IsNullOrEmpty(SrNo))
                 SrNo = "1";
 
-            if (this.sessionStore.ItemExists(SessionKeys.Exam_DETAILS))
+            if (this.sessionStore.ItemExists(SessionKeys.EXAM_DETAILS))
             {
-                this.currentExam = this.sessionStore.GetItemFromSession<Exam>(SessionKeys.Exam_DETAILS);
+                this.currentExam = this.sessionStore.GetItemFromSession<Exam>(SessionKeys.EXAM_DETAILS);
             }
             else
             {
                 this.currentExam = this.Service.StartExam(1, Convert.ToInt32(id), DateTime.Now);
-                this.sessionStore.SaveItemToSession<Exam>(SessionKeys.Exam_DETAILS, this.currentExam);
+                this.sessionStore.SaveItemToSession<Exam>(SessionKeys.EXAM_DETAILS, this.currentExam);
             }
             int paperid = Convert.ToInt32(id);
-            List<Mcq> lstMcq = this.McqService.getAllMcqs().Where(a => a.YearwisePaperID == paperid).ToList();
-            List<McqAnswer> lstMcqAnswer = this.McqService.getAllMcqAnswers().ToList();
+            List<Mcq> lstMcq = this.McqService.GetAllMcqs().Where(a => a.YearwisePaperID == paperid).ToList();
+            List<McqAnswer> lstMcqAnswer = this.McqService.GetAllMcqAnswers().ToList();
             ExamViewModel examVM = new ExamViewModel();
             examVM.CurrentExam = this.currentExam;
             examVM.CurrentQuestion = this.Service.GetSingleExamMcq(Convert.ToInt32(id), Convert.ToInt32(SrNo));
@@ -99,9 +99,9 @@ namespace Interpidians.Catalyst.Client.Web.Controllers
         [HttpPost]
         public virtual ActionResult SubmitAnswer([JsonBinder]AnswerToSubmitVM answer)
         {
-            if (this.sessionStore.ItemExists(SessionKeys.Exam_DETAILS))
+            if (this.sessionStore.ItemExists(SessionKeys.EXAM_DETAILS))
             {
-                this.currentExam = this.sessionStore.GetItemFromSession<Exam>(SessionKeys.Exam_DETAILS);
+                this.currentExam = this.sessionStore.GetItemFromSession<Exam>(SessionKeys.EXAM_DETAILS);
             }
             else
             {
@@ -119,16 +119,16 @@ namespace Interpidians.Catalyst.Client.Web.Controllers
             this.currentExam.TotalTimeLeft = (new TimeSpan(answer.TimeLeft.SplitTimePart("H"), answer.TimeLeft.SplitTimePart("M"), answer.TimeLeft.SplitTimePart("S"))).Ticks / 10000000;
             this.Service.SubmitExamQuestionAnswer(currentExam.ExamID,
                 new McqAnswer() { McqID = Convert.ToInt64(mcqId), McqAnswerID = Convert.ToInt64(answerId) }, TimeSpan.FromTicks(currentExam.TotalTimeLeft * 10000000),answer.IsMarkForReview);
-            this.sessionStore.SaveItemToSession<Exam>(SessionKeys.Exam_DETAILS, this.currentExam);
+            this.sessionStore.SaveItemToSession<Exam>(SessionKeys.EXAM_DETAILS, this.currentExam);
             return Redirect(Url.Action(MVC.Exam.Start(Crypto.Encrypt("id", this.currentExam.PaperID.ToString()), (Convert.ToInt32(answer.SrNo) + 1).ToString())));
         }
 
         [HttpPost]
         public virtual ActionResult SkipAnswer([JsonBinder]AnswerToSubmitVM answer)
         {
-            if (this.sessionStore.ItemExists(SessionKeys.Exam_DETAILS))
+            if (this.sessionStore.ItemExists(SessionKeys.EXAM_DETAILS))
             {
-                this.currentExam = this.sessionStore.GetItemFromSession<Exam>(SessionKeys.Exam_DETAILS);
+                this.currentExam = this.sessionStore.GetItemFromSession<Exam>(SessionKeys.EXAM_DETAILS);
             }
             else
             {
@@ -144,7 +144,7 @@ namespace Interpidians.Catalyst.Client.Web.Controllers
             this.currentExam.TotalTimeLeft = (new TimeSpan(answer.TimeLeft.SplitTimePart("H"), answer.TimeLeft.SplitTimePart("M"), answer.TimeLeft.SplitTimePart("S"))).Ticks / 10000000;
             Int64 MCQID = Convert.ToInt64(mcqId);
             this.Service.SkipExamQuestion(currentExam.ExamID, MCQID, TimeSpan.FromTicks(currentExam.TotalTimeLeft * 10000000));
-            this.sessionStore.SaveItemToSession<Exam>(SessionKeys.Exam_DETAILS, this.currentExam);
+            this.sessionStore.SaveItemToSession<Exam>(SessionKeys.EXAM_DETAILS, this.currentExam);
 
             return RedirectToAction(MVC.Exam.Start(Crypto.Encrypt("id", this.currentExam.PaperID.ToString()), (Convert.ToInt32(answer.SrNo) + 1).ToString()));
         }
@@ -152,9 +152,9 @@ namespace Interpidians.Catalyst.Client.Web.Controllers
         [HttpPost]
         public virtual JsonResult PauseExamTimer(ExamTimerAndNavigatorVM examTimer)
         {
-            if (this.sessionStore.ItemExists(SessionKeys.Exam_DETAILS))
+            if (this.sessionStore.ItemExists(SessionKeys.EXAM_DETAILS))
             {
-                this.currentExam = this.sessionStore.GetItemFromSession<Exam>(SessionKeys.Exam_DETAILS);
+                this.currentExam = this.sessionStore.GetItemFromSession<Exam>(SessionKeys.EXAM_DETAILS);
             }
             else
             {
@@ -163,7 +163,7 @@ namespace Interpidians.Catalyst.Client.Web.Controllers
 
             this.currentExam.TotalTimeLeft = (new TimeSpan(examTimer.TimeLeft.SplitTimePart("H"), examTimer.TimeLeft.SplitTimePart("M"), examTimer.TimeLeft.SplitTimePart("S"))).Ticks / 10000000;
             this.Service.StopTimer(currentExam.ExamID, TimeSpan.FromTicks(currentExam.TotalTimeLeft * 10000000));
-            this.sessionStore.SaveItemToSession<Exam>(SessionKeys.Exam_DETAILS, this.currentExam);
+            this.sessionStore.SaveItemToSession<Exam>(SessionKeys.EXAM_DETAILS, this.currentExam);
 
             return Json(new { result = WebConstant.Success }, JsonRequestBehavior.AllowGet);
             //return JavaScript("sucees");
@@ -172,9 +172,9 @@ namespace Interpidians.Catalyst.Client.Web.Controllers
         [HttpPost]
         public virtual JsonResult ResumeExamTimer(ExamTimerAndNavigatorVM examTimer)
         {
-            if (this.sessionStore.ItemExists(SessionKeys.Exam_DETAILS))
+            if (this.sessionStore.ItemExists(SessionKeys.EXAM_DETAILS))
             {
-                this.currentExam = this.sessionStore.GetItemFromSession<Exam>(SessionKeys.Exam_DETAILS);
+                this.currentExam = this.sessionStore.GetItemFromSession<Exam>(SessionKeys.EXAM_DETAILS);
             }
             else
             {
@@ -183,7 +183,7 @@ namespace Interpidians.Catalyst.Client.Web.Controllers
 
             this.currentExam.TotalTimeLeft =(new TimeSpan(examTimer.TimeLeft.SplitTimePart("H"), examTimer.TimeLeft.SplitTimePart("M"), examTimer.TimeLeft.SplitTimePart("S"))).Ticks;
             this.Service.StartTimer(currentExam.ExamID, TimeSpan.FromTicks(currentExam.TotalTimeLeft));
-            this.sessionStore.SaveItemToSession<Exam>(SessionKeys.Exam_DETAILS, this.currentExam);
+            this.sessionStore.SaveItemToSession<Exam>(SessionKeys.EXAM_DETAILS, this.currentExam);
 
             return Json(new { result = WebConstant.Success }, JsonRequestBehavior.AllowGet);
         }
@@ -191,9 +191,9 @@ namespace Interpidians.Catalyst.Client.Web.Controllers
         [HttpPost]
         public virtual ActionResult NavigateToQuestion([JsonBinder]ExamTimerAndNavigatorVM examNavigator)
         {
-            if (this.sessionStore.ItemExists(SessionKeys.Exam_DETAILS))
+            if (this.sessionStore.ItemExists(SessionKeys.EXAM_DETAILS))
             {
-                this.currentExam = this.sessionStore.GetItemFromSession<Exam>(SessionKeys.Exam_DETAILS);
+                this.currentExam = this.sessionStore.GetItemFromSession<Exam>(SessionKeys.EXAM_DETAILS);
             }
             else
             {
@@ -201,16 +201,16 @@ namespace Interpidians.Catalyst.Client.Web.Controllers
             }
 
             this.currentExam.TotalTimeLeft = (new TimeSpan(examNavigator.TimeLeft.SplitTimePart("H"), examNavigator.TimeLeft.SplitTimePart("M"), examNavigator.TimeLeft.SplitTimePart("S"))).Ticks / 10000000;
-            this.sessionStore.SaveItemToSession<Exam>(SessionKeys.Exam_DETAILS, this.currentExam);
+            this.sessionStore.SaveItemToSession<Exam>(SessionKeys.EXAM_DETAILS, this.currentExam);
 
             return RedirectToAction(MVC.Exam.Start(Crypto.Encrypt("id", this.currentExam.PaperID.ToString()), (Convert.ToInt32(examNavigator.NavigateToSrNo)).ToString()));
         }
 
         public virtual ActionResult Result([JsonBinder]ExamTimerAndNavigatorVM examTimer)
         {
-            if (this.sessionStore.ItemExists(SessionKeys.Exam_DETAILS))
+            if (this.sessionStore.ItemExists(SessionKeys.EXAM_DETAILS))
             {
-                this.currentExam = this.sessionStore.GetItemFromSession<Exam>(SessionKeys.Exam_DETAILS);
+                this.currentExam = this.sessionStore.GetItemFromSession<Exam>(SessionKeys.EXAM_DETAILS);
             }
             else
             {
@@ -218,7 +218,7 @@ namespace Interpidians.Catalyst.Client.Web.Controllers
             }
 
             this.currentExam.TotalTimeLeft =(new TimeSpan(examTimer.TimeLeft.SplitTimePart("H"), examTimer.TimeLeft.SplitTimePart("M"), examTimer.TimeLeft.SplitTimePart("S"))).Ticks;
-            this.sessionStore.SaveItemToSession<Exam>(SessionKeys.Exam_DETAILS, this.currentExam);
+            this.sessionStore.SaveItemToSession<Exam>(SessionKeys.EXAM_DETAILS, this.currentExam);
 
             TimeSpan timeSpent;
             TimeSpan.TryParseExact(Convert.ToString(this.currentExam.TotalTime - this.currentExam.TotalTimeLeft), "g", CultureInfo.InvariantCulture, out timeSpent);

@@ -47,7 +47,7 @@ namespace Interpidians.Catalyst.Client.Web.Helpers
 
         public override IEnumerable<DynamicNode> GetDynamicNodeCollection(ISiteMapNode node)
         {
-            var courses = this.McqService.getAllCourses();
+            var courses = this.McqService.GetAllCourses();
 
             foreach (var course in courses.Where(course => course.IsVisible == true))
             {
@@ -69,8 +69,8 @@ namespace Interpidians.Catalyst.Client.Web.Helpers
 
         public override IEnumerable<DynamicNode> GetDynamicNodeCollection(ISiteMapNode node)
         {
-            var courses = this.McqService.getAllCourses();
-            var subCourses = this.McqService.getAllSubCourses();
+            var courses = this.McqService.GetAllCourses();
+            var subCourses = this.McqService.GetAllSubCourses();
 
             foreach (var subCourse in subCourses.Where(course => course.IsVisible == true))
             {
@@ -93,7 +93,7 @@ namespace Interpidians.Catalyst.Client.Web.Helpers
 
         public override IEnumerable<DynamicNode> GetDynamicNodeCollection(ISiteMapNode node)
         {
-            var subCourses = this.McqService.getAllSubCourses();
+            var subCourses = this.McqService.GetAllSubCourses();
             var subjects = this.McqService.GetAllSubjects();
 
             foreach (var subject in subjects.Where(course => course.IsVisible == true))
@@ -118,8 +118,8 @@ namespace Interpidians.Catalyst.Client.Web.Helpers
 
         public override IEnumerable<DynamicNode> GetDynamicNodeCollection(ISiteMapNode node)
         {
-            var courses = this.McqService.getAllCourses();
-            var subCourses = this.McqService.getAllSubCourses();
+            var courses = this.McqService.GetAllCourses();
+            var subCourses = this.McqService.GetAllSubCourses();
             var subjects = this.McqService.GetAllSubjects();
             Dictionary<string, string> dict = new Dictionary<string, string>();
 

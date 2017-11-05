@@ -56,6 +56,30 @@ namespace Interpidians.Catalyst.Client.Web.Controllers
             return RedirectToActionPermanent(taskResult.Result);
         }
 
+        [NonAction]
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public virtual System.Web.Mvc.ActionResult Login()
+        {
+            return new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Login);
+        }
+        [NonAction]
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public virtual System.Web.Mvc.ActionResult Register()
+        {
+            return new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Register);
+        }
+        [NonAction]
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public virtual System.Web.Mvc.ActionResult CheckEmailIdAlreadyExists()
+        {
+            return new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.CheckEmailIdAlreadyExists);
+        }
+        [NonAction]
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public virtual System.Web.Mvc.ActionResult CheckMobileNumberAlreadyExists()
+        {
+            return new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.CheckMobileNumberAlreadyExists);
+        }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public UserController Actions { get { return MVC.User; } }
@@ -73,17 +97,59 @@ namespace Interpidians.Catalyst.Client.Web.Controllers
         public class ActionNamesClass
         {
             public readonly string Index = "Index";
+            public readonly string LoginRegister = "LoginRegister";
             public readonly string Login = "Login";
+            public readonly string Register = "Register";
+            public readonly string Dashboard = "Dashboard";
+            public readonly string CheckEmailIdAlreadyExists = "CheckEmailIdAlreadyExists";
+            public readonly string CheckMobileNumberAlreadyExists = "CheckMobileNumberAlreadyExists";
         }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public class ActionNameConstants
         {
             public const string Index = "Index";
+            public const string LoginRegister = "LoginRegister";
             public const string Login = "Login";
+            public const string Register = "Register";
+            public const string Dashboard = "Dashboard";
+            public const string CheckEmailIdAlreadyExists = "CheckEmailIdAlreadyExists";
+            public const string CheckMobileNumberAlreadyExists = "CheckMobileNumberAlreadyExists";
         }
 
 
+        static readonly ActionParamsClass_Login s_params_Login = new ActionParamsClass_Login();
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public ActionParamsClass_Login LoginParams { get { return s_params_Login; } }
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public class ActionParamsClass_Login
+        {
+            public readonly string loginModel = "loginModel";
+        }
+        static readonly ActionParamsClass_Register s_params_Register = new ActionParamsClass_Register();
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public ActionParamsClass_Register RegisterParams { get { return s_params_Register; } }
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public class ActionParamsClass_Register
+        {
+            public readonly string registerModel = "registerModel";
+        }
+        static readonly ActionParamsClass_CheckEmailIdAlreadyExists s_params_CheckEmailIdAlreadyExists = new ActionParamsClass_CheckEmailIdAlreadyExists();
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public ActionParamsClass_CheckEmailIdAlreadyExists CheckEmailIdAlreadyExistsParams { get { return s_params_CheckEmailIdAlreadyExists; } }
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public class ActionParamsClass_CheckEmailIdAlreadyExists
+        {
+            public readonly string loginRegisterViewModel = "loginRegisterViewModel";
+        }
+        static readonly ActionParamsClass_CheckMobileNumberAlreadyExists s_params_CheckMobileNumberAlreadyExists = new ActionParamsClass_CheckMobileNumberAlreadyExists();
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public ActionParamsClass_CheckMobileNumberAlreadyExists CheckMobileNumberAlreadyExistsParams { get { return s_params_CheckMobileNumberAlreadyExists; } }
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public class ActionParamsClass_CheckMobileNumberAlreadyExists
+        {
+            public readonly string loginRegisterViewModel = "loginRegisterViewModel";
+        }
         static readonly ViewsClass s_views = new ViewsClass();
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public ViewsClass Views { get { return s_views; } }
@@ -94,11 +160,13 @@ namespace Interpidians.Catalyst.Client.Web.Controllers
             public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
             public class _ViewNamesClass
             {
+                public readonly string Dashboard = "Dashboard";
                 public readonly string Index = "Index";
-                public readonly string Login = "Login";
+                public readonly string LoginRegister = "LoginRegister";
             }
+            public readonly string Dashboard = "~/Views/User/Dashboard.cshtml";
             public readonly string Index = "~/Views/User/Index.cshtml";
-            public readonly string Login = "~/Views/User/Login.cshtml";
+            public readonly string LoginRegister = "~/Views/User/LoginRegister.cshtml";
         }
     }
 
@@ -119,13 +187,72 @@ namespace Interpidians.Catalyst.Client.Web.Controllers
         }
 
         [NonAction]
-        partial void LoginOverride(T4MVC_System_Web_Mvc_ActionResult callInfo);
+        partial void LoginRegisterOverride(T4MVC_System_Web_Mvc_ActionResult callInfo);
 
         [NonAction]
-        public override System.Web.Mvc.ActionResult Login()
+        public override System.Web.Mvc.ActionResult LoginRegister()
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.LoginRegister);
+            LoginRegisterOverride(callInfo);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void LoginOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, Interpidians.Catalyst.Client.Web.ViewModels.LoginViewModel loginModel);
+
+        [NonAction]
+        public override System.Web.Mvc.ActionResult Login(Interpidians.Catalyst.Client.Web.ViewModels.LoginViewModel loginModel)
         {
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Login);
-            LoginOverride(callInfo);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "loginModel", loginModel);
+            LoginOverride(callInfo, loginModel);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void RegisterOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, Interpidians.Catalyst.Client.Web.ViewModels.RegisterViewModel registerModel);
+
+        [NonAction]
+        public override System.Web.Mvc.ActionResult Register(Interpidians.Catalyst.Client.Web.ViewModels.RegisterViewModel registerModel)
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Register);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "registerModel", registerModel);
+            RegisterOverride(callInfo, registerModel);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void DashboardOverride(T4MVC_System_Web_Mvc_ActionResult callInfo);
+
+        [NonAction]
+        public override System.Web.Mvc.ActionResult Dashboard()
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Dashboard);
+            DashboardOverride(callInfo);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void CheckEmailIdAlreadyExistsOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, Interpidians.Catalyst.Client.Web.ViewModels.LoginRegisterViewModel loginRegisterViewModel);
+
+        [NonAction]
+        public override System.Web.Mvc.ActionResult CheckEmailIdAlreadyExists(Interpidians.Catalyst.Client.Web.ViewModels.LoginRegisterViewModel loginRegisterViewModel)
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.CheckEmailIdAlreadyExists);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "loginRegisterViewModel", loginRegisterViewModel);
+            CheckEmailIdAlreadyExistsOverride(callInfo, loginRegisterViewModel);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void CheckMobileNumberAlreadyExistsOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, Interpidians.Catalyst.Client.Web.ViewModels.LoginRegisterViewModel loginRegisterViewModel);
+
+        [NonAction]
+        public override System.Web.Mvc.ActionResult CheckMobileNumberAlreadyExists(Interpidians.Catalyst.Client.Web.ViewModels.LoginRegisterViewModel loginRegisterViewModel)
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.CheckMobileNumberAlreadyExists);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "loginRegisterViewModel", loginRegisterViewModel);
+            CheckMobileNumberAlreadyExistsOverride(callInfo, loginRegisterViewModel);
             return callInfo;
         }
 

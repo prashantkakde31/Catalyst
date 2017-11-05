@@ -12,6 +12,8 @@ namespace Interpidians.Catalyst.Core.Entity
 
         public string EmailID { get; set; } // nvarchar(50), not null
 
+        public string MobileNumber { get; set; } // nvarchar(50), not null
+
         public string AccountStatus { get; set; } // nvarchar(20), not null
 
         public DateTime ValidFrom { get; set; } // datetime, not null

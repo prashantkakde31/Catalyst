@@ -21,18 +21,12 @@ namespace Interpidians.Catalyst.Infrastructure.Data
 
         public ProductMaster GetById(IdentifiableData id)
         {
-            //dont know what is the correct code
             ProductMaster productMaster = new ProductMaster();
             using (IDataReader IReader = this.DB.ExecuteReader("usp_GetProductById",id))
             { 
                 MapRecord(IReader,productMaster); 
             }
-            // productMaster = this.DB.ExecuteSprocAccessor<ProductMaster>("usp_GetAllProduct");
             return productMaster;
-
-            //List<ProductMaster> lstConditionRating = new List<ProductMaster>();
-            //lstConditionRating = this.DB.ExecuteSprocAccessor<ProductMaster>("usp_GetProductById", id).ToList();
-            //return lstConditionRating.FirstOrDefault(); 
         }
 
         public void Add(ProductMaster ProductMaster)

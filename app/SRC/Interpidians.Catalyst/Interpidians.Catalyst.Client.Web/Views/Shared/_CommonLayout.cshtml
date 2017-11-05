@@ -186,11 +186,10 @@
         </div>
         <!--=== End Header v5 ===-->
         
-
         <!--=== Breadcrumbs v4 ===-->
         <div class="breadcrumbs">
             <div class="container">
-                <h1 class="pull-left">MCQ</h1>
+                <h1 class="pull-left">@ViewBag.Title</h1>
                 @Html.MvcSiteMap().SiteMapPath("BootstrapSiteMapPathHelperModel")
             </div>
         </div>
@@ -208,6 +207,35 @@
         </div>
         <!--=== End Page Content ===-->
         
+        <!--=== Shop Suvbscribe ===-->
+        <div class="shop-subscribe">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 md-margin-bottom-20">
+                        <h2>Suspendisse et tincidunt ipsum, et dignissim urna.</h2>
+                    </div>
+
+                </div>
+            </div><!--/end container-->
+        </div>
+        <!--=== End Shop Suvbscribe ===-->
+
+        <!--=== Footer v4 ===-->
+        <div class="footer-v4">
+            <div class="copyright">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p>
+                                2016 &copy; ALL Rights Reserved.
+                                <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div><!--/copyright-->
+        </div>
+        <!--=== End Footer v4 ===-->
 
     </div>
 
@@ -218,6 +246,9 @@
     <script src="~/Content/plugins/back-to-top.js"></script>
     <script src="~/Content/plugins/smoothScroll.js"></script>
     <script src="~/Content/plugins/scrollbar/js/jquery.mCustomScrollbar.concat.min.js"></script>
+    <!-- MVC client side validation-->
+    <script src="~/Content/plugins/jquery/jquery.validate.min.js"></script>
+    <script src="~/Content/plugins/jquery/jquery.validate.unobtrusive.min.js"></script>
     <!-- JS Customization -->
     <script src="~/Content/js/custom.js"></script>
     <!-- JS Page Level -->
@@ -226,6 +257,10 @@
         jQuery(document).ready(function () {
             App.init();
             App.initScrollBar();
+
+            //Disable onkeyup validation for fields to be validated remotely
+            $("#RegisterModel_EmailID").keyup(function () { return false });
+            $("#RegisterModel_MobileNumber").keyup(function () { return false });
         });
     </script>
     <!--[if lt IE 9]>
