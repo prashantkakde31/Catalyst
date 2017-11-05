@@ -1,11 +1,14 @@
-﻿@using MvcSiteMapProvider.Web.Html
-@model Interpidians.Catalyst.Client.Web.ViewModels.LoginRegisterViewModel
+﻿@model Interpidians.Catalyst.Client.Web.ViewModels.LoginRegisterViewModel
 
 @{
     ViewBag.Title = "Login / Register";
     Layout = "~/Views/Shared/_CommonLayout.cshtml";
 }
-
+<style type="text/css">
+    .validation-summary-errors li, .field-validation-error span {
+    color: red;
+    }
+</style>
 <!--=== Login ===-->
 <div class="log-reg-v3 content-md" style="background-image: url('../../Content/img/bg/11.jpg');">
      <div class="container">

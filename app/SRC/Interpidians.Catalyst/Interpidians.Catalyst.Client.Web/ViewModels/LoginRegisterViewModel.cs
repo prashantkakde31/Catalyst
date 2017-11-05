@@ -39,11 +39,11 @@ namespace Interpidians.Catalyst.Client.Web.ViewModels
 
         [Required]
         [Display(Name = "Mobile Number")]
-        [Remote("CheckMobileNumberAlreadyExists", "User", ErrorMessage = "Mobile number already exists!")]
+        [Remote("CheckMobileNumberAlreadyExists", "User", ErrorMessage = "Mobile number already exists !")]
         public string MobileNumber { get; set; } // nvarchar(50), not null
         [Required]
         [Display(Name = "Email ID")]
-        [Remote("CheckEmailIdAlreadyExists", "User", ErrorMessage = "EmailID already exists!")]
+        [Remote("CheckEmailIdAlreadyExists", "User", ErrorMessage = "Email ID already exists !")]
         public string EmailID { get; set; } // nvarchar(50), not null
         public int ExamYear { get; set; } // int, not null
         public int ExamMonth { get; set; } // int, not null

@@ -57,8 +57,8 @@ namespace Interpidians.Catalyst.Client.Web.Controllers
 
                 if(authUser == null)
                 {
-                    ModelState.AddModelError(string.Empty,"Invalid username / password");
-                    return RedirectToAction(MVC.User.ActionNames.LoginRegister, new LoginRegisterViewModel() { LoginModel = loginModel });
+                    ModelState.AddModelError(string.Empty,"Invalid username / password !");
+                    return RedirectToAction(MVC.User.ActionNames.LoginRegister, MVC.User.Name);
                     //return RedirectToAction("LoginRegister", new LoginRegisterViewModel() { LoginModel = loginModel });
                 }
 
@@ -76,7 +76,7 @@ namespace Interpidians.Catalyst.Client.Web.Controllers
             }
             else
             {
-                return RedirectToAction(MVC.User.ActionNames.LoginRegister, new LoginRegisterViewModel() { LoginModel = loginModel });
+                return RedirectToAction(MVC.User.ActionNames.LoginRegister, MVC.User.Name);
                 //return RedirectToAction("LoginRegister", new LoginRegisterViewModel() { LoginModel = loginModel });
             }
         }
@@ -111,7 +111,7 @@ namespace Interpidians.Catalyst.Client.Web.Controllers
             }
             else
             {
-                return RedirectToAction(MVC.User.ActionNames.LoginRegister, new LoginRegisterViewModel() { RegisterModel = registerModel });
+                return RedirectToAction(MVC.User.ActionNames.LoginRegister, MVC.User.Name);
                 //return RedirectToAction("LoginRegister",new LoginRegisterViewModel() { RegisterModel=registerModel});
             }
         }
