@@ -16,7 +16,7 @@
                         {
                             <h4 class="panel-title">
                                 <a href="#collapse-@mcq.TopicWiseSrNo" data-parent="#accordion" data-toggle="collapse" class="accordion-toggle">
-                                    @(mcq.TopicWiseSrNo + "." + mcq.QuestionText1)
+                                    @Html.Raw(mcq.TopicWiseSrNo + "." + mcq.QuestionText1)
                                 </a>
                             </h4>
                         }
@@ -38,7 +38,7 @@
                                         if (!string.IsNullOrEmpty(mcq.QuestionText2))
                                         {
                                             <div class="col-sm-12">
-                                                <p>@mcq.QuestionText2</p>
+                                                <p>@Html.Raw(mcq.QuestionText2)</p>
                                             </div>
                                         }
 
@@ -83,7 +83,7 @@
                                         switch (mcq.McqAnswers[i].AnswerType)
                                         {
                                             case "TEXT":
-                                                <label class="radio"><input type="radio" name="currentMcqChoice" data-answer-id="@Interpidians.Catalyst.Core.Utility.Crypto.Encrypt(mcq.McqAnswers[i].McqAnswerID.ToString())" @{ if (mcq.McqAnswers[i].IsSelected) { <text> checked</text> }}><i class="rounded-x"></i>@mcq.McqAnswers[i].Answer</label>
+                                                <label class="radio"><input type="radio" name="currentMcqChoice" data-answer-id="@Interpidians.Catalyst.Core.Utility.Crypto.Encrypt(mcq.McqAnswers[i].McqAnswerID.ToString())" @{ if (mcq.McqAnswers[i].IsSelected) { <text> checked</text> }}><i class="rounded-x"></i>@Html.Raw(mcq.McqAnswers[i].Answer)</label>
                                                 break;
 
                                             case "NONE":

@@ -49,6 +49,7 @@ namespace T4MVC
             public partial class _DisplayTemplatesClass
             {
                 public readonly string BootstrapMenuHelperModel = "BootstrapMenuHelperModel";
+                public readonly string BootstrapSiteMapPathHelperModel = "BootstrapSiteMapPathHelperModel";
                 public readonly string CanonicalHelperModel = "CanonicalHelperModel";
                 public readonly string MenuHelperModel = "MenuHelperModel";
                 public readonly string MetaRobotsHelperModel = "MetaRobotsHelperModel";

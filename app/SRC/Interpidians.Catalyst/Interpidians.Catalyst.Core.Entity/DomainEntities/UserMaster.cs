@@ -27,5 +27,13 @@ namespace Interpidians.Catalyst.Core.Entity
         public int ExamYear { get; set; } // int, not null
 
         public int ExamMonth { get; set; } // int, not null
+
+        public bool IsExternalUser { get; set; } // bool
+
+        public bool IsRegistrationComplete { get; set; } // bool
+
+        public string ExternalLoginProvider { get; set; }
+
+        public string ProviderKey { get; set; }
     }
 }

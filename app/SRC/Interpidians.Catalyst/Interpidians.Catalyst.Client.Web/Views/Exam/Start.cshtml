@@ -130,40 +130,31 @@
                                     @{
                                         if (!string.IsNullOrEmpty(Model.CurrentQuestion.QuestionText1))
                                         {
-                                            <h4 class="panel-title@(("QuestionOrBoth".IndexOf(Model.CurrentExam.DisableQuestionAnswer,StringComparison.CurrentCultureIgnoreCase) != -1) ? " invisible" : "")">@Model.CurrentQuestion.QuestionText1</h4>
+                                            <h4 class="panel-title@(("QuestionOrBoth".IndexOf(Model.CurrentExam.DisableQuestionAnswer,StringComparison.CurrentCultureIgnoreCase) != -1) ? " invisible" : "")">@Html.Raw(Model.CurrentQuestion.QuestionText1)</h4>
                                         }
                                     }
                                 </div>
                                 <div class="sky-form">
                                     <div class="panel-body@(("QuestionOrBoth".IndexOf(Model.CurrentExam.DisableQuestionAnswer,StringComparison.CurrentCultureIgnoreCase) != -1) ? " invisible" : "")">
                                         <div class="row">
-                                            <div class="col-xs-12 col-md-8">
+                                            <div class="col-xs-12 col-md-6">
                                                 <!-- Question Image/Text (if any )-->
                                                 <div class="row">
 
                                                     @{
                                                         if (!string.IsNullOrEmpty(Model.CurrentQuestion.QuestionImageLink))
                                                         {
-                                                            <div class="col-md-5"><img class="img-responsive" src="http://app.educastle.net/Upload/QuestionImage/@Model.CurrentQuestion.QuestionImageLink" alt=""></div>
-                                                        }
-
-                                                        if (!string.IsNullOrEmpty(Model.CurrentQuestion.QuestionText2))
-                                                        {
-                                                            <div class="col-sm-12">
-                                                                <p>
-                                                                    @Model.CurrentQuestion.QuestionText2
-                                                                </p>
-                                                            </div>
+                                                            <div class="col-md-12"><img class="img-responsive" src="http://app.educastle.net/Upload/QuestionImage/@Model.CurrentQuestion.QuestionImageLink" alt=""></div>
                                                         }
 
                                                         if (!string.IsNullOrEmpty(Model.CurrentQuestion.QuestionImage2))
                                                         {
-                                                            <div class="col-md-6"><img class="img-responsive" src="http://app.educastle.net/Upload/QuestionImage/@Model.CurrentQuestion.QuestionImage2" alt=""></div>
+                                                            <div class="col-md-12"><img class="img-responsive" src="http://app.educastle.net/Upload/QuestionImage/@Model.CurrentQuestion.QuestionImage2" alt=""></div>
                                                         }
 
                                                         if (!string.IsNullOrEmpty(Model.CurrentQuestion.CommonAnswerImage))
                                                         {
-                                                            <div class="col-md-6"><img class="img-responsive" src="http://app.educastle.net/Upload/CommonAnswer/@Model.CurrentQuestion.CommonAnswerImage" alt=""></div>
+                                                            <div class="col-md-12"><img class="img-responsive" src="http://app.educastle.net/Upload/CommonAnswer/@Model.CurrentQuestion.CommonAnswerImage" alt=""></div>
                                                         }
                                                     }
                                                 </div>
@@ -177,11 +168,11 @@
                                                 {
                                                     if (!string.IsNullOrEmpty(Model.CurrentQuestion.QuestionImageLink))
                                                     {
-                                                        @Html.Raw("<div class='col-xs-12 col-md-4'>")  @*For Text Options with Question Image*@
+                                                        @Html.Raw("<div class='col-xs-12 col-md-6'>")  @*For Text Options with Question Image*@
                                                     }
                                                     else
                                                     {
-                                                        @Html.Raw("<div class='col-xs-12 col-md-8'>")  @*For Text Options without Question Image*@
+                                                        @Html.Raw("<div class='col-xs-12 col-md-6'>")  @*For Text Options without Question Image*@
                                                     }
 
                                                 }
@@ -292,6 +283,16 @@
                                 </div>
                             </div>
 
+                            
+                                @{
+                                    if (!string.IsNullOrEmpty(Model.CurrentQuestion.QuestionText2))
+                                    {
+                                        <div class="panel-heading">
+                                            <h4 class="panel-title@(("QuestionOrBoth".IndexOf(Model.CurrentExam.DisableQuestionAnswer,StringComparison.CurrentCultureIgnoreCase) != -1) ? " invisible" : "")">@Html.Raw(Model.CurrentQuestion.QuestionText2)</h4>
+                                        </div>
+                                    }
+                                }
+
                             <div class="panel-footer">
                                 <button class="btn rounded btn-u-sm@(("AnswerOrBoth".IndexOf(Model.CurrentExam.DisableQuestionAnswer,StringComparison.CurrentCultureIgnoreCase) != -1) ? " invisible" : "")" type="button" data-source="#q1-help" data-toggle="modal" data-target=".modal-mcqhelp"><i class="glyphicon glyphicon-question-sign"></i> Help</button>
                                 <button class="btn rounded btn-u-sm btn-warning" type="button" id="btnMarkForReview"><i class="fa fa-eye"></i> Mark For Review</button>
@@ -303,8 +304,16 @@
                         <!-- /Q.1 -->
 
                     </div>
+                    <div class="panel-heading">
+                        @{
+                            if (!string.IsNullOrEmpty(Model.CurrentQuestion.QuestionText1))
+                            {
+                                <h4 class="panel-title@(("QuestionOrBoth".IndexOf(Model.CurrentExam.DisableQuestionAnswer,StringComparison.CurrentCultureIgnoreCase) != -1) ? " invisible" : "")">@Html.Raw(Model.CurrentQuestion.QuestionText1)</h4>
+                            }
+                        }
+                    </div>
 
-                </div>
+                            </div>
 
                 <!-- Modal : MCQ Help -->
                 <div id="modal-mcqhelp" class="modal fade modal-mcqhelp" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">

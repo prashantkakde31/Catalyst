@@ -48,7 +48,7 @@ namespace Interpidians.Catalyst.Client.Web.Controllers
             ViewBag.SubjectList = lstSub;
             int sm = (from subjectid in lstSub.Where(a => a.Name == subject) select subjectid.SubjectID).FirstOrDefault();
             List<TopicMaster> lstTopic = this.McqService.GetAllTopics().Where(a => a.SubjectID == sm).ToList();
-            List<PaperMaster> lstPaper = this.McqService.GetAllPapers().Where(a => a.SubjectId == sm && (a.IsSample)).ToList();
+            List<PaperMaster> lstPaper = this.McqService.GetAllPapers().Where(a => a.SubjectId == sm).ToList();
 
             SampleMcqViewModel objSampleMcqViewModel = new SampleMcqViewModel();
             objSampleMcqViewModel.TopicWiseList = lstTopic;
@@ -129,7 +129,7 @@ namespace Interpidians.Catalyst.Client.Web.Controllers
                               HintVideoUrl = mcq.HintVideoUrl,
                               IsVisible = mcq.IsVisible,
                               Marks = mcq.Marks,
-                              PaperWiseSrNo = mcq.PaperWiseSrNo,
+                              PaperWiseSrNo = Rank,
                               QuestionAudioLink = mcq.QuestionAudioLink,
                               QuestionImage2 = mcq.QuestionImage2,
                               QuestionImageLink = mcq.QuestionImageLink,

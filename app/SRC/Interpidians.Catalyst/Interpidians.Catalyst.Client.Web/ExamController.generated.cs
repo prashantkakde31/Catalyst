@@ -135,6 +135,7 @@ namespace Interpidians.Catalyst.Client.Web.Controllers
             public readonly string ResumeExamTimer = "ResumeExamTimer";
             public readonly string NavigateToQuestion = "NavigateToQuestion";
             public readonly string Result = "Result";
+            public readonly string ExamSessionExpired = "ExamSessionExpired";
         }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -149,6 +150,7 @@ namespace Interpidians.Catalyst.Client.Web.Controllers
             public const string ResumeExamTimer = "ResumeExamTimer";
             public const string NavigateToQuestion = "NavigateToQuestion";
             public const string Result = "Result";
+            public const string ExamSessionExpired = "ExamSessionExpired";
         }
 
 
@@ -167,6 +169,7 @@ namespace Interpidians.Catalyst.Client.Web.Controllers
         public class ActionParamsClass_Paper
         {
             public readonly string id = "id";
+            public readonly string paperName = "paperName";
         }
         static readonly ActionParamsClass_Start s_params_Start = new ActionParamsClass_Start();
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -235,11 +238,13 @@ namespace Interpidians.Catalyst.Client.Web.Controllers
             public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
             public class _ViewNamesClass
             {
+                public readonly string ExamSessionExpired = "ExamSessionExpired";
                 public readonly string Index = "Index";
                 public readonly string Paper = "Paper";
                 public readonly string Result = "Result";
                 public readonly string Start = "Start";
             }
+            public readonly string ExamSessionExpired = "~/Views/Exam/ExamSessionExpired.cshtml";
             public readonly string Index = "~/Views/Exam/Index.cshtml";
             public readonly string Paper = "~/Views/Exam/Paper.cshtml";
             public readonly string Result = "~/Views/Exam/Result.cshtml";
@@ -265,14 +270,15 @@ namespace Interpidians.Catalyst.Client.Web.Controllers
         }
 
         [NonAction]
-        partial void PaperOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, string id);
+        partial void PaperOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, string id, string paperName);
 
         [NonAction]
-        public override System.Web.Mvc.ActionResult Paper(string id)
+        public override System.Web.Mvc.ActionResult Paper(string id, string paperName)
         {
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Paper);
             ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "id", id);
-            PaperOverride(callInfo, id);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "paperName", paperName);
+            PaperOverride(callInfo, id, paperName);
             return callInfo;
         }
 
@@ -358,6 +364,17 @@ namespace Interpidians.Catalyst.Client.Web.Controllers
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Result);
             ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "examTimer", examTimer);
             ResultOverride(callInfo, examTimer);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void ExamSessionExpiredOverride(T4MVC_System_Web_Mvc_ActionResult callInfo);
+
+        [NonAction]
+        public override System.Web.Mvc.ActionResult ExamSessionExpired()
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.ExamSessionExpired);
+            ExamSessionExpiredOverride(callInfo);
             return callInfo;
         }
 

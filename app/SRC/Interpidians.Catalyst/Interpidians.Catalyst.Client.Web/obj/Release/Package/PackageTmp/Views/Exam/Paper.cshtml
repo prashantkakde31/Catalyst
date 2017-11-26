@@ -1,10 +1,18 @@
-﻿@{
+﻿
+@{
     ViewBag.Title = "Paper";
+    Layout = "~/Views/Shared/_CommonLayout.cshtml";
 }
 
-<h2>Exam for Paper - @ViewData["PaperID"]</h2>
-<h3>Total Questions - @ViewData["TotalQuestions"]</h3>
-<h3>Total Time - @ViewData["TotalTime"] (HH:MM:SS)</h3>
 
-<h1>@Html.ActionLink("START TEST", MVC.Exam.Start(@ViewData["PaperID"].ToString(),"1"))</h1>
+<div class="panel panel-grey">
+    <div class="panel-heading">
+        <h2 class="panel-title"><i class="fa fa-play"></i> Exam for Paper - @Convert.ToString(ViewData["PaperName"])</h2>
+    </div>
+    <div class="panel-body">
+        <h4>Total Questions - @ViewData["TotalQuestions"]</h4>
+        <h4>Total Time - @ViewData["TotalTime"] (HH:MM:SS)</h4>
+        <h1>@Html.ActionLink("START TEST", MVC.Exam.Start(@ViewData["PaperID"].ToString(), "1"))</h1>
+    </div>
+</div>
 

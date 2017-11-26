@@ -69,6 +69,7 @@
   <ItemGroup>
     <Compile Include="BaseRepository\BaseRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\CartItemRepository.cs" />
     <Compile Include="Repository\CourseMasterRepository.cs" />
     <Compile Include="Repository\DiscountMasterRepository.cs" />
     <Compile Include="Repository\EmployeeRepository.cs" />
@@ -80,10 +81,15 @@
     <Compile Include="Repository\McqRepository.cs" />
     <Compile Include="Repository\PaperMasterRepository.cs" />
     <Compile Include="Repository\ProductMasterRepository.cs" />
+    <Compile Include="Repository\RoleMasterRepository.cs" />
+    <Compile Include="Repository\ShoppingCartRepository.cs" />
     <Compile Include="Repository\SubCourseMasterRepository.cs" />
     <Compile Include="Repository\SubjectMasterRepository.cs" />
     <Compile Include="Repository\TestimonialMasterRepository.cs" />
     <Compile Include="Repository\TopicMasterRepository.cs" />
+    <Compile Include="Repository\UserMasterRepository.cs" />
+    <Compile Include="Repository\UserProfileRepository.cs" />
+    <Compile Include="Repository\UserRoleRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

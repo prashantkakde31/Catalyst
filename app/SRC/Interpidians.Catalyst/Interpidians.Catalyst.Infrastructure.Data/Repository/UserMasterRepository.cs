@@ -43,6 +43,10 @@ namespace Interpidians.Catalyst.Infrastructure.Data
             this.DB.AddInParameter(saveCommand, "@MobileNumber", DbType.String, UserMaster.MobileNumber);
             this.DB.AddInParameter(saveCommand, "@ExamYear", DbType.Int32, UserMaster.ExamYear);
             this.DB.AddInParameter(saveCommand, "@ExamMonth", DbType.Int32, UserMaster.ExamMonth);
+            this.DB.AddInParameter(saveCommand, "@IsExternalUser", DbType.Boolean, UserMaster.IsExternalUser);
+            this.DB.AddInParameter(saveCommand, "@ExternalLoginProvider", DbType.String, UserMaster.ExternalLoginProvider);
+            this.DB.AddInParameter(saveCommand, "@ProviderKey", DbType.String, UserMaster.ProviderKey);
+            this.DB.AddInParameter(saveCommand, "@IsRegistrationComplete", DbType.Boolean, UserMaster.IsRegistrationComplete);
             this.DB.ExecuteScalar(saveCommand);
             if (saveCommand != null) saveCommand.Dispose();
         }

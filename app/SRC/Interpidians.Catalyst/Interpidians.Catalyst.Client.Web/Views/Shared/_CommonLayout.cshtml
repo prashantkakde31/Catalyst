@@ -1,4 +1,5 @@
 ﻿@using MvcSiteMapProvider.Web.Html
+@using Interpidians.Catalyst.Client.Web.Common
 <!DOCTYPE html>
 <!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
 <!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
@@ -97,7 +98,19 @@
                                 </li>
                                 <li class=""><a class="" href="javascript:void(0);">Contact</a></li>
                                 <li class=""><a class="" href="javascript:void(0);">Account</a></li>
-                                <li class=""><a class="" href="javascript:void(0);">Login / Register</a></li>
+                                <li class="">
+                                @{
+                                    if ((new SessionStore().GetItemFromSession<Interpidians.Catalyst.Core.Entity.UserMaster>(SessionKeys.USER_DETAILS)) != null)
+                                    {
+                                        @:Hi @(new SessionStore().GetItemFromSession<Interpidians.Catalyst.Core.Entity.UserMaster>(SessionKeys.USER_DETAILS).UserName),
+                                        @Html.ActionLink("Logout", MVC.User.LogOff())
+                                    }
+                                    else
+                                    {
+                                        @Html.ActionLink("Login / Register", MVC.User.LoginRegister())
+                                    }
+                                }
+                                </li>
                                 <li class=""><i class="search fa fa-search search-button"></i></li>
                             </ul>
                         </div>
@@ -261,6 +274,7 @@
             //Disable onkeyup validation for fields to be validated remotely
             $("#RegisterModel_EmailID").keyup(function () { return false });
             $("#RegisterModel_MobileNumber").keyup(function () { return false });
+            $("#ForgotPasswordModel_EmailID").keyup(function () { return false });
         });
     </script>
     <!--[if lt IE 9]>

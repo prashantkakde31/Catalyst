@@ -105,13 +105,6 @@
                             </div>
                             <div class="test-nav-pager test-nav-control-block text-center">
                                 <ul class="pagination questions-strip">
-                                    @*@for (int i = 1; i <= Model.CurrentExam.TotalQuestions; i++)
-                                        {
-                                            <li>
-                                                <a href="javascript:;" data-navigate-url="@Request.Url.AbsolutePath?SrNo=@i" data-control="pager" data-page="@i" class="test-nav-control" >@i</a>
-                                            </li>
-                                        }*@
-
                                     @for (int i = 1; i <= Model.CurrentExam.TotalQuestions; i++)
                                     {
                                         <li>
@@ -134,17 +127,11 @@
                             <!-- Q.1 -->
                             <div id="QuestionPanel" class="panel panel-default active" style="display: block;" data-question-id="@Interpidians.Catalyst.Core.Utility.Crypto.Encrypt(Model.CurrentQuestion.McqID.ToString())" data-exam-id="@Interpidians.Catalyst.Core.Utility.Crypto.Encrypt(Model.CurrentExam.ExamID.ToString())" data-question-sr-no="@Request.QueryString["SrNo"]">
                                 <div class="panel-heading">
-
                                     @{
                                         if (!string.IsNullOrEmpty(Model.CurrentQuestion.QuestionText1))
                                         {
                                             <h4 class="panel-title@(("QuestionOrBoth".IndexOf(Model.CurrentExam.DisableQuestionAnswer,StringComparison.CurrentCultureIgnoreCase) != -1) ? " invisible" : "")">@Model.CurrentQuestion.QuestionText1</h4>
                                         }
-
-                                        @*if (!string.IsNullOrEmpty(Model.CurrentQuestion.QuestionText2))
-                                            {
-                                                <h4 class="panel-title">@Model.CurrentQuestion.QuestionText2</h4>
-                                            }*@
                                     }
                                 </div>
                                 <div class="sky-form">
@@ -203,20 +190,6 @@
                                             <!-- Options -->
                                             <h4>Options</h4>
                                             <div class="options">
-
-                                                @*@foreach (var item in Model.CurrentQuestion.McqAnswers)
-                                                    {
-                                                        if (!string.IsNullOrEmpty(item.Answer))
-                                                        {
-                                                            <label class="radio"><input type="radio" name="currentMcqChoice" data-answer-id="@Interpidians.Catalyst.Core.Utility.Crypto.Encrypt(item.McqAnswerID.ToString())" @{ if (item.IsSelected) { <text> checked</text> }}><i class="rounded-x"></i>@item.Answer</label>
-                                                        }
-                                                        if (!string.IsNullOrEmpty(item.AnswerImage))
-                                                        {
-                                                             <label class="radio col-sm-6 col-md-3"><input type="radio" name="currentMcqChoice" data-answer-id="@Interpidians.Catalyst.Core.Utility.Crypto.Encrypt(item.McqAnswerID.ToString())" @{ if (item.IsSelected) { <text> checked</text> }}><i class="rounded-x"></i><img class="img-responsive" src="http://app.educastle.net/Upload/AnswerImage/@item.AnswerImage" alt="" /></label>
-                                                        }
-                                                    }*@
-
-                                                @*@foreach (var item in Model.CurrentQuestion.McqAnswers)*@
                                                 @for (int i=0;i< Model.CurrentQuestion.McqAnswers.Count;i++)
                                                 {
                                                     switch (Model.CurrentQuestion.McqAnswers[i].AnswerType)
@@ -239,7 +212,7 @@
                                                 }
 
                                             </div>
-
+                                            
                                         </div>
                                     </div>
                                     <!-- Help Popup -->
@@ -290,23 +263,24 @@
                                         @{
 
                                             <!-- Solution Video -->
-                                            if (!string.IsNullOrEmpty(@Model.CurrentQuestion.HintVideoUrl))
+                                            if (!string.IsNullOrEmpty(@Model.CurrentQuestion.HintVideoUrl) || !string.IsNullOrEmpty(@Model.CurrentQuestion.VideoLink))
                                             {
                                                 @:<h3>Solution Video</h3>
+                                            }
+
+                                            if (!string.IsNullOrEmpty(@Model.CurrentQuestion.HintVideoUrl) && @Model.CurrentQuestion.HintVideoUrl.ToLower().Contains("http"))
+                                            {
                                                 @:<video class="full-width" controls>
-                                                    @:
-                                                    <source src="@Model.CurrentQuestion.HintVideoUrl" type="video/mp4">
+                                                    @:<source src="@Model.CurrentQuestion.HintVideoUrl" type="video/mp4">
                                                     @: Your browser does not support the video tag.
-                                                    @:
                                                 @:</video>
+                                            }
 
-
-                                                if (!string.IsNullOrEmpty(@Model.CurrentQuestion.VideoLink))
-                                                {
+                                            if (!string.IsNullOrEmpty(@Model.CurrentQuestion.VideoLink))
+                                            {
                                                     @:<ul>
                                                         @:<li><a href="http://app.educastle.net/Upload/SolutionVideo/@Model.CurrentQuestion.VideoLink" class="text-success" target="_blank">@Model.CurrentQuestion.VideoLink</a></li>
                                                     @:</ul>
-                                                }
                                             }
 
                                              <!-- /end Solution Video -->

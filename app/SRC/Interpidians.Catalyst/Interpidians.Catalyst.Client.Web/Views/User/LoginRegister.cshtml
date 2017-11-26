@@ -17,7 +17,8 @@
              <!--login Block-->
              <div class="form-block login-block col-md-6 col-sm-12 rounded-left equal-height-column">
                  @Html.ValidationSummary()
-                 @using (Html.BeginForm("Login", "User", FormMethod.Post, new {@id="LoginForm"})) {
+                 @using (Html.BeginForm("Login", "User", FormMethod.Post, new { @id = "LoginForm" }))
+                 {
                      <div class="form-block-header">
                          <h2 class="margin-bottom-15">Sign In</h2>
                      </div>
@@ -25,37 +26,45 @@
                      <div class="input-group margin-bottom-20">
                          <span class="input-group-addon rounded-left"><i class="icon-user color-white"></i></span>
                          @*<input type="text" class="form-control rounded-right" placeholder="Username" id="UserName" name="UserName">*@
-                         @Html.TextBoxFor(model => model.LoginModel.UserName, new { @class = "form-control rounded-right", @placeholder="Username ( Email / Mobile )" })
+                         @Html.TextBoxFor(model => model.LoginModel.UserName, new { @class = "form-control rounded-right", @placeholder = "Username ( Email / Mobile )" })
                      </div>
 
                      <div class="input-group margin-bottom-20">
                          <span class="input-group-addon rounded-left"><i class="icon-lock color-white"></i></span>
                          @*<input type="password" class="form-control rounded-right" placeholder="Password" id="Password" name="Password">*@
-                         @Html.PasswordFor(model => model.LoginModel.Password, new { @class = "form-control rounded-right", @placeholder="Password" })
+                         @Html.PasswordFor(model => model.LoginModel.Password, new { @class = "form-control rounded-right", @placeholder = "Password" })
                      </div>
 
                      <div class="row margin-bottom-70">
                          <div class="col-md-12">
                              <button type="submit" class="btn-u btn-block rounded">Sign In</button>
                          </div>
+                         <div class="col-md-12">
+                             <a class="btn-link" href="#" data-source="#q1-help" data-toggle="modal" data-target=".modal-forgot-password"><i class="glyphicon glyphicon-lock"></i> Forgot Password</a>
+                         </div>
                      </div>
                  }
 
-                 <div class="social-login">
-                     <div class="or rounded-x">Or</div>
-                     <ul class="list-unstyled">
-                         <li>
-                             <button class="btn rounded btn-block btn-lg btn-facebook-inversed margin-bottom-20">
-                                 <i class="fa fa-facebook"></i> Sign in with Facebook
-                             </button>
-                         </li>
-                         <li>
-                             <button class="btn rounded btn-block btn-lg btn-gmail-inversed">
-                                 <i class="fa fa-envelope"></i> Sign in with Gmail
-                             </button>
-                         </li>
-                     </ul>
-                 </div>
+                 @using (Html.BeginForm("ExternalLogin", "User"))
+                 {
+                     @*@Html.AntiForgeryToken()*@
+                     <div class="social-login">
+                         <div class="or rounded-x">Or</div>
+                         <ul class="list-unstyled">
+                             <li>
+                                 <button type="submit" id="btnLinkFacebook" name="provider" value="Facebook" class="btn rounded btn-block btn-lg btn-facebook-inversed margin-bottom-20">
+                                     <i class="fa fa-facebook"></i> Sign in with Facebook
+                                 </button>
+                             </li>
+                             <li>
+                                 <button type="submit" id="btnLinkGoogle" name="provider" value="Google" class="btn rounded btn-block btn-lg btn-gmail-inversed">
+                                     <i class="fa fa-envelope"></i> Sign in with Gmail
+                                 </button>
+                             </li>
+                         </ul>
+                     </div>
+
+                 }
              </div>
              <!--End login Block-->
 
@@ -95,29 +104,12 @@
                      </div>
                     <label>@Html.ValidationMessageFor(model=>model.RegisterModel.Password)</label>
 
-                     <label>Exam Appearance Year</label>
-                     <div class="input-group margin-bottom-20">
-                         <div class="inline-group">
-                             <label class="radio">@Html.RadioButtonFor(model => model.RegisterModel.ExamYear, "2018",new {@checked="checked"})<i class="rounded-x"></i>2018</label>
-                             <label class="radio">@Html.RadioButtonFor(model => model.RegisterModel.ExamYear, "2019")<i class="rounded-x"></i>2019</label>
-                             <label class="radio">@Html.RadioButtonFor(model => model.RegisterModel.ExamYear, "2020")<i class="rounded-x"></i>2020</label>
-                                 @*<label class="radio"><input type="radio" name="ExamYear" value="2016" checked=""><i class="rounded-x"></i>2018</label>
-                                 <label class="radio"><input type="radio" name="ExamYear" value="2017"><i class="rounded-x"></i>2019</label>
-                                 <label class="radio"><input type="radio" name="ExamYear" value="2018"><i class="rounded-x"></i>2020</label>*@
-                        </div>
-                     </div>
-
-                     <label>Exam Appearance Month</label>
-                     <div class="input-group margin-bottom-20">
-                         <div class="inline-group">
-                             @*<label class="radio"><input type="radio" name="ExamMonth" value="03"><i class="rounded-x"></i>March</label>
-                             <label class="radio"><input type="radio" name="ExamMonth" value="05"><i class="rounded-x"></i>May</label>
-                             <label class="radio"><input type="radio" name="ExamMonth" value="10"><i class="rounded-x"></i>Oct</label>*@
-                             <label class="radio">@Html.RadioButtonFor(model => model.RegisterModel.ExamMonth, "03",new {@checked="checked"})<i class="rounded-x"></i>March</label>
-                             <label class="radio">@Html.RadioButtonFor(model => model.RegisterModel.ExamMonth, "05")<i class="rounded-x"></i>May</label>
-                             <label class="radio">@Html.RadioButtonFor(model => model.RegisterModel.ExamMonth, "10")<i class="rounded-x"></i>Oct</label>
-                         </div>
-                     </div>
+                    <div class="input-group margin-bottom-20">
+                        <span class="input-group-addon rounded-left"><i class="icon-lock"></i></span>
+                        @*<input type="password" class="form-control rounded-right" placeholder="Password" id="Password" name="Password">*@
+                        @Html.PasswordFor(model => model.RegisterModel.ConfirmPassword, new { @class = "form-control rounded-right", @placeholder = "Confirm Password" })
+                    </div>
+                    <label>@Html.ValidationMessageFor(model => model.RegisterModel.ConfirmPassword)</label>
 
                      @*<div class="margin-bottom-15">
                          <label class="checkbox termslink"><input type="checkbox" name="checkbox" checked=""><i></i> I agree to terms &amp; conditions</label>
@@ -136,3 +128,39 @@
      </div><!--/end container-->
  </div>
 <!--=== End Login ===-->
+
+    <!-- Modal : Forgot Password -->
+<div id="modal-forgot-password" class="modal fade modal-forgot-password" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-md">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+                <h4 id="myLargeModalLabel2" class="modal-title">Forgot Password</h4>
+            </div>
+            <div class="modal-body">
+                <div class="text-center">
+                    <h3><i class="fa fa-lock fa-4x"></i></h3>
+                    @*<p>You can reset your password here.</p>*@
+                    <p>We will send password on your registered email address.</p>
+                    <div class="panel-body">
+                        @using (Html.BeginForm("ForgotPassword", "User", FormMethod.Post, new { @id = "ForgotPasswordForm" , @role = "form" ,@autocomplete = "off", @class="form"}))
+                        {
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="glyphicon glyphicon-envelope color-green"></i></span>
+                                    @*<input id="email" name="email" placeholder="email address" class="form-control" type="email">*@
+                                    @Html.TextBoxFor(model => model.ForgotPasswordModel.RegisterEmail, new { @class = "form-control rounded-right", @placeholder = "email address" })
+                                </div>
+                                <label>@Html.ValidationMessageFor(model => model.ForgotPasswordModel.RegisterEmail)</label>
+                            </div>
+                            <div class="form-group">
+                                @*<input name="recover-submit" class="btn-u btn-block rounded" value="Send Me Password" type="submit">*@
+                                <button type="submit" class="btn-u btn-block rounded">Send Me Password</button>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

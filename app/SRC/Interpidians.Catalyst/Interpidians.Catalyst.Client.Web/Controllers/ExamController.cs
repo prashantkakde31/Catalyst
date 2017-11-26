@@ -38,7 +38,7 @@ namespace Interpidians.Catalyst.Client.Web.Controllers
             return View();
         }
 
-        public virtual ActionResult Paper(string id)
+        public virtual ActionResult Paper(string id,string paperName)
         {
             //Get Exam Questions Metadata
             List<Mcq> lstMcq = this.Service.GetAllExamMcq(Convert.ToInt32(id));
@@ -46,6 +46,7 @@ namespace Interpidians.Catalyst.Client.Web.Controllers
             lstMcq.ForEach(x => { totalTime = totalTime.Add(x.TimeToSolve); });
 
             ViewData["PaperId"] = Crypto.Encrypt("id", id);
+            ViewData["PaperName"] = paperName;
             ViewData["TotalQuestions"] = lstMcq.Count;
             ViewData["TotalTime"] = totalTime;
             return View();
@@ -64,23 +65,65 @@ namespace Interpidians.Catalyst.Client.Web.Controllers
 
             if (string.IsNullOrEmpty(SrNo))
                 SrNo = "1";
+            int paperid = Convert.ToInt32(id);
+            int i = 1;
+            List<Mcq> lstExamMcq;
 
-            if (this.sessionStore.ItemExists(SessionKeys.EXAM_DETAILS))
+            //check if exam session is running
+            if (this.sessionStore.ItemExists(SessionKeys.EXAM_DETAILS) && this.sessionStore.GetItemFromSession<Exam>(SessionKeys.EXAM_DETAILS).PaperID == paperid)
             {
                 this.currentExam = this.sessionStore.GetItemFromSession<Exam>(SessionKeys.EXAM_DETAILS);
+                lstExamMcq = this.sessionStore.GetItemFromSession<ExamQuestionPaperSet>(SessionKeys.EXAM_QUESTION_PAPER_SET).ExamQuestions;
             }
             else
             {
                 this.currentExam = this.Service.StartExam(1, Convert.ToInt32(id), DateTime.Now);
+
+                lstExamMcq=(from mcq in this.McqService.GetAllMcqs().Where(a => a.YearwisePaperID == paperid).ToList()
+                 join ans in this.McqService.GetAllMcqAnswers().ToList() 
+                 on mcq.McqID equals ans.McqID into mcqAnswers
+                 let Rank = i++
+                 select new Mcq
+                 {
+                     McqID = mcq.McqID,
+                     CommonAnswerImage = mcq.CommonAnswerImage,
+                     CorrectAnswerID = mcq.CorrectAnswerID,
+                     HintAudioLink = mcq.HintAudioLink,
+                     HintImageLink = mcq.HintImageLink,
+                     HintText = mcq.HintText,
+                     HintVideoUrl = mcq.HintVideoUrl,
+                     IsVisible = mcq.IsVisible,
+                     Marks = mcq.Marks,
+                     PaperWiseSrNo = Rank,
+                     QuestionAudioLink = mcq.QuestionAudioLink,
+                     QuestionImage2 = mcq.QuestionImage2,
+                     QuestionImageLink = mcq.QuestionImageLink,
+                     QuestionText1 = mcq.QuestionText1,
+                     QuestionText2 = mcq.QuestionText2,
+                     SupportedDocumentLink = mcq.SupportedDocumentLink,
+                     SupportedDocumentLink2 = mcq.SupportedDocumentLink2,
+                     SupportedDocumentLink3 = mcq.SupportedDocumentLink3,
+                     TimeToSolve = mcq.TimeToSolve,
+                     TopicwisePaperID = mcq.TopicwisePaperID,
+                     TopicWiseSrNo = Rank,
+                     VideoLink = mcq.VideoLink,
+                     YearwisePaperID = mcq.YearwisePaperID,
+                     McqAnswers = mcqAnswers.ToList()
+                 }).ToList();
+
                 this.sessionStore.SaveItemToSession<Exam>(SessionKeys.EXAM_DETAILS, this.currentExam);
+                this.sessionStore.SaveItemToSession<ExamQuestionPaperSet>(SessionKeys.EXAM_QUESTION_PAPER_SET,new ExamQuestionPaperSet() { ExamQuestions=lstExamMcq});
             }
-            int paperid = Convert.ToInt32(id);
-            List<Mcq> lstMcq = this.McqService.GetAllMcqs().Where(a => a.YearwisePaperID == paperid).ToList();
-            List<McqAnswer> lstMcqAnswer = this.McqService.GetAllMcqAnswers().ToList();
+            
+            //lstMcq = this.McqService.GetAllMcqs().Where(a => a.YearwisePaperID == paperid).ToList();
+            //lstMcqAnswer = this.McqService.GetAllMcqAnswers().ToList();
             ExamViewModel examVM = new ExamViewModel();
             examVM.CurrentExam = this.currentExam;
-            examVM.CurrentQuestion = this.Service.GetSingleExamMcq(Convert.ToInt32(id), Convert.ToInt32(SrNo));
-            examVM.CurrentQuestion.McqAnswers = lstMcqAnswer.Where(x => x.McqID == examVM.CurrentQuestion?.McqID)?.ToList<McqAnswer>();
+            //examVM.CurrentQuestion = this.Service.GetSingleExamMcq(Convert.ToInt32(id), Convert.ToInt32(SrNo));
+
+            examVM.CurrentQuestion = lstExamMcq.Where(x=>x.PaperWiseSrNo == Convert.ToInt32(SrNo)).FirstOrDefault();
+            //examVM.CurrentQuestion.McqAnswers = lstMcqAnswer.Where(x => x.McqID == examVM.CurrentQuestion?.McqID)?.ToList<McqAnswer>();
+            examVM.CurrentQuestion.McqAnswers = lstExamMcq.Where(x => x.McqID == examVM.CurrentQuestion?.McqID).Select(x=>x.McqAnswers).FirstOrDefault();
             examVM.CurrentQuestion.McqAnswers.Where<McqAnswer>(x => x.McqAnswerID == this.currentExam.ExamDetails.Where<ExamDetail>(y => (y.McqID == x.McqID && y.SubmittedAnswerID != null)).Select(z => z.SubmittedAnswerID.GetValueOrDefault()).SingleOrDefault())?.ToList<McqAnswer>()?.ForEach(m => m.IsSelected=true);
 
             //Calculate exam summary details
@@ -105,7 +148,7 @@ namespace Interpidians.Catalyst.Client.Web.Controllers
             }
             else
             {
-                return Redirect(Url.Action(MVC.Exam.Start(Crypto.Encrypt("id", this.currentExam.PaperID.ToString()), "1")));
+                return Redirect(Url.Action(MVC.Exam.ExamSessionExpired()));
             }
 
             var mcqId = Crypto.Decrypt(answer.McqId);
@@ -132,7 +175,7 @@ namespace Interpidians.Catalyst.Client.Web.Controllers
             }
             else
             {
-                return RedirectToAction(MVC.Exam.Start(Crypto.Encrypt("id", this.currentExam.PaperID.ToString()), "1"));
+                return Redirect(Url.Action(MVC.Exam.ExamSessionExpired()));
             }
 
             var mcqId = Crypto.Decrypt(answer.McqId);
@@ -197,7 +240,7 @@ namespace Interpidians.Catalyst.Client.Web.Controllers
             }
             else
             {
-                return Redirect(Url.Action(MVC.Exam.Start(Crypto.Encrypt("id", this.currentExam.PaperID.ToString()), "1")));
+                return Redirect(Url.Action(MVC.Exam.ExamSessionExpired()));
             }
 
             this.currentExam.TotalTimeLeft = (new TimeSpan(examNavigator.TimeLeft.SplitTimePart("H"), examNavigator.TimeLeft.SplitTimePart("M"), examNavigator.TimeLeft.SplitTimePart("S"))).Ticks / 10000000;
@@ -214,7 +257,7 @@ namespace Interpidians.Catalyst.Client.Web.Controllers
             }
             else
             {
-                return Redirect(Url.Action(MVC.Exam.Start(Crypto.Encrypt("id", this.currentExam.PaperID.ToString()), "1")));
+                return Redirect(Url.Action(MVC.Exam.ExamSessionExpired()));
             }
 
             this.currentExam.TotalTimeLeft =(new TimeSpan(examTimer.TimeLeft.SplitTimePart("H"), examTimer.TimeLeft.SplitTimePart("M"), examTimer.TimeLeft.SplitTimePart("S"))).Ticks;
@@ -223,56 +266,13 @@ namespace Interpidians.Catalyst.Client.Web.Controllers
             TimeSpan timeSpent;
             TimeSpan.TryParseExact(Convert.ToString(this.currentExam.TotalTime - this.currentExam.TotalTimeLeft), "g", CultureInfo.InvariantCulture, out timeSpent);
             ExamResult obj = this.Service.EndExam(currentExam.ExamID);
-            //this.sessionStore.RemoveItemFromSession(SessionKeys.Exam_DETAILS);
+            this.sessionStore.RemoveItemFromSession(SessionKeys.EXAM_DETAILS);
             return View(obj);    
         }
 
-        #region Commented code
-        //[HttpPost]
-        //public virtual ActionResult SubmitAnswer(string srNo,string mcqId,string answerId,string timeLeft )
-        //{
-        //    if (this.sessionStore.ItemExists(SessionKeys.Exam_DETAILS))
-        //    {
-        //        this.currentExam = this.sessionStore.GetItemFromSession<Exam>(SessionKeys.Exam_DETAILS);
-        //    }
-        //    else
-        //    {
-        //        this.currentExam = this.Service.StartExam(1, Convert.ToInt32(1), DateTime.Now);
-        //        this.sessionStore.SaveItemToSession<Exam>(SessionKeys.Exam_DETAILS, this.currentExam);
-        //    }
-
-        //    mcqId = Crypto.Decrypt(mcqId);
-        //    answerId = Crypto.Decrypt(answerId);
-
-        //    this.currentExam.ExamDetails.Where<ExamDetail>(x => x.ExamID == this.currentExam.ExamID && x.McqID == Convert.ToInt64(mcqId)).ToList<ExamDetail>().ForEach(x => { x.IsSkipped = false; x.SubmittedTime = DateTime.Now; x.SubmittedAnswerID = Convert.ToInt64(answerId); });
-        //    this.currentExam.TotalTimeLeft = new TimeSpan(timeLeft.SplitTimePart("H"),timeLeft.SplitTimePart("M"),timeLeft.SplitTimePart("S"));
-        //    //this.Service.SubmitExamQuestionAnswer(this.currentExam.ExamID, new McqAnswer() { McqID = Convert.ToInt64(mcqId), McqAnswerID = Convert.ToInt64(answerId) }, new TimeSpan(timeLeft.SplitTimePart("H"),timeLeft.SplitTimePart("M"),timeLeft.SplitTimePart("S")));
-
-        //    this.sessionStore.SaveItemToSession<Exam>(SessionKeys.Exam_DETAILS,this.currentExam);
-
-        //    return Json(new { result = "Redirect", url = Url.Action(MVC.Exam.Actions.ActionNames.Start, MVC.Exam.Name, new { id = Crypto.Encrypt(this.currentExam.PaperID.ToString()), SrNo = (Convert.ToInt32(srNo) + 1) }) }, JsonRequestBehavior.AllowGet);
-
-        //    //return JavaScript("window.location = '/" + Url.Action(MVC.Exam.Actions.ActionNames.Start, MVC.Exam.Name, new { id = Crypto.Encrypt(this.currentExam.PaperID.ToString()), SrNo = (Convert.ToInt32(srNo) + 1) }) + "'");
-        //}
-
-        //[HttpPost]
-        //public virtual ActionResult SkipAnswer(string srNo, string mcqId, string timeLeft)
-        //{
-        //    if (this.sessionStore.ItemExists(SessionKeys.Exam_DETAILS))
-        //    {
-        //        this.currentExam = this.sessionStore.GetItemFromSession<Exam>(SessionKeys.Exam_DETAILS);
-        //    }
-        //    else
-        //    {
-        //        this.currentExam = this.Service.StartExam(1, Convert.ToInt32(1), DateTime.Now);
-        //        this.sessionStore.SaveItemToSession<Exam>(SessionKeys.Exam_DETAILS, this.currentExam);
-        //    }
-
-        //    mcqId = Crypto.Decrypt(mcqId);
-        //    return View();
-        //}
-        #endregion
-
-
+        public virtual ActionResult ExamSessionExpired()
+        {
+            return View(MVC.Exam.Views.ViewNames.ExamSessionExpired);
+        }
     }
 }

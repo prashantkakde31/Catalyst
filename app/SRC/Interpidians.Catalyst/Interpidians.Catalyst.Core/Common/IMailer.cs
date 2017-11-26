@@ -4,6 +4,6 @@ namespace Interpidians.Catalyst.Core.Common
 {
     public interface IMailer
     {
-        void Send(string to, string message);
+        bool Send(string to, string subject,string message);
     }
 }

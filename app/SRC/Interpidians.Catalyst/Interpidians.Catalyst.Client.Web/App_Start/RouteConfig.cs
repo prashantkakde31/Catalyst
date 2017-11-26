@@ -39,8 +39,8 @@ namespace Interpidians.Catalyst.Client.Web
             //Load exam paper based on paper Id
             routes.MapRoute(
                 name: "ExamPaper",
-                url: "Exam/Paper/{id}",
-                defaults: new { controller = "Exam", action = "Paper", id = UrlParameter.Optional }
+                url: "Exam/Paper/{id}/{paperName}",
+                defaults: new { controller = "Exam", action = "Paper", id = UrlParameter.Optional, paperName=UrlParameter.Optional }
             );
 
             //Start exam based on paper Id
@@ -53,7 +53,7 @@ namespace Interpidians.Catalyst.Client.Web
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "User", action = "LoginRegister", id = UrlParameter.Optional }
+                defaults: new { controller = "User", action = "Home", id = UrlParameter.Optional }
             );
 
             //routes.MapRoute(

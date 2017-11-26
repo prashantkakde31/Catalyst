@@ -47,11 +47,14 @@
     <Compile Include="ApplicationService\IExamService.cs" />
     <Compile Include="ApplicationService\IMcqService.cs" />
     <Compile Include="ApplicationService\ISubjectService.cs" />
+    <Compile Include="ApplicationService\IUserService.cs" />
     <Compile Include="ApplicationService\McqService.cs" />
     <Compile Include="ApplicationService\SubjectService.cs" />
+    <Compile Include="ApplicationService\UserService.cs" />
     <Compile Include="Common\ILogger.cs" />
     <Compile Include="Common\IMailer.cs" />
     <Compile Include="Common\IServiceLocator.cs" />
+    <Compile Include="DomainService\ICartItemRepository.cs" />
     <Compile Include="DomainService\ICityMasterRepository.cs" />
     <Compile Include="DomainService\ICountryMasterRepository.cs" />
     <Compile Include="DomainService\ICourseMasterRepository.cs" />

@@ -268,7 +268,7 @@ var MCQ_MODULE = function () {
 
     function startTimer() {
         var today = new Date();
-        var examTime = $('#timer').html().split(":");    //split time lefte into H M S format
+        var examTime = $('#timer').html().split(":");    //split time left into H M S format
         //targetTime = new Date(today.getFullYear(), today.getMonth(), today.getDate(),today.getHours(),today.getMinutes() + 45,today.getSeconds(),today.getMilliseconds());
         targetTime = new Date(today.getFullYear(), today.getMonth(), today.getDate(), today.getHours() + Number(examTime[0]), today.getMinutes() + Number(examTime[1]), today.getSeconds() + Number(examTime[2]), today.getMilliseconds());
         console.log(targetTime);

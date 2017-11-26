@@ -96,13 +96,13 @@
                 <div class="panel-body">
                     <table class="table table-border">
                         <tbody>
-                            @foreach (var topic in Model.PaperWiseList)
+                            @foreach (var paper in Model.PaperWiseList)
                             { 
                                 <tr>
                                     <td>
                                        @* @Html.ActionLink(topic.Name, "")*@
-                                        @Html.ActionLink(topic.Name,MVC.Mcq.ActionNames.Paper,MVC.Mcq.Name, new { id=Interpidians.Catalyst.Core.Utility.Crypto.Encrypt("id", ""+topic.PaperID) }, null)
-
+                                        @Html.ActionLink(paper.Name,MVC.Mcq.ActionNames.Paper,MVC.Mcq.Name, new { id=Interpidians.Catalyst.Core.Utility.Crypto.Encrypt("id", ""+ paper.PaperID) }, null)
+                                        @Html.ActionLink("START TEST", MVC.Exam.Paper(Convert.ToString(paper.PaperID),Convert.ToString(paper.Name)), new { @class = "btn-u btn-u-xs margin-left-10" })
                                     </td>
                                 </tr>
                             }
