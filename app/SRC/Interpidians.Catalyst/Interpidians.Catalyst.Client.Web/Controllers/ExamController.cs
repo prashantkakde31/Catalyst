@@ -62,11 +62,13 @@ namespace Interpidians.Catalyst.Client.Web.Controllers
         public virtual ActionResult Start(string id,string SrNo)
         {
             Logger.Info("Paper-id:" + id + " SrNo:" + SrNo);
-
             if (string.IsNullOrEmpty(SrNo))
                 SrNo = "1";
-            int paperid = Convert.ToInt32(id);
+
             int i = 1;
+            int paperid = Convert.ToInt32(id);
+            int serialNumber= Convert.ToInt32(SrNo);
+
             List<Mcq> lstExamMcq;
 
             //check if exam session is running
@@ -121,7 +123,7 @@ namespace Interpidians.Catalyst.Client.Web.Controllers
             examVM.CurrentExam = this.currentExam;
             //examVM.CurrentQuestion = this.Service.GetSingleExamMcq(Convert.ToInt32(id), Convert.ToInt32(SrNo));
 
-            examVM.CurrentQuestion = lstExamMcq.Where(x=>x.PaperWiseSrNo == Convert.ToInt32(SrNo)).FirstOrDefault();
+            examVM.CurrentQuestion = lstExamMcq.Where(x=>x.PaperWiseSrNo == serialNumber).FirstOrDefault();
             //examVM.CurrentQuestion.McqAnswers = lstMcqAnswer.Where(x => x.McqID == examVM.CurrentQuestion?.McqID)?.ToList<McqAnswer>();
             examVM.CurrentQuestion.McqAnswers = lstExamMcq.Where(x => x.McqID == examVM.CurrentQuestion?.McqID).Select(x=>x.McqAnswers).FirstOrDefault();
             examVM.CurrentQuestion.McqAnswers.Where<McqAnswer>(x => x.McqAnswerID == this.currentExam.ExamDetails.Where<ExamDetail>(y => (y.McqID == x.McqID && y.SubmittedAnswerID != null)).Select(z => z.SubmittedAnswerID.GetValueOrDefault()).SingleOrDefault())?.ToList<McqAnswer>()?.ForEach(m => m.IsSelected=true);

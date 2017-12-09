@@ -5,11 +5,6 @@ namespace Interpidians.Catalyst.Client.Web.ViewModels
 {
     public class LoginRegisterViewModel
     {
-        //public LoginRegisterViewModel()
-        //{
-        //    LoginModel = new LoginViewModel();
-        //    RegisterModel = new RegisterViewModel();
-        //}
         public LoginViewModel LoginModel { get; set; }
         public RegisterViewModel RegisterModel { get; set; }
         public ForgotPasswordViewModel ForgotPasswordModel { get; set; }

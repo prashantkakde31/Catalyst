@@ -191,7 +191,7 @@ namespace Interpidians.Catalyst.Client.Web.Controllers
 
             
 
-            if (this.sessionStore.ItemExists(SessionKeys.USER_DETAILS))
+            if (this.sessionStore.ItemExists(SessionKeys.USER_DETAILS) && this.sessionStore.GetItemFromSession<UserMaster>(SessionKeys.USER_DETAILS).UserName == externalUser.UserName)
             {
                 this.CurrentUser = this.sessionStore.GetItemFromSession<UserMaster>(SessionKeys.USER_DETAILS);
             }
@@ -211,7 +211,7 @@ namespace Interpidians.Catalyst.Client.Web.Controllers
         #region Actions
         public virtual ActionResult Index()
         {
-            Logger.Info("Hi, This is Prashant");
+            //Logger.Info("Hi, This is Prashant");
             return View(MVC.User.Views.ViewNames.Index);
             //return View();
         }
@@ -244,10 +244,9 @@ namespace Interpidians.Catalyst.Client.Web.Controllers
                 {
                     ModelState.AddModelError(string.Empty, "Invalid username / password !");
                     return RedirectToAction(MVC.User.ActionNames.LoginRegister, MVC.User.Name);
-                    //return RedirectToAction("LoginRegister", new LoginRegisterViewModel() { LoginModel = loginModel });
                 }
 
-                if (this.sessionStore.ItemExists(SessionKeys.USER_DETAILS))
+                if (this.sessionStore.ItemExists(SessionKeys.USER_DETAILS) && this.sessionStore.GetItemFromSession<UserMaster>(SessionKeys.USER_DETAILS).UserName == authUser.UserName)
                 {
                     this.CurrentUser = this.sessionStore.GetItemFromSession<UserMaster>(SessionKeys.USER_DETAILS);
                 }
@@ -264,7 +263,6 @@ namespace Interpidians.Catalyst.Client.Web.Controllers
             else
             {
                 return RedirectToAction(MVC.User.ActionNames.LoginRegister, MVC.User.Name);
-                //return RedirectToAction("LoginRegister", new LoginRegisterViewModel() { LoginModel = loginModel });
             }
         }
 
@@ -282,7 +280,7 @@ namespace Interpidians.Catalyst.Client.Web.Controllers
 
                 UserService.Register(userMaster);
 
-                if (this.sessionStore.ItemExists(SessionKeys.USER_DETAILS))
+                if (this.sessionStore.ItemExists(SessionKeys.USER_DETAILS) && this.sessionStore.GetItemFromSession<UserMaster>(SessionKeys.USER_DETAILS).UserName == userMaster.UserName)
                 {
                     this.CurrentUser = this.sessionStore.GetItemFromSession<UserMaster>(SessionKeys.USER_DETAILS);
                 }
@@ -299,7 +297,6 @@ namespace Interpidians.Catalyst.Client.Web.Controllers
             else
             {
                 return RedirectToAction(MVC.User.ActionNames.LoginRegister, MVC.User.Name);
-                //return RedirectToAction("LoginRegister",new LoginRegisterViewModel() { RegisterModel=registerModel});
             }
         }
 
@@ -308,13 +305,27 @@ namespace Interpidians.Catalyst.Client.Web.Controllers
         public virtual ActionResult ForgotPassword(ForgotPasswordViewModel forgotPasswordModel)
         {
             UserMaster user = this.UserService.GetUserByEmailID(forgotPasswordModel.RegisterEmail);
-            bool isMailSent=Mailer.Send(user.EmailID, "Catalyst Password", $"Hi {user.UserName},<br/> Your password is {user.Password}");
-            if(isMailSent) ModelState.AddModelError(string.Empty, "Your password has been sent to registered mail address");
+            bool isMailSent=false;
+
+            try
+            {
+                isMailSent = Mailer.Send(user.EmailID, "Catalyst Password", $"Hi {user.UserName},<br/> Your password is {user.Password}");
+            }
+            catch (Exception ex)
+            {
+                Logger.Info("Error:-" + ex.ToString());
+            }
+             
+            if (isMailSent)
+            {
+                ModelState.AddModelError(string.Empty, "Your password has been sent to registered mail address");
+                Logger.Info("Mail Sent");
+            } 
             return RedirectToAction(MVC.User.ActionNames.LoginRegister, MVC.User.Name);
         }
         public virtual ActionResult LogOff()
         {
-            IdentitySignout();
+            //IdentitySignout();
             Session.Clear();
             Session.Abandon();
             return RedirectToAction(MVC.User.ActionNames.LoginRegister, MVC.User.Name);

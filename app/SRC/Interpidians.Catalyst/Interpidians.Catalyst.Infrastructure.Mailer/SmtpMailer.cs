@@ -35,16 +35,11 @@ namespace Interpidians.Catalyst.Infrastructure.Mailer
         {
             try
             {
-                // Send mail logic......
-                var smtp = new SmtpClient
-                {
-                    Host = _config.Host,
-                    Port = _config.Port,
-                    EnableSsl = _config.Ssl,
-                    DeliveryMethod = SmtpDeliveryMethod.Network,
-                    UseDefaultCredentials = false,
-                    Credentials = new NetworkCredential(_config.UserName, _config.Password)
-                };
+                var smtp = new SmtpClient(_config.Host,_config.Port);
+                smtp.EnableSsl = _config.Ssl;
+                smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
+                smtp.UseDefaultCredentials = false;
+                smtp.Credentials = new NetworkCredential(_config.UserName, _config.Password);
 
                 using (var smtpMessage = new MailMessage(_config.UserName,to))
                 {
@@ -61,9 +56,8 @@ namespace Interpidians.Catalyst.Infrastructure.Mailer
             }
             catch (Exception ex)
             {
-                //todo: add logging integration
-                //throw;
-                return false;
+                Debug.WriteLine("SmtpMailer >> Error: {0}", ex.ToString());
+                throw;
             }
         }
     }

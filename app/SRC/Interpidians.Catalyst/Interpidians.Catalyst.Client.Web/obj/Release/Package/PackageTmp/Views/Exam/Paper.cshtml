@@ -12,7 +12,11 @@
     <div class="panel-body">
         <h4>Total Questions - @ViewData["TotalQuestions"]</h4>
         <h4>Total Time - @ViewData["TotalTime"] (HH:MM:SS)</h4>
-        <h1>@Html.ActionLink("START TEST", MVC.Exam.Start(@ViewData["PaperID"].ToString(), "1"))</h1>
+        <h1>@{if (Convert.ToInt32(ViewData["TotalQuestions"]) > 0)
+            {
+                @Html.ActionLink("START TEST", MVC.Exam.Start(@ViewData["PaperID"].ToString(), "1"))
+            }}
+        </h1>
     </div>
 </div>
 
