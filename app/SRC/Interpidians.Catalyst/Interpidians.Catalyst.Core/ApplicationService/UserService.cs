@@ -22,8 +22,8 @@ namespace Interpidians.Catalyst.Core.ApplicationService
             ICartItemRepository cartItemRepository)
         {
             this.UserMasterRepository = userMasterRepository;
-            this.UserRoleRepository = UserRoleRepository;
-            this.UserProfileRepository = UserProfileRepository;
+            this.UserRoleRepository = userRoleRepository;
+            this.UserProfileRepository = userProfileRepository;
             this.ShoppingCartRepository = shoppingCartRepository;
             this.CartItemRepository = cartItemRepository;
         }
@@ -44,7 +44,7 @@ namespace Interpidians.Catalyst.Core.ApplicationService
 
         public UserProfile GetProfileDetails(IdentifiableData userId)
         {
-            throw new NotImplementedException();
+            return UserProfileRepository.GetById(userId);
         }
 
         public List<UserRole> GetRoles(IdentifiableData userId)
@@ -69,7 +69,12 @@ namespace Interpidians.Catalyst.Core.ApplicationService
 
         public void UpdateProfile(UserProfile userProfile)
         {
-            throw new NotImplementedException();
+            UserProfileRepository.Update(userProfile);
+        }
+
+        public void UpdateUserMaster(UserMaster userMaster)
+        {
+            UserMasterRepository.Update(userMaster);
         }
 
         public List<String> GetAllExistingUserEmailIDs()

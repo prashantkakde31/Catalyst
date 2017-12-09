@@ -12,7 +12,7 @@ namespace Interpidians.Catalyst.Core.Entity
     {
 
         private int? _Id;
-        private long _LId;
+        private long? _LId;
         private string _DTOType = string.Empty;
 
         /// <summary>
@@ -29,7 +29,7 @@ namespace Interpidians.Catalyst.Core.Entity
         /// Get and set Long Id
         /// </summary>
         [DataMember]
-        public long LId
+        public long? LId
         {
             get { return _LId; }
             set { _LId = value; }

@@ -40,9 +40,11 @@ namespace T4MVC
             {
                 public readonly string _CommonLayout = "_CommonLayout";
                 public readonly string _ErrorLayout = "_ErrorLayout";
+                public readonly string _ProfileLayout = "_ProfileLayout";
             }
             public readonly string _CommonLayout = "~/Views/Shared/_CommonLayout.cshtml";
             public readonly string _ErrorLayout = "~/Views/Shared/_ErrorLayout.cshtml";
+            public readonly string _ProfileLayout = "~/Views/Shared/_ProfileLayout.cshtml";
             static readonly _DisplayTemplatesClass s_DisplayTemplates = new _DisplayTemplatesClass();
             public _DisplayTemplatesClass DisplayTemplates { get { return s_DisplayTemplates; } }
             [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]

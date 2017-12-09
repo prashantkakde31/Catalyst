@@ -51,8 +51,8 @@ namespace Interpidians.Catalyst.Client.Web.Common
             {
                 filterContext.Result = new RedirectToRouteResult(
                            new RouteValueDictionary {
-                        { "Controller", "Login" },
-                        { "Action", "Index" },
+                        { "Controller", "User" },
+                        { "Action", "LoginRegister" },
                         {"returnUrl",filterContext.HttpContext.Request.Url.PathAndQuery}
                      });
             }

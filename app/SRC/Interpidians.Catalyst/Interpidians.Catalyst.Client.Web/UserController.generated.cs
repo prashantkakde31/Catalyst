@@ -105,6 +105,18 @@ namespace Interpidians.Catalyst.Client.Web.Controllers
         {
             return new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.ForgotPassword);
         }
+        [NonAction]
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public virtual System.Web.Mvc.JsonResult ChangePassword()
+        {
+            return new T4MVC_System_Web_Mvc_JsonResult(Area, Name, ActionNames.ChangePassword);
+        }
+        [NonAction]
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public virtual System.Web.Mvc.JsonResult ManageProfile()
+        {
+            return new T4MVC_System_Web_Mvc_JsonResult(Area, Name, ActionNames.ManageProfile);
+        }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public UserController Actions { get { return MVC.User; } }
@@ -134,6 +146,9 @@ namespace Interpidians.Catalyst.Client.Web.Controllers
             public readonly string LogOff = "LogOff";
             public readonly string Dashboard = "Dashboard";
             public readonly string Home = "Home";
+            public readonly string Me = "Me";
+            public readonly string ChangePassword = "ChangePassword";
+            public readonly string ManageProfile = "ManageProfile";
         }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -152,6 +167,9 @@ namespace Interpidians.Catalyst.Client.Web.Controllers
             public const string LogOff = "LogOff";
             public const string Dashboard = "Dashboard";
             public const string Home = "Home";
+            public const string Me = "Me";
+            public const string ChangePassword = "ChangePassword";
+            public const string ManageProfile = "ManageProfile";
         }
 
 
@@ -219,6 +237,22 @@ namespace Interpidians.Catalyst.Client.Web.Controllers
         {
             public readonly string forgotPasswordModel = "forgotPasswordModel";
         }
+        static readonly ActionParamsClass_ChangePassword s_params_ChangePassword = new ActionParamsClass_ChangePassword();
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public ActionParamsClass_ChangePassword ChangePasswordParams { get { return s_params_ChangePassword; } }
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public class ActionParamsClass_ChangePassword
+        {
+            public readonly string changePasswordVM = "changePasswordVM";
+        }
+        static readonly ActionParamsClass_ManageProfile s_params_ManageProfile = new ActionParamsClass_ManageProfile();
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public ActionParamsClass_ManageProfile ManageProfileParams { get { return s_params_ManageProfile; } }
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public class ActionParamsClass_ManageProfile
+        {
+            public readonly string profileVM = "profileVM";
+        }
         static readonly ViewsClass s_views = new ViewsClass();
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public ViewsClass Views { get { return s_views; } }
@@ -233,11 +267,13 @@ namespace Interpidians.Catalyst.Client.Web.Controllers
                 public readonly string Home = "Home";
                 public readonly string Index = "Index";
                 public readonly string LoginRegister = "LoginRegister";
+                public readonly string Me = "Me";
             }
             public readonly string Dashboard = "~/Views/User/Dashboard.cshtml";
             public readonly string Home = "~/Views/User/Home.cshtml";
             public readonly string Index = "~/Views/User/Index.cshtml";
             public readonly string LoginRegister = "~/Views/User/LoginRegister.cshtml";
+            public readonly string Me = "~/Views/User/Me.cshtml";
         }
     }
 
@@ -394,6 +430,41 @@ namespace Interpidians.Catalyst.Client.Web.Controllers
         {
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Home);
             HomeOverride(callInfo);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void MeOverride(T4MVC_System_Web_Mvc_ActionResult callInfo);
+
+        [NonAction]
+        public override System.Web.Mvc.ActionResult Me()
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Me);
+            MeOverride(callInfo);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void ChangePasswordOverride(T4MVC_System_Web_Mvc_JsonResult callInfo, Interpidians.Catalyst.Client.Web.ViewModels.ChangePasswordViewModel changePasswordVM);
+
+        [NonAction]
+        public override System.Web.Mvc.JsonResult ChangePassword(Interpidians.Catalyst.Client.Web.ViewModels.ChangePasswordViewModel changePasswordVM)
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_JsonResult(Area, Name, ActionNames.ChangePassword);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "changePasswordVM", changePasswordVM);
+            ChangePasswordOverride(callInfo, changePasswordVM);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void ManageProfileOverride(T4MVC_System_Web_Mvc_JsonResult callInfo, Interpidians.Catalyst.Client.Web.ViewModels.ProfileViewModel profileVM);
+
+        [NonAction]
+        public override System.Web.Mvc.JsonResult ManageProfile(Interpidians.Catalyst.Client.Web.ViewModels.ProfileViewModel profileVM)
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_JsonResult(Area, Name, ActionNames.ManageProfile);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "profileVM", profileVM);
+            ManageProfileOverride(callInfo, profileVM);
             return callInfo;
         }
 

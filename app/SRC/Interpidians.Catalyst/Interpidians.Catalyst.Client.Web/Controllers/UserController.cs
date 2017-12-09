@@ -342,7 +342,60 @@ namespace Interpidians.Catalyst.Client.Web.Controllers
         {
             return View();
         }
-        #endregion
 
-    }
+        [HttpGet]
+        [SetTempDataModelState]
+        //[AuthorizeAction]
+        public virtual ActionResult Me()
+        {
+            if (!this.sessionStore.ItemExists(SessionKeys.USER_DETAILS))
+            {
+                ModelState.AddModelError(string.Empty, "Session Expired ! Login again !");
+                return RedirectToAction(MVC.User.ActionNames.LoginRegister, MVC.User.Name);
+            }
+            UserMaster user = this.sessionStore.GetItemFromSession<UserMaster>(SessionKeys.USER_DETAILS);
+            UserProfile userProfile = this.UserService.GetProfileDetails(new IdentifiableData() { Id = user.UserID });
+            ManageProfileViewModel manageProfileVM = new ManageProfileViewModel();
+            manageProfileVM.ProfileVM.UserID = user.UserID;
+            manageProfileVM.ProfileVM.EmailID = user.EmailID;
+            manageProfileVM.ProfileVM.ProfileID = userProfile.ProfileID;
+            manageProfileVM.ProfileVM.FirstName = userProfile.FirstName;
+            manageProfileVM.ProfileVM.LastName = userProfile.LastName;
+            manageProfileVM.ProfileVM.Landline = userProfile.LandlineNo;
+            manageProfileVM.ProfileVM.Mobile = userProfile.MobileNo;
+            manageProfileVM.ProfileVM.Addresss = userProfile.AddrLine1;
+            return View(MVC.User.Views.Me,manageProfileVM);
+        }
+
+        [HttpPost]
+        public virtual JsonResult ChangePassword(ChangePasswordViewModel changePasswordVM)
+        {
+            UserMaster user = this.sessionStore.GetItemFromSession<UserMaster>(SessionKeys.USER_DETAILS);
+            if (user.Password.Equals(changePasswordVM.OldPassword) || user.IsExternalUser==true)
+            {
+                user.Password = changePasswordVM.NewPassword;
+                this.UserService.UpdateUserMaster(user);
+                return Json("Password changed successfully !");
+            }
+            else
+            {
+                return Json("Please enter correct old password !");
+            }
+        }
+
+        [HttpPost]
+        public virtual JsonResult ManageProfile(ProfileViewModel profileVM)
+        {
+            UserProfile userProfile = this.UserService.GetProfileDetails(new IdentifiableData() { Id = profileVM.UserID });
+            userProfile.FirstName = profileVM.FirstName;
+            userProfile.LastName = profileVM.LastName;
+            userProfile.LandlineNo = profileVM.Landline;
+            userProfile.MobileNo = profileVM.Mobile;
+            userProfile.AddrLine1 = profileVM.Addresss;
+            this.UserService.UpdateProfile(userProfile);
+            return Json("Profile has been updated successfully !");
+        }
+            #endregion
+
+        }
 }

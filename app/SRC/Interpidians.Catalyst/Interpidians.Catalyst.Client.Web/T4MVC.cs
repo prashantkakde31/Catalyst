@@ -27,6 +27,7 @@ using T4MVC;
 [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
 public static partial class MVC
 {
+    public static Interpidians.Catalyst.Client.Web.Controllers.AboutController About = new Interpidians.Catalyst.Client.Web.Controllers.T4MVC_AboutController();
     public static Interpidians.Catalyst.Client.Web.Controllers.CheckoutController Checkout = new Interpidians.Catalyst.Client.Web.Controllers.T4MVC_CheckoutController();
     public static Interpidians.Catalyst.Client.Web.Controllers.EmployeeController Employee = new Interpidians.Catalyst.Client.Web.Controllers.T4MVC_EmployeeController();
     public static Interpidians.Catalyst.Client.Web.Controllers.ErrorController Error = new Interpidians.Catalyst.Client.Web.Controllers.T4MVC_ErrorController();
@@ -395,6 +396,7 @@ namespace Links
                 public static readonly string jquery_min_js = Url("jquery.min.js");
                 public static readonly string jquery_min_map = Url("jquery.min.map");
                 public static readonly string jquery_plugin_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/jquery.plugin.min.js") ? Url("jquery.plugin.min.js") : Url("jquery.plugin.js");
+                public static readonly string jquery_unobtrusive_ajax_min_js = Url("jquery.unobtrusive-ajax.min.js");
                 public static readonly string jquery_validate_min_js = Url("jquery.validate.min.js");
                 public static readonly string jquery_validate_unobtrusive_min_js = Url("jquery.validate.unobtrusive.min.js");
             }
@@ -1656,6 +1658,7 @@ namespace Links
                         public const string jquery_js = "~/Content/plugins/jquery/jquery.js"; 
                         public const string jquery_min_js = "~/Content/plugins/jquery/jquery.min.js"; 
                         public const string jquery_plugin_js = "~/Content/plugins/jquery/jquery.plugin.js"; 
+                        public const string jquery_unobtrusive_ajax_min_js = "~/Content/plugins/jquery/jquery.unobtrusive-ajax.min.js"; 
                         public const string jquery_validate_min_js = "~/Content/plugins/jquery/jquery.validate.min.js"; 
                         public const string jquery_validate_unobtrusive_min_js = "~/Content/plugins/jquery/jquery.validate.unobtrusive.min.js"; 
                     }

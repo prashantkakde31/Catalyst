@@ -12,7 +12,11 @@
           <mvcSiteMapNode title="Menus" dynamicNodeProvider="Interpidians.Catalyst.Client.Web.Helpers.MenuDetailsDynamicNodeProvider, Interpidians.Catalyst.Client.Web"/>
         </mvcSiteMapNode>
       </mvcSiteMapNode>
-    </mvcSiteMapNode>     
+    </mvcSiteMapNode>
+    <mvcSiteMapNode title="About" clickable="false">
+      <mvcSiteMapNode title="Team" url="About/Team" />
+      <mvcSiteMapNode title="Testimonials" url="About/Testimonial" />
+    </mvcSiteMapNode>
     <!--</mvcSiteMapNode>-->
   <!--<mvcSiteMapNode title="CIPP" clickable="false">
     <mvcSiteMapNode title="Grade 1" clickable="false">

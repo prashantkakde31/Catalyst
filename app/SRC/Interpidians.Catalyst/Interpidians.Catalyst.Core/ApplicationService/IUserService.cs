@@ -18,5 +18,6 @@ namespace Interpidians.Catalyst.Core.ApplicationService
         List<String> GetAllExistingUserEmailIDs();
         List<String> GetAllMobileNumber();
         void UpdateProfile(UserProfile userProfile);
+        void UpdateUserMaster(UserMaster userMaster);
     }
 }

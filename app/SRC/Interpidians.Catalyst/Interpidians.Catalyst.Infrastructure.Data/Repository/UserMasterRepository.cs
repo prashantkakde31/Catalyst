@@ -57,14 +57,19 @@ namespace Interpidians.Catalyst.Infrastructure.Data
             this.DB.AddInParameter(saveCommand, "@UserID", DbType.Int32, UserMaster.UserID);
             this.DB.AddInParameter(saveCommand, "@UserName", DbType.String, UserMaster.UserName);
             this.DB.AddInParameter(saveCommand, "@Password", DbType.String, UserMaster.Password);
-            this.DB.AddInParameter(saveCommand, "@AccountStatus", DbType.String, UserMaster.AccountStatus);
             this.DB.AddInParameter(saveCommand, "@EmailID", DbType.String, UserMaster.EmailID);
+            this.DB.AddInParameter(saveCommand, "@MobileNo", DbType.String, UserMaster.MobileNumber);
             this.DB.AddInParameter(saveCommand, "@ValidFrom", DbType.DateTime, UserMaster.ValidFrom);
             this.DB.AddInParameter(saveCommand, "@ValidUpto", DbType.DateTime, UserMaster.ValidUpto);
             this.DB.AddInParameter(saveCommand, "@IsLoggedOn", DbType.Boolean, UserMaster.IsLoggedOn);
             this.DB.AddInParameter(saveCommand, "@LoggedOnSessionID", DbType.String, UserMaster.LoggedOnSessionID);
-            this.DB.AddInParameter(saveCommand, "@ExamYear", DbType.Int32, UserMaster.ExamYear);
-            this.DB.AddInParameter(saveCommand, "@ExamMonth", DbType.Int32, UserMaster.ExamMonth);
+            this.DB.AddInParameter(saveCommand, "@IsExternalUser", DbType.Boolean, UserMaster.IsExternalUser);
+            this.DB.AddInParameter(saveCommand, "@ExternalLoginProvider", DbType.String, UserMaster.ExternalLoginProvider);
+            this.DB.AddInParameter(saveCommand, "@ProviderKey", DbType.String, UserMaster.ProviderKey);
+            this.DB.AddInParameter(saveCommand, "@IsRegistrationComplete", DbType.Boolean, UserMaster.IsRegistrationComplete);
+            this.DB.AddInParameter(saveCommand, "@AccountStatus", DbType.String, UserMaster.AccountStatus);
+            //this.DB.AddInParameter(saveCommand, "@ExamYear", DbType.Int32, UserMaster.ExamYear);
+            //this.DB.AddInParameter(saveCommand, "@ExamMonth", DbType.Int32, UserMaster.ExamMonth);
             this.DB.ExecuteNonQuery(saveCommand);
             if (saveCommand != null) saveCommand.Dispose();
         }

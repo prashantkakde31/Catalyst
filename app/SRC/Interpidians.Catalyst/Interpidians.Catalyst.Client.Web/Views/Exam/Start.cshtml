@@ -304,16 +304,8 @@
                         <!-- /Q.1 -->
 
                     </div>
-                    <div class="panel-heading">
-                        @{
-                            if (!string.IsNullOrEmpty(Model.CurrentQuestion.QuestionText1))
-                            {
-                                <h4 class="panel-title@(("QuestionOrBoth".IndexOf(Model.CurrentExam.DisableQuestionAnswer,StringComparison.CurrentCultureIgnoreCase) != -1) ? " invisible" : "")">@Html.Raw(Model.CurrentQuestion.QuestionText1)</h4>
-                            }
-                        }
-                    </div>
 
-                            </div>
+                </div>
 
                 <!-- Modal : MCQ Help -->
                 <div id="modal-mcqhelp" class="modal fade modal-mcqhelp" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
@@ -321,7 +313,7 @@
                         <div class="modal-content">
                             <div class="modal-header">
                                 <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
-                                <h4 id="myLargeModalLabel2" class="modal-title">Help</h4>
+                                <h4 id="myLargeModalLabel" class="modal-title">Help</h4>
                             </div>
                             <div class="modal-body">
 

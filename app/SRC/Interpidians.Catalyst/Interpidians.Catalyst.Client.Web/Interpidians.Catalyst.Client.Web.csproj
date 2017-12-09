@@ -172,6 +172,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AboutController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
     <Compile Include="CheckoutController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
@@ -180,6 +183,7 @@
     <Compile Include="Common\SessionKeys.cs" />
     <Compile Include="Common\SessionStore.cs" />
     <Compile Include="Common\WebConstant.cs" />
+    <Compile Include="Controllers\AboutController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\CheckoutController.cs" />
     <Compile Include="Controllers\EmployeeController.cs" />
@@ -232,6 +236,7 @@
     <Compile Include="ViewModels\ExamResultViewModel.cs" />
     <Compile Include="ViewModels\ExamViewModel.cs" />
     <Compile Include="ViewModels\LoginRegisterViewModel.cs" />
+    <Compile Include="ViewModels\ManageProfileViewModel.cs" />
     <Compile Include="ViewModels\PaperMcqViewModel.cs" />
     <Compile Include="ViewModels\SampleMcqViewModel.cs" />
     <Compile Include="ViewModels\TopicMcqViewModel.cs" />
@@ -330,6 +335,7 @@
     <Content Include="Content\plugins\jquery\jquery.js" />
     <Content Include="Content\plugins\jquery\jquery.min.js" />
     <Content Include="Content\plugins\jquery\jquery.plugin.js" />
+    <Content Include="Content\plugins\jquery\jquery.unobtrusive-ajax.min.js" />
     <Content Include="Content\plugins\jquery\jquery.validate.min.js" />
     <Content Include="Content\plugins\jquery\jquery.validate.unobtrusive.min.js" />
     <Content Include="Content\plugins\line-icons\fonts\Simple-Line-Icons.dev.svg" />
@@ -899,6 +905,10 @@
     <Content Include="Views\Shared\DisplayTemplates\BootstrapSiteMapPathHelperModel.cshtml" />
     <Content Include="Views\User\Home.cshtml" />
     <Content Include="Views\Exam\ExamSessionExpired.cshtml" />
+    <Content Include="Views\Shared\_ProfileLayout.cshtml" />
+    <Content Include="Views\User\Me.cshtml" />
+    <Content Include="Views\About\Team.cshtml" />
+    <Content Include="Views\About\Testimonial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

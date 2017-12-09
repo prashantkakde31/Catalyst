@@ -394,8 +394,6 @@ var MCQ_MODULE = function () {
             success: function (data) {
                 debugger;
                 if (sucesscallbackfunction != '') {
-                    //var url = decodeURIComponent(JSON.stringify(window.location.host + data.url)).replace(/\"/g, "");
-                    //window.location.href = url;
                     eval(sucesscallbackfunction + '(data)');
                 }
             },

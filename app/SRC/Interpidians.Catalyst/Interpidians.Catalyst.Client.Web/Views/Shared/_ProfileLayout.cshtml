@@ -5,7 +5,7 @@
 <!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
 <!--[if !IE]><!-->
 <html lang="en">
- <!--<![endif]-->
+<!--<![endif]-->
 <head>
     <title>@ViewBag.Title</title>
 
@@ -50,6 +50,7 @@
     <link rel="stylesheet" href="~/Content/css/theme-colors/green.css" id="style_color">
 
     <!-- CSS Customization -->
+    <link rel="stylesheet" href="~/Content/css/pages/profile.css">
     <link rel="stylesheet" href="~/Content/css/catalyst.css">
 
     <!-- Global Js Variables -->
@@ -98,17 +99,17 @@
                                 </li>*@
                                 <li class=""><a class="" href="javascript:void(0);">Contact</a></li>
                                 <li class="">
-                                @{
-                                    if ((new SessionStore().GetItemFromSession<Interpidians.Catalyst.Core.Entity.UserMaster>(SessionKeys.USER_DETAILS)) != null)
-                                    {
-                                        @:Hi @Html.ActionLink(new SessionStore().GetItemFromSession<Interpidians.Catalyst.Core.Entity.UserMaster>(SessionKeys.USER_DETAILS).UserName, MVC.User.Me()),
-                                        @Html.ActionLink("Logout", MVC.User.LogOff())
+                                    @{
+                                        if ((new SessionStore().GetItemFromSession<Interpidians.Catalyst.Core.Entity.UserMaster>(SessionKeys.USER_DETAILS)) != null)
+                                        {
+                                            @:Hi @Html.ActionLink(new SessionStore().GetItemFromSession<Interpidians.Catalyst.Core.Entity.UserMaster>(SessionKeys.USER_DETAILS).UserName, MVC.User.Me()),
+                                            @Html.ActionLink("Logout", MVC.User.LogOff())
+                                        }
+                                        else
+                                        {
+                                            @Html.ActionLink("Login / Register", MVC.User.LoginRegister())
+                                        }
                                     }
-                                    else
-                                    {
-                                        @Html.ActionLink("Login / Register", MVC.User.LoginRegister())
-                                    }
-                                }
                                 </li>
                                 <li class=""><i class="search fa fa-search search-button"></i></li>
                             </ul>
@@ -117,7 +118,6 @@
                 </div><!--/container-->
             </div>
             <!-- End Topbar v3 -->
-
             <!-- Navbar -->
             <div class="navbar navbar-default mega-menu" role="navigation">
                 <div class="container">
@@ -184,8 +184,6 @@
                         </div>
                     </div>
                     <!-- End Shopping Cart -->
-
-
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     @*startFromCurrentNode: false, startingNodeInChildLevel: false, showStartingNode: true*@
                     <div class="collapse navbar-collapse navbar-responsive-collapse">
@@ -197,7 +195,6 @@
             <!-- End Navbar -->
         </div>
         <!--=== End Header v5 ===-->
-        
         <!--=== Breadcrumbs v4 ===-->
         <div class="breadcrumbs">
             <div class="container">
@@ -206,19 +203,39 @@
             </div>
         </div>
         <!--=== End Breadcrumbs v4 ===-->
-
         <!--=== Page Content ===-->
         <div class="content-md ">
-            <div class="container">
+            <div class="container profile">
                 <div class="row">
+                    <!--Left Sidebar-->
+                    <div class="col-md-3 md-margin-bottom-40">
+                        <!--Profile Picture-->
+                        @*<img class="img-responsive profile-img margin-bottom-20" src="#" alt="">*@
+                        <i class="glyphicon glyphicon-user usricon img-responsive profile-img margin-bottom-20" style="font-size: 60px;text-align:center;"></i>
+                        <!--End Profile Picture-->
 
-                    @RenderBody()
+                        <ul class="list-group sidebar-nav-v1 margin-bottom-40" id="sidebar-nav-1">
+                            <li class="list-group-item active">
+                                <a href="#"><i class="fa fa-user"></i> Profile</a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="#"><i class="fa fa-cubes"></i> My Subscription</a>
+                            </li>
+                        </ul>
 
-                </div><!--/end row-->
-            </div><!--/end container-->
-        </div>
+                    </div>
+                    <!--End Left Sidebar-->
+
+                    <!-- Profile Content -->
+                    <div class="col-md-9">
+                        <div class="profile-body margin-bottom-20">
+                            @RenderBody()
+                        </div>
+                    </div>
+                        </div><!--/end row-->
+                    </div><!--/end container-->
+                </div>
         <!--=== End Page Content ===-->
-        
         <!--=== Shop Suvbscribe ===-->
         <div class="shop-subscribe">
             <div class="container">
@@ -231,7 +248,6 @@
             </div><!--/end container-->
         </div>
         <!--=== End Shop Suvbscribe ===-->
-
         <!--=== Footer v4 ===-->
         <div class="footer-v4">
             <div class="copyright">
@@ -261,6 +277,7 @@
     <!-- MVC client side validation-->
     <script src="~/Content/plugins/jquery/jquery.validate.min.js"></script>
     <script src="~/Content/plugins/jquery/jquery.validate.unobtrusive.min.js"></script>
+    <script src="~/Content/plugins/jquery/jquery.unobtrusive-ajax.min.js"></script>
     <!-- JS Customization -->
     <script src="~/Content/js/custom.js"></script>
     <!-- JS Page Level -->
@@ -269,11 +286,6 @@
         jQuery(document).ready(function () {
             App.init();
             App.initScrollBar();
-
-            //Disable onkeyup validation for fields to be validated remotely
-            $("#RegisterModel_EmailID").keyup(function () { return false });
-            $("#RegisterModel_MobileNumber").keyup(function () { return false });
-            $("#ForgotPasswordModel_EmailID").keyup(function () { return false });
         });
     </script>
     <!--[if lt IE 9]>
