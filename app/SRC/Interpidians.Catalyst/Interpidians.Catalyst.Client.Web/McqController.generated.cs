@@ -74,6 +74,12 @@ namespace Interpidians.Catalyst.Client.Web.Controllers
         {
             return new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Paper);
         }
+        [NonAction]
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public virtual System.Web.Mvc.ActionResult Buy()
+        {
+            return new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Buy);
+        }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public McqController Actions { get { return MVC.Mcq; } }
@@ -94,6 +100,7 @@ namespace Interpidians.Catalyst.Client.Web.Controllers
             public readonly string Sample = "Sample";
             public readonly string Topic = "Topic";
             public readonly string Paper = "Paper";
+            public readonly string Buy = "Buy";
         }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -103,6 +110,7 @@ namespace Interpidians.Catalyst.Client.Web.Controllers
             public const string Sample = "Sample";
             public const string Topic = "Topic";
             public const string Paper = "Paper";
+            public const string Buy = "Buy";
         }
 
 
@@ -132,6 +140,16 @@ namespace Interpidians.Catalyst.Client.Web.Controllers
         {
             public readonly string id = "id";
         }
+        static readonly ActionParamsClass_Buy s_params_Buy = new ActionParamsClass_Buy();
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public ActionParamsClass_Buy BuyParams { get { return s_params_Buy; } }
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public class ActionParamsClass_Buy
+        {
+            public readonly string course = "course";
+            public readonly string subcourse = "subcourse";
+            public readonly string subject = "subject";
+        }
         static readonly ViewsClass s_views = new ViewsClass();
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public ViewsClass Views { get { return s_views; } }
@@ -142,11 +160,13 @@ namespace Interpidians.Catalyst.Client.Web.Controllers
             public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
             public class _ViewNamesClass
             {
+                public readonly string Buy = "Buy";
                 public readonly string Index = "Index";
                 public readonly string Paper = "Paper";
                 public readonly string Sample = "Sample";
                 public readonly string Topic = "Topic";
             }
+            public readonly string Buy = "~/Views/Mcq/Buy.cshtml";
             public readonly string Index = "~/Views/Mcq/Index.cshtml";
             public readonly string Paper = "~/Views/Mcq/Paper.cshtml";
             public readonly string Sample = "~/Views/Mcq/Sample.cshtml";
@@ -205,6 +225,20 @@ namespace Interpidians.Catalyst.Client.Web.Controllers
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Paper);
             ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "id", id);
             PaperOverride(callInfo, id);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void BuyOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, string course, string subcourse, string subject);
+
+        [NonAction]
+        public override System.Web.Mvc.ActionResult Buy(string course, string subcourse, string subject)
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Buy);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "course", course);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "subcourse", subcourse);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "subject", subject);
+            BuyOverride(callInfo, course, subcourse, subject);
             return callInfo;
         }
 

@@ -11,8 +11,9 @@ namespace Interpidians.Catalyst.Core.DomainService
     {
         IEnumerable<CartItem> GetAll();
         CartItem GetById(IdentifiableData id);
-        void Add(CartItem ShoppingCart);
+        void Add(long shoppingCartId, int productId);
         void Update(CartItem ShoppingCart);
-        void Delete(IdentifiableData id);
+        void Delete(long shoppingCartId, int productId);
+        void DeleteAll(long shoppingCartId);
     }
 }

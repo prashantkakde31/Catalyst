@@ -10,11 +10,11 @@ namespace Interpidians.Catalyst.Client.Web.Helpers
 {
     public class CourseDetailsDynamicNodeProvider : DynamicNodeProviderBase
     {
-        private IMcqService McqService { get; set; }
+        private ICatalystService McqService { get; set; }
 
         public CourseDetailsDynamicNodeProvider()
         {
-            this.McqService = DependencyConfiguration.Instance.GetInstance<IMcqService>();
+            this.McqService = DependencyConfiguration.Instance.GetInstance<ICatalystService>();
         }
 
         //public override IEnumerable<DynamicNode> GetDynamicNodeCollection(ISiteMapNode node)
@@ -61,10 +61,10 @@ namespace Interpidians.Catalyst.Client.Web.Helpers
 
     public class SubCourseDetailsDynamicNodeProvider : DynamicNodeProviderBase
     {
-        private IMcqService McqService { get; set; }
+        private ICatalystService McqService { get; set; }
         public SubCourseDetailsDynamicNodeProvider()
         {
-            this.McqService = DependencyConfiguration.Instance.GetInstance<IMcqService>();
+            this.McqService = DependencyConfiguration.Instance.GetInstance<ICatalystService>();
         }
 
         public override IEnumerable<DynamicNode> GetDynamicNodeCollection(ISiteMapNode node)
@@ -85,10 +85,10 @@ namespace Interpidians.Catalyst.Client.Web.Helpers
 
     public class SubjectDetailsDynamicNodeProvider : DynamicNodeProviderBase
     {
-        private IMcqService McqService { get; set; }
+        private ICatalystService McqService { get; set; }
         public SubjectDetailsDynamicNodeProvider()
         {
-            this.McqService = DependencyConfiguration.Instance.GetInstance<IMcqService>();
+            this.McqService = DependencyConfiguration.Instance.GetInstance<ICatalystService>();
         }
 
         public override IEnumerable<DynamicNode> GetDynamicNodeCollection(ISiteMapNode node)
@@ -110,10 +110,10 @@ namespace Interpidians.Catalyst.Client.Web.Helpers
 
     public class MenuDetailsDynamicNodeProvider : DynamicNodeProviderBase
     {
-        private IMcqService McqService { get; set; }
+        private ICatalystService McqService { get; set; }
         public MenuDetailsDynamicNodeProvider()
         {
-            this.McqService = DependencyConfiguration.Instance.GetInstance<IMcqService>();
+            this.McqService = DependencyConfiguration.Instance.GetInstance<ICatalystService>();
         }
 
         public override IEnumerable<DynamicNode> GetDynamicNodeCollection(ISiteMapNode node)

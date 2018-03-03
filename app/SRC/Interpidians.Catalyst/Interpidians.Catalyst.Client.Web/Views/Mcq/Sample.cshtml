@@ -126,7 +126,8 @@
         </div>
 
         <div class="col-sm-offset-3 col-sm-6">
-            <button class="btn-u btn-u-lg btn-block text-highlights-green" type="button">Go Premium <i class="fa fa-usd"></i></button>
+            @Html.ActionLink("Go Premium $", MVC.Mcq.ActionNames.Buy, MVC.Mcq.Name, new { course = Convert.ToString(ViewBag.CourseName), subcourse = Convert.ToString(ViewBag.Subcourse), subject = Convert.ToString(ViewBag.SubjectName).Trim() }, new { @class = "btn-u btn-u-lg btn-block text-highlights-green" })
+            @*<button class="btn-u btn-u-lg btn-block text-highlights-green" type="button">Go Premium <i class="fa fa-usd"></i></button>*@
         </div>
     </div>
 </div>

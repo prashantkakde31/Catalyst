@@ -1,0 +1,146 @@
+﻿@model Interpidians.Catalyst.Client.Web.ViewModels.BuyMcqViewModel
+@{
+    ViewBag.Title = "MCQ - " + ViewBag.CourseName + " / " + ViewBag.Subcourse + " / " + ViewBag.SubjectName;
+    Layout = "~/Views/Shared/_CommonLayout.cshtml";
+}
+
+<!-- Fetch Subjects under course or subcourse -->
+<div class="col-sm-3">
+    <ul class="list-group sidebar-nav-v1">
+
+        @foreach (var subject in Model.SubjectList)
+        {
+            if (subject.Name == ViewBag.SubjectName)
+            {
+                <li class="list-group-item active">
+                    @Html.ActionLink(subject.Name, MVC.Mcq.ActionNames.Buy, MVC.Mcq.Name, new { course = Convert.ToString(ViewBag.CourseName), subcourse = Convert.ToString(ViewBag.subcourse), subject = Convert.ToString(subject.Name).Trim() }, null)
+                </li>
+            }
+            else
+            {
+                <li class="list-group-item">
+                    @Html.ActionLink(subject.Name, MVC.Mcq.ActionNames.Buy, MVC.Mcq.Name, new { course = Convert.ToString(ViewBag.CourseName), subcourse = Convert.ToString(ViewBag.subcourse), subject = Convert.ToString(subject.Name).Trim() }, null)
+                </li>
+            }
+        }
+    </ul>
+</div>
+<!-- End Fetch Subjects under course or subcourse -->
+
+<div class="col-sm-9">
+    <div class="row">
+        <!-- Fetch Topics To Sell under subject -->
+        <div class="col-sm-6">
+            <div class="buying-table call-action-v1 bg-color-blue">
+                <div class="call-action-v1-box">
+                    <div class="call-action-v1-in">
+                        <h2 class="color-light">Topic Wise</h2>
+                    </div>
+                </div>
+                <table class="buying-table pricing-all table table-border bg-color-light-blue">
+                    <tbody>
+                        @{
+                            var allTopic = Model.TopicList.Where(x => x.Name.ToUpper().Contains("ALL")).FirstOrDefault();
+                            if (Model.TopicList.Count > 0)
+                            {
+                                @*<tr>
+                                    <td class="all-heading">All Topics</td>
+                                    <td><span class="all-price"><i>$</i>35<i>.10</i></span></td>
+                                    <td><span class="all-price"><i>$</i>@(allTopic == null?0:allTopic.Price)</span></td>
+                                    <td><button type="button" class="btn-u btn-u-sea-shop">Buy All Topics</button></td>
+                                </tr>*@
+                            }
+                            else
+                            {
+                                <tr>
+                                    <td class="all-heading">Coming Soon</td>
+                                </tr>
+                            }
+                        }
+                    </tbody>
+                </table>
+            </div>
+
+
+            <div class="mCustomScrollbar buying-table panel panel-default margin-bottom-10">
+                <table class="sky-form buying-table table table-border table-striped">
+                    <tbody>
+                        @foreach (var topic in Model.TopicList)
+                        {
+                            if (!topic.Name.ToUpper().Contains("ALL"))
+                            {
+                                <tr>
+                                    <td>@topic.Name</td>
+                                    <td>$ @Math.Round(topic.Price,2)</td>
+                                    <td data-product-id="@topic.ProductID" data-product-category="@(Convert.ToString(ViewBag.CourseName) + "/" + Convert.ToString(ViewBag.subcourse)+ "/" + Convert.ToString(ViewBag.SubjectName).Trim())"><button type="button" class="btn-u btn-u-sea-shop" onclick="AddItemToCart(this)">Add to Cart</button></td>
+                                </tr>
+                            }
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- End Fetch Topics To Sell under subject -->
+        <!-- Fetch Papers To Sell under subject -->
+        <div class="col-sm-6">
+
+            <div class="buying-table call-action-v1 bg-color-sea">
+                <div class="buying-table call-action-v1-box">
+                    <div class="call-action-v1-in">
+                        <h2 class="color-light">Paper Wise</h2>
+                    </div>
+                </div>
+                <table class="buying-table pricing-all table table-border bg-color-light-blue">
+                    @{
+                        var allPaper = Model.PaperList.Where(x => x.Name.ToUpper().Contains("ALL")).FirstOrDefault();
+                        if (Model.PaperList.Count > 0)
+                        {
+                            @*<tr>
+                                <td class="all-heading">All Papers</td>
+                                <td><span class="all-price"><i>$</i>35<i>.10</i></span></td>
+                                <td><span class="all-price"><i>$</i>@(allPaper == null ? 0 : allPaper.Price)</span></td>
+                                <td><button type="button" class="btn-u btn-u-sea-shop">Buy All Papers</button></td>
+                            </tr>*@
+                        }
+                        else
+                        {
+                            <tr>
+                                <td class="all-heading">Coming Soon</td>
+                            </tr>
+                        }
+                    }
+                </table>
+            </div>
+            <div class="mCustomScrollbar buying-table panel panel-default margin-bottom-10">
+                <table class="sky-form buying-table table table-border table-striped">
+                    <tbody>
+                        @foreach (var paper in Model.PaperList)
+                        {
+                            if (!paper.Name.ToUpper().Contains("ALL"))
+                            {
+                                <tr>
+                                    <td>@paper.Name</td>
+                                    <td>$ @Math.Round(paper.Price,2)</td>
+                                    <td data-product-id="@paper.ProductID" data-product-category="@(Convert.ToString(ViewBag.CourseName) + "/" + Convert.ToString(ViewBag.subcourse)+ "/" + Convert.ToString(ViewBag.SubjectName).Trim())"><button type="button" class="btn-u btn-u-sea-shop" onclick="AddItemToCart(this)">Add to Cart</button></td>
+                                </tr>
+                            }
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <!-- End Fetch Papers To Sell under subject -->
+
+        <div class="col-xs-offset-6 col-xs-6 text-right margin-top-20">
+            <ul class="list-unstyled invoice-total-info">
+                <li><strong>Total Amount:</strong> $1000</li>
+                <li><strong>Discount:</strong> 10%</li>
+                <li><strong>Grand Total:</strong> $900</li>
+            </ul>
+            <button class="btn-u">Proceed To Checkout</button>
+        </div>
+    </div>
+</div>
+
+<script src="~/Content/js/shopping-cart.js"></script>

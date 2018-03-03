@@ -6,7 +6,7 @@ using Interpidians.Catalyst.Core.Entity;
 
 namespace Interpidians.Catalyst.Core.ApplicationService
 {
-   public interface IMcqService
+   public interface ICatalystService
     {
        List<CourseMaster> GetAllCourses();
        List<SubCourseMaster> GetAllSubCourses();
@@ -15,5 +15,7 @@ namespace Interpidians.Catalyst.Core.ApplicationService
        List<PaperMaster> GetAllPapers();
        List<Mcq> GetAllMcqs();
        List<McqAnswer> GetAllMcqAnswers();
+       List<ProductMaster> GetAllProducts();
+       List<DiscountMaster> GetAllDiscounts();
     }
 }

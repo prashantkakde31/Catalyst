@@ -27,5 +27,9 @@ namespace Interpidians.Catalyst.Core.Entity
         public DateTime ValidUpto { get; set; } // datetime, not null
 
         public bool IsVisible { get; set; } // bit, not null
+
+        public bool IsSample { get; set; } // bit, not null
+
+        public int? ProductType { get; set; } // int, null
     }
 }

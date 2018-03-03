@@ -18,12 +18,12 @@ namespace Interpidians.Catalyst.Client.Web.Controllers
     public partial class ExamController : BaseController
     {
         private IExamService Service { get; set; }
-        private IMcqService McqService { get; set; }
+        private ICatalystService McqService { get; set; }
         private ILogger Logger { get; set; }
         private Exam currentExam { get; set; }
 
 
-        public ExamController(IExamService service, IMcqService mcqService,ILogger loggerService)
+        public ExamController(IExamService service, ICatalystService mcqService,ILogger loggerService)
         {
             this.Service = service;
             this.McqService = mcqService;

@@ -28,9 +28,6 @@ namespace Interpidians.Catalyst.Client.Web.Controllers
     public partial class ShoppingCartController
     {
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        public ShoppingCartController() { }
-
-        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         protected ShoppingCartController(Dummy d) { }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -59,6 +56,18 @@ namespace Interpidians.Catalyst.Client.Web.Controllers
             return RedirectToActionPermanent(taskResult.Result);
         }
 
+        [NonAction]
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public virtual System.Web.Mvc.JsonResult AddItemToCart()
+        {
+            return new T4MVC_System_Web_Mvc_JsonResult(Area, Name, ActionNames.AddItemToCart);
+        }
+        [NonAction]
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public virtual System.Web.Mvc.ActionResult RemoveItemFromCart()
+        {
+            return new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.RemoveItemFromCart);
+        }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public ShoppingCartController Actions { get { return MVC.ShoppingCart; } }
@@ -75,16 +84,42 @@ namespace Interpidians.Catalyst.Client.Web.Controllers
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public class ActionNamesClass
         {
-            public readonly string Index = "Index";
+            public readonly string GetCart = "GetCart";
+            public readonly string GetEmptyCart = "GetEmptyCart";
+            public readonly string LoadUserCart = "LoadUserCart";
+            public readonly string AddItemToCart = "AddItemToCart";
+            public readonly string RemoveItemFromCart = "RemoveItemFromCart";
+            public readonly string RemoveAllItemsFromCart = "RemoveAllItemsFromCart";
         }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public class ActionNameConstants
         {
-            public const string Index = "Index";
+            public const string GetCart = "GetCart";
+            public const string GetEmptyCart = "GetEmptyCart";
+            public const string LoadUserCart = "LoadUserCart";
+            public const string AddItemToCart = "AddItemToCart";
+            public const string RemoveItemFromCart = "RemoveItemFromCart";
+            public const string RemoveAllItemsFromCart = "RemoveAllItemsFromCart";
         }
 
 
+        static readonly ActionParamsClass_AddItemToCart s_params_AddItemToCart = new ActionParamsClass_AddItemToCart();
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public ActionParamsClass_AddItemToCart AddItemToCartParams { get { return s_params_AddItemToCart; } }
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public class ActionParamsClass_AddItemToCart
+        {
+            public readonly string productId = "productId";
+        }
+        static readonly ActionParamsClass_RemoveItemFromCart s_params_RemoveItemFromCart = new ActionParamsClass_RemoveItemFromCart();
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public ActionParamsClass_RemoveItemFromCart RemoveItemFromCartParams { get { return s_params_RemoveItemFromCart; } }
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public class ActionParamsClass_RemoveItemFromCart
+        {
+            public readonly string productId = "productId";
+        }
         static readonly ViewsClass s_views = new ViewsClass();
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public ViewsClass Views { get { return s_views; } }
@@ -105,13 +140,70 @@ namespace Interpidians.Catalyst.Client.Web.Controllers
         public T4MVC_ShoppingCartController() : base(Dummy.Instance) { }
 
         [NonAction]
-        partial void IndexOverride(T4MVC_System_Web_Mvc_ActionResult callInfo);
+        partial void GetCartOverride(T4MVC_System_Web_Mvc_ContentResult callInfo);
 
         [NonAction]
-        public override System.Web.Mvc.ActionResult Index()
+        public override System.Web.Mvc.ContentResult GetCart()
         {
-            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Index);
-            IndexOverride(callInfo);
+            var callInfo = new T4MVC_System_Web_Mvc_ContentResult(Area, Name, ActionNames.GetCart);
+            GetCartOverride(callInfo);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void GetEmptyCartOverride(T4MVC_System_Web_Mvc_ContentResult callInfo);
+
+        [NonAction]
+        public override System.Web.Mvc.ContentResult GetEmptyCart()
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ContentResult(Area, Name, ActionNames.GetEmptyCart);
+            GetEmptyCartOverride(callInfo);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void LoadUserCartOverride(T4MVC_System_Web_Mvc_ActionResult callInfo);
+
+        [NonAction]
+        public override System.Web.Mvc.ActionResult LoadUserCart()
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.LoadUserCart);
+            LoadUserCartOverride(callInfo);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void AddItemToCartOverride(T4MVC_System_Web_Mvc_JsonResult callInfo, int productId);
+
+        [NonAction]
+        public override System.Web.Mvc.JsonResult AddItemToCart(int productId)
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_JsonResult(Area, Name, ActionNames.AddItemToCart);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "productId", productId);
+            AddItemToCartOverride(callInfo, productId);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void RemoveItemFromCartOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, int productId);
+
+        [NonAction]
+        public override System.Web.Mvc.ActionResult RemoveItemFromCart(int productId)
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.RemoveItemFromCart);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "productId", productId);
+            RemoveItemFromCartOverride(callInfo, productId);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void RemoveAllItemsFromCartOverride(T4MVC_System_Web_Mvc_ActionResult callInfo);
+
+        [NonAction]
+        public override System.Web.Mvc.ActionResult RemoveAllItemsFromCart()
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.RemoveAllItemsFromCart);
+            RemoveAllItemsFromCartOverride(callInfo);
             return callInfo;
         }
 

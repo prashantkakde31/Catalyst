@@ -80,6 +80,19 @@ internal partial class T4MVC_System_Web_Mvc_JsonResult : System.Web.Mvc.JsonResu
     public string Protocol { get; set; }
     public RouteValueDictionary RouteValueDictionary { get; set; }
 }
+[GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+internal partial class T4MVC_System_Web_Mvc_ContentResult : System.Web.Mvc.ContentResult, IT4MVCActionResult
+{
+    public T4MVC_System_Web_Mvc_ContentResult(string area, string controller, string action, string protocol = null): base()
+    {
+        this.InitMVCT4Result(area, controller, action, protocol);
+    }
+    
+    public string Controller { get; set; }
+    public string Action { get; set; }
+    public string Protocol { get; set; }
+    public RouteValueDictionary RouteValueDictionary { get; set; }
+}
 
 
 
@@ -220,7 +233,6 @@ namespace Links
                 public static readonly string review_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/review.min.js") ? Url("review.min.js") : Url("review.js");
             }
         
-            public static readonly string mcq_result_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/mcq-result.min.js") ? Url("mcq-result.min.js") : Url("mcq-result.js");
             public static readonly string mcq_test_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/mcq-test.min.js") ? Url("mcq-test.min.js") : Url("mcq-test.js");
             [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
             public static class plugins {
@@ -244,6 +256,7 @@ namespace Links
             }
         
             public static readonly string shop_app_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/shop.app.min.js") ? Url("shop.app.min.js") : Url("shop.app.js");
+            public static readonly string shopping_cart_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/shopping-cart.min.js") ? Url("shopping-cart.min.js") : Url("shopping-cart.js");
         }
     
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -1563,9 +1576,9 @@ namespace Links
                 {
                     public const string common_js = "~/Content/js/common.js"; 
                     public const string custom_js = "~/Content/js/custom.js"; 
-                    public const string mcq_result_js = "~/Content/js/mcq-result.js"; 
                     public const string mcq_test_js = "~/Content/js/mcq-test.js"; 
                     public const string shop_app_js = "~/Content/js/shop.app.js"; 
+                    public const string shopping_cart_js = "~/Content/js/shopping-cart.js"; 
                 }
             }
             public static partial class plugins 

@@ -22,6 +22,13 @@ namespace Interpidians.Catalyst.Client.Web
                 defaults: new { controller = "Mcq", action = "Sample", course = UrlParameter.Optional, subcourse = UrlParameter.Optional, subject = UrlParameter.Optional }
             );
 
+            //Buy mcq sample based on course, subcourse and subject
+            routes.MapRoute(
+                name: "McqBuy",
+                url: "Mcq/Buy/{course}/{subcourse}/{subject}",
+                defaults: new { controller = "Mcq", action = "Buy", course = UrlParameter.Optional, subcourse = UrlParameter.Optional, subject = UrlParameter.Optional }
+            );
+
             //Load mcq questions based on topic
             routes.MapRoute(
                 name: "McqQuestionsTopicwise",

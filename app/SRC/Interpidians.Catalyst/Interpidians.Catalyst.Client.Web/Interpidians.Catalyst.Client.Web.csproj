@@ -233,12 +233,14 @@
     <Compile Include="UserController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
+    <Compile Include="ViewModels\BuyMcqViewModel.cs" />
     <Compile Include="ViewModels\ExamResultViewModel.cs" />
     <Compile Include="ViewModels\ExamViewModel.cs" />
     <Compile Include="ViewModels\LoginRegisterViewModel.cs" />
     <Compile Include="ViewModels\ManageProfileViewModel.cs" />
     <Compile Include="ViewModels\PaperMcqViewModel.cs" />
     <Compile Include="ViewModels\SampleMcqViewModel.cs" />
+    <Compile Include="ViewModels\ShoppingCartViewModel.cs" />
     <Compile Include="ViewModels\TopicMcqViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -285,7 +287,6 @@
     <Content Include="Content\js\forms\page_registration.js" />
     <Content Include="Content\js\forms\product-quantity.js" />
     <Content Include="Content\js\forms\review.js" />
-    <Content Include="Content\js\mcq-result.js" />
     <Content Include="Content\js\mcq-test.js" />
     <Content Include="Content\js\plugins\circles-master.js" />
     <Content Include="Content\js\plugins\countdown.js" />
@@ -302,6 +303,7 @@
     <Content Include="Content\js\plugins\style-switcher-rtl.js" />
     <Content Include="Content\js\plugins\style-switcher.js" />
     <Content Include="Content\js\shop.app.js" />
+    <Content Include="Content\js\shopping-cart.js" />
     <Content Include="Content\plugins\animate.css" />
     <Content Include="Content\plugins\back-to-top.js" />
     <Content Include="Content\plugins\bootstrap\css\bootstrap-rtl.min.css" />
@@ -909,6 +911,9 @@
     <Content Include="Views\User\Me.cshtml" />
     <Content Include="Views\About\Team.cshtml" />
     <Content Include="Views\About\Testimonial.cshtml" />
+    <Content Include="Views\Mcq\Buy.cshtml" />
+    <Content Include="Views\Shared\_ShoppingCart.cshtml" />
+    <Content Include="Views\Shared\_EmptyShoppingCart.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -997,7 +1002,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>51260</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:51260/</IISUrl>
+          <IISUrl>http://localhost:51261/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

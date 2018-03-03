@@ -448,5 +448,6 @@ var MCQ_MODULE = function () {
     return {
         init: initTest,
         startTimer: startTimer,
+        disableKeys: disableCtrlKeyCombination,
     };
 }();

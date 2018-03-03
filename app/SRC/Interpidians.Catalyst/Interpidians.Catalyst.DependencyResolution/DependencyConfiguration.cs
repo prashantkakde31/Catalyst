@@ -44,8 +44,10 @@ namespace Interpidians.Catalyst.DependencyResolution
             diContainer.Register<IPaperMasterRepository, PaperMasterRepository>(Lifestyle.Scoped);
             diContainer.Register<IMcqAnswerRepository, McqAnswerRepository>(Lifestyle.Scoped);
             diContainer.Register<IExamResultRepository, ExamResultRepository>(Lifestyle.Scoped);
+            diContainer.Register<IProductMasterRepository, ProductMasterRepository>(Lifestyle.Scoped);
             diContainer.Register<ICartItemRepository, CartItemRepository>(Lifestyle.Scoped);
             diContainer.Register<IShoppingCartRepository, ShoppingCartRepository>(Lifestyle.Scoped);
+            diContainer.Register<IDiscountMasterRepository, DiscountMasterRepository>(Lifestyle.Scoped);
             diContainer.Register<IUserMasterRepository, UserMasterRepository>(Lifestyle.Scoped);
             diContainer.Register<IUserProfileRepository, UserProfileRepository>(Lifestyle.Scoped);
             diContainer.Register<IUserRoleRepository, UserRoleRepository>(Lifestyle.Scoped);
@@ -63,8 +65,10 @@ namespace Interpidians.Catalyst.DependencyResolution
 
             diContainer.Register<IEmployeeService, EmployeeService>();
             diContainer.Register<IExamService, ExamService>();
-            diContainer.Register<IMcqService, McqService>();
+            diContainer.Register<ICatalystService, CatalystService>();
             diContainer.Register<IUserService, UserService>();
+            diContainer.Register<IShoppingCartService, ShoppingCartService>();
+            diContainer.Register<ICacheService, CacheService>();
 
 
             #endregion

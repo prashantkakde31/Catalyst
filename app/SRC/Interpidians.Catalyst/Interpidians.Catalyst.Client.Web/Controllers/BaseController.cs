@@ -20,6 +20,11 @@ namespace Interpidians.Catalyst.Client.Web.Controllers
             this.sessionStore = new SessionStore();
         }
 
+        public UserMaster GetCurrentUser()
+        {
+            return (this.sessionStore.ItemExists(SessionKeys.USER_DETAILS)? this.sessionStore.GetItemFromSession<UserMaster>(SessionKeys.USER_DETAILS):null);
+        }
+
         /// <summary>
         /// Called when an unhandled exception occurs in the action.
         /// </summary>

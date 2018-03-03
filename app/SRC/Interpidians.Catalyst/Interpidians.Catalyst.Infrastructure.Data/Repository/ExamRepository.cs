@@ -13,9 +13,6 @@ namespace Interpidians.Catalyst.Infrastructure.Data
 {
     public class ExamRepository :BaseRepository, IExamRepository
     {
-        private Exam exam;
-        private Mcq mcq;
-        private McqAnswer mcqAnswer;
         public IEnumerable<Exam> GetAll()
         {
             IEnumerable<Exam> lstEmployee;
@@ -33,11 +30,6 @@ namespace Interpidians.Catalyst.Infrastructure.Data
             return objExam;
         }
 
-        //public Exam EndExam(long examId, DateTime endTime)
-        //{
-        //    this.exam.EndTime = endTime;
-        //    return this.exam;
-        //}
         public void EndExam(long examId)//stored procedure for Ending exam
         {
             DbCommand StartCommand = this.DB.GetStoredProcCommand("usp_EndExam");
@@ -84,11 +76,6 @@ namespace Interpidians.Catalyst.Infrastructure.Data
             this.DB.AddInParameter(StartCommand, "@IsMarkForReview", DbType.Boolean, isMarkForReview);
             this.DB.ExecuteNonQuery(StartCommand);
             if (StartCommand != null) StartCommand.Dispose();
-            }
-
-
-
-
-        
+            }     
     }
 }

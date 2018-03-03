@@ -160,7 +160,7 @@
                                                 </div>
                                             </div>
                                             @{
-                                                if (Model.CurrentQuestion.McqAnswers.Where(x => x.AnswerType == "Image").Any<Interpidians.Catalyst.Core.Entity.McqAnswer>())
+                                                if (Model.CurrentQuestion.McqAnswers.Where(x => x.AnswerType == "IMAGE").Any<Interpidians.Catalyst.Core.Entity.McqAnswer>())
                                                 {
                                                     @Html.Raw("<div class='col-xs-12 col-md-12'>") @*For Image Options*@
                                                 }
@@ -298,7 +298,13 @@
                                 <button class="btn rounded btn-u-sm btn-warning" type="button" id="btnMarkForReview"><i class="fa fa-eye"></i> Mark For Review</button>
                                 <button class="btn-u rounded btn-u-sm btn-u-blue pull-right margin-left-10" type="button" id="btnSkipQuestion">Skip&nbsp;&nbsp;<i class="fa fa-angle-right"></i></button>
                                 <button class="btn-u rounded btn-u-sm pull-right margin-left-5" type="button" id="btnClearSelection">Clear Selection&nbsp;&nbsp;</button>
-                                <button class="btn-u rounded btn-u-sm pull-right" type="button" id="btnSubmitAnswer">Submit answer & continue&nbsp;&nbsp;<i class="fa fa-angle-right"></i></button>
+                                <button class="btn-u rounded btn-u-sm pull-right margin-left-5" type="button" id="btnSubmitAnswer">Submit answer & continue&nbsp;&nbsp;<i class="fa fa-angle-right"></i></button>
+                                @{
+                                    if (Convert.ToString(Request.QueryString["SrNo"]) == Convert.ToString(Model.CurrentExam.TotalQuestions))
+                                    {
+                                        <button class="btn-u rounded btn-u-sm pull-right" type="button" data-toggle="modal" data-target=".modal-status">Submit Paper</button>
+                                    }
+                                }
                             </div>
                         </div>
                         <!-- /Q.1 -->

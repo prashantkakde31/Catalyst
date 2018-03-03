@@ -32,6 +32,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Caching" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -39,18 +40,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ApplicationService\CacheService.cs" />
     <Compile Include="ApplicationService\EmployeeService.cs" />
     <Compile Include="ApplicationService\ExamDetailService.cs" />
     <Compile Include="ApplicationService\ExamService.cs" />
+    <Compile Include="ApplicationService\ICacheService.cs" />
     <Compile Include="ApplicationService\IEmployeeService.cs" />
     <Compile Include="ApplicationService\IExamDetailService.cs" />
     <Compile Include="ApplicationService\IExamService.cs" />
-    <Compile Include="ApplicationService\IMcqService.cs" />
-    <Compile Include="ApplicationService\ISubjectService.cs" />
+    <Compile Include="ApplicationService\ICatalystService.cs" />
+    <Compile Include="ApplicationService\IShoppingCartService.cs" />
     <Compile Include="ApplicationService\IUserService.cs" />
-    <Compile Include="ApplicationService\McqService.cs" />
-    <Compile Include="ApplicationService\SubjectService.cs" />
+    <Compile Include="ApplicationService\CatalystService.cs" />
+    <Compile Include="ApplicationService\ShoppingCartService.cs" />
     <Compile Include="ApplicationService\UserService.cs" />
+    <Compile Include="Common\CachingKeys.cs" />
     <Compile Include="Common\ILogger.cs" />
     <Compile Include="Common\IMailer.cs" />
     <Compile Include="Common\IServiceLocator.cs" />

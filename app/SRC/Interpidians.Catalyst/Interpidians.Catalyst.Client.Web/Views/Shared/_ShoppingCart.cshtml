@@ -1,0 +1,36 @@
+﻿@model Interpidians.Catalyst.Client.Web.ViewModels.ShoppingCartViewModel
+<!-- Shopping Cart -->
+<div class="shop-badge badge-icons pull-right">
+    <a href="#"><i class="fa fa-shopping-cart"></i></a>
+    <span class="badge badge-sea rounded-x">@Model.TotalCartItemCount</span>
+    <div class="badge-open">
+        <ul class="list-unstyled mCustomScrollbar" data-mcs-theme="minimal-dark" id="CartItems">
+            @{
+                foreach (var product in Model.ProductsInCart)
+                {
+                    <li data-product-id="@product.ProductID">
+                        <button type="button" class="close" onclick="RemoveItemFromCart(this)">×</button>
+                        <div class="overflow-h">
+                            <span>{Product Category / Hierarchy}</span>
+                            <strong>@product.Name</strong>
+                            <br>
+                            <strong class="color-green">$ @Math.Round(product.Price,2)</strong>
+                        </div>
+                    </li>
+                }
+            }
+        </ul>
+        <div class="subtotal">
+            <div class="overflow-h margin-bottom-10">
+                <span>Subtotal</span>
+                <span class="pull-right subtotal-cost">$ @Math.Round(Model.TotalCartPrice,2)</span>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <a href="shop-ui-add-to-cart.html" class="btn-u btn-u-sea-shop btn-block">Checkout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Shopping Cart -->

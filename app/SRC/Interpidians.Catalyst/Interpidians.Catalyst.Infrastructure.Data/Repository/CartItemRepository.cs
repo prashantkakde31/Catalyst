@@ -25,11 +25,11 @@ namespace Interpidians.Catalyst.Infrastructure.Data
             throw new NotImplementedException();
         }
 
-        public void Add(CartItem CartItem)
+        public void Add(long shoppingCartId, int productId)
         {
             DbCommand saveCommand = this.DB.GetStoredProcCommand("usp_AddCartItem");
-            this.DB.AddInParameter(saveCommand, "@ShoppingCartID", DbType.Int64, CartItem.ShoppingCartID);
-            this.DB.AddInParameter(saveCommand, "@ProductID", DbType.Int32, CartItem.ProductID);
+            this.DB.AddInParameter(saveCommand, "@ShoppingCartID", DbType.Int64, shoppingCartId);
+            this.DB.AddInParameter(saveCommand, "@ProductID", DbType.Int32, productId);
             this.DB.ExecuteNonQuery(saveCommand);
             if (saveCommand != null) saveCommand.Dispose();
         }
@@ -39,10 +39,19 @@ namespace Interpidians.Catalyst.Infrastructure.Data
             throw new NotImplementedException();
         }
 
-        public void Delete(IdentifiableData id)
+        public void Delete(long shoppingCartId, int productId)
         {
             DbCommand saveCommand = this.DB.GetStoredProcCommand("usp_DeleteCartItem");
-            this.DB.AddInParameter(saveCommand, "@CartItemID", DbType.Int64, id.LId);
+            this.DB.AddInParameter(saveCommand, "@ShoppingCartID", DbType.Int64, shoppingCartId);
+            this.DB.AddInParameter(saveCommand, "@ProductID", DbType.Int32, productId);
+            this.DB.ExecuteNonQuery(saveCommand);
+            if (saveCommand != null) saveCommand.Dispose();
+        }
+
+        public void DeleteAll(long shoppingCartId)
+        {
+            DbCommand saveCommand = this.DB.GetStoredProcCommand("usp_DeleteAllCartItem");
+            this.DB.AddInParameter(saveCommand, "@ShoppingCartID", DbType.Int64, shoppingCartId);
             this.DB.ExecuteNonQuery(saveCommand);
             if (saveCommand != null) saveCommand.Dispose();
         }

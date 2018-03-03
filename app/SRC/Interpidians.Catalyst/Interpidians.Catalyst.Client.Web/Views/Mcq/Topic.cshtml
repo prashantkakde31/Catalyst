@@ -57,7 +57,7 @@
                             </div>
 
                             @{
-                                if (mcq.McqAnswers.Where(x => x.AnswerType == "Image").Any<Interpidians.Catalyst.Core.Entity.McqAnswer>())
+                                if (mcq.McqAnswers.Where(x => x.AnswerType == "IMAGE").Any<Interpidians.Catalyst.Core.Entity.McqAnswer>())
                                 {
                                     @Html.Raw("<div class='col-xs-12 col-md-12'>") @*For Image Options*@
                                 }
