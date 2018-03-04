@@ -1,0 +1,21 @@
+﻿@model Interpidians.Catalyst.Client.Web.ViewModels.CheckoutCartSummaryViewModel
+    @{
+        if (Model == null)
+        {
+            <ul class="list-unstyled invoice-total-info">
+                <li><strong>Sub - Total Amount:</strong> $0</li>
+                <li><strong>Discount:</strong> $0</li>
+                <li><strong>VAT ($6):</strong> $0</li>
+                <li><strong>Grand Total:</strong> $0</li>
+            </ul>
+        }
+        else
+        {
+            <ul class="list-unstyled invoice-total-info">
+                <li><strong>Sub - Total Amount:</strong> $@Model.SubTotal</li>
+                <li><strong>Discount:</strong> $@Model.Discount</li>
+                <li><strong>VAT ($6):</strong> $@Model.Vat</li>
+                <li><strong>Grand Total:</strong> $@Model.GrandTotal</li>
+            </ul>
+        }
+    }

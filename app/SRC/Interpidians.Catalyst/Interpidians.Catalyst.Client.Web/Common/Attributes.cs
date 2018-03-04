@@ -39,12 +39,12 @@ namespace Interpidians.Catalyst.Client.Web.Common
 
                 //if (userInfo.PermittedActions.Count(pa => pa.ActionMethod == action) == 0)
                 //{
-                    filterContext.Result = new RedirectToRouteResult(
-                        new RouteValueDictionary {
-                        { "Controller", "Authorization" },
-                        { "Action", "AccessDenied" },
-                        {"returnUrl",filterContext.HttpContext.Request.Url.PathAndQuery}
-                     });
+                    //filterContext.Result = new RedirectToRouteResult(
+                    //    new RouteValueDictionary {
+                    //    { "Controller", "Authorization" },
+                    //    { "Action", "AccessDenied" },
+                    //    {"returnUrl",filterContext.HttpContext.Request.Url.PathAndQuery}
+                    // });
                 //}
             }
             else

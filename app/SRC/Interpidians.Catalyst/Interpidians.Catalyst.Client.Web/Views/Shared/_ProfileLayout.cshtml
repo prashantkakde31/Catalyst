@@ -136,54 +136,11 @@
                     </div>
 
                     <!-- Shopping Cart -->
-                    <div class="shop-badge badge-icons pull-right">
-                        <a href="#"><i class="fa fa-shopping-cart"></i></a>
-                        <span class="badge badge-sea rounded-x">3</span>
-                        <div class="badge-open">
-                            <ul class="list-unstyled mCustomScrollbar" data-mcs-theme="minimal-dark">
-                                <li>
-                                    <button type="button" class="close">×</button>
-                                    <div class="overflow-h">
-                                        <span>Board Name</span>
-                                        <strong>Subject Name</strong>
-                                        <br>
-                                        <strong class="color-green">$40.00</strong>
-                                    </div>
-                                </li>
-                                <li>
-                                    <button type="button" class="close">×</button>
-                                    <div class="overflow-h">
-                                        <span>Board Name</span>
-                                        <strong>Combo(All Subject + All Years)</strong>
-                                        <br>
-                                        <strong class="color-green">$40.00</strong>
-                                    </div>
-                                </li>
-                                <li>
-                                    <button type="button" class="close">×</button>
-                                    <div class="overflow-h">
-                                        <span>Board Name</span>
-                                        <strong>Year 2011</strong>
-                                        <br>
-                                        <strong class="color-green">$40.00</strong>
-                                    </div>
-                                </li>
-
-                            </ul>
-                            <div class="subtotal">
-                                <div class="overflow-h margin-bottom-10">
-                                    <span>Subtotal</span>
-                                    <span class="pull-right subtotal-cost">$1200.00</span>
-                                </div>
-                                <div class="row">
-                                    <div class="col-xs-12">
-                                        <a href="shop-ui-add-to-cart.html" class="btn-u btn-u-sea-shop btn-block">Checkout</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                    <div id="UserShoppingCart">
+                        @{Html.RenderAction(MVC.ShoppingCart.ActionNames.LoadUserCart, MVC.ShoppingCart.Name);}
                     </div>
                     <!-- End Shopping Cart -->
+
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     @*startFromCurrentNode: false, startingNodeInChildLevel: false, showStartingNode: true*@
                     <div class="collapse navbar-collapse navbar-responsive-collapse">
@@ -241,7 +198,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-12 md-margin-bottom-20">
-                        <h2>Suspendisse et tincidunt ipsum, et dignissim urna.</h2>
+                        <h2>EDUCASTLE</h2>
                     </div>
 
                 </div>
@@ -282,6 +239,7 @@
     <script src="~/Content/js/custom.js"></script>
     <!-- JS Page Level -->
     <script src="~/Content/js/common.js"></script>
+    <script src="~/Content/js/shopping-cart.js"></script>
     <script>
         jQuery(document).ready(function () {
             App.init();

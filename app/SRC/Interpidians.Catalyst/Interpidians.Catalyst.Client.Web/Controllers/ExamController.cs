@@ -38,6 +38,7 @@ namespace Interpidians.Catalyst.Client.Web.Controllers
             return View();
         }
 
+        [AuthorizeAction]
         public virtual ActionResult Paper(string id,string paperName)
         {
             //Get Exam Questions Metadata

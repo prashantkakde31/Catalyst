@@ -89,6 +89,12 @@ namespace Interpidians.Catalyst.Client.Web.Controllers
         }
         [NonAction]
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public virtual System.Web.Mvc.ActionResult LoginRegister()
+        {
+            return new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.LoginRegister);
+        }
+        [NonAction]
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public virtual System.Web.Mvc.ActionResult Login()
         {
             return new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Login);
@@ -210,6 +216,14 @@ namespace Interpidians.Catalyst.Client.Web.Controllers
         public ActionParamsClass_ExternalLoginCallback ExternalLoginCallbackParams { get { return s_params_ExternalLoginCallback; } }
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public class ActionParamsClass_ExternalLoginCallback
+        {
+            public readonly string returnUrl = "returnUrl";
+        }
+        static readonly ActionParamsClass_LoginRegister s_params_LoginRegister = new ActionParamsClass_LoginRegister();
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public ActionParamsClass_LoginRegister LoginRegisterParams { get { return s_params_LoginRegister; } }
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public class ActionParamsClass_LoginRegister
         {
             public readonly string returnUrl = "returnUrl";
         }
@@ -354,13 +368,14 @@ namespace Interpidians.Catalyst.Client.Web.Controllers
         }
 
         [NonAction]
-        partial void LoginRegisterOverride(T4MVC_System_Web_Mvc_ActionResult callInfo);
+        partial void LoginRegisterOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, string returnUrl);
 
         [NonAction]
-        public override System.Web.Mvc.ActionResult LoginRegister()
+        public override System.Web.Mvc.ActionResult LoginRegister(string returnUrl)
         {
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.LoginRegister);
-            LoginRegisterOverride(callInfo);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "returnUrl", returnUrl);
+            LoginRegisterOverride(callInfo, returnUrl);
             return callInfo;
         }
 

@@ -38,12 +38,16 @@ namespace T4MVC
             public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
             public class _ViewNamesClass
             {
+                public readonly string _CheckoutCartSummary = "_CheckoutCartSummary";
+                public readonly string _CheckoutItems = "_CheckoutItems";
                 public readonly string _CommonLayout = "_CommonLayout";
                 public readonly string _EmptyShoppingCart = "_EmptyShoppingCart";
                 public readonly string _ErrorLayout = "_ErrorLayout";
                 public readonly string _ProfileLayout = "_ProfileLayout";
                 public readonly string _ShoppingCart = "_ShoppingCart";
             }
+            public readonly string _CheckoutCartSummary = "~/Views/Shared/_CheckoutCartSummary.cshtml";
+            public readonly string _CheckoutItems = "~/Views/Shared/_CheckoutItems.cshtml";
             public readonly string _CommonLayout = "~/Views/Shared/_CommonLayout.cshtml";
             public readonly string _EmptyShoppingCart = "~/Views/Shared/_EmptyShoppingCart.cshtml";
             public readonly string _ErrorLayout = "~/Views/Shared/_ErrorLayout.cshtml";

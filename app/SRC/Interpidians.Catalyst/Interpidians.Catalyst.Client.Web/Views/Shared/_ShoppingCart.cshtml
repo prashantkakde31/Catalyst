@@ -27,7 +27,8 @@
             </div>
             <div class="row">
                 <div class="col-xs-12">
-                    <a href="shop-ui-add-to-cart.html" class="btn-u btn-u-sea-shop btn-block">Checkout</a>
+                    @*<a href="shop-ui-add-to-cart.html" class="btn-u btn-u-sea-shop btn-block">Checkout</a>*@
+                    @Html.ActionLink("Checkout", MVC.Checkout.ActionNames.Index, MVC.Checkout.Name,null, new { @class = "btn-u btn-u-sea-shop btn-block" })
                 </div>
             </div>
         </div>

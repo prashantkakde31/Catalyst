@@ -22,7 +22,7 @@
                      <div class="form-block-header">
                          <h2 class="margin-bottom-15">Sign In</h2>
                      </div>
-
+                    @Html.HiddenFor(model => model.LoginModel.ReturnUrl)
                      <div class="input-group margin-bottom-20">
                          <span class="input-group-addon rounded-left"><i class="icon-user color-white"></i></span>
                          @*<input type="text" class="form-control rounded-right" placeholder="Username" id="UserName" name="UserName">*@

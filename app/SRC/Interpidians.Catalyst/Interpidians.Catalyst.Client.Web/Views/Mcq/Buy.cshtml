@@ -72,7 +72,9 @@
                                 <tr>
                                     <td>@topic.Name</td>
                                     <td>$ @Math.Round(topic.Price,2)</td>
-                                    <td data-product-id="@topic.ProductID" data-product-category="@(Convert.ToString(ViewBag.CourseName) + "/" + Convert.ToString(ViewBag.subcourse)+ "/" + Convert.ToString(ViewBag.SubjectName).Trim())"><button type="button" class="btn-u btn-u-sea-shop" onclick="AddItemToCart(this)">Add to Cart</button></td>
+                                    <td data-product-id="@topic.ProductID" data-product-category="@(Convert.ToString(ViewBag.CourseName) + "/" + Convert.ToString(ViewBag.subcourse)+ "/" + Convert.ToString(ViewBag.SubjectName).Trim())">
+                                        <button type="button" class="btn-u btn-u-sea-shop" onclick="AddItemToCart(this)">Add to Cart</button>
+                                    </td>
                                 </tr>
                             }
                         }
@@ -133,14 +135,11 @@
         <!-- End Fetch Papers To Sell under subject -->
 
         <div class="col-xs-offset-6 col-xs-6 text-right margin-top-20">
-            <ul class="list-unstyled invoice-total-info">
-                <li><strong>Total Amount:</strong> $1000</li>
-                <li><strong>Discount:</strong> 10%</li>
-                <li><strong>Grand Total:</strong> $900</li>
-            </ul>
-            <button class="btn-u">Proceed To Checkout</button>
+            <div id="CheckoutCartSummary">
+                @{Html.RenderAction(MVC.Checkout.ActionNames.LoadCheckoutCartSummary, MVC.Checkout.Name);}
+            </div>
+            @*<button class="btn-u">Proceed To Checkout</button>*@
+            @Html.ActionLink("Proceed To Checkout", MVC.Checkout.ActionNames.Index, MVC.Checkout.Name, null, new { @class = "btn-u" })
         </div>
     </div>
 </div>
-
-<script src="~/Content/js/shopping-cart.js"></script>

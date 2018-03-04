@@ -151,6 +151,7 @@ namespace Interpidians.Catalyst.Client.Web.Controllers
             return View(objTopicMcqViewModel);
         }
 
+        [AuthorizeAction]
         public virtual ActionResult Buy(string course, string subcourse, string subject)
         {
             //http://localhost:51260/Mcq/Buy/?course=IB&subcourse=f&subject=f

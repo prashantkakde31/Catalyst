@@ -218,9 +218,9 @@ namespace Interpidians.Catalyst.Client.Web.Controllers
 
         [HttpGet]
         [RestoreModelStateFromTempData]
-        public virtual ActionResult LoginRegister()
+        public virtual ActionResult LoginRegister(string returnUrl)
         {
-            return View(MVC.User.Views.ViewNames.LoginRegister, new LoginRegisterViewModel());
+            return View(MVC.User.Views.ViewNames.LoginRegister, new LoginRegisterViewModel() { LoginModel = new LoginViewModel() { ReturnUrl=returnUrl} });
             //return View("LoginRegister", new LoginRegisterViewModel());
         }
 
@@ -257,6 +257,11 @@ namespace Interpidians.Catalyst.Client.Web.Controllers
                 }
 
                 //IdentitySignin(this.CurrentUser.EmailID, this.CurrentUser.UserName, isPersistent: true);
+
+                if (loginModel.ReturnUrl !=null)
+                {
+                    return Redirect(loginModel.ReturnUrl);
+                }
 
                 return View(MVC.User.Views.ViewNames.Dashboard);
             }

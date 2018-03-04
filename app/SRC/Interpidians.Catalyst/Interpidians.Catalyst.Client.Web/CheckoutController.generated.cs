@@ -28,9 +28,6 @@ namespace Interpidians.Catalyst.Client.Web.Controllers
     public partial class CheckoutController
     {
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        public CheckoutController() { }
-
-        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         protected CheckoutController(Dummy d) { }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -76,12 +73,24 @@ namespace Interpidians.Catalyst.Client.Web.Controllers
         public class ActionNamesClass
         {
             public readonly string Index = "Index";
+            public readonly string LoadCheckoutCartSummary = "LoadCheckoutCartSummary";
+            public readonly string LoadCheckoutItems = "LoadCheckoutItems";
+            public readonly string GetCheckoutItems = "GetCheckoutItems";
+            public readonly string GetCheckoutCartSummary = "GetCheckoutCartSummary";
+            public readonly string GetEmptyCheckoutCartSummary = "GetEmptyCheckoutCartSummary";
+            public readonly string GetEmptyCheckoutItems = "GetEmptyCheckoutItems";
         }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public class ActionNameConstants
         {
             public const string Index = "Index";
+            public const string LoadCheckoutCartSummary = "LoadCheckoutCartSummary";
+            public const string LoadCheckoutItems = "LoadCheckoutItems";
+            public const string GetCheckoutItems = "GetCheckoutItems";
+            public const string GetCheckoutCartSummary = "GetCheckoutCartSummary";
+            public const string GetEmptyCheckoutCartSummary = "GetEmptyCheckoutCartSummary";
+            public const string GetEmptyCheckoutItems = "GetEmptyCheckoutItems";
         }
 
 
@@ -95,7 +104,9 @@ namespace Interpidians.Catalyst.Client.Web.Controllers
             public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
             public class _ViewNamesClass
             {
+                public readonly string Index = "Index";
             }
+            public readonly string Index = "~/Views/Checkout/Index.cshtml";
         }
     }
 
@@ -112,6 +123,72 @@ namespace Interpidians.Catalyst.Client.Web.Controllers
         {
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Index);
             IndexOverride(callInfo);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void LoadCheckoutCartSummaryOverride(T4MVC_System_Web_Mvc_ActionResult callInfo);
+
+        [NonAction]
+        public override System.Web.Mvc.ActionResult LoadCheckoutCartSummary()
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.LoadCheckoutCartSummary);
+            LoadCheckoutCartSummaryOverride(callInfo);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void LoadCheckoutItemsOverride(T4MVC_System_Web_Mvc_ActionResult callInfo);
+
+        [NonAction]
+        public override System.Web.Mvc.ActionResult LoadCheckoutItems()
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.LoadCheckoutItems);
+            LoadCheckoutItemsOverride(callInfo);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void GetCheckoutItemsOverride(T4MVC_System_Web_Mvc_ContentResult callInfo);
+
+        [NonAction]
+        public override System.Web.Mvc.ContentResult GetCheckoutItems()
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ContentResult(Area, Name, ActionNames.GetCheckoutItems);
+            GetCheckoutItemsOverride(callInfo);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void GetCheckoutCartSummaryOverride(T4MVC_System_Web_Mvc_ContentResult callInfo);
+
+        [NonAction]
+        public override System.Web.Mvc.ContentResult GetCheckoutCartSummary()
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ContentResult(Area, Name, ActionNames.GetCheckoutCartSummary);
+            GetCheckoutCartSummaryOverride(callInfo);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void GetEmptyCheckoutCartSummaryOverride(T4MVC_System_Web_Mvc_ContentResult callInfo);
+
+        [NonAction]
+        public override System.Web.Mvc.ContentResult GetEmptyCheckoutCartSummary()
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ContentResult(Area, Name, ActionNames.GetEmptyCheckoutCartSummary);
+            GetEmptyCheckoutCartSummaryOverride(callInfo);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void GetEmptyCheckoutItemsOverride(T4MVC_System_Web_Mvc_ContentResult callInfo);
+
+        [NonAction]
+        public override System.Web.Mvc.ContentResult GetEmptyCheckoutItems()
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ContentResult(Area, Name, ActionNames.GetEmptyCheckoutItems);
+            GetEmptyCheckoutItemsOverride(callInfo);
             return callInfo;
         }
 

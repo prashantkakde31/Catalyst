@@ -1,0 +1,52 @@
+﻿@model IEnumerable<Interpidians.Catalyst.Core.Entity.ProductMaster>
+
+@{
+    List<Interpidians.Catalyst.Core.Entity.ProductMaster> products=null;
+    if (Model !=null)
+    {
+        products = Model.ToList();
+    }
+}
+<table class="table table-striped invoice-table">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Item</th>
+            <th class="hidden-sm">Description</th>
+            <th>Cost</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @{
+            if (products == null)
+            {
+                <tr>
+                    <td colspan="5">Your cart is empty !</td>
+                </tr>
+            }
+            else
+            {
+                for (int i = 0; i < products.Count; i++)
+                {
+                    <tr>
+                        <td>@(i+1)</td>
+                        <td><strong>@products[i].Name</strong></td>
+                        <td class="hidden-sm">{Product Hierarchy}</td>
+                        <td>$@Math.Round(products[i].Price,2)</td>
+                        <td data-product-id="@products[i].ProductID">
+                            <button class="btn-u btn-u-red" type="button" onclick="RemoveItemFromCart(this)"><i class="fa fa-trash-o"></i></button>
+                        </td>
+                    </tr>
+                }
+            }
+        }
+        @*<tr>
+                <td>1</td>
+                <td>Solutions Board Name, <strong>Subject Name</strong></td>
+                <td class="hidden-sm">At vero eos et accusamus etofficia mollitia</td>
+                <td>$35.00</td>
+                <td><button class="btn-u btn-u-red" type="button"><i class="fa fa-trash-o"></i></button></td>
+            </tr>*@
+    </tbody>
+</table>

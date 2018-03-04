@@ -234,6 +234,7 @@
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
     <Compile Include="ViewModels\BuyMcqViewModel.cs" />
+    <Compile Include="ViewModels\CheckoutCartSummaryViewModel.cs" />
     <Compile Include="ViewModels\ExamResultViewModel.cs" />
     <Compile Include="ViewModels\ExamViewModel.cs" />
     <Compile Include="ViewModels\LoginRegisterViewModel.cs" />
@@ -914,6 +915,9 @@
     <Content Include="Views\Mcq\Buy.cshtml" />
     <Content Include="Views\Shared\_ShoppingCart.cshtml" />
     <Content Include="Views\Shared\_EmptyShoppingCart.cshtml" />
+    <Content Include="Views\Checkout\Index.cshtml" />
+    <Content Include="Views\Shared\_CheckoutCartSummary.cshtml" />
+    <Content Include="Views\Shared\_CheckoutItems.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

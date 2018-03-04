@@ -1,0 +1,27 @@
+﻿@model Interpidians.Catalyst.Client.Web.ViewModels.ShoppingCartViewModel
+@{
+    ViewBag.Title = "Checkout";
+    Layout = "~/Views/Shared/_CommonLayout.cshtml";
+}
+
+<div class="col-sm-12">
+    <div class="panel panel-grey">
+        <div class="panel-heading">
+            <h2 class="panel-title"><i class="fa fa-shopping-cart"></i> Order Summary</h2>
+        </div>
+        <div class="panel-body">
+            <h4>Note</h4>
+            <p>Order Instructions</p>
+        </div>
+        <div id="CheckoutItems">
+            @{Html.RenderAction(MVC.Checkout.ActionNames.LoadCheckoutItems, MVC.Checkout.Name);}
+        </div>
+    </div>
+
+</div>
+<div class="col-xs-offset-6 col-xs-6 text-right">
+    <div id="CheckoutCartSummary">
+        @{Html.RenderAction(MVC.Checkout.ActionNames.LoadCheckoutCartSummary, MVC.Checkout.Name);}
+    </div>
+    <button class="btn-u">Proceed to Payment</button>
+</div>

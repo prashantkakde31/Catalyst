@@ -18,6 +18,8 @@ namespace Interpidians.Catalyst.Client.Web.ViewModels
 
         [Required]
         public string Password { get; set; } // nvarchar(50), not null
+
+        public string ReturnUrl { get; set; }
     }
 
     public class RegisterViewModel

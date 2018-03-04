@@ -17,50 +17,38 @@ namespace Interpidians.Catalyst.Client.Web.Controllers
 {
     public partial class ShoppingCartController : BaseController
     {
+        #region Properties
         private IShoppingCartService ShoppingCartService { get; set; }
         private ICatalystService CatalystService { get; set; }
         private ILogger Logger { get; set; }
-
         private UserMaster CurrentUser => this.GetCurrentUser();
-
         private long ShoppingCartId => this.GetCartId();
+        #endregion
 
+        #region Constructor
         public ShoppingCartController(IShoppingCartService shoppingCartService, ICatalystService catalystService, ILogger loggerService)
         {
             this.ShoppingCartService = shoppingCartService;
             this.CatalystService = catalystService;
             this.Logger = loggerService;
         }
+        #endregion
 
         // POST: /ShoppingCart/GetCart - Ajax Call
         [HttpPost]
         public virtual ContentResult GetCart()
         {
-            if (CurrentUser == null)
+            ShoppingCartViewModel shoppingCartVM = GetShoppingCartData();
+
+            if (shoppingCartVM == null)
             {
                 return GetEmptyCart();
             }
-
-            ShoppingCartViewModel shoppingCartVM = new ShoppingCartViewModel();
-            ShoppingCart userShoppingCart = ShoppingCartService.GetAll().Where(x => x.UserID == CurrentUser.UserID).FirstOrDefault();
-            userShoppingCart.CartItems = ShoppingCartService.GetCartItems(userShoppingCart.ShoppingCartID).ToList();
-            List<int> productIds = userShoppingCart.CartItems.Select(x => x.ProductID).ToList();
-
-            if (userShoppingCart.CartItems.Count() == 0 )
+            else
             {
-                return GetEmptyCart();
+                string cartContent = this.Render(this, MVC.Shared.Views.ViewNames._ShoppingCart, shoppingCartVM);
+                return Content(cartContent);
             }
-
-            List<ProductMaster> lstCartProducts = GetProducts(productIds);
-            List<DiscountMaster> lstDiscounts = CatalystService.GetAllDiscounts().ToList();
-
-            shoppingCartVM.UserShoppingCart = userShoppingCart;
-            shoppingCartVM.ProductsInCart = lstCartProducts;
-            shoppingCartVM.TotalCartItemCount = lstCartProducts.Count();
-            shoppingCartVM.TotalCartDiscountPrice = lstCartProducts.Sum(x => (x.Price * lstDiscounts.Where(y => y.DiscountID == x.DiscountID).Select(z => Convert.ToDecimal(z.Percentage)).FirstOrDefault()) / 100);
-            shoppingCartVM.TotalCartPrice = lstCartProducts.Sum(x => x.Price) - shoppingCartVM.TotalCartDiscountPrice;
-            string cartContent = this.Render(this, MVC.Shared.Views.ViewNames._ShoppingCart,shoppingCartVM);
-            return Content(cartContent);
         }
 
         public virtual ContentResult GetEmptyCart()
@@ -72,9 +60,23 @@ namespace Interpidians.Catalyst.Client.Web.Controllers
         [ChildActionOnly]
         public virtual ActionResult LoadUserCart()
         {
-            if (CurrentUser == null)
+            ShoppingCartViewModel shoppingCartVM = GetShoppingCartData();
+
+            if (shoppingCartVM == null)
             {
                 return GetEmptyCart();
+            }
+            else
+            {
+                return PartialView(MVC.Shared.Views.ViewNames._ShoppingCart, shoppingCartVM);
+            }
+        }
+
+        private ShoppingCartViewModel GetShoppingCartData()
+        {
+            if (CurrentUser == null)
+            {
+                return null;
             }
 
             ShoppingCartViewModel shoppingCartVM = new ShoppingCartViewModel();
@@ -84,7 +86,7 @@ namespace Interpidians.Catalyst.Client.Web.Controllers
 
             if (userShoppingCart.CartItems.Count() == 0)
             {
-                return GetEmptyCart();
+                return null;
             }
 
             List<ProductMaster> lstCartProducts = GetProducts(productIds);
@@ -93,9 +95,10 @@ namespace Interpidians.Catalyst.Client.Web.Controllers
             shoppingCartVM.UserShoppingCart = userShoppingCart;
             shoppingCartVM.ProductsInCart = lstCartProducts;
             shoppingCartVM.TotalCartItemCount = lstCartProducts.Count();
-            shoppingCartVM.TotalCartDiscountPrice = lstCartProducts.Sum(x => (x.Price * lstDiscounts.Where(y => y.DiscountID == x.DiscountID).Select(z => Convert.ToDecimal(z.Percentage)).FirstOrDefault())/100);
+            shoppingCartVM.TotalCartDiscountPrice = lstCartProducts.Sum(x => (x.Price * lstDiscounts.Where(y => y.DiscountID == x.DiscountID).Select(z => Convert.ToDecimal(z.Percentage)).FirstOrDefault()) / 100);
             shoppingCartVM.TotalCartPrice = lstCartProducts.Sum(x => x.Price) - shoppingCartVM.TotalCartDiscountPrice;
-            return PartialView(MVC.Shared.Views.ViewNames._ShoppingCart, shoppingCartVM);
+
+            return shoppingCartVM;
         }
         private List<ProductMaster> GetProducts(List<int> productIds)
         {
@@ -111,7 +114,7 @@ namespace Interpidians.Catalyst.Client.Web.Controllers
             else
             {
                 return ShoppingCartService.GetAll().Where(x => x.UserID == CurrentUser.UserID).Select(y => y.ShoppingCartID).FirstOrDefault();
-            }           
+            }
         }
 
         /// <summary>

@@ -1,5 +1,6 @@
 ﻿@model Interpidians.Catalyst.Client.Web.ViewModels.ExamViewModel
-
+@using MvcSiteMapProvider.Web.Html
+@using Interpidians.Catalyst.Client.Web.Common
 @{
     Layout = null;
     ViewBag.Title = "Start";
@@ -68,7 +69,96 @@
 <body class="header-fixed" data-page="mcq-test">
 
     <div class="wrapper">
+        <!--=== Header v5 ===-->
+        <div class="header-v5 header-static">
 
+            <!-- Topbar v3 -->
+            <div class="topbar-v3">
+                <div class="search-open">
+                    <div class="container">
+                        <input type="text" class="form-control" placeholder="Search">
+                        <div class="search-close"><i class="icon-close"></i></div>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+
+                            <ul class="topbar-list topbar-log_reg">
+                                <li>
+                                    <i class="fa fa-envelope"></i> <a href="mailto:info@htmlstream.com">something@something.com</a>
+                                </li>
+                                <li>
+                                    <i class="fa fa-phone"></i> <a href="tel:+919999999999">99999 99999</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-6">
+                            <ul class="topbar-list topbar-log_reg pull-right">
+                                @*<li>
+                                    <a href="javascript:void(0);">About</a>
+                                    <ul class="topbar-dropdown">
+                                        <li><a href="#">Team</a></li>
+                                        <li><a href="#">Testimonials</a></li>
+                                        <li><a href="#">Help &amp; Advice</a></li>
+                                        <li><a href="#">Opportunities</a></li>
+                                    </ul>
+                                </li>*@
+                                <li class=""><a class="" href="javascript:void(0);">Contact</a></li>
+                                <li class="">
+                                    @{
+                                        if ((new SessionStore().GetItemFromSession<Interpidians.Catalyst.Core.Entity.UserMaster>(SessionKeys.USER_DETAILS)) != null)
+                                        {
+                                            @:Hi @Html.ActionLink(new SessionStore().GetItemFromSession<Interpidians.Catalyst.Core.Entity.UserMaster>(SessionKeys.USER_DETAILS).UserName, MVC.User.Me()),
+                                            @Html.ActionLink("Logout", MVC.User.LogOff())
+                                        }
+                                        else
+                                        {
+                                            @Html.ActionLink("Login / Register", MVC.User.LoginRegister())
+                                        }
+                                    }
+                                </li>
+                                <li class=""><i class="search fa fa-search search-button"></i></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div><!--/container-->
+            </div>
+            <!-- End Topbar v3 -->
+            <!-- Navbar -->
+            <div class="navbar navbar-default mega-menu" role="navigation">
+                <div class="container">
+
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="index.html">
+                            <img id="logo-header" src="~/Content/img/logo.png" alt="Logo">
+                        </a>
+                    </div>
+
+                    <!-- Shopping Cart -->
+                    <div id="UserShoppingCart">
+                        @{Html.RenderAction(MVC.ShoppingCart.ActionNames.LoadUserCart, MVC.ShoppingCart.Name);}
+                    </div>
+                    <!-- End Shopping Cart -->
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    @*startFromCurrentNode: false, startingNodeInChildLevel: false, showStartingNode: true*@
+                    <div class="collapse navbar-collapse navbar-responsive-collapse">
+                        @*@Html.MvcSiteMap().Menu("BootstrapMenuHelperModel", startFromCurrentNode: false, startingNodeInChildLevel: false, showStartingNode: true)*@
+                        @Html.MvcSiteMap().Menu("BootstrapMenuHelperModel")
+                    </div>
+                </div>
+            </div>
+            <!-- End Navbar -->
+        </div>
+        <!--=== End Header v5 ===-->
         <!--=== Breadcrumbs v4 ===-->
         <div class="breadcrumbs">
 
@@ -391,6 +481,7 @@
     <script src="~/Content/js/common.js"></script>
     <!-- JS Customization -->
     <script src="~/Content/js/custom.js"></script>
+    <script src="~/Content/js/shopping-cart.js"></script>
     <script>
         jQuery(document).ready(function () {
             App.init();

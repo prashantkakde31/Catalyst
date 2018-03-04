@@ -1,7 +1,10 @@
 ﻿var addItemToCartUrl = '../../../../ShoppingCart/AddItemToCart';
 var removeItemFromCartUrl = '../../../../ShoppingCart/RemoveItemFromCart';
 var getCartUrl = '../../../../ShoppingCart/GetCart';
-var removeAllItemsFromCart = '../../../../ShoppingCart/RemoveAllItemsFromCart';
+var removeAllItemsFromCartUrl = '../../../../ShoppingCart/RemoveAllItemsFromCart';
+
+var getCheckoutItemsUrl = '../../../../Checkout/GetCheckoutItems';
+var getCheckoutSummaryUrl = '../../../../Checkout/GetCheckoutCartSummary';
 
 function InitAjaxCallBack() {
     $(document).ajaxStart(function () {
@@ -21,8 +24,10 @@ function AddItemToCart(ctrl) {
     var prodCategory = $(ctrl).parent()[0].dataset.productCategory;
     var prod = { productId: prodId };
     var dataToSend = JSON.stringify(prod);
-    AjaxCall(addItemToCartUrl, dataToSend, "post", "json", "OnAddCartItemSuccess", "application/json", undefined, undefined);
+    AjaxCall(addItemToCartUrl, dataToSend, "post", "json", "OnAddCartItemSuccess", "application/json", undefined, false);
     GetCart();
+    GetCheckoutItems();
+    GetCheckoutSummary();
 }
 
 function GetCart() {
@@ -30,13 +35,25 @@ function GetCart() {
     AjaxCall(getCartUrl, undefined, "post", "html", "OnGetCartSuccess", "application/json", undefined, undefined);
 }
 
+function GetCheckoutItems() {
+    debugger;
+    AjaxCall(getCheckoutItemsUrl, undefined, "post", "html", "OnGetCheckoutItemsSuccess", "application/json", undefined, undefined);
+}
+
+function GetCheckoutSummary() {
+    debugger;
+    AjaxCall(getCheckoutSummaryUrl, undefined, "post", "html", "OnGetCheckoutSummarySuccess", "application/json", undefined, undefined);
+}
+
 function RemoveItemFromCart(ctrl) {
     debugger;
     var prodId = $(ctrl).parent()[0].dataset.productId;
     var prod = { productId: prodId };
     var dataToSend = JSON.stringify(prod);
-    AjaxCall(removeItemFromCartUrl, dataToSend, "post", "json", "OnRemoveCartItemSuccess", "application/json", undefined, undefined);
+    AjaxCall(removeItemFromCartUrl, dataToSend, "post", "json", "OnRemoveCartItemSuccess", "application/json", undefined, false);
     GetCart();
+    GetCheckoutItems();
+    GetCheckoutSummary();
 }
 
 function EmptyCart() {
@@ -121,6 +138,16 @@ function OnGetCartSuccess(response) {
         //advanced: { autoExpandHorizontalScroll: false, updateOnContentResize: true },
         //axis: "y"
     });
+}
+
+function OnGetCheckoutItemsSuccess(response) {
+    console.log("Got Checkout Items");
+    $('#CheckoutItems').html(response);
+}
+
+function OnGetCheckoutSummarySuccess(response) {
+    console.log("Got Checkout Summary");
+    $('#CheckoutCartSummary').html(response);
 }
 
 function OnAddCartItemSuccess(response) {
