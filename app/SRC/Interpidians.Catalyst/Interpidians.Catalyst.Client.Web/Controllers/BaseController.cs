@@ -8,6 +8,7 @@ using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Net;
 
 namespace Interpidians.Catalyst.Client.Web.Controllers
 {
@@ -23,6 +24,22 @@ namespace Interpidians.Catalyst.Client.Web.Controllers
         public UserMaster GetCurrentUser()
         {
             return (this.sessionStore.ItemExists(SessionKeys.USER_DETAILS)? this.sessionStore.GetItemFromSession<UserMaster>(SessionKeys.USER_DETAILS):null);
+        }
+
+        public string GetUserIPAddress()
+        {
+            string hostName = null,ipAddress=null;
+            IPHostEntry host = default(IPHostEntry);
+            hostName = System.Environment.MachineName;
+            host = Dns.GetHostEntry(hostName);
+            foreach (IPAddress ip in host.AddressList)
+            {
+                if (ip.AddressFamily == System.Net.Sockets.AddressFamily.InterNetwork)
+                {
+                    ipAddress = Convert.ToString(ip);
+                }
+            }
+            return ipAddress;
         }
 
         /// <summary>

@@ -79,6 +79,7 @@
     <Compile Include="Repository\GradeMasterRepository.cs" />
     <Compile Include="Repository\McqAnswerRepository.cs" />
     <Compile Include="Repository\McqRepository.cs" />
+    <Compile Include="Repository\OrderDetailRepository.cs" />
     <Compile Include="Repository\PaperMasterRepository.cs" />
     <Compile Include="Repository\ProductMasterRepository.cs" />
     <Compile Include="Repository\RoleMasterRepository.cs" />
@@ -87,6 +88,7 @@
     <Compile Include="Repository\SubjectMasterRepository.cs" />
     <Compile Include="Repository\TestimonialMasterRepository.cs" />
     <Compile Include="Repository\TopicMasterRepository.cs" />
+    <Compile Include="Repository\TransactionDetailRepository.cs" />
     <Compile Include="Repository\UserMasterRepository.cs" />
     <Compile Include="Repository\UserProfileRepository.cs" />
     <Compile Include="Repository\UserRoleRepository.cs" />

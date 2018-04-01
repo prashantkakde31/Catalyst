@@ -33,6 +33,7 @@ public static partial class MVC
     public static Interpidians.Catalyst.Client.Web.Controllers.ErrorController Error = new Interpidians.Catalyst.Client.Web.Controllers.T4MVC_ErrorController();
     public static Interpidians.Catalyst.Client.Web.Controllers.ExamController Exam = new Interpidians.Catalyst.Client.Web.Controllers.T4MVC_ExamController();
     public static Interpidians.Catalyst.Client.Web.Controllers.McqController Mcq = new Interpidians.Catalyst.Client.Web.Controllers.T4MVC_McqController();
+    public static Interpidians.Catalyst.Client.Web.Controllers.PaymentController Payment = new Interpidians.Catalyst.Client.Web.Controllers.T4MVC_PaymentController();
     public static Interpidians.Catalyst.Client.Web.Controllers.ShoppingCartController ShoppingCart = new Interpidians.Catalyst.Client.Web.Controllers.T4MVC_ShoppingCartController();
     public static Interpidians.Catalyst.Client.Web.Controllers.UserController User = new Interpidians.Catalyst.Client.Web.Controllers.T4MVC_UserController();
     public static T4MVC.SharedController Shared = new T4MVC.SharedController();

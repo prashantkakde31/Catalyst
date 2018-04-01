@@ -23,5 +23,6 @@
     <div id="CheckoutCartSummary">
         @{Html.RenderAction(MVC.Checkout.ActionNames.LoadCheckoutCartSummary, MVC.Checkout.Name);}
     </div>
-    <button class="btn-u">Proceed to Payment</button>
+    @*<button class="btn-u">Proceed to Payment</button>*@
+    @Html.ActionLink("Proceed to Payment", MVC.Payment.ActionNames.Details, MVC.Payment.Name, null, new { @class = "btn-u" })
 </div>

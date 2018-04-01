@@ -1,0 +1,63 @@
+﻿@model Interpidians.Catalyst.Client.Web.ViewModels.PaymentSummaryViewModel
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_CommonLayout.cshtml";
+}
+
+<div class="col-sm-6">
+    <table class="sky-form buying-table table table-border table-striped">
+        <tbody>
+            <tr>
+                <td colspan="2"><h3>Payment Summary</h3></td>
+            </tr>
+            <tr>
+                <td>Customer Name</td>
+                <td>@Model.UserName</td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td>@Model.Email</td>
+            </tr>
+            <tr>
+                <td>Mobile</td>
+                <td>@Model.MobileNumber</td>
+            </tr>
+            <tr>
+                <td>SubTotal</td>
+                <td>$@Model.SubTotal</td>
+            </tr>
+            <tr>
+                <td>Discount</td>
+                <td>$@Model.Discount</td>
+            </tr>
+            <tr>
+                <td>Amount to be Paid</td>
+                <td>$@Convert.ToDecimal(Model.AmountToBePaid).ToString("g29")</td>
+            </tr>
+            <tr>
+                <td>Pay Via</td>
+                <td>@Html.ActionLink("PayUMoney", MVC.Payment.ActionNames.PayUMoney, MVC.Payment.Name, null, new { @class = "btn-u" })</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="col-sm-6">
+    <div class="mCustomScrollbar buying-table panel panel-default margin-bottom-10">
+        <table class="sky-form buying-table table table-border table-striped">
+            <tbody>
+                <tr>
+                    <td colspan="2"><h3>Product Details</h3></td>
+                </tr>
+            @{
+                foreach (var product in Model.ProductInfo)
+                {
+                    <tr>
+                        <td>@product.Name</td>
+                        <td>$@product.Price</td>
+                    </tr>
+                }
+            }
+            </tbody>
+        </table>
+    </div>
+ </div>

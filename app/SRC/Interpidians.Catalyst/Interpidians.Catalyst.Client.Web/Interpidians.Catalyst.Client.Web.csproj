@@ -190,6 +190,7 @@
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\ExamController.cs" />
     <Compile Include="Controllers\McqController.cs" />
+    <Compile Include="Controllers\PaymentController.cs" />
     <Compile Include="Controllers\ShoppingCartController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="EmployeeController.generated.cs">
@@ -218,6 +219,9 @@
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ExamQuestionPaperSet.cs" />
+    <Compile Include="PaymentController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SharedController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
@@ -240,6 +244,7 @@
     <Compile Include="ViewModels\LoginRegisterViewModel.cs" />
     <Compile Include="ViewModels\ManageProfileViewModel.cs" />
     <Compile Include="ViewModels\PaperMcqViewModel.cs" />
+    <Compile Include="ViewModels\PaymentSummaryViewModel.cs" />
     <Compile Include="ViewModels\SampleMcqViewModel.cs" />
     <Compile Include="ViewModels\ShoppingCartViewModel.cs" />
     <Compile Include="ViewModels\TopicMcqViewModel.cs" />
@@ -918,6 +923,9 @@
     <Content Include="Views\Checkout\Index.cshtml" />
     <Content Include="Views\Shared\_CheckoutCartSummary.cshtml" />
     <Content Include="Views\Shared\_CheckoutItems.cshtml" />
+    <Content Include="Views\Payment\Details.cshtml" />
+    <Content Include="Views\Payment\PayUMoney.cshtml" />
+    <Content Include="Views\Payment\PayUMoneyResponse.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

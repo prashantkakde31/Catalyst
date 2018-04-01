@@ -1,17 +1,17 @@
-﻿using System;
+﻿using Interpidians.Catalyst.Core.Entity;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Interpidians.Catalyst.Core.Entity;
 
 namespace Interpidians.Catalyst.Core.DomainService
 {
-   public interface ITransactionDetailRepository
+    public interface ITransactionDetailRepository
     {
         IEnumerable<TransactionDetail> GetAll();
         TransactionDetail GetById(IdentifiableData id);
-        void Add(TransactionDetail TransactionDetail);
-        void Update(TransactionDetail TransactionDetail);
+        void Add(TransactionDetail Transaction);
+        void Update(TransactionDetail Transaction);
         void Delete(IdentifiableData id);
     }
 }

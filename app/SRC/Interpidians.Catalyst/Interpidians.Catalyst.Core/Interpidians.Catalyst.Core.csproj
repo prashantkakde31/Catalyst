@@ -49,9 +49,11 @@
     <Compile Include="ApplicationService\IExamDetailService.cs" />
     <Compile Include="ApplicationService\IExamService.cs" />
     <Compile Include="ApplicationService\ICatalystService.cs" />
+    <Compile Include="ApplicationService\IPaymentService.cs" />
     <Compile Include="ApplicationService\IShoppingCartService.cs" />
     <Compile Include="ApplicationService\IUserService.cs" />
     <Compile Include="ApplicationService\CatalystService.cs" />
+    <Compile Include="ApplicationService\PaymentService.cs" />
     <Compile Include="ApplicationService\ShoppingCartService.cs" />
     <Compile Include="ApplicationService\UserService.cs" />
     <Compile Include="Common\CachingKeys.cs" />
@@ -72,6 +74,7 @@
     <Compile Include="DomainService\IMcqRepository.cs" />
     <Compile Include="DomainService\IMenuMasterRepository.cs" />
     <Compile Include="DomainService\IOrderDetailRepository.cs" />
+    <Compile Include="DomainService\IOrderItemRepository.cs" />
     <Compile Include="DomainService\IPaperMasterRepository.cs" />
     <Compile Include="DomainService\IProductMasterRepository.cs" />
     <Compile Include="DomainService\IProductPurchaseDetailRepository.cs" />
@@ -84,7 +87,6 @@
     <Compile Include="DomainService\ITestimonialRepository.cs" />
     <Compile Include="DomainService\ITopicMasterRepository.cs" />
     <Compile Include="DomainService\ITransactionDetailRepository.cs" />
-    <Compile Include="DomainService\IUserCartRepository.cs" />
     <Compile Include="DomainService\IUserEducationDetailRepository.cs" />
     <Compile Include="DomainService\IUserEnquiryRepository.cs" />
     <Compile Include="DomainService\IUserMasterRepository.cs" />
